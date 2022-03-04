@@ -7,9 +7,8 @@
 - Azure Subscription
 - New Resource Group
 
-## Deploy variamos to Azure 
+## Deploy variamos to Azure
 
 To deploy variamosApp execute from PowerShell the Next command:
 
-    .\variamosAppDeployment.ps1 -deploymentName 'VariamosAppDeploy' -templateFile 'variamosApp.bicep' -appName 'variamosapp' -ppKind 'app,linux,container' -aspName 'variamosasp' -subscriptionName 'BizSpark-Applipets' -resourceGroupName 'rglabvariamos3000' -location 'westus'
-
+    .\variamos.ps1 -deploymentName 'VariamosAppDeploy' -location 'westus' -templateFile 'variamos.bicep' -variamosAppName 'variamosapp' -appKind 'app,linux,container' -aspName 'variamosasp' -subscriptionName 'BizSpark-Applipets' -resourceGroupName 'rglabvariamos3000' -aspKind 'linux'

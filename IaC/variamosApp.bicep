@@ -3,16 +3,8 @@
 param appName string = 'variamosapp'
 param location string = resourceGroup().location
 param appKind string = 'app,linux,container'
-param aspName string =  'variamosasp'
-
-module asp 'appServicePlan.bicep' = {
-  name: aspName
-  params:{
-    appServicePlanName:aspName
-    location: location
-  }
-}
-
+param aspId string = ''
+//param aspName string =  'variamosasp'
 
 resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
   name: appName
@@ -32,7 +24,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
             hostType: 'Repository'
         }
     ]
-    serverFarmId: asp.outputs.aspId
+    serverFarmId: aspId
     reserved: true
     isXenon: false
     hyperV: false
