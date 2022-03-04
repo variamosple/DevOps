@@ -4,8 +4,9 @@ param(
     $appName = 'variamosapp',
     $ppKind = 'app,linux,container',
     $aspName = 'variamosasp',
-    $subscriptionName = 'BizSpark-Applipets',
-    $resourceGroupName = 'rglabvariamos3000'
+    $subscriptionName = '',
+    $resourceGroupName = 'rglabvariamos3000',
+    $location = 'westus'
 )
 
 Connect-AzAccount
@@ -13,7 +14,10 @@ Connect-AzAccount
 $context = Get-AzSubscription -SubscriptionName $subscriptionName
 Set-AzContext $context
 
+# Deploy the resource group
+New-AzSubscriptionDeployment -TemplateFile variamosResourceGroup.bicep -Name $deploymentName -Location $location -resourceGroupName $resourceGroupName
 
 Set-AzDefault -ResourceGroupName $resourceGroupName
 
-New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile -appName $appName -appKind $ppKind -aspName $aspName
+# Deploy the AppServicePlan and the App Service 
+New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile -appName $appName -appKind $ppKind -aspName $aspName 

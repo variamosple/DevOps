@@ -1,4 +1,5 @@
 //Microsoft.Web/sites
+
 param appName string = 'variamosapp'
 param location string = resourceGroup().location
 param appKind string = 'app,linux,container'
@@ -11,6 +12,7 @@ module asp 'appServicePlan.bicep' = {
     location: location
   }
 }
+
 
 resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
   name: appName
