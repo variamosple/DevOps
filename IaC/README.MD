@@ -11,4 +11,4 @@
 
 To deploy variamosApp execute from PowerShell the Next command:
 
-    .\variamos.ps1 -deploymentName 'VariamosAppDeploy' -location 'westus' -templateFile 'variamos.bicep' -variamosAppName 'variamosapp' -appKind 'app,linux,container' -aspName 'variamosasp' -subscriptionName 'BizSpark-Applipets' -resourceGroupName 'rglabvariamos3000' -aspKind 'linux'
+    .\variamos.ps1 -deploymentName 'VariamosDeploy' -location 'westus' -templateFile 'variamos.bicep' -variamosAppName 'variamosapp' -appKind 'app,linux,container' -aspName 'variamosasp' -subscriptionName '' -resourceGroupName 'rglabvariamos5000' -aspKind 'linux'

@@ -12,8 +12,6 @@ param(
 
 Connect-AzAccount
 
-Write-Host $subscriptionName
-
 $context = Get-AzSubscription -SubscriptionName $subscriptionName
 Set-AzContext $context
 

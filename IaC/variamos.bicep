@@ -14,23 +14,32 @@ module rg 'variamosResourceGroup.bicep' = {
   }
 }
 
-module variamosAppService 'variamosApp.bicep' = {
-  scope: resourceGroup(rg.name)
-  name: variamosAppName
-  params:{
-    appName:variamosAppName
-    location:location
-    appKind: appKind
-    aspId:variamosAsp.outputs.aspId
-  }  
-}
-
 module variamosAsp 'variamosAsp.bicep' = {
   scope: resourceGroup(rg.name)
   name: aspName
+  dependsOn:[
+    rg
+  ]
   params:{
     appServicePlanName:aspName
     location: location
     aspKind: aspKind
   }
 }
+
+module variamosAppService 'variamosApp.bicep' = {
+  scope: resourceGroup(rg.name)
+  name: variamosAppName
+  dependsOn: [
+    variamosAsp
+    rg
+  ]
+  params:{
+    appName: variamosAppName
+    location: location
+    appKind: appKind
+    aspId: variamosAsp.outputs.aspId
+  }  
+}
+
+

@@ -1,5 +1,5 @@
 param appServicePlanName string = ''
-param location string = resourceGroup().location
+param location string = ''
 param aspKind string = 'linux'
 output aspId string = asp.id
 
