@@ -1,5 +1,7 @@
 # variamosAsp.bicep
 
+![Variamos Deployment Diagram](DeplymentDiagram.jpg "Variamos Deployment Diagram")
+
 ## Prerequisites
 
 - Azure Subscription
