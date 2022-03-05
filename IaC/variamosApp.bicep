@@ -50,23 +50,23 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
         storageAccountRequired: false
         keyVaultReferenceIdentity: 'SystemAssigned'
     }
-    /*
+    
     resource ftp 'basicPublishingCredentialsPolicies' = {
         name: 'ftp'
+        location: location
         properties: {
             allow: true
         }
     }
-    */
     
-    /*
-    resource scm 'basicPublishingCredentialsPolicies' = {
+    resource scm 'basicPublishingCredentialsPolicies@2021-03-01' = {
         name: 'scm'
+        location: location
         properties: {
             allow: true
         }
     }
-    */
+    
     
     resource web 'config' = {
         name: 'web'
