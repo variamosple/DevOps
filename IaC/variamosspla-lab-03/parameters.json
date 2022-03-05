@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_VariaMos_name": {
+            "value": null
+        },
+        "sites_variamos_ms_languages_name": {
+            "value": null
+        },
+        "sites_variamos_ms_apireference_name": {
+            "value": null
+        },
+        "sites_variamos_ms_restrictions_name": {
+            "value": null
+        },
+        "serverfarms_ASP_variamosspla_a699_name": {
+            "value": null
+        }
+    }
+}
