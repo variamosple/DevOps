@@ -1,0 +1,1231 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_VariaMos_name": {
+            "defaultValue": "VariaMos",
+            "type": "String"
+        },
+        "sites_variamos_ms_languages_name": {
+            "defaultValue": "variamos-ms-languages",
+            "type": "String"
+        },
+        "sites_variamos_ms_apireference_name": {
+            "defaultValue": "variamos-ms-apireference",
+            "type": "String"
+        },
+        "sites_variamos_ms_restrictions_name": {
+            "defaultValue": "variamos-ms-restrictions",
+            "type": "String"
+        },
+        "registries_variamos_name": {
+            "defaultValue": "variamos",
+            "type": "String"
+        },
+        "serverfarms_ASP_variamosspla_a699_name": {
+            "defaultValue": "ASP-variamosspla-a699",
+            "type": "String"
+        },
+        "containerGroups_variamosweb_name": {
+            "defaultValue": "variamosweb",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "apiVersion": "2021-10-01",
+            "name": "[parameters('containerGroups_variamosweb_name')]",
+            "location": "eastus",
+            "properties": {
+                "sku": "Standard",
+                "containers": [
+                    {
+                        "name": "[parameters('containerGroups_variamosweb_name')]",
+                        "properties": {
+                            "image": "jsoto25/variamos-web:latest",
+                            "ports": [
+                                {
+                                    "protocol": "TCP",
+                                    "port": 80
+                                }
+                            ],
+                            "environmentVariables": [],
+                            "resources": {
+                                "requests": {
+                                    "memoryInGB": 1.5,
+                                    "cpu": 1
+                                }
+                            }
+                        }
+                    }
+                ],
+                "initContainers": [],
+                "restartPolicy": "Always",
+                "ipAddress": {
+                    "ports": [
+                        {
+                            "protocol": "TCP",
+                            "port": 80
+                        }
+                    ],
+                    "ip": "20.85.136.212",
+                    "type": "Public",
+                    "dnsNameLabel": "[parameters('containerGroups_variamosweb_name')]",
+                    "dnsNameLabelReusePolicy": "Unsecure"
+                },
+                "osType": "Linux"
+            }
+        },
+        {
+            "type": "Microsoft.ContainerRegistry/registries",
+            "apiVersion": "2021-12-01-preview",
+            "name": "[parameters('registries_variamos_name')]",
+            "location": "eastus",
+            "sku": {
+                "name": "Basic",
+                "tier": "Basic"
+            },
+            "properties": {
+                "adminUserEnabled": true,
+                "policies": {
+                    "quarantinePolicy": {
+                        "status": "disabled"
+                    },
+                    "trustPolicy": {
+                        "type": "Notary",
+                        "status": "disabled"
+                    },
+                    "retentionPolicy": {
+                        "days": 7,
+                        "status": "disabled"
+                    },
+                    "exportPolicy": {
+                        "status": "enabled"
+                    }
+                },
+                "encryption": {
+                    "status": "disabled"
+                },
+                "dataEndpointEnabled": false,
+                "publicNetworkAccess": "Enabled",
+                "networkRuleBypassOptions": "AzureServices",
+                "zoneRedundancy": "Disabled",
+                "anonymousPullEnabled": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2021-03-01",
+            "name": "[parameters('serverfarms_ASP_variamosspla_a699_name')]",
+            "location": "East US",
+            "sku": {
+                "name": "B2",
+                "tier": "Basic",
+                "size": "B2",
+                "family": "B",
+                "capacity": 1
+            },
+            "kind": "linux",
+            "properties": {
+                "perSiteScaling": false,
+                "elasticScaleEnabled": false,
+                "maximumElasticWorkerCount": 1,
+                "isSpot": false,
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0,
+                "zoneRedundant": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-03-01",
+            "name": "[parameters('sites_VariaMos_name')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]"
+            ],
+            "kind": "app,linux,container",
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "variamos.azurewebsites.net",
+                        "sslState": "Disabled",
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "variamos.scm.azurewebsites.net",
+                        "sslState": "Disabled",
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]",
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "siteConfig": {
+                    "numberOfWorkers": 1,
+                    "linuxFxVersion": "DOCKER|index.docker.io/magudeloz/variamos:cfcf8c8fc870713e2faffc8ce3e925d0f0ffe099",
+                    "acrUseManagedIdentityCreds": false,
+                    "alwaysOn": false,
+                    "http20Enabled": false,
+                    "functionAppScaleLimit": 0,
+                    "minimumElasticInstanceCount": 0
+                },
+                "scmSiteAlsoStopped": false,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "clientCertMode": "Required",
+                "hostNamesDisabled": false,
+                "customDomainVerificationId": "D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE",
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "httpsOnly": false,
+                "redundancyMode": "None",
+                "storageAccountRequired": false,
+                "keyVaultReferenceIdentity": "SystemAssigned"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-03-01",
+            "name": "[parameters('sites_variamos_ms_apireference_name')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]"
+            ],
+            "kind": "app,linux,container",
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]",
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "siteConfig": {
+                    "numberOfWorkers": 1,
+                    "linuxFxVersion": "[concat('DOCKER|variamos.azurecr.io/variamos/', parameters('sites_variamos_ms_apireference_name'), ':e4c266cdcf468b4e1e079459d8473c87698934a7')]",
+                    "acrUseManagedIdentityCreds": false,
+                    "alwaysOn": false,
+                    "http20Enabled": false,
+                    "functionAppScaleLimit": 0,
+                    "minimumElasticInstanceCount": 1
+                },
+                "scmSiteAlsoStopped": false,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "clientCertMode": "Required",
+                "hostNamesDisabled": false,
+                "customDomainVerificationId": "D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE",
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "httpsOnly": false,
+                "redundancyMode": "None",
+                "storageAccountRequired": false,
+                "keyVaultReferenceIdentity": "SystemAssigned"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-03-01",
+            "name": "[parameters('sites_variamos_ms_languages_name')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]"
+            ],
+            "kind": "app,linux,container",
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_variamos_ms_languages_name'), '.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_variamos_ms_languages_name'), '.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]",
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "siteConfig": {
+                    "numberOfWorkers": 1,
+                    "linuxFxVersion": "DOCKER|index.docker.io/magudeloz/variamos_ms_languages:3af48ce6f66d9ed7321edfac5a99ebdf22284b3b",
+                    "acrUseManagedIdentityCreds": false,
+                    "alwaysOn": false,
+                    "http20Enabled": false,
+                    "functionAppScaleLimit": 0,
+                    "minimumElasticInstanceCount": 1
+                },
+                "scmSiteAlsoStopped": false,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "clientCertMode": "Required",
+                "hostNamesDisabled": false,
+                "customDomainVerificationId": "D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE",
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "httpsOnly": false,
+                "redundancyMode": "None",
+                "storageAccountRequired": false,
+                "keyVaultReferenceIdentity": "SystemAssigned"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-03-01",
+            "name": "[parameters('sites_variamos_ms_restrictions_name')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]"
+            ],
+            "kind": "app,linux,container",
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_ASP_variamosspla_a699_name'))]",
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "siteConfig": {
+                    "numberOfWorkers": 1,
+                    "linuxFxVersion": "DOCKER|variamos.azurecr.io/variamos/variamos_ms_restrictions:1bc696b3d3f302cb8c5f50b0456629664fba217c",
+                    "acrUseManagedIdentityCreds": false,
+                    "alwaysOn": false,
+                    "http20Enabled": false,
+                    "functionAppScaleLimit": 0,
+                    "minimumElasticInstanceCount": 1
+                },
+                "scmSiteAlsoStopped": false,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "clientCertMode": "Required",
+                "hostNamesDisabled": false,
+                "customDomainVerificationId": "D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE",
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "httpsOnly": false,
+                "redundancyMode": "None",
+                "storageAccountRequired": false,
+                "keyVaultReferenceIdentity": "SystemAssigned"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/ftp')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '/ftp')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_apireference_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/ftp')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '/ftp')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_restrictions_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/scm')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '/scm')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_apireference_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/scm')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '/scm')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_restrictions_name'))]"
+            ],
+            "properties": {
+                "allow": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/web')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "linuxFxVersion": "DOCKER|index.docker.io/magudeloz/variamos:cfcf8c8fc870713e2faffc8ce3e925d0f0ffe099",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2019",
+                "httpLoggingEnabled": false,
+                "acrUseManagedIdentityCreds": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$VariaMos",
+                "scmType": "GitHubAction",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false
+                    }
+                ],
+                "loadBalancing": "LeastRequests",
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "autoHealEnabled": false,
+                "vnetRouteAllEnabled": false,
+                "vnetPrivatePortsCount": 0,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictionsUseMain": false,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "scmMinTlsVersion": "1.0",
+                "ftpsState": "AllAllowed",
+                "preWarmedInstanceCount": 0,
+                "functionAppScaleLimit": 0,
+                "functionsRuntimeScaleMonitoringEnabled": false,
+                "minimumElasticInstanceCount": 0,
+                "azureStorageAccounts": {}
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '/web')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_apireference_name'))]"
+            ],
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "linuxFxVersion": "DOCKER|variamos.azurecr.io/variamos/variamos-ms-apireference:e4c266cdcf468b4e1e079459d8473c87698934a7",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2019",
+                "httpLoggingEnabled": false,
+                "acrUseManagedIdentityCreds": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$variamos-ms-apireference",
+                "scmType": "GitHubAction",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false
+                    }
+                ],
+                "loadBalancing": "LeastRequests",
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "autoHealEnabled": false,
+                "vnetRouteAllEnabled": false,
+                "vnetPrivatePortsCount": 0,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictionsUseMain": false,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "scmMinTlsVersion": "1.0",
+                "ftpsState": "AllAllowed",
+                "preWarmedInstanceCount": 0,
+                "functionAppScaleLimit": 0,
+                "functionsRuntimeScaleMonitoringEnabled": false,
+                "minimumElasticInstanceCount": 1,
+                "azureStorageAccounts": {}
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/web')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "linuxFxVersion": "DOCKER|index.docker.io/magudeloz/variamos_ms_languages:3af48ce6f66d9ed7321edfac5a99ebdf22284b3b",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2019",
+                "httpLoggingEnabled": false,
+                "acrUseManagedIdentityCreds": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$variamos-ms-languages",
+                "scmType": "GitHubAction",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false
+                    }
+                ],
+                "loadBalancing": "LeastRequests",
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "autoHealEnabled": false,
+                "vnetRouteAllEnabled": false,
+                "vnetPrivatePortsCount": 0,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictionsUseMain": false,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "scmMinTlsVersion": "1.0",
+                "ftpsState": "AllAllowed",
+                "preWarmedInstanceCount": 0,
+                "functionAppScaleLimit": 0,
+                "functionsRuntimeScaleMonitoringEnabled": false,
+                "minimumElasticInstanceCount": 1,
+                "azureStorageAccounts": {}
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '/web')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_restrictions_name'))]"
+            ],
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "linuxFxVersion": "DOCKER|variamos.azurecr.io/variamos/variamos_ms_restrictions:1bc696b3d3f302cb8c5f50b0456629664fba217c",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2019",
+                "httpLoggingEnabled": false,
+                "acrUseManagedIdentityCreds": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$variamos-ms-restrictions",
+                "scmType": "GitHubAction",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false
+                    }
+                ],
+                "loadBalancing": "LeastRequests",
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "autoHealEnabled": false,
+                "vnetRouteAllEnabled": false,
+                "vnetPrivatePortsCount": 0,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictions": [
+                    {
+                        "ipAddress": "Any",
+                        "action": "Allow",
+                        "priority": 1,
+                        "name": "Allow all",
+                        "description": "Allow all access"
+                    }
+                ],
+                "scmIpSecurityRestrictionsUseMain": false,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "scmMinTlsVersion": "1.0",
+                "ftpsState": "AllAllowed",
+                "preWarmedInstanceCount": 0,
+                "functionAppScaleLimit": 0,
+                "functionsRuntimeScaleMonitoringEnabled": false,
+                "minimumElasticInstanceCount": 1,
+                "azureStorageAccounts": {}
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/0611efd5cc712c25da2c01eb36d2e144a73048ae1644265406542')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"0611efd5cc712c25da2c01eb36d2e144a73048ae\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-07T20:23:30.1835237Z",
+                "end_time": "2022-02-07T20:23:30.1835237Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/18b2650af3ecc4a25b8682af423d4208998a5a021626818534649')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"18b2650af3ecc4a25b8682af423d4208998a5a02\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-07-20T22:02:15.0894994Z",
+                "end_time": "2021-07-20T22:02:15.0894994Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '/1bc696b3d3f302cb8c5f50b0456629664fba217c1632424996396')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_restrictions_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"1bc696b3d3f302cb8c5f50b0456629664fba217c\",\"repoName\":\"mauroagudeloz/variamos_ms_restrictions\",\"slotName\":\"production\"}",
+                "start_time": "2021-09-23T19:23:16.7978256Z",
+                "end_time": "2021-09-23T19:23:16.7978256Z",
+                "active": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/2ef71f53ed9f4e8cb8cfc9e139da57975421ad851634335251398')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"2ef71f53ed9f4e8cb8cfc9e139da57975421ad85\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-10-15T22:00:52.0305684Z",
+                "end_time": "2021-10-15T22:00:52.0305684Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/3af48ce6f66d9ed7321edfac5a99ebdf22284b3b1644265142631')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"3af48ce6f66d9ed7321edfac5a99ebdf22284b3b\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-07T20:19:03.1301167Z",
+                "end_time": "2022-02-07T20:19:03.1301167Z",
+                "active": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/6774aa1bb7348165e8174c1f43795d3560d30c3a1626663689503')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"6774aa1bb7348165e8174c1f43795d3560d30c3a\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-07-19T03:01:29.8804687Z",
+                "end_time": "2021-07-19T03:01:29.8804687Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/7076e4a324fa1f9078b7968df8e50b42a3b811111643382101920')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"7076e4a324fa1f9078b7968df8e50b42a3b81111\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-01-28T15:01:42.3682819Z",
+                "end_time": "2022-01-28T15:01:42.3682819Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/7265024aa62627a72e14063643cb45a8eedf22d71639267586698')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"7265024aa62627a72e14063643cb45a8eedf22d7\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2021-12-12T00:06:27.1253791Z",
+                "end_time": "2021-12-12T00:06:27.1253791Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/73c6de7017b0cd67d7ce16b3638050bf604530461634397209790')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"73c6de7017b0cd67d7ce16b3638050bf60453046\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-10-16T15:13:30.1570911Z",
+                "end_time": "2021-10-16T15:13:30.1570911Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/7504222392d73b683fb138a49dcfb13a70993eb91643376285081')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"7504222392d73b683fb138a49dcfb13a70993eb9\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-01-28T13:24:45.4233965Z",
+                "end_time": "2022-01-28T13:24:45.4233965Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/7a536898bfed6ecc30ff846bda330375e1232be61624416510335')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"7a536898bfed6ecc30ff846bda330375e1232be6\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-06-23T02:48:31.7456767Z",
+                "end_time": "2021-06-23T02:48:31.7456767Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/8688e0b9fc78adcaa6e122c12dbb08f36ac9caef1624417099517')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"8688e0b9fc78adcaa6e122c12dbb08f36ac9caef\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-06-23T02:58:19.9082338Z",
+                "end_time": "2021-06-23T02:58:19.9082338Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/9f3dbec998bf3989c19a62c37375e48f519e349f1643377791282')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"9f3dbec998bf3989c19a62c37375e48f519e349f\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-01-28T13:49:51.7416177Z",
+                "end_time": "2022-01-28T13:49:51.7416177Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/a0d3252e3f988475d79eb930dd02d0b8907165811625713114970')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"a0d3252e3f988475d79eb930dd02d0b890716581\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-07-08T02:58:35.3464792Z",
+                "end_time": "2021-07-08T02:58:35.3464792Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/a308c60a8d57ed82ed80992815c9670a5420a43b1643840578680')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "aolopezeafit",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"a308c60a8d57ed82ed80992815c9670a5420a43b\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-02T22:22:59.1414649Z",
+                "end_time": "2022-02-02T22:22:59.1414649Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/a9070739c32d2cba30c427aec41cf2f9aba8b8791645667931729')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"a9070739c32d2cba30c427aec41cf2f9aba8b879\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-24T01:58:52.1279235Z",
+                "end_time": "2022-02-24T01:58:52.1279235Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/bfb639849165e929fcb1316dcdcd31490e65bd901626823819261')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"bfb639849165e929fcb1316dcdcd31490e65bd90\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-07-20T23:30:19.6609299Z",
+                "end_time": "2021-07-20T23:30:19.6609299Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/c5a78959642adfcbfff16f0a7ca531a445e3879d1644265234708')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"c5a78959642adfcbfff16f0a7ca531a445e3879d\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-07T20:20:37.895624Z",
+                "end_time": "2022-02-07T20:20:37.895624Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/caa543bdae65d5922cbd4c09769a22a4d32ef3b51624753771703')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"caa543bdae65d5922cbd4c09769a22a4d32ef3b5\",\"repoName\":\"mauroagudeloz/variamos_ms_languages\",\"slotName\":\"production\"}",
+                "start_time": "2021-06-27T00:29:32.4336149Z",
+                "end_time": "2021-06-27T00:29:32.4336149Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/cfcf8c8fc870713e2faffc8ce3e925d0f0ffe0991646416549466')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "aolopezeafit",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"cfcf8c8fc870713e2faffc8ce3e925d0f0ffe099\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-03-04T17:55:49.7892272Z",
+                "end_time": "2022-03-04T17:55:49.7892272Z",
+                "active": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '/e4c266cdcf468b4e1e079459d8473c87698934a71644269255706')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_apireference_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"e4c266cdcf468b4e1e079459d8473c87698934a7\",\"repoName\":\"mauroagudeloz/variamos-ms-apireference\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-07T21:27:36.1450757Z",
+                "end_time": "2022-02-07T21:27:36.1450757Z",
+                "active": true
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '/f5e41694ba81ce5e0551989241b968389c556b3e1644268583702')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_apireference_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"f5e41694ba81ce5e0551989241b968389c556b3e\",\"repoName\":\"mauroagudeloz/variamos-ms-apireference\",\"slotName\":\"production\"}",
+                "start_time": "2022-02-07T21:16:24.1148182Z",
+                "end_time": "2022-02-07T21:16:24.1148182Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/deployments",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/ffa0f8b7007d60880c28340171877696d61348ca1643376469308')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "status": 4,
+                "author": "mauroagudeloz",
+                "deployer": "GitHub",
+                "message": "{\"type\":\"Deployment\",\"sha\":\"ffa0f8b7007d60880c28340171877696d61348ca\",\"repoName\":\"mauroagudeloz/VariaMosPLE\",\"slotName\":\"production\"}",
+                "start_time": "2022-01-28T13:27:50.1318451Z",
+                "end_time": "2022-01-28T13:27:50.1318451Z",
+                "active": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_VariaMos_name'), '/', parameters('sites_VariaMos_name'), '.azurewebsites.net')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_VariaMos_name'))]"
+            ],
+            "properties": {
+                "siteName": "VariaMos",
+                "hostNameType": "Verified"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_apireference_name'), '/', parameters('sites_variamos_ms_apireference_name'), '.azurewebsites.net')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_apireference_name'))]"
+            ],
+            "properties": {
+                "siteName": "variamos-ms-apireference",
+                "hostNameType": "Verified"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_languages_name'), '/', parameters('sites_variamos_ms_languages_name'), '.azurewebsites.net')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_languages_name'))]"
+            ],
+            "properties": {
+                "siteName": "variamos-ms-languages",
+                "hostNameType": "Verified"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "apiVersion": "2021-03-01",
+            "name": "[concat(parameters('sites_variamos_ms_restrictions_name'), '/', parameters('sites_variamos_ms_restrictions_name'), '.azurewebsites.net')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_variamos_ms_restrictions_name'))]"
+            ],
+            "properties": {
+                "siteName": "variamos-ms-restrictions",
+                "hostNameType": "Verified"
+            }
+        }
+    ]
+}

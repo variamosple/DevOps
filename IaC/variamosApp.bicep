@@ -4,6 +4,11 @@ param appName string = 'variamosapp'
 param location string = ''
 param appKind string = 'applinuxcontainer'
 param aspId string = ''
+param dockerImage string = ''
+param publishingUsername string = ''
+// For variamos the value is: 'D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE'
+//param customDomainVerificationId string = ''
+
 //param aspName string =  'variamosasp'
 
 resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
@@ -14,12 +19,12 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
         enabled: true
         hostNameSslStates: [
             {
-                name: 'variamos.azurewebsites.net'
+                name: '${appName}.azurewebsites.net' 
                 sslState: 'Disabled'
                 hostType: 'Standard'
             }
             {
-                name: 'variamos.scm.azurewebsites.net'
+                name: '${appName}.scm.azurewebsites.net'
                 sslState: 'Disabled'
                 hostType: 'Repository'
             }
@@ -30,7 +35,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
         hyperV: false
         siteConfig: {
             numberOfWorkers: 1
-            linuxFxVersion: 'DOCKER|index.docker.io/magudeloz/variamos:a9070739c32d2cba30c427aec41cf2f9aba8b879'
+            linuxFxVersion: 'DOCKER|${dockerImage}'
             acrUseManagedIdentityCreds: false
             alwaysOn: false
             http20Enabled: false
@@ -42,7 +47,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
         clientCertEnabled: false
         clientCertMode: 'Required'
         hostNamesDisabled: false
-        customDomainVerificationId: 'D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE'
+        //customDomainVerificationId: 'D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE'
         containerSize: 0
         dailyMemoryTimeQuota: 0
         httpsOnly: false
@@ -52,7 +57,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
     }
     
     resource ftp 'basicPublishingCredentialsPolicies' = {
-        name: 'ftp'
+        name: 'ftp' 
         location: location
         properties: {
             allow: true
@@ -84,7 +89,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
                 'hostingstart.html'
             ]
             netFrameworkVersion: 'v4.0'
-            linuxFxVersion: 'DOCKER|index.docker.io/magudeloz/variamos:cfcf8c8fc870713e2faffc8ce3e925d0f0ffe099'
+            linuxFxVersion: 'DOCKER|${dockerImage}'
             requestTracingEnabled: false
             remoteDebuggingEnabled: false
             remoteDebuggingVersion: 'VS2019'
@@ -92,7 +97,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
             acrUseManagedIdentityCreds: false
             logsDirectorySizeLimit: 35
             detailedErrorLoggingEnabled: false
-            publishingUsername: '$VariaMos'
+            publishingUsername: publishingUsername
             scmType: 'GitHub'
             use32BitWorkerProcess: true
             webSocketsEnabled: false
