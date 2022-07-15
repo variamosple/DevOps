@@ -1,17 +1,11 @@
-//Microsoft.Web/sites
-
-param appName string = 'variamosapp'
-param location string = ''
-param appKind string = 'applinuxcontainer'
-param aspId string = ''
+param appName string 
+param location string = resourceGroup().location
+param appKind string
+param appServicePlanName string
 param dockerImage string = ''
 param publishingUsername string = ''
-// For variamos the value is: 'D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE'
-//param customDomainVerificationId string = ''
 
-//param aspName string =  'variamosasp'
-
-resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
+resource webSites 'Microsoft.Web/sites@2021-03-01' = {
     name: appName
     location: location
     kind: appKind
@@ -29,7 +23,7 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
                 hostType: 'Repository'
             }
         ]
-        serverFarmId: aspId
+        serverFarmId: asp.id
         reserved: true
         isXenon: false
         hyperV: false
@@ -47,7 +41,6 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
         clientCertEnabled: false
         clientCertMode: 'Required'
         hostNamesDisabled: false
-        //customDomainVerificationId: 'D1C4D5A27662E15790B9693D91CBB47D6CED37E0FACCF80C72C6F39DB2D5DEEE'
         containerSize: 0
         dailyMemoryTimeQuota: 0
         httpsOnly: false
@@ -149,4 +142,8 @@ resource variamosApp 'Microsoft.Web/sites@2021-03-01' = {
         }
     }
     
+}
+
+resource asp 'Microsoft.Web/serverfarms@2021-03-01' existing = {
+    name: appServicePlanName
 }

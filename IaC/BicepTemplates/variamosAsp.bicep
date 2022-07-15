@@ -1,7 +1,7 @@
-param appServicePlanName string = ''
-param location string = ''
-param aspKind string = 'linux'
-output aspId string = asp.id
+param appServicePlanName string
+param location string = resourceGroup().location
+param aspKind string
+//output aspId string = asp.id
 
 resource asp 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: appServicePlanName

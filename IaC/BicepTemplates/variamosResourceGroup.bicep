@@ -1,5 +1,5 @@
 targetScope = 'subscription'
-param resourceGroupName string = ''
+param resourceGroupName string
 param location string = deployment().location
 output name string = rg.name
 
