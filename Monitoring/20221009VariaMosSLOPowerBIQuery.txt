@@ -10,7 +10,7 @@ For Power BI Desktop follow the instructions below:
 
 let AnalyticsQuery =
 let Source = Json.Document(Web.Contents("https://api.applicationinsights.io/v1/apps/ce07b6e1-24f7-4a1f-8e8f-d515bbe711ef/query", 
-[Query=[#"query"="requests | where timestamp > ago(30d) | extend success = tostring(customDimensions[""status""]) | summarize succeed = count(resultCode == ""200""), total = count() by bin(timestamp, 1d) | extend SLI = succeed * 100.00/total | extend SLO = 90 | extend SLA = 80 | project SLI, SLO, SLA , timestamp | render timechart
+[Query=[#"query"="requests | where timestamp > ago(30d) | extend success = tostring(customDimensions[""status""]) | summarize succeed = count(resultCode == ""200""), total = count() by bin(timestamp, 15m) | extend SLI = succeed * 100.00/total | extend SLO = 90 | extend SLA = 80 | project SLI, SLO, SLA , timestamp | render timechart
 ",#"x-ms-app"="AAPBI",#"prefer"="ai.response-thinning=true"],Timeout=#duration(0,0,4,0)])),
 TypeMap = #table(
 { "AnalyticsTypes", "Type" }, 
