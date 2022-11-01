@@ -12,7 +12,7 @@ This DSL allows us to create the models and generate reports with the sugestion 
 
 **DevOps Model**
 
-![VariamosDevOpsModel.png](Docs\VariamosDevOpsMode3.png)
+![VariamosDevOpsModel03.png](Docs\VariamosDevOpsMode03.png)
 
 ## DSL Projects Creation in Visual Studio
 
