@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<devopsDiagram dslVersion="1.0.0.0" Id="d2cbc5e5-7b05-4375-a7b1-cd60460ec830" absoluteBounds="0, 0, 13.25, 8.5" name="Test">
+  <devOpsMoniker Id="c6021160-236d-4362-b3e5-3bc1140a8f98" />
+  <nestedChildShapes>
+    <applicationShape Id="62ec6889-5949-4573-b258-5e196b2113c5" absoluteBounds="6.75, 1, 1.5, 1">
+      <applicationMoniker Id="c4b3f265-190e-4b71-9a30-86913bd9fbd5" />
+    </applicationShape>
+    <devopsCategoryShape Id="c6ff43c5-291b-4fa8-829c-c85360f61c5f" absoluteBounds="2.625, 2.625, 1.5, 1">
+      <devopsCategoryMoniker Id="8005779a-1b4c-40d3-87c5-61866c38956c" />
+    </devopsCategoryShape>
+    <applicationCategoryConnector Id="702cfff6-cb2f-405f-935f-7909294ec472" edgePoints="[(6.75 : 1.5); (3.375 : 1.5); (3.375 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <applicationHasDevopsCategoriesMoniker Id="ae2b2306-c54f-4d71-89a7-81bc176be4cf" />
+      <nodes>
+        <applicationShapeMoniker Id="62ec6889-5949-4573-b258-5e196b2113c5" />
+        <devopsCategoryShapeMoniker Id="c6ff43c5-291b-4fa8-829c-c85360f61c5f" />
+      </nodes>
+    </applicationCategoryConnector>
+    <devopsCategoryShape Id="fdbc1b2a-4bc8-479b-ad70-81398836d09f" absoluteBounds="5.75, 2.625, 1.5, 1">
+      <devopsCategoryMoniker Id="0ad335dc-c65e-403f-8154-f43b781f63c4" />
+    </devopsCategoryShape>
+    <applicationCategoryConnector Id="a2ba5075-4bca-4908-b5ea-dfe9c09b111d" edgePoints="[(7 : 2); (7 : 2.625)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <applicationHasDevopsCategoriesMoniker Id="fe99875c-cec4-4b52-a3b5-9cc81fc4c2d0" />
+      <nodes>
+        <applicationShapeMoniker Id="62ec6889-5949-4573-b258-5e196b2113c5" />
+        <devopsCategoryShapeMoniker Id="fdbc1b2a-4bc8-479b-ad70-81398836d09f" />
+      </nodes>
+    </applicationCategoryConnector>
+    <devopsCategoryShape Id="646c6fdf-952c-44ae-bf82-7b1fb2da0c61" absoluteBounds="8.5, 2.625, 1.5, 1">
+      <devopsCategoryMoniker Id="db86db85-6705-46a2-a4d9-c847ba8ab0df" />
+    </devopsCategoryShape>
+    <applicationCategoryConnector Id="b658b21b-6cd6-4165-b164-cdd01ff3bfa4" edgePoints="[(8.25 : 1.7812525); (9.25 : 1.7812525); (9.25 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <applicationHasDevopsCategoriesMoniker Id="d557452a-59c1-451b-9fea-cd26e8702fc7" />
+      <nodes>
+        <applicationShapeMoniker Id="62ec6889-5949-4573-b258-5e196b2113c5" />
+        <devopsCategoryShapeMoniker Id="646c6fdf-952c-44ae-bf82-7b1fb2da0c61" />
+      </nodes>
+    </applicationCategoryConnector>
+    <devopsCategoryShape Id="6f3d7ea9-2b80-44b0-a895-f80eef167fd4" absoluteBounds="11.5, 2.625, 1.5, 1">
+      <devopsCategoryMoniker Id="4e9d2b7a-d05b-48b6-b7d3-889fb6c972be" />
+    </devopsCategoryShape>
+    <applicationCategoryConnector Id="9d2a70a1-0489-4920-a2fc-6e3d8611aed0" edgePoints="[(8.25 : 1.35937375); (12.25 : 1.35937375); (12.25 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <applicationHasDevopsCategoriesMoniker Id="b379f26a-7658-4549-bb93-bff7463ef523" />
+      <nodes>
+        <applicationShapeMoniker Id="62ec6889-5949-4573-b258-5e196b2113c5" />
+        <devopsCategoryShapeMoniker Id="6f3d7ea9-2b80-44b0-a895-f80eef167fd4" />
+      </nodes>
+    </applicationCategoryConnector>
+    <devopsPracticeShape Id="64cd4c8f-648c-442e-843f-632f1876a8e9" absoluteBounds="0.75, 4.75, 1.5, 1">
+      <devopsPracticeMoniker Id="18ef3eab-792f-41e9-adb1-d0bb241195d8" />
+    </devopsPracticeShape>
+    <categoryPracticeConnector Id="ec190e4f-bc2f-4d8d-a66c-72ac70c62b8d" edgePoints="[(2.625 : 3.125); (1.5 : 3.125); (1.5 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <devopsCategoryHasDevopsPracticedMoniker Id="f3a53e9e-f3f9-4e56-a8e4-cd690c69dde0" />
+      <nodes>
+        <devopsCategoryShapeMoniker Id="c6ff43c5-291b-4fa8-829c-c85360f61c5f" />
+        <devopsPracticeShapeMoniker Id="64cd4c8f-648c-442e-843f-632f1876a8e9" />
+      </nodes>
+    </categoryPracticeConnector>
+    <devopsPracticeShape Id="10630dae-390e-4dd4-93b9-9e4e91c2c04b" absoluteBounds="2.5, 4.75, 1.5, 1">
+      <devopsPracticeMoniker Id="c5ec0aba-9c12-4cf8-b465-9cdacfd3e262" />
+    </devopsPracticeShape>
+    <categoryPracticeConnector Id="31330da3-ef5d-4c65-8f43-136c64b7f525" edgePoints="[(3.3125 : 3.625); (3.3125 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <devopsCategoryHasDevopsPracticedMoniker Id="15449641-9bd4-4eda-ad0d-4282723ab377" />
+      <nodes>
+        <devopsCategoryShapeMoniker Id="c6ff43c5-291b-4fa8-829c-c85360f61c5f" />
+        <devopsPracticeShapeMoniker Id="10630dae-390e-4dd4-93b9-9e4e91c2c04b" />
+      </nodes>
+    </categoryPracticeConnector>
+    <devopsPracticeShape Id="aee3c87d-6f31-46db-9fcb-38e361aa9cdc" absoluteBounds="4.375, 4.75, 1.5, 1">
+      <devopsPracticeMoniker Id="e5363e70-fdd6-442f-aec7-303d015142d8" />
+    </devopsPracticeShape>
+    <categoryPracticeConnector Id="71f93c30-97db-4193-8fb9-d69ac4e48854" edgePoints="[(4.125 : 3.125); (5.0624995 : 3.125); (5.0624995 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <devopsCategoryHasDevopsPracticedMoniker Id="7e149f7c-4a8e-4d5b-b2bc-f18b7f061797" />
+      <nodes>
+        <devopsCategoryShapeMoniker Id="c6ff43c5-291b-4fa8-829c-c85360f61c5f" />
+        <devopsPracticeShapeMoniker Id="aee3c87d-6f31-46db-9fcb-38e361aa9cdc" />
+      </nodes>
+    </categoryPracticeConnector>
+  </nestedChildShapes>
+</devopsDiagram>

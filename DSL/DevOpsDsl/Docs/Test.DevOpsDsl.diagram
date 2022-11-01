@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<devOpsDslDiagram dslVersion="1.0.0.0" Id="081a0868-5f3f-473e-be59-827211873995" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <devOpsMoniker Id="c6021160-236d-4362-b3e5-3bc1140a8f98" />
+  <nestedChildShapes>
+    <exampleShape Id="0962b336-5e82-4bcf-8edb-d5e37e2c7a5d" absoluteBounds="1.75, 2.75, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/IaC" />
+    </exampleShape>
+    <exampleShape Id="74e82f73-52a8-48db-aa5f-24139935b209" absoluteBounds="7.25, 2.75, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/DevSecOps" />
+    </exampleShape>
+    <exampleShape Id="b21a0f59-c71f-49d4-84cd-98f9ac90cd54" absoluteBounds="3, 4.25, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Bicep Templates" />
+    </exampleShape>
+    <exampleShape Id="ad9446b2-e1f9-4b8e-8cfd-5ad8a612597e" absoluteBounds="0.5, 4.25, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Version Control" />
+    </exampleShape>
+    <exampleConnector Id="f99e707d-e9ab-435e-9a1f-06efa2547117" edgePoints="[(2.125 : 3.5); (2.125 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="5f0db210-83d4-4a32-9c93-8b66cd2715ce">
+      <nodes>
+        <exampleShapeMoniker Id="0962b336-5e82-4bcf-8edb-d5e37e2c7a5d" />
+        <exampleShapeMoniker Id="ad9446b2-e1f9-4b8e-8cfd-5ad8a612597e" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="d4dd3d8d-e324-44be-ac4b-dc423feee34c" edgePoints="[(3.375 : 3.5); (3.375 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="5f0db210-83d4-4a32-9c93-8b66cd2715ce">
+      <nodes>
+        <exampleShapeMoniker Id="0962b336-5e82-4bcf-8edb-d5e37e2c7a5d" />
+        <exampleShapeMoniker Id="b21a0f59-c71f-49d4-84cd-98f9ac90cd54" />
+      </nodes>
+    </exampleConnector>
+    <exampleShape Id="afe1425c-0cd3-42ea-9729-fcc6effcd9d1" absoluteBounds="5.875, 4.25, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Static Code Analisys" />
+    </exampleShape>
+    <exampleShape Id="5daadae3-8ac9-4eb5-be56-d31a27e4f714" absoluteBounds="8.75, 4.25, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Dinamic Code Analysis" />
+    </exampleShape>
+    <exampleConnector Id="31a2d8fd-815c-4048-a347-55e5ab0147ff" edgePoints="[(7.5625 : 3.5); (7.5625 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="5f0db210-83d4-4a32-9c93-8b66cd2715ce">
+      <nodes>
+        <exampleShapeMoniker Id="74e82f73-52a8-48db-aa5f-24139935b209" />
+        <exampleShapeMoniker Id="afe1425c-0cd3-42ea-9729-fcc6effcd9d1" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="b3549d4c-3605-4175-918d-2465e64e8c1c" edgePoints="[(9 : 3.5); (9 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="5f0db210-83d4-4a32-9c93-8b66cd2715ce">
+      <nodes>
+        <exampleShapeMoniker Id="74e82f73-52a8-48db-aa5f-24139935b209" />
+        <exampleShapeMoniker Id="5daadae3-8ac9-4eb5-be56-d31a27e4f714" />
+      </nodes>
+    </exampleConnector>
+    <exampleShape Id="d1792ce9-5ba3-4b01-99db-54632f1b8f47" absoluteBounds="4.625, 0.625, 2, 0.75">
+      <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Variamos DevOps Implementation" />
+    </exampleShape>
+    <exampleConnector Id="9995e295-8c9d-4ce9-bec7-c6d29f493258" edgePoints="[(5.625 : 1.375); (5.625 : 3.125); (3.75 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="5f0db210-83d4-4a32-9c93-8b66cd2715ce">
+      <nodes>
+        <exampleShapeMoniker Id="d1792ce9-5ba3-4b01-99db-54632f1b8f47" />
+        <exampleShapeMoniker Id="0962b336-5e82-4bcf-8edb-d5e37e2c7a5d" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="1f4592e9-d746-44ca-b3b7-337ac57fb2d7" edgePoints="[(6.1562525 : 1.375); (6.1562525 : 2.9375); (7.25 : 2.9375)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="5f0db210-83d4-4a32-9c93-8b66cd2715ce">
+      <nodes>
+        <exampleShapeMoniker Id="d1792ce9-5ba3-4b01-99db-54632f1b8f47" />
+        <exampleShapeMoniker Id="74e82f73-52a8-48db-aa5f-24139935b209" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</devOpsDslDiagram>

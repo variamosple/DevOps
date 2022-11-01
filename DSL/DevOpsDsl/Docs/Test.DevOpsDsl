@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<devOps xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c6021160-236d-4362-b3e5-3bc1140a8f98" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
+  <elements>
+    <category Id="5c8a4c16-9f89-4eba-8ea9-7f7e83da4938" name="IaC">
+      <targets>
+        <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Version Control" />
+        <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Bicep Templates" />
+      </targets>
+    </category>
+    <category Id="c5a7842c-ac39-4fbc-ba03-2a366e1c1d58" name="DevSecOps">
+      <targets>
+        <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Static Code Analisys" />
+        <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/Dinamic Code Analysis" />
+      </targets>
+    </category>
+    <category Id="2a837b0b-a716-403a-b613-af53a1c91cc0" name="Bicep Templates" />
+    <category Id="05c52ab8-e215-4ffc-a5dd-01bbfa8c03bc" name="Version Control" />
+    <category Id="93a92813-df3b-4c3e-bd69-f6200348d08e" name="Static Code Analisys" />
+    <category Id="0c809251-b85c-46e5-ac03-990f5f555699" name="Dinamic Code Analysis" />
+    <category Id="74cbff6a-134b-439f-ada0-de95e36de745" name="Variamos DevOps Implementation">
+      <targets>
+        <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/IaC" />
+        <categoryMoniker name="/c6021160-236d-4362-b3e5-3bc1140a8f98/DevSecOps" />
+      </targets>
+    </category>
+  </elements>
+</devOps>
