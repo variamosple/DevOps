@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="DevOpsDslSchema" targetNamespace="http://schemas.microsoft.com/dsltools/DevOpsDsl" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
+  <!-- DevOps -->
+  <xsd:element name="devOps" type="DevOps" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DevOps">
+    <xsd:annotation>
+      <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: DevOpsHasApplication -->
+          <xsd:element name="application" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of DevOpsHasApplication</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="devOpsHasApplication" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DevOpsHasApplication needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- dslVersion -->
+        <xsd:attribute name="dslVersion" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: ModelName -->
+        <xsd:attribute name="modelName" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevOps Moniker -->
+  <xsd:element name="devOpsMoniker" type="DevOpsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DevOpsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DevOps instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Application -->
+  <xsd:element name="application" type="Application" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Application">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ApplicationHasDevopsCategories -->
+          <xsd:element name="devopsCategories" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ApplicationHasDevopsCategories</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="applicationHasDevopsCategories" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ApplicationHasDevopsCategories needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: ApplicationName -->
+        <xsd:attribute name="applicationName" type="xsd:string" />
+        <!-- Property: CloudPlatform -->
+        <xsd:attribute name="cloudPlatform" type="CloudProvider" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Application Moniker -->
+  <xsd:element name="applicationMoniker" type="ApplicationMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ApplicationMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Application instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevopsCategory -->
+  <xsd:element name="devopsCategory" type="DevopsCategory" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DevopsCategory">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: DevopsCategoryHasDevopsPracticed -->
+          <xsd:element name="devopsPracticed" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of DevopsCategoryHasDevopsPracticed</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="devopsCategoryHasDevopsPracticed" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DevopsCategoryHasDevopsPracticed needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: CategoryName -->
+        <xsd:attribute name="categoryName" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevopsCategory Moniker -->
+  <xsd:element name="devopsCategoryMoniker" type="DevopsCategoryMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DevopsCategoryMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DevopsCategory instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevopsPractice -->
+  <xsd:element name="devopsPractice" type="DevopsPractice" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DevopsPractice">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: PracticeName -->
+        <xsd:attribute name="practiceName" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevopsPractice Moniker -->
+  <xsd:element name="devopsPracticeMoniker" type="DevopsPracticeMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DevopsPracticeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DevopsPractice instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevOpsHasApplication -->
+  <xsd:element name="devOpsHasApplication" type="DevOpsHasApplication" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DevOpsHasApplication">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Application -->
+          <xsd:element ref="application" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevOpsHasApplication Moniker -->
+  <xsd:element name="devOpsHasApplicationMoniker" type="DevOpsHasApplicationMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DevOpsHasApplicationMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DevOpsHasApplication instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ApplicationHasDevopsCategories -->
+  <xsd:element name="applicationHasDevopsCategories" type="ApplicationHasDevopsCategories" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ApplicationHasDevopsCategories">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end DevopsCategory -->
+          <xsd:element ref="devopsCategory" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ApplicationHasDevopsCategories Moniker -->
+  <xsd:element name="applicationHasDevopsCategoriesMoniker" type="ApplicationHasDevopsCategoriesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ApplicationHasDevopsCategoriesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ApplicationHasDevopsCategories instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevopsCategoryHasDevopsPracticed -->
+  <xsd:element name="devopsCategoryHasDevopsPracticed" type="DevopsCategoryHasDevopsPracticed" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DevopsCategoryHasDevopsPracticed">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end DevopsPractice -->
+          <xsd:element ref="devopsPractice" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DevopsCategoryHasDevopsPracticed Moniker -->
+  <xsd:element name="devopsCategoryHasDevopsPracticedMoniker" type="DevopsCategoryHasDevopsPracticedMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DevopsCategoryHasDevopsPracticedMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DevopsCategoryHasDevopsPracticed instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Enum CloudProvider -->
+  <xsd:simpleType name="CloudProvider">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Azure">
+        <xsd:annotation>
+          <xsd:documentation>Microsft Azure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AWS">
+        <xsd:annotation>
+          <xsd:documentation>Amazon Web Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GCP">
+        <xsd:annotation>
+          <xsd:documentation>Google Cloud Platform</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>
+
