@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<devOps xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c6021160-236d-4362-b3e5-3bc1140a8f98" modelName="Variamos DevOps Model" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
+  <application>
+    <devOpsHasApplication Id="f88d2a19-3394-41e2-b005-6448988bca1e">
+      <application Id="c4b3f265-190e-4b71-9a30-86913bd9fbd5" applicationName="Variamos" cloudPlatform="AWS">
+        <devopsCategories>
+          <applicationHasDevopsCategories Id="ae2b2306-c54f-4d71-89a7-81bc176be4cf">
+            <devopsCategory Id="8005779a-1b4c-40d3-87c5-61866c38956c" categoryName="IaC">
+              <devopsPracticed>
+                <devopsCategoryHasDevopsPracticed Id="f3a53e9e-f3f9-4e56-a8e4-cd690c69dde0">
+                  <devopsPractice Id="18ef3eab-792f-41e9-adb1-d0bb241195d8" practiceName="Templates" />
+                </devopsCategoryHasDevopsPracticed>
+                <devopsCategoryHasDevopsPracticed Id="15449641-9bd4-4eda-ad0d-4282723ab377">
+                  <devopsPractice Id="c5ec0aba-9c12-4cf8-b465-9cdacfd3e262" practiceName="CV" />
+                </devopsCategoryHasDevopsPracticed>
+                <devopsCategoryHasDevopsPracticed Id="7e149f7c-4a8e-4d5b-b2bc-f18b7f061797">
+                  <devopsPractice Id="e5363e70-fdd6-442f-aec7-303d015142d8" practiceName="Release Pipeline" />
+                </devopsCategoryHasDevopsPracticed>
+              </devopsPracticed>
+            </devopsCategory>
+          </applicationHasDevopsCategories>
+          <applicationHasDevopsCategories Id="fe99875c-cec4-4b52-a3b5-9cc81fc4c2d0">
+            <devopsCategory Id="0ad335dc-c65e-403f-8154-f43b781f63c4" categoryName="CI/CD" />
+          </applicationHasDevopsCategories>
+          <applicationHasDevopsCategories Id="d557452a-59c1-451b-9fea-cd26e8702fc7">
+            <devopsCategory Id="db86db85-6705-46a2-a4d9-c847ba8ab0df" categoryName="DevSecOps" />
+          </applicationHasDevopsCategories>
+          <applicationHasDevopsCategories Id="b379f26a-7658-4549-bb93-bff7463ef523">
+            <devopsCategory Id="4e9d2b7a-d05b-48b6-b7d3-889fb6c972be" categoryName="Continuous Monitoring" />
+          </applicationHasDevopsCategories>
+        </devopsCategories>
+      </application>
+    </devOpsHasApplication>
+  </application>
+</devOps>
