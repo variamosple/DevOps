@@ -125,22 +125,6 @@
     <value>DevOpsDsl</value>
     <comment>DisplayName for DslLibrary &apos;DevOpsDsl&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOps.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.DevOps</value>
-    <comment>Description for DomainClass &apos;DevOps&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOps.DisplayName" xml:space="preserve">
-    <value>Dev Ops</value>
-    <comment>DisplayName for DomainClass &apos;DevOps&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOps/ModelName.Description" xml:space="preserve">
-    <value>Model Name</value>
-    <comment>Description for DomainProperty &apos;ModelName&apos; on DomainClass &apos;DevOps&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOps/ModelName.DisplayName" xml:space="preserve">
-    <value>Model Name</value>
-    <comment>DisplayName for DomainProperty &apos;ModelName&apos; on DomainClass &apos;DevOps&apos;</comment>
-  </data>
   <data name="Variamos.DevOpsDsl.Application.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.Application</value>
     <comment>Description for DomainClass &apos;Application&apos;</comment>
@@ -150,7 +134,7 @@
     <comment>DisplayName for DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application/ApplicationName.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.Application.Application Name</value>
+    <value>Name of the Application</value>
     <comment>Description for DomainProperty &apos;ApplicationName&apos; on DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application/ApplicationName.DisplayName" xml:space="preserve">
@@ -158,12 +142,20 @@
     <comment>DisplayName for DomainProperty &apos;ApplicationName&apos; on DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application/CloudProvider.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.Application.Cloud Provider</value>
+    <value>Cloud provider that host the application</value>
     <comment>Description for DomainProperty &apos;CloudProvider&apos; on DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application/CloudProvider.DisplayName" xml:space="preserve">
     <value>Cloud Provider</value>
     <comment>DisplayName for DomainProperty &apos;CloudProvider&apos; on DomainClass &apos;Application&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Application/ArchitecturalStyle.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Application.Architectural Style</value>
+    <comment>Description for DomainProperty &apos;ArchitecturalStyle&apos; on DomainClass &apos;Application&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Application/ArchitecturalStyle.DisplayName" xml:space="preserve">
+    <value>Architectural Style</value>
+    <comment>DisplayName for DomainProperty &apos;ArchitecturalStyle&apos; on DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Container.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.Container</value>
@@ -181,61 +173,45 @@
     <value>Container Name</value>
     <comment>DisplayName for DomainProperty &apos;ContainerName&apos; on DomainClass &apos;Container&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Container/DevSecOps.Description" xml:space="preserve">
-    <value>Implement DevSecOps practices to the current container</value>
-    <comment>Description for DomainProperty &apos;DevSecOps&apos; on DomainClass &apos;Container&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Container/ContainerType.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Container.Container Type</value>
+    <comment>Description for DomainProperty &apos;ContainerType&apos; on DomainClass &apos;Container&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Container/DevSecOps.DisplayName" xml:space="preserve">
-    <value>DevSecOps</value>
-    <comment>DisplayName for DomainProperty &apos;DevSecOps&apos; on DomainClass &apos;Container&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Container/ContainerType.DisplayName" xml:space="preserve">
+    <value>Container Type</value>
+    <comment>DisplayName for DomainProperty &apos;ContainerType&apos; on DomainClass &apos;Container&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Container/ContinuousIntegration.Description" xml:space="preserve">
-    <value>Implement Continuous Integration practices to the current container</value>
-    <comment>Description for DomainProperty &apos;ContinuousIntegration&apos; on DomainClass &apos;Container&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Container/ContainerFramework.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Container.Container Framework</value>
+    <comment>Description for DomainProperty &apos;ContainerFramework&apos; on DomainClass &apos;Container&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Container/ContinuousIntegration.DisplayName" xml:space="preserve">
-    <value>Continuous Integration</value>
-    <comment>DisplayName for DomainProperty &apos;ContinuousIntegration&apos; on DomainClass &apos;Container&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Container/ContainerFramework.DisplayName" xml:space="preserve">
+    <value>Container Framework</value>
+    <comment>DisplayName for DomainProperty &apos;ContainerFramework&apos; on DomainClass &apos;Container&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Container/ReleaseManagement.Description" xml:space="preserve">
-    <value>Implement Release Management practices to the current container</value>
-    <comment>Description for DomainProperty &apos;ReleaseManagement&apos; on DomainClass &apos;Container&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Practice</value>
+    <comment>Description for DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Container/ReleaseManagement.DisplayName" xml:space="preserve">
-    <value>Release Management</value>
-    <comment>DisplayName for DomainProperty &apos;ReleaseManagement&apos; on DomainClass &apos;Container&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice.DisplayName" xml:space="preserve">
+    <value>Practice</value>
+    <comment>DisplayName for DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.DevOpsHasApplications</value>
-    <comment>Description for DomainClass &apos;DevOpsHasApplications&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice/PracticeName.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Practice.Practice Name</value>
+    <comment>Description for DomainProperty &apos;PracticeName&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications.DisplayName" xml:space="preserve">
-    <value>Dev Ops Has Applications</value>
-    <comment>DisplayName for DomainClass &apos;DevOpsHasApplications&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice/PracticeName.DisplayName" xml:space="preserve">
+    <value>Practice Name</value>
+    <comment>DisplayName for DomainProperty &apos;PracticeName&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications/DevOps.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.DevOpsHasApplications.DevOps</value>
-    <comment>Description for DomainRole &apos;DevOps&apos; on DomainRelationship &apos;DevOpsHasApplications&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice/PracticeType.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Practice.Practice Type</value>
+    <comment>Description for DomainProperty &apos;PracticeType&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications/DevOps.DisplayName" xml:space="preserve">
-    <value>Dev Ops</value>
-    <comment>DisplayName for DomainRole &apos;DevOps&apos; on DomainRelationship &apos;DevOpsHasApplications&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications/DevOps.PropertyDisplayName" xml:space="preserve">
-    <value>Applications</value>
-    <comment>PropertyDisplayName for DomainRole &apos;DevOps&apos; on DomainRelationship &apos;DevOpsHasApplications&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications/Application.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.DevOpsHasApplications.Application</value>
-    <comment>Description for DomainRole &apos;Application&apos; on DomainRelationship &apos;DevOpsHasApplications&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications/Application.DisplayName" xml:space="preserve">
-    <value>Application</value>
-    <comment>DisplayName for DomainRole &apos;Application&apos; on DomainRelationship &apos;DevOpsHasApplications&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.DevOpsHasApplications/Application.PropertyDisplayName" xml:space="preserve">
-    <value>Dev Ops</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Application&apos; on DomainRelationship &apos;DevOpsHasApplications&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice/PracticeType.DisplayName" xml:space="preserve">
+    <value>Practice Type</value>
+    <comment>DisplayName for DomainProperty &apos;PracticeType&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ApplicationHasContainers.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.ApplicationHasContainers</value>
@@ -268,6 +244,38 @@
   <data name="Variamos.DevOpsDsl.ApplicationHasContainers/Container.PropertyDisplayName" xml:space="preserve">
     <value>Application</value>
     <comment>PropertyDisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ApplicationHasContainers&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ContainerHasPracticed</value>
+    <comment>Description for DomainClass &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed.DisplayName" xml:space="preserve">
+    <value>Container Has Practiced</value>
+    <comment>DisplayName for DomainClass &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Container.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ContainerHasPracticed.Container</value>
+    <comment>Description for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Container.DisplayName" xml:space="preserve">
+    <value>Container</value>
+    <comment>DisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Container.PropertyDisplayName" xml:space="preserve">
+    <value>Practiced</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Container&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Practice.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ContainerHasPracticed.Practice</value>
+    <comment>Description for DomainRole &apos;Practice&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Practice.DisplayName" xml:space="preserve">
+    <value>Practice</value>
+    <comment>DisplayName for DomainRole &apos;Practice&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Practice.PropertyDisplayName" xml:space="preserve">
+    <value>Container</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Practice&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.CloudProvider/Azure.DisplayName" xml:space="preserve">
     <value>Azure</value>
@@ -317,6 +325,190 @@
     <value>Description for Variamos.DevOpsDsl.NodeType.Application</value>
     <comment>Description for EnumerationLiteral &apos;Application&apos; on DomainEnumeration &apos;NodeType&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.ContainerType/WebApplication.DisplayName" xml:space="preserve">
+    <value>WebApplication</value>
+    <comment>Display name for EnumerationLiteral &apos;WebApplication&apos; on DomainEnumeration &apos;ContainerType&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerType/WebApplication.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ContainerType.WebApplication</value>
+    <comment>Description for EnumerationLiteral &apos;WebApplication&apos; on DomainEnumeration &apos;ContainerType&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerType/Api.DisplayName" xml:space="preserve">
+    <value>Api</value>
+    <comment>Display name for EnumerationLiteral &apos;Api&apos; on DomainEnumeration &apos;ContainerType&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerType/Api.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ContainerType.Api</value>
+    <comment>Description for EnumerationLiteral &apos;Api&apos; on DomainEnumeration &apos;ContainerType&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerType/MobilApp.DisplayName" xml:space="preserve">
+    <value>MobilApp</value>
+    <comment>Display name for EnumerationLiteral &apos;MobilApp&apos; on DomainEnumeration &apos;ContainerType&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ContainerType/MobilApp.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ContainerType.MobilApp</value>
+    <comment>Description for EnumerationLiteral &apos;MobilApp&apos; on DomainEnumeration &apos;ContainerType&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/NTierApplication.DisplayName" xml:space="preserve">
+    <value>NTierApplication</value>
+    <comment>Display name for EnumerationLiteral &apos;NTierApplication&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/NTierApplication.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.NTierApplication</value>
+    <comment>Description for EnumerationLiteral &apos;NTierApplication&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/Microservices.DisplayName" xml:space="preserve">
+    <value>Microservices</value>
+    <comment>Display name for EnumerationLiteral &apos;Microservices&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/Microservices.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.Microservices</value>
+    <comment>Description for EnumerationLiteral &apos;Microservices&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/WebQueueWorker.DisplayName" xml:space="preserve">
+    <value>WebQueueWorker</value>
+    <comment>Display name for EnumerationLiteral &apos;WebQueueWorker&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/WebQueueWorker.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.WebQueueWorker</value>
+    <comment>Description for EnumerationLiteral &apos;WebQueueWorker&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/BigCompute.DisplayName" xml:space="preserve">
+    <value>BigCompute</value>
+    <comment>Display name for EnumerationLiteral &apos;BigCompute&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/BigCompute.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.BigCompute</value>
+    <comment>Description for EnumerationLiteral &apos;BigCompute&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/BigData.DisplayName" xml:space="preserve">
+    <value>BigData</value>
+    <comment>Display name for EnumerationLiteral &apos;BigData&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/BigData.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.BigData</value>
+    <comment>Description for EnumerationLiteral &apos;BigData&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/EventDriven.DisplayName" xml:space="preserve">
+    <value>EventDriven</value>
+    <comment>Display name for EnumerationLiteral &apos;EventDriven&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/EventDriven.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.EventDriven</value>
+    <comment>Description for EnumerationLiteral &apos;EventDriven&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/ContinuousIntegration.DisplayName" xml:space="preserve">
+    <value>ContinuousIntegration</value>
+    <comment>Display name for EnumerationLiteral &apos;ContinuousIntegration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/ContinuousIntegration.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevOpsPractices.ContinuousIntegration</value>
+    <comment>Description for EnumerationLiteral &apos;ContinuousIntegration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/InfrastructureAsCode.DisplayName" xml:space="preserve">
+    <value>InfrastructureAsCode</value>
+    <comment>Display name for EnumerationLiteral &apos;InfrastructureAsCode&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/InfrastructureAsCode.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevOpsPractices.InfrastructureAsCode</value>
+    <comment>Description for EnumerationLiteral &apos;InfrastructureAsCode&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Java.DisplayName" xml:space="preserve">
+    <value>Java</value>
+    <comment>Display name for EnumerationLiteral &apos;Java&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Java.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Java</value>
+    <comment>Description for EnumerationLiteral &apos;Java&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/DotNet.DisplayName" xml:space="preserve">
+    <value>DotNet</value>
+    <comment>Display name for EnumerationLiteral &apos;DotNet&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/DotNet.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.DotNet</value>
+    <comment>Description for EnumerationLiteral &apos;DotNet&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Spring.DisplayName" xml:space="preserve">
+    <value>Spring</value>
+    <comment>Display name for EnumerationLiteral &apos;Spring&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Spring.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Spring</value>
+    <comment>Description for EnumerationLiteral &apos;Spring&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/NodeJS.DisplayName" xml:space="preserve">
+    <value>NodeJS</value>
+    <comment>Display name for EnumerationLiteral &apos;NodeJS&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/NodeJS.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.NodeJS</value>
+    <comment>Description for EnumerationLiteral &apos;NodeJS&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Python.DisplayName" xml:space="preserve">
+    <value>Python</value>
+    <comment>Display name for EnumerationLiteral &apos;Python&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Python.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Python</value>
+    <comment>Description for EnumerationLiteral &apos;Python&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/React.DisplayName" xml:space="preserve">
+    <value>React</value>
+    <comment>Display name for EnumerationLiteral &apos;React&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/React.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.React</value>
+    <comment>Description for EnumerationLiteral &apos;React&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/VueJS.DisplayName" xml:space="preserve">
+    <value>VueJS</value>
+    <comment>Display name for EnumerationLiteral &apos;VueJS&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/VueJS.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.VueJS</value>
+    <comment>Description for EnumerationLiteral &apos;VueJS&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Angular.DisplayName" xml:space="preserve">
+    <value>Angular</value>
+    <comment>Display name for EnumerationLiteral &apos;Angular&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Angular.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Angular</value>
+    <comment>Description for EnumerationLiteral &apos;Angular&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/ReactNative.DisplayName" xml:space="preserve">
+    <value>ReactNative</value>
+    <comment>Display name for EnumerationLiteral &apos;ReactNative&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/ReactNative.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.ReactNative</value>
+    <comment>Description for EnumerationLiteral &apos;ReactNative&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Xcode.DisplayName" xml:space="preserve">
+    <value>Xcode</value>
+    <comment>Display name for EnumerationLiteral &apos;Xcode&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Xcode.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Xcode</value>
+    <comment>Description for EnumerationLiteral &apos;Xcode&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.PracticeShape.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.PracticeShape</value>
+    <comment>Description for DomainClass &apos;PracticeShape&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.PracticeShape.DisplayName" xml:space="preserve">
+    <value>Practice Shape</value>
+    <comment>DisplayName for DomainClass &apos;PracticeShape&apos;</comment>
+  </data>
+  <data name="PracticeShapeNameDecoratorDefaultText" xml:space="preserve">
+    <value>NameDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="PracticeShapePracticeTypeDecoratorDefaultText" xml:space="preserve">
+    <value>PracticeTypeDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.ContainerShape.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.ContainerShape</value>
     <comment>Description for DomainClass &apos;ContainerShape&apos;</comment>
@@ -329,20 +521,12 @@
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.ApplicationShape.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.ApplicationShape</value>
-    <comment>Description for DomainClass &apos;ApplicationShape&apos;</comment>
-  </data>
-  <data name="Variamos.DevOpsDsl.ApplicationShape.DisplayName" xml:space="preserve">
-    <value>Application Shape</value>
-    <comment>DisplayName for DomainClass &apos;ApplicationShape&apos;</comment>
-  </data>
-  <data name="ApplicationShapeNameDecoratorDefaultText" xml:space="preserve">
-    <value>NameDecorator</value>
+  <data name="ContainerShapeContinerTypeDecoratorDefaultText" xml:space="preserve">
+    <value>ContinerTypeDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="ApplicationShapeCloudProviderDecoratorDefaultText" xml:space="preserve">
-    <value>CloudProviderDecorator</value>
+  <data name="ContainerShapeFrameworkDecoratorDefaultText" xml:space="preserve">
+    <value>FrameworkDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ApplicationContainerConnector.Description" xml:space="preserve">
@@ -368,6 +552,14 @@
   <data name="Variamos.DevOpsDsl.DevOpsDiagram.DisplayName" xml:space="preserve">
     <value>Dev Ops Diagram</value>
     <comment>DisplayName for DomainClass &apos;DevOpsDiagram&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsDiagram/DiamgramName.Description" xml:space="preserve">
+    <value>Name of the diagram</value>
+    <comment>Description for DomainProperty &apos;DiamgramName&apos; on DomainClass &apos;DevOpsDiagram&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsDiagram/DiamgramName.DisplayName" xml:space="preserve">
+    <value>Diamgram Name</value>
+    <comment>DisplayName for DomainProperty &apos;DiamgramName&apos; on DomainClass &apos;DevOpsDiagram&apos;</comment>
   </data>
   <data name="DevOpsDslToolboxTab" xml:space="preserve">
     <value>DevOpsDsl</value>

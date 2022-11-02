@@ -309,10 +309,10 @@ namespace Variamos.DevOpsDsl
 	{
 	
 		/// <summary>
-		/// Loads a DevOps instance into the default partition of the given store, and ignore serialization result.
+		/// Loads a Application instance into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new DevOps instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the DevOps instance will be deserialized.</param>
+		/// <param name="store">The new Application instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the Application instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -324,8 +324,8 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded DevOps instance.</returns>
-		public virtual DevOps LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded Application instance.</returns>
+		public virtual Application LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -336,11 +336,11 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		/// <summary>
-		/// Loads a DevOps instance into the default partition of the given store.
+		/// Loads a Application instance into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new DevOps instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the DevOps instance will be deserialized.</param>
+		/// <param name="store">The new Application instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the Application instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -352,8 +352,8 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded DevOps instance.</returns>
-		public virtual DevOps LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded Application instance.</returns>
+		public virtual Application LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -364,11 +364,11 @@ namespace Variamos.DevOpsDsl
 		}
 	
 		/// <summary>
-		/// Loads a DevOps instance.
+		/// Loads a Application instance.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new DevOps instance will be created.</param>
-		/// <param name="fileName">Name of the file from which the DevOps instance will be deserialized.</param>
+		/// <param name="partition">Partition in which the new Application instance will be created.</param>
+		/// <param name="fileName">Name of the file from which the Application instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -380,9 +380,9 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded DevOps instance.</returns>
+		/// <returns>The loaded Application instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual DevOps LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual Application LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (string.IsNullOrEmpty(fileName))
@@ -396,11 +396,11 @@ namespace Variamos.DevOpsDsl
 		}
 	
 		/// <summary>
-		/// Loads a DevOps instance from a stream.
+		/// Loads a Application instance from a stream.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new DevOps instance will be created.</param>
-		/// <param name="location">Source location associated with stream from which the DevOps instance is to be loaded. Usually a file path, but can be any string, including null.</param>
+		/// <param name="partition">Partition in which the new Application instance will be created.</param>
+		/// <param name="location">Source location associated with stream from which the Application instance is to be loaded. Usually a file path, but can be any string, including null.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -412,10 +412,10 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <param name="stream">The Stream from which the DevOps will be deserialized.</param>
-		/// <returns>The loaded DevOps instance.</returns>
+		/// <param name="stream">The Stream from which the Application will be deserialized.</param>
+		/// <returns>The loaded Application instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual DevOps LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
+		public virtual Application LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -432,10 +432,10 @@ namespace Variamos.DevOpsDsl
 				throw new global::System.InvalidOperationException(DevOpsDslDomainModel.SingletonResourceManager.GetString("MissingTransaction"));
 			}
 			
-			DevOps modelRoot = null;
+			Application modelRoot = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(partition.Store);
-			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(DevOps.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for DevOps!");
+			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(Application.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for Application!");
 			if (modelRootSerializer != null)
 			{
 				DslModeling::SerializationContext serializationContext = new DslModeling::SerializationContext(directory, location, serializationResult);
@@ -466,7 +466,7 @@ namespace Variamos.DevOpsDsl
 								
 								reader.MoveToContent();
 									
-								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as DevOps;
+								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as Application;
 								if (modelRoot != null && !serializationResult.Failed)
 								{
 									this.ReadRootElement(serializationContext, modelRoot, reader, schemaResolver);
@@ -535,9 +535,9 @@ namespace Variamos.DevOpsDsl
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the DevOps instance will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string fileName)
+		/// <param name="modelRoot">Application instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the Application instance will be saved.</param>
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, Application modelRoot, string fileName)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -546,10 +546,10 @@ namespace Variamos.DevOpsDsl
 		/// Saves the given model to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the DevOps instance will be saved.</param>
+		/// <param name="modelRoot">Application instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the Application instance will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, Application modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
@@ -558,12 +558,12 @@ namespace Variamos.DevOpsDsl
 		/// Saves the given model root to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the DevOps instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the DevOps instance.</param>
+		/// <param name="modelRoot">Application instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the Application instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the Application instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, Application modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -598,13 +598,13 @@ namespace Variamos.DevOpsDsl
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the DevOps instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the DevOps instance.</param>
+		/// <param name="modelRoot">Application instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the Application instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the Application instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized DevOps instance.</returns>
+		/// <returns>In-memory stream containing the serialized Application instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, Application modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -670,19 +670,19 @@ namespace Variamos.DevOpsDsl
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new DevOps.
+		/// Helper method to create and initialize a new Application.
 		/// </summary>
-		internal protected virtual DevOps CreateModelHelper(DslModeling::Partition modelPartition)
+		internal protected virtual Application CreateModelHelper(DslModeling::Partition modelPartition)
 		{
-			DevOps model = new DevOps(modelPartition);
+			Application model = new Application(modelPartition);
 			return model;
 		}
 		
 		/// <summary>
-		/// Loads a DevOps instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
+		/// Loads a Application instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new DevOps instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the DevOps instance will be deserialized.</param>
+		/// <param name="store">The new Application instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the Application instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the DevOpsDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -695,18 +695,18 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded DevOps instance.</returns>
-		public virtual DevOps LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded Application instance.</returns>
+		public virtual Application LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			return this.LoadModelAndDiagram(new DslModeling::SerializationResult(), store, modelFileName, diagramFileName, schemaResolver, validationController, serializerLocator);
 		}
 		
 		/// <summary>
-		/// Loads a DevOps instance and its associated diagram file into the default partition of the given store.
+		/// Loads a Application instance and its associated diagram file into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new DevOps instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the DevOps instance will be deserialized.</param>
+		/// <param name="store">The new Application instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the Application instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the DevOpsDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -719,8 +719,8 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded DevOps instance.</returns>
-		public virtual DevOps LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded Application instance.</returns>
+		public virtual Application LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null)
@@ -732,11 +732,11 @@ namespace Variamos.DevOpsDsl
 		}
 			
 		/// <summary>
-		/// Loads a DevOps instance and its associated diagram file.
+		/// Loads a Application instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="modelPartition">Partition in which the new DevOps instance will be created.</param>
-		/// <param name="modelFileName">Name of the file from which the DevOps instance will be deserialized.</param>
+		/// <param name="modelPartition">Partition in which the new Application instance will be created.</param>
+		/// <param name="modelFileName">Name of the file from which the Application instance will be deserialized.</param>
 		/// <param name="diagramPartition">Partition in which the new DevOpsDiagram instance will be created.</param>
 		/// <param name="diagramFileName">Name of the file from which the DevOpsDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
@@ -750,9 +750,9 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded DevOps instance.</returns>
+		/// <returns>The loaded Application instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-		public virtual DevOps LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual Application LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -765,7 +765,7 @@ namespace Variamos.DevOpsDsl
 				throw new global::System.ArgumentNullException("diagramFileName");
 			#endregion
 	
-			DevOps modelRoot;
+			Application modelRoot;
 	
 			// Ensure there is an outer transaction spanning both model and diagram load, so moniker resolution works properly.
 			if (!diagramPartition.Store.TransactionActive)
@@ -890,11 +890,11 @@ namespace Variamos.DevOpsDsl
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
+		/// <param name="modelRoot">Application instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, Application modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -903,28 +903,28 @@ namespace Variamos.DevOpsDsl
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
+		/// <param name="modelRoot">Application instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, Application modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given DevOps and DevOpsDiagram to the given files, with specified encoding.
+		/// Saves the given Application and DevOpsDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">DevOps instance to be saved.</param>
+		/// <param name="modelRoot">Application instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, Application modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1296,7 +1296,7 @@ namespace Variamos.DevOpsDsl
 		/// <param name="modelRoot">Root instance to be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the root instance.</param>
 		/// <returns>Model in XML form</returns>
-		public virtual string GetSerializedModelString(global::Variamos.DevOpsDsl.DevOps modelRoot, global::System.Text.Encoding encoding)
+		public virtual string GetSerializedModelString(global::Variamos.DevOpsDsl.Application modelRoot, global::System.Text.Encoding encoding)
 		{
 			string result = string.Empty;
 			if (modelRoot == null)
@@ -1499,7 +1499,7 @@ namespace Variamos.DevOpsDsl
 namespace Variamos.DevOpsDsl
 {
 	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
-	public partial class DevOps
+	public partial class Application
 	{
 		/// <summary>
 		/// Check to make sure all elements in the model will have unambiguous monikers when serialized.

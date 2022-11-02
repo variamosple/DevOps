@@ -305,7 +305,7 @@ namespace Variamos.DevOpsDsl
 		protected override void Load(string fileName, bool isReload)
 		{
 			DslModeling::SerializationResult serializationResult = new DslModeling::SerializationResult();
-			global::Variamos.DevOpsDsl.DevOps modelRoot = null;
+			global::Variamos.DevOpsDsl.Application modelRoot = null;
 			DslModeling::ISchemaResolver schemaResolver = new DslShell::ModelingSchemaResolver(this.ServiceProvider);
 			//clear the current root element
 			this.SetRootElement(null);
@@ -410,7 +410,7 @@ namespace Variamos.DevOpsDsl
 		protected override void Save(string fileName)
 		{
 			DslModeling::SerializationResult serializationResult = new DslModeling::SerializationResult();
-			global::Variamos.DevOpsDsl.DevOps modelRoot = (global::Variamos.DevOpsDsl.DevOps)this.RootElement;
+			global::Variamos.DevOpsDsl.Application modelRoot = (global::Variamos.DevOpsDsl.Application)this.RootElement;
 
 			
 			// Only save the diagrams if
@@ -556,7 +556,7 @@ namespace Variamos.DevOpsDsl
 		{
 			get
 			{
-				global::Variamos.DevOpsDsl.DevOps modelRoot = this.RootElement as global::Variamos.DevOpsDsl.DevOps;
+				global::Variamos.DevOpsDsl.Application modelRoot = this.RootElement as global::Variamos.DevOpsDsl.Application;
 				string modelFile = string.Empty;
 				if (modelRoot != null)
 				{

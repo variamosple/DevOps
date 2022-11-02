@@ -1,48 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<devOpsDiagram dslVersion="1.0.0.0" Id="c71eec72-9ff6-4b68-9173-38f735b2e646" absoluteBounds="0, 0, 12.75, 8.5" name="DevOpsVariamos01">
-  <devOpsMoniker Id="f02a3587-8d50-4e62-9288-1680782f8e80" />
+<devOpsDiagram dslVersion="1.0.0.0" Id="c71eec72-9ff6-4b68-9173-38f735b2e646" absoluteBounds="0, 0, 11, 8.5" name="DevOpsVariamos01" diamgramName="Variamos - DevOps Model">
+  <applicationMoniker Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" />
   <nestedChildShapes>
-    <applicationShape Id="4e27df13-5f7e-4829-9211-f6c37e2eb1fa" absoluteBounds="6.25, 1, 1.5, 1">
-      <applicationMoniker Id="2e313561-0631-4a7d-b234-80ecc6096713" />
-    </applicationShape>
-    <containerShape Id="17d7762c-928e-47de-968e-f44fac4dade7" absoluteBounds="1.375, 3.25, 2.5, 1">
-      <containerMoniker Id="681a7302-2be6-47eb-982e-bc78af75b1b4" />
+    <containerShape Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" isExpanded="false" absoluteBounds="2.375, 1.875, 2.625, 1">
+      <containerMoniker Id="a203568c-8057-4292-afb7-9a90b9fc07d4" />
     </containerShape>
-    <applicationContainerConnector Id="9e15dda2-663c-4aaa-aaa0-53a469676741" edgePoints="[(6.25 : 2); (3.875 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <applicationHasContainersMoniker Id="3d27903a-a336-4cd4-bda5-2a869bc13d33" />
+    <containerShape Id="71a2c853-7ddf-47ff-823d-296185a16e5c" absoluteBounds="5.25, 1.875, 2.625, 1">
+      <containerMoniker Id="6519a090-54a2-4c31-8b3e-6e1b2da613ae" />
+    </containerShape>
+    <containerShape Id="68d11f36-2dec-4064-bbd0-b28acbc6181c" absoluteBounds="8.125, 1.875, 2.625, 1">
+      <containerMoniker Id="c29f0b63-8420-4a6a-af60-76420850d156" />
+    </containerShape>
+    <practiceShape Id="311de19e-29d9-49dc-b52c-90a63da17b7d" absoluteBounds="0.5, 3.5, 2.625, 1">
+      <practiceMoniker Id="9163d529-9009-4a59-b16a-cd57656f851c" />
+    </practiceShape>
+    <applicationContainerConnector Id="1b4ba27c-5f5b-417f-b1a1-d3330c3f4037" edgePoints="[(2.75 : 2.875); (2.75 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <containerHasPracticedMoniker Id="9e530470-38e6-499c-9474-1f801ca1f98e" />
       <nodes>
-        <applicationShapeMoniker Id="4e27df13-5f7e-4829-9211-f6c37e2eb1fa" />
-        <containerShapeMoniker Id="17d7762c-928e-47de-968e-f44fac4dade7" />
+        <containerShapeMoniker Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" />
+        <practiceShapeMoniker Id="311de19e-29d9-49dc-b52c-90a63da17b7d" />
       </nodes>
     </applicationContainerConnector>
-    <containerShape Id="d21805fb-4233-4001-a002-5069ebd1040d" absoluteBounds="4.25, 3.25, 2.5, 1">
-      <containerMoniker Id="e5c9afd6-f036-4adc-aacd-e35a122f0049" />
-    </containerShape>
-    <applicationContainerConnector Id="34ea28f2-b714-4299-b181-b5f95729d2a9" edgePoints="[(6.5312525 : 2); (6.5312525 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <applicationHasContainersMoniker Id="a9ebef3a-3792-45ec-90d4-d9a30dbc1b29" />
+    <practiceShape Id="6ba65312-f8cb-413a-9134-b54e6daa07f6" absoluteBounds="3.875, 3.5, 2.625, 1">
+      <practiceMoniker Id="0251a29c-b48d-4039-8401-2ed51e1edb95" />
+    </practiceShape>
+    <applicationContainerConnector Id="48adc962-020c-48d2-a16d-0b8eb9e2a864" edgePoints="[(4.4375 : 2.875); (4.4375 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <containerHasPracticedMoniker Id="6b9613a1-b3e5-4773-8223-9eaf12014a97" />
       <nodes>
-        <applicationShapeMoniker Id="4e27df13-5f7e-4829-9211-f6c37e2eb1fa" />
-        <containerShapeMoniker Id="d21805fb-4233-4001-a002-5069ebd1040d" />
-      </nodes>
-    </applicationContainerConnector>
-    <containerShape Id="c2219ce6-6a70-4dd1-bb6a-00a534e5b234" absoluteBounds="7.125, 3.25, 2.5, 1">
-      <containerMoniker Id="a91d36f4-4949-4883-bc1f-4b8b1452641f" />
-    </containerShape>
-    <applicationContainerConnector Id="63f41e2d-0667-4595-9b24-17cd65f49ead" edgePoints="[(7.4375 : 2); (7.4375 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <applicationHasContainersMoniker Id="addbd128-e70f-4157-b748-60337492b679" />
-      <nodes>
-        <applicationShapeMoniker Id="4e27df13-5f7e-4829-9211-f6c37e2eb1fa" />
-        <containerShapeMoniker Id="c2219ce6-6a70-4dd1-bb6a-00a534e5b234" />
-      </nodes>
-    </applicationContainerConnector>
-    <containerShape Id="e54fdc8c-c6d7-4240-b345-ce3cdda957e5" absoluteBounds="10, 3.25, 2.5, 1">
-      <containerMoniker Id="8e6e0176-ec4d-4fef-a807-771400266971" />
-    </containerShape>
-    <applicationContainerConnector Id="4eb0b8cb-0ca9-4349-9b5e-c0fc738a8b98" edgePoints="[(7.75 : 2); (10 : 3.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <applicationHasContainersMoniker Id="202c00a5-b32f-42eb-bdbf-a9815ba49bd9" />
-      <nodes>
-        <applicationShapeMoniker Id="4e27df13-5f7e-4829-9211-f6c37e2eb1fa" />
-        <containerShapeMoniker Id="e54fdc8c-c6d7-4240-b345-ce3cdda957e5" />
+        <containerShapeMoniker Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" />
+        <practiceShapeMoniker Id="6ba65312-f8cb-413a-9134-b54e6daa07f6" />
       </nodes>
     </applicationContainerConnector>
   </nestedChildShapes>

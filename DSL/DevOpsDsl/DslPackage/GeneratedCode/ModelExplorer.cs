@@ -67,7 +67,7 @@ namespace Variamos.DevOpsDsl
 		///</summary>
 		protected override global::System.Guid RootElementDomainClassId
 		{
-			get { return global::Variamos.DevOpsDsl.DevOps.DomainClassId; }
+			get { return global::Variamos.DevOpsDsl.Application.DomainClassId; }
 		}
 		
 		/// <summary>
