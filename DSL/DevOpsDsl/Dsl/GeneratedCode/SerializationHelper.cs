@@ -637,13 +637,13 @@ namespace Variamos.DevOpsDsl
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized DevopsDiagram instance.</returns>
+		/// <returns>In-memory stream containing the serialized DevOpsDiagram instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveDiagram(DslModeling::SerializationResult serializationResult, DevopsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveDiagram(DslModeling::SerializationResult serializationResult, DevOpsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -683,7 +683,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="store">The new DevOps instance will be created into the default partition of this store.</param>
 		/// <param name="modelFileName">Name of the file from which the DevOps instance will be deserialized.</param>
-		/// <param name="diagramFileName">Name of the file from which the DevopsDiagram instance will be deserialized.</param>
+		/// <param name="diagramFileName">Name of the file from which the DevOpsDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -707,7 +707,7 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
 		/// <param name="store">The new DevOps instance will be created into the default partition of this store.</param>
 		/// <param name="modelFileName">Name of the file from which the DevOps instance will be deserialized.</param>
-		/// <param name="diagramFileName">Name of the file from which the DevopsDiagram instance will be deserialized.</param>
+		/// <param name="diagramFileName">Name of the file from which the DevOpsDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -737,8 +737,8 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
 		/// <param name="modelPartition">Partition in which the new DevOps instance will be created.</param>
 		/// <param name="modelFileName">Name of the file from which the DevOps instance will be deserialized.</param>
-		/// <param name="diagramPartition">Partition in which the new DevopsDiagram instance will be created.</param>
-		/// <param name="diagramFileName">Name of the file from which the DevopsDiagram instance will be deserialized.</param>
+		/// <param name="diagramPartition">Partition in which the new DevOpsDiagram instance will be created.</param>
+		/// <param name="diagramFileName">Name of the file from which the DevOpsDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -781,10 +781,10 @@ namespace Variamos.DevOpsDsl
 				return modelRoot;
 			}
 	
-			DevopsDiagram diagram = null;
+			DevOpsDiagram diagram = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(diagramPartition.Store);
-			DslModeling::DomainClassXmlSerializer diagramSerializer = directory.GetSerializer(DevopsDiagram.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(diagramSerializer != null, "Cannot find serializer for DevopsDiagram");
+			DslModeling::DomainClassXmlSerializer diagramSerializer = directory.GetSerializer(DevOpsDiagram.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(diagramSerializer != null, "Cannot find serializer for DevOpsDiagram");
 			if (diagramSerializer != null)
 			{
 				if(!global::System.IO.File.Exists(diagramFileName))
@@ -813,7 +813,7 @@ namespace Variamos.DevOpsDsl
 									using (global::System.Xml.XmlReader reader = global::System.Xml.XmlReader.Create(fileStream, settings))
 									{
 										reader.MoveToContent();
-										diagram = diagramSerializer.TryCreateInstance(serializationContext, reader, diagramPartition) as DevopsDiagram;
+										diagram = diagramSerializer.TryCreateInstance(serializationContext, reader, diagramPartition) as DevOpsDiagram;
 										if (diagram != null)
 										{
 											this.ReadRootElement(serializationContext, diagram, reader, schemaResolver);
@@ -875,12 +875,12 @@ namespace Variamos.DevOpsDsl
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new DevopsDiagram.
+		/// Helper method to create and initialize a new DevOpsDiagram.
 		/// </summary>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="modelRoot", Justification = "Signature enforced by caller.")]
-		internal protected virtual DevopsDiagram CreateDiagramHelper(DslModeling::Partition diagramPartition, DslModeling::ModelElement modelRoot)
+		internal protected virtual DevOpsDiagram CreateDiagramHelper(DslModeling::Partition diagramPartition, DslModeling::ModelElement modelRoot)
 		{
-			DevopsDiagram diagram = new DevopsDiagram(diagramPartition);
+			DevOpsDiagram diagram = new DevOpsDiagram(diagramPartition);
 			return diagram;
 		}
 		
@@ -892,9 +892,9 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
 		/// <param name="modelRoot">DevOps instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevopsDiagram diagram, string diagramFileName)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -905,26 +905,26 @@ namespace Variamos.DevOpsDsl
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
 		/// <param name="modelRoot">DevOps instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevopsDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given DevOps and DevopsDiagram to the given files, with specified encoding.
+		/// Saves the given DevOps and DevOpsDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
 		/// <param name="modelRoot">DevOps instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevopsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, DevOps modelRoot, string modelFileName, DevOpsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -981,9 +981,9 @@ namespace Variamos.DevOpsDsl
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, DevopsDiagram diagram, string diagramFileName)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, DevOpsDiagram diagram, string diagramFileName)
 		{
 			this.SaveDiagram(serializationResult, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -992,24 +992,24 @@ namespace Variamos.DevOpsDsl
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, DevopsDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, DevOpsDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveDiagram(serializationResult, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given DevopsDiagram to the given file, with specified encoding.
+		/// Saves the given DevOpsDiagram to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">DevopsDiagram to be saved.</param>
+		/// <param name="diagram">DevOpsDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, DevopsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, DevOpsDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)

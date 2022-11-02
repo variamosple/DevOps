@@ -69,17 +69,13 @@ namespace Variamos.DevOpsDsl
 			{
 				typeof(DevOps),
 				typeof(Application),
-				typeof(DevopsCategory),
-				typeof(DevopsPractice),
-				typeof(DevOpsHasApplication),
-				typeof(ApplicationHasDevopsCategories),
-				typeof(DevopsCategoryHasDevopsPracticed),
-				typeof(DevopsDiagram),
-				typeof(ApplicationCategoryConnector),
-				typeof(CategoryPracticeConnector),
+				typeof(Container),
+				typeof(DevOpsHasApplications),
+				typeof(ApplicationHasContainers),
+				typeof(DevOpsDiagram),
+				typeof(ApplicationContainerConnector),
+				typeof(ContainerShape),
 				typeof(ApplicationShape),
-				typeof(DevopsCategoryShape),
-				typeof(DevopsPracticeShape),
 				typeof(global::Variamos.DevOpsDsl.FixUpDiagram),
 				typeof(global::Variamos.DevOpsDsl.ConnectorRolePlayerChanged),
 			};
@@ -95,9 +91,11 @@ namespace Variamos.DevOpsDsl
 			{
 				new DomainMemberInfo(typeof(DevOps), "ModelName", DevOps.ModelNameDomainPropertyId, typeof(DevOps.ModelNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Application), "ApplicationName", Application.ApplicationNameDomainPropertyId, typeof(Application.ApplicationNamePropertyHandler)),
-				new DomainMemberInfo(typeof(Application), "CloudPlatform", Application.CloudPlatformDomainPropertyId, typeof(Application.CloudPlatformPropertyHandler)),
-				new DomainMemberInfo(typeof(DevopsCategory), "CategoryName", DevopsCategory.CategoryNameDomainPropertyId, typeof(DevopsCategory.CategoryNamePropertyHandler)),
-				new DomainMemberInfo(typeof(DevopsPractice), "PracticeName", DevopsPractice.PracticeNameDomainPropertyId, typeof(DevopsPractice.PracticeNamePropertyHandler)),
+				new DomainMemberInfo(typeof(Application), "CloudProvider", Application.CloudProviderDomainPropertyId, typeof(Application.CloudProviderPropertyHandler)),
+				new DomainMemberInfo(typeof(Container), "ContainerName", Container.ContainerNameDomainPropertyId, typeof(Container.ContainerNamePropertyHandler)),
+				new DomainMemberInfo(typeof(Container), "DevSecOps", Container.DevSecOpsDomainPropertyId, typeof(Container.DevSecOpsPropertyHandler)),
+				new DomainMemberInfo(typeof(Container), "ContinuousIntegration", Container.ContinuousIntegrationDomainPropertyId, typeof(Container.ContinuousIntegrationPropertyHandler)),
+				new DomainMemberInfo(typeof(Container), "ReleaseManagement", Container.ReleaseManagementDomainPropertyId, typeof(Container.ReleaseManagementPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -108,12 +106,10 @@ namespace Variamos.DevOpsDsl
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(DevOpsHasApplication), "DevOps", DevOpsHasApplication.DevOpsDomainRoleId),
-				new DomainRolePlayerInfo(typeof(DevOpsHasApplication), "Application", DevOpsHasApplication.ApplicationDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ApplicationHasDevopsCategories), "Application", ApplicationHasDevopsCategories.ApplicationDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ApplicationHasDevopsCategories), "DevopsCategory", ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId),
-				new DomainRolePlayerInfo(typeof(DevopsCategoryHasDevopsPracticed), "DevopsCategory", DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId),
-				new DomainRolePlayerInfo(typeof(DevopsCategoryHasDevopsPracticed), "DevopsPractice", DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DevOpsHasApplications), "DevOps", DevOpsHasApplications.DevOpsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DevOpsHasApplications), "Application", DevOpsHasApplications.ApplicationDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ApplicationHasContainers), "Application", ApplicationHasContainers.ApplicationDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ApplicationHasContainers), "Container", ApplicationHasContainers.ContainerDomainRoleId),
 			};
 		}
 		#endregion
@@ -135,17 +131,14 @@ namespace Variamos.DevOpsDsl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
 				createElementMap.Add(typeof(DevOps), 0);
 				createElementMap.Add(typeof(Application), 1);
-				createElementMap.Add(typeof(DevopsCategory), 2);
-				createElementMap.Add(typeof(DevopsPractice), 3);
-				createElementMap.Add(typeof(DevopsDiagram), 4);
-				createElementMap.Add(typeof(ApplicationCategoryConnector), 5);
-				createElementMap.Add(typeof(CategoryPracticeConnector), 6);
-				createElementMap.Add(typeof(ApplicationShape), 7);
-				createElementMap.Add(typeof(DevopsCategoryShape), 8);
-				createElementMap.Add(typeof(DevopsPracticeShape), 9);
+				createElementMap.Add(typeof(Container), 2);
+				createElementMap.Add(typeof(DevOpsDiagram), 3);
+				createElementMap.Add(typeof(ApplicationContainerConnector), 4);
+				createElementMap.Add(typeof(ContainerShape), 5);
+				createElementMap.Add(typeof(ApplicationShape), 6);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -161,14 +154,11 @@ namespace Variamos.DevOpsDsl
 			{
 				case 0: return new DevOps(partition, propertyAssignments);
 				case 1: return new Application(partition, propertyAssignments);
-				case 2: return new DevopsCategory(partition, propertyAssignments);
-				case 3: return new DevopsPractice(partition, propertyAssignments);
-				case 4: return new DevopsDiagram(partition, propertyAssignments);
-				case 5: return new ApplicationCategoryConnector(partition, propertyAssignments);
-				case 6: return new CategoryPracticeConnector(partition, propertyAssignments);
-				case 7: return new ApplicationShape(partition, propertyAssignments);
-				case 8: return new DevopsCategoryShape(partition, propertyAssignments);
-				case 9: return new DevopsPracticeShape(partition, propertyAssignments);
+				case 2: return new Container(partition, propertyAssignments);
+				case 3: return new DevOpsDiagram(partition, propertyAssignments);
+				case 4: return new ApplicationContainerConnector(partition, propertyAssignments);
+				case 5: return new ContainerShape(partition, propertyAssignments);
+				case 6: return new ApplicationShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -191,10 +181,9 @@ namespace Variamos.DevOpsDsl
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
-				createElementLinkMap.Add(typeof(DevOpsHasApplication), 0);
-				createElementLinkMap.Add(typeof(ApplicationHasDevopsCategories), 1);
-				createElementLinkMap.Add(typeof(DevopsCategoryHasDevopsPracticed), 2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
+				createElementLinkMap.Add(typeof(DevOpsHasApplications), 0);
+				createElementLinkMap.Add(typeof(ApplicationHasContainers), 1);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -209,9 +198,8 @@ namespace Variamos.DevOpsDsl
 			}
 			switch (index)
 			{
-				case 0: return new DevOpsHasApplication(partition, roleAssignments, propertyAssignments);
-				case 1: return new ApplicationHasDevopsCategories(partition, roleAssignments, propertyAssignments);
-				case 2: return new DevopsCategoryHasDevopsPracticed(partition, roleAssignments, propertyAssignments);
+				case 0: return new DevOpsHasApplications(partition, roleAssignments, propertyAssignments);
+				case 1: return new ApplicationHasContainers(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -380,9 +368,8 @@ namespace Variamos.DevOpsDsl
 		public DevOpsDslDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::Variamos.DevOpsDsl.DevOpsHasApplication.ApplicationDomainRoleId, true);
-			DomainRoles.Add(global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId, true);
-			DomainRoles.Add(global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId, true);
+			DomainRoles.Add(global::Variamos.DevOpsDsl.DevOpsHasApplications.ApplicationDomainRoleId, true);
+			DomainRoles.Add(global::Variamos.DevOpsDsl.ApplicationHasContainers.ContainerDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
@@ -484,6 +471,35 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.CloudProvider/GCP.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		GCP,
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainEnumeration: NodeType
+	/// Description for Variamos.DevOpsDsl.NodeType
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum NodeType
+	{
+		/// <summary>
+		/// Container
+		/// Description for Variamos.DevOpsDsl.NodeType.Container
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.NodeType/Container.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		Container,
+		/// <summary>
+		/// Capability
+		/// Description for Variamos.DevOpsDsl.NodeType.Capability
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.NodeType/Capability.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		Capability,
+		/// <summary>
+		/// Application
+		/// Description for Variamos.DevOpsDsl.NodeType.Application
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.NodeType/Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		Application,
 	}
 }
 

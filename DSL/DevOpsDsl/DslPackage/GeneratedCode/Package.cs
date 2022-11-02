@@ -29,14 +29,6 @@ namespace Variamos.DevOpsDsl
 	[VSShell::ProvideToolWindow(typeof(DevOpsDslExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
 	[VSShell::ProvideToolWindowVisibility(typeof(DevOpsDslExplorerToolWindow), Constants.DevOpsDslEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@DevOpsDslToolboxTab;Variamos.DevOpsDsl.Dsl.dll", "Variamos.DevOpsDsl.DevOpsDslToolboxTab")]
-	[VSShell::ProvideStaticToolboxItem("Variamos.DevOpsDsl.DevOpsDslToolboxTab",
-					"@ApplicationElementToolToolboxItem;Variamos.DevOpsDsl.Dsl.dll", 
-					"Variamos.DevOpsDsl.ApplicationElementToolToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"ApplicationElementTool", 
-					"@ApplicationElementToolToolboxBitmap;Variamos.DevOpsDsl.Dsl.dll", 
-					0xff00ff,
-					Index = 0)]
 	[VSShell::ProvideEditorFactory(typeof(DevOpsDslEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(DevOpsDslEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(DevOpsDslEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

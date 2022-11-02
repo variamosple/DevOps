@@ -1,2 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<devOps xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c6021160-236d-4362-b3e5-3bc1140a8f98" modelName="Variamos DevOps Model" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl" />
+<devOps xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f02a3587-8d50-4e62-9288-1680782f8e80" modelName="DevOps Variamos Adoption" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
+  <applications>
+    <devOpsHasApplications Id="ae7d649b-8226-46cf-93ae-38e8a9dd5bfa">
+      <application Id="2e313561-0631-4a7d-b234-80ecc6096713" applicationName="Variamos" cloudProvider="Azure">
+        <containers>
+          <applicationHasContainers Id="3d27903a-a336-4cd4-bda5-2a869bc13d33">
+            <container Id="681a7302-2be6-47eb-982e-bc78af75b1b4" containerName="Variamos" devSecOps="true" continuousIntegration="true" releaseManagement="true" />
+          </applicationHasContainers>
+          <applicationHasContainers Id="a9ebef3a-3792-45ec-90d4-d9a30dbc1b29">
+            <container Id="e5c9afd6-f036-4adc-aacd-e35a122f0049" containerName="variamos-ms-apireference" devSecOps="false" continuousIntegration="true" releaseManagement="false" />
+          </applicationHasContainers>
+          <applicationHasContainers Id="addbd128-e70f-4157-b748-60337492b679">
+            <container Id="a91d36f4-4949-4883-bc1f-4b8b1452641f" containerName="variamos-ms-languages" devSecOps="false" continuousIntegration="true" releaseManagement="false" />
+          </applicationHasContainers>
+          <applicationHasContainers Id="202c00a5-b32f-42eb-bdbf-a9815ba49bd9">
+            <container Id="8e6e0176-ec4d-4fef-a807-771400266971" containerName="variamos-ms-restrictions" devSecOps="false" continuousIntegration="true" releaseManagement="false" />
+          </applicationHasContainers>
+        </containers>
+      </application>
+    </devOpsHasApplications>
+  </applications>
+</devOps>

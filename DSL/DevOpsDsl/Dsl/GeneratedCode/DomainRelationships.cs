@@ -12,33 +12,33 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace Variamos.DevOpsDsl
 {
 	/// <summary>
-	/// DomainRelationship DevOpsHasApplication
-	/// Description for Variamos.DevOpsDsl.DevOpsHasApplication
+	/// DomainRelationship DevOpsHasApplications
+	/// Description for Variamos.DevOpsDsl.DevOpsHasApplications
 	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsHasApplication.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsHasApplication.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsHasApplications.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsHasApplications.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("ee361c5f-9b65-4dad-b7e7-f94701a5be89")]
-	public partial class DevOpsHasApplication : DslModeling::ElementLink
+	[DslModeling::DomainObjectId("b66acc16-ee54-4251-b928-007a38cc3e15")]
+	public partial class DevOpsHasApplications : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// DevOpsHasApplication domain class Id.
+		/// DevOpsHasApplications domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xee361c5f, 0x9b65, 0x4dad, 0xb7, 0xe7, 0xf9, 0x47, 0x01, 0xa5, 0xbe, 0x89);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb66acc16, 0xee54, 0x4251, 0xb9, 0x28, 0x00, 0x7a, 0x38, 0xcc, 0x3e, 0x15);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a DevOpsHasApplication link in the same Partition as the given DevOps
+		/// Creates a DevOpsHasApplications link in the same Partition as the given DevOps
 		/// </summary>
 		/// <param name="source">DevOps to use as the source of the relationship.</param>
 		/// <param name="target">Application to use as the target of the relationship.</param>
-		public DevOpsHasApplication(DevOps source, Application target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DevOpsHasApplication.DevOpsDomainRoleId, source), new DslModeling::RoleAssignment(DevOpsHasApplication.ApplicationDomainRoleId, target)}, null)
+		public DevOpsHasApplications(DevOps source, Application target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DevOpsHasApplications.DevOpsDomainRoleId, source), new DslModeling::RoleAssignment(DevOpsHasApplications.ApplicationDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -47,7 +47,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public DevOpsHasApplication(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public DevOpsHasApplications(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -58,7 +58,7 @@ namespace Variamos.DevOpsDsl
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public DevOpsHasApplication(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public DevOpsHasApplications(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -68,7 +68,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public DevOpsHasApplication(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public DevOpsHasApplications(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -79,7 +79,7 @@ namespace Variamos.DevOpsDsl
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public DevOpsHasApplication(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public DevOpsHasApplications(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -89,16 +89,16 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// DevOps domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid DevOpsDomainRoleId = new global::System.Guid(0x6b3eba1b, 0x4830, 0x401d, 0xb4, 0xdc, 0x4a, 0x42, 0x41, 0x51, 0x9c, 0xf3);
+		public static readonly global::System.Guid DevOpsDomainRoleId = new global::System.Guid(0x44f85076, 0xc197, 0x4de1, 0xaf, 0x0d, 0x7d, 0xec, 0xa5, 0x79, 0x33, 0x66);
 		
 		/// <summary>
 		/// DomainRole DevOps
-		/// Description for Variamos.DevOpsDsl.DevOpsHasApplication.DevOps
+		/// Description for Variamos.DevOpsDsl.DevOpsHasApplications.DevOps
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsHasApplication/DevOps.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsHasApplication/DevOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Application", PropertyDisplayNameKey="Variamos.DevOpsDsl.DevOpsHasApplication/DevOps.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("6b3eba1b-4830-401d-b4dc-4a4241519cf3")]
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsHasApplications/DevOps.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsHasApplications/DevOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Applications", PropertyDisplayNameKey="Variamos.DevOpsDsl.DevOpsHasApplications/DevOps.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("44f85076-c197-4de1-af0d-7deca5793366")]
 		public virtual DevOps DevOps
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -140,16 +140,16 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// Application domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ApplicationDomainRoleId = new global::System.Guid(0xb56c4e9c, 0x280f, 0x426b, 0xab, 0xda, 0x7e, 0xd9, 0xa4, 0xbf, 0x27, 0xfe);
+		public static readonly global::System.Guid ApplicationDomainRoleId = new global::System.Guid(0x5b862f38, 0xad09, 0x4bb8, 0x9f, 0x80, 0x1b, 0x6e, 0x44, 0x39, 0x76, 0x33);
 		
 		/// <summary>
 		/// DomainRole Application
-		/// Description for Variamos.DevOpsDsl.DevOpsHasApplication.Application
+		/// Description for Variamos.DevOpsDsl.DevOpsHasApplications.Application
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsHasApplication/Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsHasApplication/Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DevOps", PropertyDisplayNameKey="Variamos.DevOpsDsl.DevOpsHasApplication/Application.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("b56c4e9c-280f-426b-abda-7ed9a4bf27fe")]
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsHasApplications/Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsHasApplications/Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DevOps", PropertyDisplayNameKey="Variamos.DevOpsDsl.DevOpsHasApplications/Application.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("5b862f38-ad09-4bb8-9f80-1b6e44397633")]
 		public virtual Application Application
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -165,56 +165,37 @@ namespace Variamos.DevOpsDsl
 		}
 				
 		#endregion
-		#region Static methods to access Application of a DevOps
+		#region Static methods to access Applications of a DevOps
 		/// <summary>
-		/// Gets Application.
+		/// Gets a list of Applications.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static Application GetApplication(DevOps element)
+		public static DslModeling::LinkedElementCollection<Application> GetApplications(DevOps element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DevOpsDomainRoleId) as Application;
-		}
-		
-		/// <summary>
-		/// Sets Application.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetApplication(DevOps element, Application newApplication)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, DevOpsDomainRoleId, newApplication);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Application>, Application>(element, DevOpsDomainRoleId);
 		}
 		#endregion
 		#region DevOps link accessor
 		/// <summary>
-		/// Get the DevOpsHasApplication link to a DevOps.
+		/// Get the list of DevOpsHasApplications links to a DevOps.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.DevOpsHasApplication GetLinkToApplication (global::Variamos.DevOpsDsl.DevOps devOpsInstance)
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.DevOpsHasApplications> GetLinksToApplications ( global::Variamos.DevOpsDsl.DevOps devOpsInstance )
 		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplication> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplication>(devOpsInstance, global::Variamos.DevOpsDsl.DevOpsHasApplication.DevOpsDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DevOps not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplications>(devOpsInstance, global::Variamos.DevOpsDsl.DevOpsHasApplications.DevOpsDomainRoleId);
 		}
 		#endregion
 		#region Application link accessor
 		/// <summary>
-		/// Get the DevOpsHasApplication link to a Application.
+		/// Get the DevOpsHasApplications link to a Application.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.DevOpsHasApplication GetLinkToDevOps (global::Variamos.DevOpsDsl.Application applicationInstance)
+		public static global::Variamos.DevOpsDsl.DevOpsHasApplications GetLinkToDevOps (global::Variamos.DevOpsDsl.Application applicationInstance)
 		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplication> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplication>(applicationInstance, global::Variamos.DevOpsDsl.DevOpsHasApplication.ApplicationDomainRoleId);
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplications> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplications>(applicationInstance, global::Variamos.DevOpsDsl.DevOpsHasApplications.ApplicationDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Application not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -226,18 +207,18 @@ namespace Variamos.DevOpsDsl
 			}
 		}
 		#endregion
-		#region DevOpsHasApplication instance accessors
+		#region DevOpsHasApplications instance accessors
 		
 		/// <summary>
-		/// Get any DevOpsHasApplication links between a given DevOps and a Application.
+		/// Get any DevOpsHasApplications links between a given DevOps and a Application.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.DevOpsHasApplication> GetLinks( global::Variamos.DevOpsDsl.DevOps source, global::Variamos.DevOpsDsl.Application target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.DevOpsHasApplications> GetLinks( global::Variamos.DevOpsDsl.DevOps source, global::Variamos.DevOpsDsl.Application target )
 		{
-			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.DevOpsHasApplication> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.DevOpsHasApplication>();
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplication> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplication>(source, global::Variamos.DevOpsDsl.DevOpsHasApplication.DevOpsDomainRoleId);
-			foreach ( global::Variamos.DevOpsDsl.DevOpsHasApplication link in links )
+			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.DevOpsHasApplications> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.DevOpsHasApplications>();
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplications> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplications>(source, global::Variamos.DevOpsDsl.DevOpsHasApplications.DevOpsDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.DevOpsHasApplications link in links )
 			{
 				if ( target.Equals(link.Application) )
 				{
@@ -247,14 +228,14 @@ namespace Variamos.DevOpsDsl
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one DevOpsHasApplication link between a given DevOpsand a Application.
+		/// Get the one DevOpsHasApplications link between a given DevOpsand a Application.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.DevOpsHasApplication GetLink( global::Variamos.DevOpsDsl.DevOps source, global::Variamos.DevOpsDsl.Application target )
+		public static global::Variamos.DevOpsDsl.DevOpsHasApplications GetLink( global::Variamos.DevOpsDsl.DevOps source, global::Variamos.DevOpsDsl.Application target )
 		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplication> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplication>(source, global::Variamos.DevOpsDsl.DevOpsHasApplication.DevOpsDomainRoleId);
-			foreach ( global::Variamos.DevOpsDsl.DevOpsHasApplication link in links )
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevOpsHasApplications> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevOpsHasApplications>(source, global::Variamos.DevOpsDsl.DevOpsHasApplications.DevOpsDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.DevOpsHasApplications link in links )
 			{
 				if ( target.Equals(link.Application) )
 				{
@@ -270,33 +251,33 @@ namespace Variamos.DevOpsDsl
 namespace Variamos.DevOpsDsl
 {
 	/// <summary>
-	/// DomainRelationship ApplicationHasDevopsCategories
-	/// Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories
+	/// DomainRelationship ApplicationHasContainers
+	/// Description for Variamos.DevOpsDsl.ApplicationHasContainers
 	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasDevopsCategories.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasContainers.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasContainers.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("c7d3eda3-836d-4ecf-9de9-0200d5296964")]
-	public partial class ApplicationHasDevopsCategories : DslModeling::ElementLink
+	[DslModeling::DomainObjectId("1a31614f-2028-4783-9531-035dfea87223")]
+	public partial class ApplicationHasContainers : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ApplicationHasDevopsCategories domain class Id.
+		/// ApplicationHasContainers domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc7d3eda3, 0x836d, 0x4ecf, 0x9d, 0xe9, 0x02, 0x00, 0xd5, 0x29, 0x69, 0x64);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1a31614f, 0x2028, 0x4783, 0x95, 0x31, 0x03, 0x5d, 0xfe, 0xa8, 0x72, 0x23);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ApplicationHasDevopsCategories link in the same Partition as the given Application
+		/// Creates a ApplicationHasContainers link in the same Partition as the given Application
 		/// </summary>
 		/// <param name="source">Application to use as the source of the relationship.</param>
-		/// <param name="target">DevopsCategory to use as the target of the relationship.</param>
-		public ApplicationHasDevopsCategories(Application source, DevopsCategory target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ApplicationHasDevopsCategories.ApplicationDomainRoleId, source), new DslModeling::RoleAssignment(ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId, target)}, null)
+		/// <param name="target">Container to use as the target of the relationship.</param>
+		public ApplicationHasContainers(Application source, Container target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ApplicationHasContainers.ApplicationDomainRoleId, source), new DslModeling::RoleAssignment(ApplicationHasContainers.ContainerDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -305,7 +286,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ApplicationHasDevopsCategories(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ApplicationHasContainers(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -316,7 +297,7 @@ namespace Variamos.DevOpsDsl
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ApplicationHasDevopsCategories(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ApplicationHasContainers(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -326,7 +307,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ApplicationHasDevopsCategories(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ApplicationHasContainers(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -337,7 +318,7 @@ namespace Variamos.DevOpsDsl
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ApplicationHasDevopsCategories(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ApplicationHasContainers(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -347,16 +328,16 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// Application domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ApplicationDomainRoleId = new global::System.Guid(0x9186feaa, 0x18d2, 0x4605, 0xbe, 0x82, 0x2c, 0xfe, 0xd2, 0x38, 0xe3, 0x1a);
+		public static readonly global::System.Guid ApplicationDomainRoleId = new global::System.Guid(0x55a60d90, 0x0958, 0x42c8, 0xb3, 0x2e, 0x3b, 0x9c, 0xad, 0x7a, 0x2c, 0xe7);
 		
 		/// <summary>
 		/// DomainRole Application
-		/// Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories.Application
+		/// Description for Variamos.DevOpsDsl.ApplicationHasContainers.Application
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasDevopsCategories/Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasDevopsCategories/Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "DevopsCategories", PropertyDisplayNameKey="Variamos.DevOpsDsl.ApplicationHasDevopsCategories/Application.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("9186feaa-18d2-4605-be82-2cfed238e31a")]
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasContainers/Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasContainers/Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Containers", PropertyDisplayNameKey="Variamos.DevOpsDsl.ApplicationHasContainers/Application.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("55a60d90-0958-42c8-b32e-3b9cad7a2ce7")]
 		public virtual Application Application
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -372,15 +353,15 @@ namespace Variamos.DevOpsDsl
 		}
 				
 		#endregion
-		#region Static methods to access Application of a DevopsCategory
+		#region Static methods to access Application of a Container
 		/// <summary>
 		/// Gets Application.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static Application GetApplication(DevopsCategory element)
+		public static Application GetApplication(Container element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DevopsCategoryDomainRoleId) as Application;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ContainerDomainRoleId) as Application;
 		}
 		
 		/// <summary>
@@ -388,73 +369,73 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetApplication(DevopsCategory element, Application newApplication)
+		public static void SetApplication(Container element, Application newApplication)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, DevopsCategoryDomainRoleId, newApplication);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ContainerDomainRoleId, newApplication);
 		}
 		#endregion
-		#region DevopsCategory domain role code
+		#region Container domain role code
 		
 		/// <summary>
-		/// DevopsCategory domain role Id.
+		/// Container domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid DevopsCategoryDomainRoleId = new global::System.Guid(0x9b606d58, 0xfb4a, 0x4f24, 0xbe, 0x5b, 0x6b, 0x64, 0xc8, 0xb1, 0x7f, 0xb4);
+		public static readonly global::System.Guid ContainerDomainRoleId = new global::System.Guid(0x7d65ec8e, 0x9f36, 0x4ae5, 0xb1, 0xab, 0x56, 0xd3, 0xf3, 0xee, 0xab, 0x77);
 		
 		/// <summary>
-		/// DomainRole DevopsCategory
-		/// Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategory
+		/// DomainRole Container
+		/// Description for Variamos.DevOpsDsl.ApplicationHasContainers.Container
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasDevopsCategories/DevopsCategory.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasDevopsCategories/DevopsCategory.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Application", PropertyDisplayNameKey="Variamos.DevOpsDsl.ApplicationHasDevopsCategories/DevopsCategory.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("9b606d58-fb4a-4f24-be5b-6b64c8b17fb4")]
-		public virtual DevopsCategory DevopsCategory
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasContainers/Container.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasContainers/Container.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Application", PropertyDisplayNameKey="Variamos.DevOpsDsl.ApplicationHasContainers/Container.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("7d65ec8e-9f36-4ae5-b1ab-56d3f3eeab77")]
+		public virtual Container Container
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (DevopsCategory)DslModeling::DomainRoleInfo.GetRolePlayer(this, DevopsCategoryDomainRoleId);
+				return (Container)DslModeling::DomainRoleInfo.GetRolePlayer(this, ContainerDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, DevopsCategoryDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ContainerDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access DevopsCategories of a Application
+		#region Static methods to access Containers of a Application
 		/// <summary>
-		/// Gets a list of DevopsCategories.
+		/// Gets a list of Containers.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<DevopsCategory> GetDevopsCategories(Application element)
+		public static DslModeling::LinkedElementCollection<Container> GetContainers(Application element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<DevopsCategory>, DevopsCategory>(element, ApplicationDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Container>, Container>(element, ApplicationDomainRoleId);
 		}
 		#endregion
 		#region Application link accessor
 		/// <summary>
-		/// Get the list of ApplicationHasDevopsCategories links to a Application.
+		/// Get the list of ApplicationHasContainers links to a Application.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories> GetLinksToDevopsCategories ( global::Variamos.DevOpsDsl.Application applicationInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.ApplicationHasContainers> GetLinksToContainers ( global::Variamos.DevOpsDsl.Application applicationInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories>(applicationInstance, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.ApplicationDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasContainers>(applicationInstance, global::Variamos.DevOpsDsl.ApplicationHasContainers.ApplicationDomainRoleId);
 		}
 		#endregion
-		#region DevopsCategory link accessor
+		#region Container link accessor
 		/// <summary>
-		/// Get the ApplicationHasDevopsCategories link to a DevopsCategory.
+		/// Get the ApplicationHasContainers link to a Container.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories GetLinkToApplication (global::Variamos.DevOpsDsl.DevopsCategory devopsCategoryInstance)
+		public static global::Variamos.DevOpsDsl.ApplicationHasContainers GetLinkToApplication (global::Variamos.DevOpsDsl.Container containerInstance)
 		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories>(devopsCategoryInstance, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DevopsCategory not obeyed.");
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasContainers> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasContainers>(containerInstance, global::Variamos.DevOpsDsl.ApplicationHasContainers.ContainerDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Container not obeyed.");
 			if ( links.Count == 0 )
 			{
 				return null;
@@ -465,20 +446,20 @@ namespace Variamos.DevOpsDsl
 			}
 		}
 		#endregion
-		#region ApplicationHasDevopsCategories instance accessors
+		#region ApplicationHasContainers instance accessors
 		
 		/// <summary>
-		/// Get any ApplicationHasDevopsCategories links between a given Application and a DevopsCategory.
+		/// Get any ApplicationHasContainers links between a given Application and a Container.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories> GetLinks( global::Variamos.DevOpsDsl.Application source, global::Variamos.DevOpsDsl.DevopsCategory target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.ApplicationHasContainers> GetLinks( global::Variamos.DevOpsDsl.Application source, global::Variamos.DevOpsDsl.Container target )
 		{
-			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories>();
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories>(source, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.ApplicationDomainRoleId);
-			foreach ( global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories link in links )
+			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.ApplicationHasContainers> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.ApplicationHasContainers>();
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasContainers> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasContainers>(source, global::Variamos.DevOpsDsl.ApplicationHasContainers.ApplicationDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.ApplicationHasContainers link in links )
 			{
-				if ( target.Equals(link.DevopsCategory) )
+				if ( target.Equals(link.Container) )
 				{
 					outLinks.Add(link);
 				}
@@ -486,257 +467,16 @@ namespace Variamos.DevOpsDsl
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ApplicationHasDevopsCategories link between a given Applicationand a DevopsCategory.
+		/// Get the one ApplicationHasContainers link between a given Applicationand a Container.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories GetLink( global::Variamos.DevOpsDsl.Application source, global::Variamos.DevOpsDsl.DevopsCategory target )
+		public static global::Variamos.DevOpsDsl.ApplicationHasContainers GetLink( global::Variamos.DevOpsDsl.Application source, global::Variamos.DevOpsDsl.Container target )
 		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories>(source, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.ApplicationDomainRoleId);
-			foreach ( global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories link in links )
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasContainers> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasContainers>(source, global::Variamos.DevOpsDsl.ApplicationHasContainers.ApplicationDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.ApplicationHasContainers link in links )
 			{
-				if ( target.Equals(link.DevopsCategory) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Variamos.DevOpsDsl
-{
-	/// <summary>
-	/// DomainRelationship DevopsCategoryHasDevopsPracticed
-	/// Description for Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed
-	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("2cb28fd8-57e4-44ed-b2b2-56a6502d74ae")]
-	public partial class DevopsCategoryHasDevopsPracticed : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// DevopsCategoryHasDevopsPracticed domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2cb28fd8, 0x57e4, 0x44ed, 0xb2, 0xb2, 0x56, 0xa6, 0x50, 0x2d, 0x74, 0xae);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a DevopsCategoryHasDevopsPracticed link in the same Partition as the given DevopsCategory
-		/// </summary>
-		/// <param name="source">DevopsCategory to use as the source of the relationship.</param>
-		/// <param name="target">DevopsPractice to use as the target of the relationship.</param>
-		public DevopsCategoryHasDevopsPracticed(DevopsCategory source, DevopsPractice target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId, source), new DslModeling::RoleAssignment(DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public DevopsCategoryHasDevopsPracticed(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public DevopsCategoryHasDevopsPracticed(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public DevopsCategoryHasDevopsPracticed(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public DevopsCategoryHasDevopsPracticed(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region DevopsCategory domain role code
-		
-		/// <summary>
-		/// DevopsCategory domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid DevopsCategoryDomainRoleId = new global::System.Guid(0xe344dbb9, 0xa558, 0x48e2, 0x96, 0x19, 0xec, 0x09, 0x24, 0x7b, 0xaa, 0x48);
-		
-		/// <summary>
-		/// DomainRole DevopsCategory
-		/// Description for
-		/// Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategory
-		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed/DevopsCategory.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed/DevopsCategory.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "DevopsPracticed", PropertyDisplayNameKey="Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed/DevopsCategory.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("e344dbb9-a558-48e2-9619-ec09247baa48")]
-		public virtual DevopsCategory DevopsCategory
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (DevopsCategory)DslModeling::DomainRoleInfo.GetRolePlayer(this, DevopsCategoryDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, DevopsCategoryDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access DevopsCategory of a DevopsPractice
-		/// <summary>
-		/// Gets DevopsCategory.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DevopsCategory GetDevopsCategory(DevopsPractice element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DevopsPracticeDomainRoleId) as DevopsCategory;
-		}
-		
-		/// <summary>
-		/// Sets DevopsCategory.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetDevopsCategory(DevopsPractice element, DevopsCategory newDevopsCategory)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, DevopsPracticeDomainRoleId, newDevopsCategory);
-		}
-		#endregion
-		#region DevopsPractice domain role code
-		
-		/// <summary>
-		/// DevopsPractice domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid DevopsPracticeDomainRoleId = new global::System.Guid(0xc302e51b, 0x4217, 0x4081, 0xb2, 0x6a, 0x53, 0xfc, 0x61, 0xe8, 0x6c, 0x07);
-		
-		/// <summary>
-		/// DomainRole DevopsPractice
-		/// Description for
-		/// Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPractice
-		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed/DevopsPractice.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed/DevopsPractice.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DevopsCategory", PropertyDisplayNameKey="Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed/DevopsPractice.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("c302e51b-4217-4081-b26a-53fc61e86c07")]
-		public virtual DevopsPractice DevopsPractice
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (DevopsPractice)DslModeling::DomainRoleInfo.GetRolePlayer(this, DevopsPracticeDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, DevopsPracticeDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access DevopsPracticed of a DevopsCategory
-		/// <summary>
-		/// Gets a list of DevopsPracticed.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<DevopsPractice> GetDevopsPracticed(DevopsCategory element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<DevopsPractice>, DevopsPractice>(element, DevopsCategoryDomainRoleId);
-		}
-		#endregion
-		#region DevopsCategory link accessor
-		/// <summary>
-		/// Get the list of DevopsCategoryHasDevopsPracticed links to a DevopsCategory.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed> GetLinksToDevopsPracticed ( global::Variamos.DevOpsDsl.DevopsCategory devopsCategoryInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed>(devopsCategoryInstance, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId);
-		}
-		#endregion
-		#region DevopsPractice link accessor
-		/// <summary>
-		/// Get the DevopsCategoryHasDevopsPracticed link to a DevopsPractice.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed GetLinkToDevopsCategory (global::Variamos.DevOpsDsl.DevopsPractice devopsPracticeInstance)
-		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed>(devopsPracticeInstance, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DevopsPractice not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region DevopsCategoryHasDevopsPracticed instance accessors
-		
-		/// <summary>
-		/// Get any DevopsCategoryHasDevopsPracticed links between a given DevopsCategory and a DevopsPractice.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed> GetLinks( global::Variamos.DevOpsDsl.DevopsCategory source, global::Variamos.DevOpsDsl.DevopsPractice target )
-		{
-			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed>();
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed>(source, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId);
-			foreach ( global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed link in links )
-			{
-				if ( target.Equals(link.DevopsPractice) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one DevopsCategoryHasDevopsPracticed link between a given DevopsCategoryand a DevopsPractice.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed GetLink( global::Variamos.DevOpsDsl.DevopsCategory source, global::Variamos.DevOpsDsl.DevopsPractice target )
-		{
-			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed>(source, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId);
-			foreach ( global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed link in links )
-			{
-				if ( target.Equals(link.DevopsPractice) )
+				if ( target.Equals(link.Container) )
 				{
 					return link;
 				}

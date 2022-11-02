@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5af03ef8-bd8c-4744-90d5-5e9ee1e1d2aa" Description="Description for Variamos.DevOpsDsl.DevOpsDsl" Name="DevOpsDsl" DisplayName="DevOpsDsl" Namespace="Variamos.DevOpsDsl" ProductName="DevOpsDsl" CompanyName="Variamos" PackageGuid="dcd1f89d-000b-4058-8a43-beac92073e9f" PackageNamespace="Variamos.DevOpsDsl" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="db8b3ebd-5f08-4607-9624-c334d61e065c" Description="The root in which all other elements are embedded. Appears as a diagram." Name="DevOps" DisplayName="DevOps" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Description for Variamos.DevOpsDsl.DevOps" Name="DevOps" DisplayName="Dev Ops" Namespace="Variamos.DevOpsDsl">
       <Properties>
-        <DomainProperty Id="94107c8c-366b-492c-8fbb-5d2d15d302a6" Description="Description for Variamos.DevOpsDsl.DevOps.Model Name" Name="ModelName" DisplayName="Model Name">
+        <DomainProperty Id="e449a9e4-b5b2-4013-8a30-7ad6f145e609" Description="Model Name" Name="ModelName" DisplayName="Model Name" IsElementName="true">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -15,19 +15,19 @@
             <DomainClassMoniker Name="Application" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>DevOpsHasApplication.Application</DomainPath>
+            <DomainPath>DevOpsHasApplications.Applications</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="f949ca15-dd78-42a0-ac99-24f2afa6c886" Description="Description for Variamos.DevOpsDsl.Application" Name="Application" DisplayName="Application" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="89646196-a8a0-4186-a288-4384229596fd" Description="Description for Variamos.DevOpsDsl.Application" Name="Application" DisplayName="Application" Namespace="Variamos.DevOpsDsl">
       <Properties>
-        <DomainProperty Id="4b1c5f9a-09eb-4b8c-ad25-e15aa5bd629a" Description="Description for Variamos.DevOpsDsl.Application.Application Name" Name="ApplicationName" DisplayName="Application Name">
+        <DomainProperty Id="7e652c65-8339-43a0-a5ca-5373d18d416d" Description="Description for Variamos.DevOpsDsl.Application.Application Name" Name="ApplicationName" DisplayName="Application Name" IsElementName="true">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="b35186f9-19ab-4a97-8cba-0a34c7713e94" Description="Description for Variamos.DevOpsDsl.Application.Cloud Platform" Name="CloudPlatform" DisplayName="Cloud Platform">
+        <DomainProperty Id="a68c76f7-6613-4377-9eed-7587bb0f5903" Description="Description for Variamos.DevOpsDsl.Application.Cloud Provider" Name="CloudProvider" DisplayName="Cloud Provider">
           <Type>
             <DomainEnumerationMoniker Name="CloudProvider" />
           </Type>
@@ -36,88 +36,68 @@
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="DevopsCategory" />
+            <DomainClassMoniker Name="Container" />
           </Index>
           <LinkCreationPaths>
-            <DomainPath>ApplicationHasDevopsCategories.DevopsCategories</DomainPath>
+            <DomainPath>ApplicationHasContainers.Containers</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="f1e36ca0-cf54-4987-98a8-e29d8d78f5a2" Description="Description for Variamos.DevOpsDsl.DevopsCategory" Name="DevopsCategory" DisplayName="Devops Category" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="3fba09f1-07e3-4ebf-8039-06613d70913a" Description="Description for Variamos.DevOpsDsl.Container" Name="Container" DisplayName="Container" Namespace="Variamos.DevOpsDsl">
       <Properties>
-        <DomainProperty Id="6befe385-84c0-499f-bf6e-e1bc5ba05e83" Description="Description for Variamos.DevOpsDsl.DevopsCategory.Category Name" Name="CategoryName" DisplayName="Category Name">
+        <DomainProperty Id="7fa1949c-3098-44bf-8744-69103252f3d1" Description="Description for Variamos.DevOpsDsl.Container.Container Name" Name="ContainerName" DisplayName="Container Name" IsElementName="true">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-      </Properties>
-      <ElementMergeDirectives>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="DevopsPractice" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>DevopsCategoryHasDevopsPracticed.DevopsPracticed</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-      </ElementMergeDirectives>
-    </DomainClass>
-    <DomainClass Id="4f93e5a4-f9ef-4d17-9ccf-cdc28bae346d" Description="Description for Variamos.DevOpsDsl.DevopsPractice" Name="DevopsPractice" DisplayName="Devops Practice" Namespace="Variamos.DevOpsDsl">
-      <Properties>
-        <DomainProperty Id="ed16eb6a-4967-40b1-875d-33233aa3d240" Description="Description for Variamos.DevOpsDsl.DevopsPractice.Practice Name" Name="PracticeName" DisplayName="Practice Name">
+        <DomainProperty Id="d2cc7913-300d-48f0-aecb-a7767f011abb" Description="Implement DevSecOps practices to the current container" Name="DevSecOps" DisplayName="DevSecOps" DefaultValue="">
           <Type>
-            <ExternalTypeMoniker Name="/System/String" />
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="d45aabbd-728a-4307-b35a-f452ee8daf49" Description="Implement Continuous Integration practices to the current container" Name="ContinuousIntegration" DisplayName="Continuous Integration">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="1c1b8f92-c227-4d08-ba3f-fe6758fa846b" Description="Implement Release Management practices to the current container" Name="ReleaseManagement" DisplayName="Release Management">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
       </Properties>
     </DomainClass>
   </Classes>
   <Relationships>
-    <DomainRelationship Id="ee361c5f-9b65-4dad-b7e7-f94701a5be89" Description="Description for Variamos.DevOpsDsl.DevOpsHasApplication" Name="DevOpsHasApplication" DisplayName="Dev Ops Has Application" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
+    <DomainRelationship Id="b66acc16-ee54-4251-b928-007a38cc3e15" Description="Description for Variamos.DevOpsDsl.DevOpsHasApplications" Name="DevOpsHasApplications" DisplayName="Dev Ops Has Applications" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
       <Source>
-        <DomainRole Id="6b3eba1b-4830-401d-b4dc-4a4241519cf3" Description="Description for Variamos.DevOpsDsl.DevOpsHasApplication.DevOps" Name="DevOps" DisplayName="Dev Ops" PropertyName="Application" Multiplicity="ZeroOne" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Application">
+        <DomainRole Id="44f85076-c197-4de1-af0d-7deca5793366" Description="Description for Variamos.DevOpsDsl.DevOpsHasApplications.DevOps" Name="DevOps" DisplayName="Dev Ops" PropertyName="Applications" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Applications">
           <RolePlayer>
             <DomainClassMoniker Name="DevOps" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="b56c4e9c-280f-426b-abda-7ed9a4bf27fe" Description="Description for Variamos.DevOpsDsl.DevOpsHasApplication.Application" Name="Application" DisplayName="Application" PropertyName="DevOps" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Dev Ops">
+        <DomainRole Id="5b862f38-ad09-4bb8-9f80-1b6e44397633" Description="Description for Variamos.DevOpsDsl.DevOpsHasApplications.Application" Name="Application" DisplayName="Application" PropertyName="DevOps" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Dev Ops">
           <RolePlayer>
             <DomainClassMoniker Name="Application" />
           </RolePlayer>
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="c7d3eda3-836d-4ecf-9de9-0200d5296964" Description="Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories" Name="ApplicationHasDevopsCategories" DisplayName="Application Has Devops Categories" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
+    <DomainRelationship Id="1a31614f-2028-4783-9531-035dfea87223" Description="Description for Variamos.DevOpsDsl.ApplicationHasContainers" Name="ApplicationHasContainers" DisplayName="Application Has Containers" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
       <Source>
-        <DomainRole Id="9186feaa-18d2-4605-be82-2cfed238e31a" Description="Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories.Application" Name="Application" DisplayName="Application" PropertyName="DevopsCategories" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Devops Categories">
+        <DomainRole Id="55a60d90-0958-42c8-b32e-3b9cad7a2ce7" Description="Description for Variamos.DevOpsDsl.ApplicationHasContainers.Application" Name="Application" DisplayName="Application" PropertyName="Containers" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Containers">
           <RolePlayer>
             <DomainClassMoniker Name="Application" />
           </RolePlayer>
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="9b606d58-fb4a-4f24-be5b-6b64c8b17fb4" Description="Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategory" Name="DevopsCategory" DisplayName="Devops Category" PropertyName="Application" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Application">
+        <DomainRole Id="7d65ec8e-9f36-4ae5-b1ab-56d3f3eeab77" Description="Description for Variamos.DevOpsDsl.ApplicationHasContainers.Container" Name="Container" DisplayName="Container" PropertyName="Application" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Application">
           <RolePlayer>
-            <DomainClassMoniker Name="DevopsCategory" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="2cb28fd8-57e4-44ed-b2b2-56a6502d74ae" Description="Description for Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed" Name="DevopsCategoryHasDevopsPracticed" DisplayName="Devops Category Has Devops Practiced" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="e344dbb9-a558-48e2-9619-ec09247baa48" Description="Description for Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategory" Name="DevopsCategory" DisplayName="Devops Category" PropertyName="DevopsPracticed" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Devops Practiced">
-          <RolePlayer>
-            <DomainClassMoniker Name="DevopsCategory" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="c302e51b-4217-4081-b26a-53fc61e86c07" Description="Description for Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPractice" Name="DevopsPractice" DisplayName="Devops Practice" PropertyName="DevopsCategory" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Devops Category">
-          <RolePlayer>
-            <DomainClassMoniker Name="DevopsPractice" />
+            <DomainClassMoniker Name="Container" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -146,108 +126,98 @@
         <EnumerationLiteral Description="Google Cloud Platform" Name="GCP" Value="" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="NodeType" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.NodeType">
+      <Literals>
+        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.NodeType.Container" Name="Container" Value="" />
+        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.NodeType.Capability" Name="Capability" Value="" />
+        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.NodeType.Application" Name="Application" Value="" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
-    <GeometryShape Id="1207c5ad-f64d-42ff-bb2c-a58667e83a9a" Description="Description for Variamos.DevOpsDsl.ApplicationShape" Name="ApplicationShape" DisplayName="Application Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Application Shape" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" />
+    <GeometryShape Id="d7e872c2-b2b8-408a-8805-304f48a2f8cc" Description="Description for Variamos.DevOpsDsl.ContainerShape" Name="ContainerShape" DisplayName="Container Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Container Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="1f477189-8a64-42e2-994b-b0c1e42e32f1" Description="Description for Variamos.DevOpsDsl.ApplicationShape" Name="ApplicationShape" DisplayName="Application Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Application Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="12" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="CloudDecorator" DisplayName="Cloud Decorator" DefaultText="CloudDecorator" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="0587efb5-116e-4ee7-8e7e-db28cbbb693e" Description="Description for Variamos.DevOpsDsl.DevopsCategoryShape" Name="DevopsCategoryShape" DisplayName="Devops Category Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Devops Category Shape" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="7ab8c839-c9eb-4642-a614-83f47a96ce8e" Description="Description for Variamos.DevOpsDsl.DevopsPracticeShape" Name="DevopsPracticeShape" DisplayName="Devops Practice Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Devops Practice Shape" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
+        <TextDecorator Name="CloudProviderDecorator" DisplayName="Cloud Provider Decorator" DefaultText="CloudProviderDecorator" />
       </ShapeHasDecorators>
     </GeometryShape>
   </Shapes>
   <Connectors>
-    <Connector Id="5d5bbc30-416c-4619-ac6c-5abed766db48" Description="Description for Variamos.DevOpsDsl.ApplicationCategoryConnector" Name="ApplicationCategoryConnector" DisplayName="Application Category Connector" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Application Category Connector" />
-    <Connector Id="36d0816f-e8b9-46c8-a8f2-9082133923c7" Description="Description for Variamos.DevOpsDsl.CategoryPracticeConnector" Name="CategoryPracticeConnector" DisplayName="Category Practice Connector" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Category Practice Connector" />
+    <Connector Id="2e9b8dab-b453-4eac-95e4-4bcd75e4c400" Description="Description for Variamos.DevOpsDsl.ApplicationContainerConnector" Name="ApplicationContainerConnector" DisplayName="Application Container Connector" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Application Container Connector" RoutingStyle="Straight" />
   </Connectors>
   <XmlSerializationBehavior Name="DevOpsDslSerializationBehavior" Namespace="Variamos.DevOpsDsl">
     <ClassData>
+      <XmlClassData TypeName="DevOpsDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="devOpsDiagramMoniker" ElementName="devOpsDiagram" MonikerTypeName="DevOpsDiagramMoniker">
+        <DiagramMoniker Name="DevOpsDiagram" />
+      </XmlClassData>
+      <XmlClassData TypeName="ContainerShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerShapeMoniker" ElementName="containerShape" MonikerTypeName="ContainerShapeMoniker">
+        <GeometryShapeMoniker Name="ContainerShape" />
+      </XmlClassData>
       <XmlClassData TypeName="DevOps" MonikerAttributeName="" SerializeId="true" MonikerElementName="devOpsMoniker" ElementName="devOps" MonikerTypeName="DevOpsMoniker">
         <DomainClassMoniker Name="DevOps" />
         <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="application">
-            <DomainRelationshipMoniker Name="DevOpsHasApplication" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="applications">
+            <DomainRelationshipMoniker Name="DevOpsHasApplications" />
           </XmlRelationshipData>
           <XmlPropertyData XmlName="modelName">
             <DomainPropertyMoniker Name="DevOps/ModelName" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="DevOpsHasApplication" MonikerAttributeName="" SerializeId="true" MonikerElementName="devOpsHasApplicationMoniker" ElementName="devOpsHasApplication" MonikerTypeName="DevOpsHasApplicationMoniker">
-        <DomainRelationshipMoniker Name="DevOpsHasApplication" />
+      <XmlClassData TypeName="DevOpsHasApplications" MonikerAttributeName="" SerializeId="true" MonikerElementName="devOpsHasApplicationsMoniker" ElementName="devOpsHasApplications" MonikerTypeName="DevOpsHasApplicationsMoniker">
+        <DomainRelationshipMoniker Name="DevOpsHasApplications" />
       </XmlClassData>
       <XmlClassData TypeName="Application" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationMoniker" ElementName="application" MonikerTypeName="ApplicationMoniker">
         <DomainClassMoniker Name="Application" />
         <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="devopsCategories">
-            <DomainRelationshipMoniker Name="ApplicationHasDevopsCategories" />
-          </XmlRelationshipData>
           <XmlPropertyData XmlName="applicationName">
             <DomainPropertyMoniker Name="Application/ApplicationName" />
           </XmlPropertyData>
-          <XmlPropertyData XmlName="cloudPlatform">
-            <DomainPropertyMoniker Name="Application/CloudPlatform" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="ApplicationHasDevopsCategories" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationHasDevopsCategoriesMoniker" ElementName="applicationHasDevopsCategories" MonikerTypeName="ApplicationHasDevopsCategoriesMoniker">
-        <DomainRelationshipMoniker Name="ApplicationHasDevopsCategories" />
-      </XmlClassData>
-      <XmlClassData TypeName="DevopsCategory" MonikerAttributeName="" SerializeId="true" MonikerElementName="devopsCategoryMoniker" ElementName="devopsCategory" MonikerTypeName="DevopsCategoryMoniker">
-        <DomainClassMoniker Name="DevopsCategory" />
-        <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="devopsPracticed">
-            <DomainRelationshipMoniker Name="DevopsCategoryHasDevopsPracticed" />
+          <XmlRelationshipData UseFullForm="true" RoleElementName="containers">
+            <DomainRelationshipMoniker Name="ApplicationHasContainers" />
           </XmlRelationshipData>
-          <XmlPropertyData XmlName="categoryName">
-            <DomainPropertyMoniker Name="DevopsCategory/CategoryName" />
+          <XmlPropertyData XmlName="cloudProvider">
+            <DomainPropertyMoniker Name="Application/CloudProvider" />
           </XmlPropertyData>
         </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="DevopsCategoryHasDevopsPracticed" MonikerAttributeName="" SerializeId="true" MonikerElementName="devopsCategoryHasDevopsPracticedMoniker" ElementName="devopsCategoryHasDevopsPracticed" MonikerTypeName="DevopsCategoryHasDevopsPracticedMoniker">
-        <DomainRelationshipMoniker Name="DevopsCategoryHasDevopsPracticed" />
-      </XmlClassData>
-      <XmlClassData TypeName="DevopsPractice" MonikerAttributeName="" SerializeId="true" MonikerElementName="devopsPracticeMoniker" ElementName="devopsPractice" MonikerTypeName="DevopsPracticeMoniker">
-        <DomainClassMoniker Name="DevopsPractice" />
-        <ElementData>
-          <XmlPropertyData XmlName="practiceName">
-            <DomainPropertyMoniker Name="DevopsPractice/PracticeName" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="DevopsDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="devopsDiagramMoniker" ElementName="devopsDiagram" MonikerTypeName="DevopsDiagramMoniker">
-        <DiagramMoniker Name="DevopsDiagram" />
       </XmlClassData>
       <XmlClassData TypeName="ApplicationShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationShapeMoniker" ElementName="applicationShape" MonikerTypeName="ApplicationShapeMoniker">
         <GeometryShapeMoniker Name="ApplicationShape" />
       </XmlClassData>
-      <XmlClassData TypeName="DevopsCategoryShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="devopsCategoryShapeMoniker" ElementName="devopsCategoryShape" MonikerTypeName="DevopsCategoryShapeMoniker">
-        <GeometryShapeMoniker Name="DevopsCategoryShape" />
+      <XmlClassData TypeName="ApplicationHasContainers" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationHasContainersMoniker" ElementName="applicationHasContainers" MonikerTypeName="ApplicationHasContainersMoniker">
+        <DomainRelationshipMoniker Name="ApplicationHasContainers" />
       </XmlClassData>
-      <XmlClassData TypeName="DevopsPracticeShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="devopsPracticeShapeMoniker" ElementName="devopsPracticeShape" MonikerTypeName="DevopsPracticeShapeMoniker">
-        <GeometryShapeMoniker Name="DevopsPracticeShape" />
+      <XmlClassData TypeName="Container" MonikerAttributeName="" SerializeId="true" MonikerElementName="containerMoniker" ElementName="container" MonikerTypeName="ContainerMoniker">
+        <DomainClassMoniker Name="Container" />
+        <ElementData>
+          <XmlPropertyData XmlName="containerName">
+            <DomainPropertyMoniker Name="Container/ContainerName" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="devSecOps">
+            <DomainPropertyMoniker Name="Container/DevSecOps" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="continuousIntegration">
+            <DomainPropertyMoniker Name="Container/ContinuousIntegration" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="releaseManagement">
+            <DomainPropertyMoniker Name="Container/ReleaseManagement" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ApplicationCategoryConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationCategoryConnectorMoniker" ElementName="applicationCategoryConnector" MonikerTypeName="ApplicationCategoryConnectorMoniker">
-        <ConnectorMoniker Name="ApplicationCategoryConnector" />
-      </XmlClassData>
-      <XmlClassData TypeName="CategoryPracticeConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="categoryPracticeConnectorMoniker" ElementName="categoryPracticeConnector" MonikerTypeName="CategoryPracticeConnectorMoniker">
-        <ConnectorMoniker Name="CategoryPracticeConnector" />
+      <XmlClassData TypeName="ApplicationContainerConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationContainerConnectorMoniker" ElementName="applicationContainerConnector" MonikerTypeName="ApplicationContainerConnectorMoniker">
+        <ConnectorMoniker Name="ApplicationContainerConnector" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="DevOpsDslExplorer" />
-  <Diagram Id="5298a462-96a5-4839-a10b-cee1a4c3caa1" Description="Description for Variamos.DevOpsDsl.DevopsDiagram" Name="DevopsDiagram" DisplayName="Devops Diagram" Namespace="Variamos.DevOpsDsl">
+  <Diagram Id="aa0ce2b2-1fa5-458a-82dd-05d3b4d5e591" Description="Description for Variamos.DevOpsDsl.DevOpsDiagram" Name="DevOpsDiagram" DisplayName="Dev Ops Diagram" Namespace="Variamos.DevOpsDsl">
     <Class>
       <DomainClassMoniker Name="DevOps" />
     </Class>
@@ -255,7 +225,7 @@
       <ShapeMap>
         <DomainClassMoniker Name="Application" />
         <ParentElementPath>
-          <DomainPath>DevOpsHasApplication.DevOps/!DevOps</DomainPath>
+          <DomainPath>DevOpsHasApplications.DevOps/!DevOps</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
           <TextDecoratorMoniker Name="ApplicationShape/NameDecorator" />
@@ -266,54 +236,35 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="ApplicationShape/CloudDecorator" />
+          <TextDecoratorMoniker Name="ApplicationShape/CloudProviderDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Application/CloudPlatform" />
+              <DomainPropertyMoniker Name="Application/CloudProvider" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
         <GeometryShapeMoniker Name="ApplicationShape" />
       </ShapeMap>
       <ShapeMap>
-        <DomainClassMoniker Name="DevopsCategory" />
+        <DomainClassMoniker Name="Container" />
         <ParentElementPath>
-          <DomainPath>ApplicationHasDevopsCategories.Application/!Application/DevOpsHasApplication.DevOps/!DevOps</DomainPath>
+          <DomainPath>ApplicationHasContainers.Application/!Application/DevOpsHasApplications.DevOps/!DevOps</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="DevopsCategoryShape/NameDecorator" />
+          <TextDecoratorMoniker Name="ContainerShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="DevopsCategory/CategoryName" />
+              <DomainPropertyMoniker Name="Container/ContainerName" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="DevopsCategoryShape" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="DevopsPractice" />
-        <ParentElementPath>
-          <DomainPath>DevopsCategoryHasDevopsPracticed.DevopsCategory/!DevopsCategory/ApplicationHasDevopsCategories.Application/!Application/DevOpsHasApplication.DevOps/!DevOps</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="DevopsPracticeShape/NameDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="DevopsPractice/PracticeName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="DevopsPracticeShape" />
+        <GeometryShapeMoniker Name="ContainerShape" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
-        <ConnectorMoniker Name="ApplicationCategoryConnector" />
-        <DomainRelationshipMoniker Name="ApplicationHasDevopsCategories" />
-      </ConnectorMap>
-      <ConnectorMap>
-        <ConnectorMoniker Name="CategoryPracticeConnector" />
-        <DomainRelationshipMoniker Name="DevopsCategoryHasDevopsPracticed" />
+        <ConnectorMoniker Name="ApplicationContainerConnector" />
+        <DomainRelationshipMoniker Name="ApplicationHasContainers" />
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
@@ -324,13 +275,9 @@
     <XmlSerializationDefinition CustomPostLoad="false">
       <XmlSerializationBehaviorMoniker Name="DevOpsDslSerializationBehavior" />
     </XmlSerializationDefinition>
-    <ToolboxTab TabText="DevOpsDsl">
-      <ElementTool Name="ApplicationElementTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="ApplicationElementTool" Tooltip="Application Element Tool" HelpKeyword="ApplicationElementTool">
-        <DomainClassMoniker Name="Application" />
-      </ElementTool>
-    </ToolboxTab>
+    <ToolboxTab TabText="DevOpsDsl" />
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
-    <DiagramMoniker Name="DevopsDiagram" />
+    <DiagramMoniker Name="DevOpsDiagram" />
   </Designer>
   <Explorer ExplorerGuid="4862bab5-3ef9-4f41-baf7-5415442935ef" Title="DevOpsDsl Explorer">
     <ExplorerBehaviorMoniker Name="DevOpsDsl/DevOpsDslExplorer" />

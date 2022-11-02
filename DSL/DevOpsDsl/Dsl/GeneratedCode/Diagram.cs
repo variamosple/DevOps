@@ -11,20 +11,20 @@ using DslModeling = global::Microsoft.VisualStudio.Modeling;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 
-[module: global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Scope = "type", Target = "Variamos.DevOpsDsl.DevopsDiagram")]
+[module: global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Scope = "type", Target = "Variamos.DevOpsDsl.DevOpsDiagram")]
 
 namespace Variamos.DevOpsDsl
 {
 	/// <summary>
-	/// DomainClass DevopsDiagram
-	/// Description for Variamos.DevOpsDsl.DevopsDiagram
+	/// DomainClass DevOpsDiagram
+	/// Description for Variamos.DevOpsDsl.DevOpsDiagram
 	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsDiagram.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsDiagram.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOpsDiagram.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsDiagram.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("5298a462-96a5-4839-a10b-cee1a4c3caa1")]
-	public partial class DevopsDiagram : DslDiagrams::Diagram
+	[DslModeling::DomainObjectId("aa0ce2b2-1fa5-458a-82dd-05d3b4d5e591")]
+	public partial class DevOpsDiagram : DslDiagrams::Diagram
 	{
 		#region Diagram boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -197,26 +197,15 @@ namespace Variamos.DevOpsDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Variamos.DevOpsDsl.DevopsCategory)
+			if(element is global::Variamos.DevOpsDsl.Container)
 			{
-				global::Variamos.DevOpsDsl.DevopsCategoryShape newShape = new global::Variamos.DevOpsDsl.DevopsCategoryShape(this.Partition);
+				global::Variamos.DevOpsDsl.ContainerShape newShape = new global::Variamos.DevOpsDsl.ContainerShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Variamos.DevOpsDsl.DevopsPractice)
+			if(element is global::Variamos.DevOpsDsl.ApplicationHasContainers)
 			{
-				global::Variamos.DevOpsDsl.DevopsPracticeShape newShape = new global::Variamos.DevOpsDsl.DevopsPracticeShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories)
-			{
-				global::Variamos.DevOpsDsl.ApplicationCategoryConnector newShape = new global::Variamos.DevOpsDsl.ApplicationCategoryConnector(this.Partition);
-				return newShape;
-			}
-			if(element is global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed)
-			{
-				global::Variamos.DevOpsDsl.CategoryPracticeConnector newShape = new global::Variamos.DevOpsDsl.CategoryPracticeConnector(this.Partition);
+				global::Variamos.DevOpsDsl.ApplicationContainerConnector newShape = new global::Variamos.DevOpsDsl.ApplicationContainerConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -231,8 +220,7 @@ namespace Variamos.DevOpsDsl
 		{
 			base.InitializeShapeFields(shapeFields);
 			global::Variamos.DevOpsDsl.ApplicationShape.DecoratorsInitialized += ApplicationShapeDecoratorMap.OnDecoratorsInitialized;
-			global::Variamos.DevOpsDsl.DevopsCategoryShape.DecoratorsInitialized += DevopsCategoryShapeDecoratorMap.OnDecoratorsInitialized;
-			global::Variamos.DevOpsDsl.DevopsPracticeShape.DecoratorsInitialized += DevopsPracticeShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Variamos.DevOpsDsl.ContainerShape.DecoratorsInitialized += ContainerShapeDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -251,43 +239,25 @@ namespace Variamos.DevOpsDsl
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Application.ApplicationNameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Application.CloudPlatformDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "CloudDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Application.CloudProviderDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "CloudProviderDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for DevopsCategoryShape.
+		/// Class containing decorator path traversal methods for ContainerShape.
 		/// </summary>
-		internal static partial class DevopsCategoryShapeDecoratorMap
+		internal static partial class ContainerShapeDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for DevopsCategoryShape.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for ContainerShape.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.DevopsCategory.CategoryNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for DevopsPracticeShape.
-		/// </summary>
-		internal static partial class DevopsPracticeShapeDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for DevopsPracticeShape.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.DevopsPractice.PracticeNameDomainPropertyId);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Container.ContainerNameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
@@ -296,15 +266,15 @@ namespace Variamos.DevOpsDsl
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// DevopsDiagram domain class Id.
+		/// DevOpsDiagram domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5298a462, 0x96a5, 0x4839, 0xa1, 0x0b, 0xce, 0xe1, 0xa4, 0xc3, 0xca, 0xa1);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xaa0ce2b2, 0x1fa5, 0x458a, 0x82, 0xdd, 0x05, 0xd3, 0xb4, 0xd5, 0xe5, 0x91);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DevopsDiagram(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public DevOpsDiagram(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -314,7 +284,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DevopsDiagram(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public DevOpsDiagram(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -340,10 +310,8 @@ namespace Variamos.DevOpsDsl
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.Application), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.DevopsCategory), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.DevopsPractice), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.Container), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.ApplicationHasContainers), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -363,13 +331,9 @@ namespace Variamos.DevOpsDsl
 				{
 					parentElement = GetParentForApplication((global::Variamos.DevOpsDsl.Application)childElement);
 				} else
-				if(childElement is global::Variamos.DevOpsDsl.DevopsCategory)
+				if(childElement is global::Variamos.DevOpsDsl.Container)
 				{
-					parentElement = GetParentForDevopsCategory((global::Variamos.DevOpsDsl.DevopsCategory)childElement);
-				} else
-				if(childElement is global::Variamos.DevOpsDsl.DevopsPractice)
-				{
-					parentElement = GetParentForDevopsPractice((global::Variamos.DevOpsDsl.DevopsPractice)childElement);
+					parentElement = GetParentForContainer((global::Variamos.DevOpsDsl.Container)childElement);
 				} else
 				{
 					parentElement = null;
@@ -387,26 +351,13 @@ namespace Variamos.DevOpsDsl
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Variamos.DevOpsDsl.DevOps GetParentForDevopsCategory( global::Variamos.DevOpsDsl.DevopsCategory root )
+			public static global::Variamos.DevOpsDsl.DevOps GetParentForContainer( global::Variamos.DevOpsDsl.Container root )
 			{
 				// Segments 0 and 1
 				global::Variamos.DevOpsDsl.Application root2 = root.Application;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
 				global::Variamos.DevOpsDsl.DevOps result = root2.DevOps;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::Variamos.DevOpsDsl.DevOps GetParentForDevopsPractice( global::Variamos.DevOpsDsl.DevopsPractice root )
-			{
-				// Segments 0 and 1
-				global::Variamos.DevOpsDsl.DevopsCategory root2 = root.DevopsCategory;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::Variamos.DevOpsDsl.Application root4 = root2.Application;
-				if ( root4 == null ) return null;
-				// Segments 4 and 5
-				global::Variamos.DevOpsDsl.DevOps result = root4.DevOps;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -499,8 +450,7 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.ApplicationHasContainers), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>
@@ -517,7 +467,7 @@ namespace Variamos.DevOpsDsl
 					DslDiagrams::BinaryLinkShape linkShape = connectorLink.Presentation as DslDiagrams::BinaryLinkShape;
 					if (linkShape != null)
 					{
-						global::Variamos.DevOpsDsl.DevopsDiagram diagram = linkShape.Diagram as global::Variamos.DevOpsDsl.DevopsDiagram;
+						global::Variamos.DevOpsDsl.DevOpsDiagram diagram = linkShape.Diagram as global::Variamos.DevOpsDsl.DevOpsDiagram;
 						if (diagram != null)
 						{
 							if (e.NewRolePlayer != null)

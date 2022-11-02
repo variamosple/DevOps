@@ -14,15 +14,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace Variamos.DevOpsDsl
 {
 	/// <summary>
-	/// DomainClass ApplicationCategoryConnector
-	/// Description for Variamos.DevOpsDsl.ApplicationCategoryConnector
+	/// DomainClass ApplicationContainerConnector
+	/// Description for Variamos.DevOpsDsl.ApplicationContainerConnector
 	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationCategoryConnector.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationCategoryConnector.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationContainerConnector.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationContainerConnector.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("5d5bbc30-416c-4619-ac6c-5abed766db48")]
-	public partial class ApplicationCategoryConnector : DslDiagrams::BinaryLinkShape
+	[DslModeling::DomainObjectId("2e9b8dab-b453-4eac-95e4-4bcd75e4c400")]
+	public partial class ApplicationContainerConnector : DslDiagrams::BinaryLinkShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -87,9 +87,9 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with ApplicationCategoryConnector.
+		/// Finds a decorator associated with ApplicationContainerConnector.
 		/// </summary>
-		public static DslDiagrams::Decorator FindApplicationCategoryConnectorDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindApplicationContainerConnectorDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -98,20 +98,31 @@ namespace Variamos.DevOpsDsl
 		#endregion
 		
 		#region Connector styles
+		/// <summary>
+		/// Gets the default line routing style for this connector.
+		/// </summary>
+		[global::System.CLSCompliant(false)]
+		protected override DslDiagrams::GraphObject.VGRoutingStyle DefaultRoutingStyle
+		{
+			get
+			{
+				return DslDiagrams::GraphObject.VGRoutingStyle.VGRouteStraight;
+			}
+		}
 		#endregion
 		
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ApplicationCategoryConnector domain class Id.
+		/// ApplicationContainerConnector domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5d5bbc30, 0x416c, 0x4619, 0xac, 0x6c, 0x5a, 0xbe, 0xd7, 0x66, 0xdb, 0x48);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2e9b8dab, 0xb453, 0x4eac, 0x95, 0xe4, 0x4b, 0xcd, 0x75, 0xe4, 0xc4, 0x00);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ApplicationCategoryConnector(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ApplicationContainerConnector(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -121,124 +132,7 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ApplicationCategoryConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace Variamos.DevOpsDsl
-{
-	/// <summary>
-	/// DomainClass CategoryPracticeConnector
-	/// Description for Variamos.DevOpsDsl.CategoryPracticeConnector
-	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.CategoryPracticeConnector.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.CategoryPracticeConnector.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("36d0816f-e8b9-46c8-a8f2-9082133923c7")]
-	public partial class CategoryPracticeConnector : DslDiagrams::BinaryLinkShape
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with CategoryPracticeConnector.
-		/// </summary>
-		public static DslDiagrams::Decorator FindCategoryPracticeConnectorDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		#endregion
-		
-		#region Connector styles
-		#endregion
-		
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// CategoryPracticeConnector domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x36d0816f, 0xe8b9, 0x46c8, 0xa8, 0xf2, 0x90, 0x82, 0x13, 0x39, 0x23, 0xc7);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CategoryPracticeConnector(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CategoryPracticeConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ApplicationContainerConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

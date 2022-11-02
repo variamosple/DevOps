@@ -423,7 +423,7 @@ namespace Variamos.DevOpsDsl
 			global::System.Collections.Generic.IList<DslDiagrams::PresentationElement> diagrams = DslDiagrams::PresentationViewsSubject.GetPresentation(this.RootElement);
 			if (diagrams.Count > 0 && (!saveAs || this.diagramDocumentLockHolder == null))
 			{
-				global::Variamos.DevOpsDsl.DevopsDiagram diagram = diagrams[0] as global::Variamos.DevOpsDsl.DevopsDiagram;
+				global::Variamos.DevOpsDsl.DevOpsDiagram diagram = diagrams[0] as global::Variamos.DevOpsDsl.DevOpsDiagram;
 				if (diagram != null)
 				{
 					string diagramFileName = fileName + this.DiagramExtension;
@@ -495,7 +495,7 @@ namespace Variamos.DevOpsDsl
 			global::System.Collections.Generic.IList<DslDiagrams::PresentationElement> diagrams = DslDiagrams::PresentationViewsSubject.GetPresentation(this.RootElement);
 			if (diagrams.Count > 0)
 			{
-				global::Variamos.DevOpsDsl.DevopsDiagram diagram = diagrams[0] as global::Variamos.DevOpsDsl.DevopsDiagram;
+				global::Variamos.DevOpsDsl.DevOpsDiagram diagram = diagrams[0] as global::Variamos.DevOpsDsl.DevOpsDiagram;
 				if (diagram != null)
 				{
 					try

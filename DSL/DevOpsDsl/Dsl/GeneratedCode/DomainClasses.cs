@@ -13,13 +13,14 @@ namespace Variamos.DevOpsDsl
 {
 	/// <summary>
 	/// DomainClass DevOps
-	/// The root in which all other elements are embedded. Appears as a diagram.
+	/// Description for Variamos.DevOpsDsl.DevOps
 	/// </summary>
 	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOps.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("db8b3ebd-5f08-4607-9624-c334d61e065c")]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (ModelName = {modelNamePropertyStorage})")]
+	[DslModeling::DomainObjectId("53fa3ae4-60e5-44d4-9a97-0d287f987aa9")]
 	public partial class DevOps : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
@@ -27,7 +28,7 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// DevOps domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdb8b3ebd, 0x5f08, 0x4607, 0x96, 0x24, 0xc3, 0x34, 0xd6, 0x1e, 0x06, 0x5c);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x53fa3ae4, 0x60e5, 0x44d4, 0x9a, 0x97, 0x0d, 0x28, 0x7f, 0x98, 0x7a, 0xa9);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -53,7 +54,7 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// ModelName domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid ModelNameDomainPropertyId = new global::System.Guid(0x94107c8c, 0x366b, 0x492c, 0x8f, 0xbb, 0x5d, 0x2d, 0x15, 0xd3, 0x02, 0xa6);
+		public static readonly global::System.Guid ModelNameDomainPropertyId = new global::System.Guid(0xe449a9e4, 0xb5b2, 0x4013, 0x8a, 0x30, 0x7a, 0xd6, 0xf1, 0x45, 0xe6, 0x09);
 		
 		/// <summary>
 		/// Storage for ModelName
@@ -62,11 +63,12 @@ namespace Variamos.DevOpsDsl
 		
 		/// <summary>
 		/// Gets or sets the value of ModelName domain property.
-		/// Description for Variamos.DevOpsDsl.DevOps.Model Name
+		/// Model Name
 		/// </summary>
 		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevOps/ModelName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOps/ModelName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("94107c8c-366b-492c-8fbb-5d2d15d302a6")]
+		[DslModeling::ElementName]
+		[DslModeling::DomainObjectId("e449a9e4-b5b2-4013-8a30-7ad6f145e609")]
 		public global::System.String ModelName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -135,22 +137,18 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		#endregion
-		#region Application opposite domain role accessor
+		#region Applications opposite domain role accessor
+		
 		/// <summary>
-		/// Gets or sets Application.
-		/// Description for Variamos.DevOpsDsl.DevOpsHasApplication.DevOps
+		/// Gets a list of Applications.
+		/// Description for Variamos.DevOpsDsl.DevOpsHasApplications.DevOps
 		/// </summary>
-		public virtual Application Application
+		public virtual DslModeling::LinkedElementCollection<Application> Applications
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Variamos.DevOpsDsl.DevOpsHasApplication.DevOpsDomainRoleId) as Application;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Variamos.DevOpsDsl.DevOpsHasApplication.DevOpsDomainRoleId, value);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Application>, Application>(global::Variamos.DevOpsDsl.DevOpsHasApplications.DevOpsDomainRoleId);
 			}
 		}
 		#endregion
@@ -176,11 +174,6 @@ namespace Variamos.DevOpsDsl
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Variamos.DevOpsDsl.Application.DomainClassId)) 
 				{
-					// Check that creating a link with this path doesn't cause multiplicity overflow: DevOpsHasApplication.Application
-					if (this.Application != null)
-					{
-						return false;
-					}
 					return true;
 				}
 			}
@@ -211,8 +204,8 @@ namespace Variamos.DevOpsDsl
 			global::Variamos.DevOpsDsl.Application sourceApplication1 = sourceElement as global::Variamos.DevOpsDsl.Application;
 			if (sourceApplication1 != null)
 			{
-				// Create link for path DevOpsHasApplication.Application
-				this.Application = sourceApplication1;
+				// Create link for path DevOpsHasApplications.Applications
+				this.Applications.Add(sourceApplication1);
 
 				return;
 			}
@@ -242,12 +235,12 @@ namespace Variamos.DevOpsDsl
 			global::Variamos.DevOpsDsl.Application sourceApplication1 = sourceElement as global::Variamos.DevOpsDsl.Application;
 			if (sourceApplication1 != null)
 			{
-				// Delete link for path DevOpsHasApplication.Application
+				// Delete link for path DevOpsHasApplications.Applications
 				
-				foreach (DslModeling::ElementLink link in global::Variamos.DevOpsDsl.DevOpsHasApplication.GetLinks((global::Variamos.DevOpsDsl.DevOps)this, sourceApplication1))
+				foreach (DslModeling::ElementLink link in global::Variamos.DevOpsDsl.DevOpsHasApplications.GetLinks((global::Variamos.DevOpsDsl.DevOps)this, sourceApplication1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Variamos.DevOpsDsl.DevOpsHasApplication.DevOpsDomainRoleId, global::Variamos.DevOpsDsl.DevOpsHasApplication.ApplicationDomainRoleId);
+					link.Delete(global::Variamos.DevOpsDsl.DevOpsHasApplications.DevOpsDomainRoleId, global::Variamos.DevOpsDsl.DevOpsHasApplications.ApplicationDomainRoleId);
 				}
 
 				return;
@@ -268,7 +261,8 @@ namespace Variamos.DevOpsDsl
 	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("f949ca15-dd78-42a0-ac99-24f2afa6c886")]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (ApplicationName = {applicationNamePropertyStorage})")]
+	[DslModeling::DomainObjectId("89646196-a8a0-4186-a288-4384229596fd")]
 	public partial class Application : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
@@ -276,7 +270,7 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// Application domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf949ca15, 0xdd78, 0x42a0, 0xac, 0x99, 0x24, 0xf2, 0xaf, 0xa6, 0xc8, 0x86);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x89646196, 0xa8a0, 0x4186, 0xa2, 0x88, 0x43, 0x84, 0x22, 0x95, 0x96, 0xfd);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -302,7 +296,7 @@ namespace Variamos.DevOpsDsl
 		/// <summary>
 		/// ApplicationName domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid ApplicationNameDomainPropertyId = new global::System.Guid(0x4b1c5f9a, 0x09eb, 0x4b8c, 0xad, 0x25, 0xe1, 0x5a, 0xa5, 0xbd, 0x62, 0x9a);
+		public static readonly global::System.Guid ApplicationNameDomainPropertyId = new global::System.Guid(0x7e652c65, 0x8339, 0x43a0, 0xa5, 0xca, 0x53, 0x73, 0xd1, 0x8d, 0x41, 0x6d);
 		
 		/// <summary>
 		/// Storage for ApplicationName
@@ -315,7 +309,8 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application/ApplicationName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application/ApplicationName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("4b1c5f9a-09eb-4b8c-ad25-e15aa5bd629a")]
+		[DslModeling::ElementName]
+		[DslModeling::DomainObjectId("7e652c65-8339-43a0-a5ca-5373d18d416d")]
 		public global::System.String ApplicationName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -384,59 +379,59 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		#endregion
-		#region CloudPlatform domain property code
+		#region CloudProvider domain property code
 		
 		/// <summary>
-		/// CloudPlatform domain property Id.
+		/// CloudProvider domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid CloudPlatformDomainPropertyId = new global::System.Guid(0xb35186f9, 0x19ab, 0x4a97, 0x8c, 0xba, 0x0a, 0x34, 0xc7, 0x71, 0x3e, 0x94);
+		public static readonly global::System.Guid CloudProviderDomainPropertyId = new global::System.Guid(0xa68c76f7, 0x6613, 0x4377, 0x9e, 0xed, 0x75, 0x87, 0xbb, 0x0f, 0x59, 0x03);
 		
 		/// <summary>
-		/// Storage for CloudPlatform
+		/// Storage for CloudProvider
 		/// </summary>
-		private CloudProvider cloudPlatformPropertyStorage;
+		private CloudProvider cloudProviderPropertyStorage;
 		
 		/// <summary>
-		/// Gets or sets the value of CloudPlatform domain property.
-		/// Description for Variamos.DevOpsDsl.Application.Cloud Platform
+		/// Gets or sets the value of CloudProvider domain property.
+		/// Description for Variamos.DevOpsDsl.Application.Cloud Provider
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application/CloudPlatform.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application/CloudPlatform.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("b35186f9-19ab-4a97-8cba-0a34c7713e94")]
-		public CloudProvider CloudPlatform
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application/CloudProvider.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application/CloudProvider.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("a68c76f7-6613-4377-9eed-7587bb0f5903")]
+		public CloudProvider CloudProvider
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return cloudPlatformPropertyStorage;
+				return cloudProviderPropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				CloudPlatformPropertyHandler.Instance.SetValue(this, value);
+				CloudProviderPropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the Application.CloudPlatform domain property.
+		/// Value handler for the Application.CloudProvider domain property.
 		/// </summary>
-		internal sealed partial class CloudPlatformPropertyHandler : DslModeling::DomainPropertyValueHandler<Application, CloudProvider>
+		internal sealed partial class CloudProviderPropertyHandler : DslModeling::DomainPropertyValueHandler<Application, CloudProvider>
 		{
-			private CloudPlatformPropertyHandler() { }
+			private CloudProviderPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the Application.CloudPlatform domain property value handler.
+			/// Gets the singleton instance of the Application.CloudProvider domain property value handler.
 			/// </summary>
-			public static readonly CloudPlatformPropertyHandler Instance = new CloudPlatformPropertyHandler();
+			public static readonly CloudProviderPropertyHandler Instance = new CloudProviderPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the Application.CloudPlatform domain property.
+			/// Gets the Id of the Application.CloudProvider domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return CloudPlatformDomainPropertyId;
+					return CloudProviderDomainPropertyId;
 				}
 			}
 			
@@ -448,7 +443,7 @@ namespace Variamos.DevOpsDsl
 			public override sealed CloudProvider GetValue(Application element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.cloudPlatformPropertyStorage;
+				return element.cloudProviderPropertyStorage;
 			}
 		
 			/// <summary>
@@ -464,7 +459,7 @@ namespace Variamos.DevOpsDsl
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.cloudPlatformPropertyStorage = newValue;
+					element.cloudProviderPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -474,34 +469,34 @@ namespace Variamos.DevOpsDsl
 		#region DevOps opposite domain role accessor
 		/// <summary>
 		/// Gets or sets DevOps.
-		/// Description for Variamos.DevOpsDsl.DevOpsHasApplication.Application
+		/// Description for Variamos.DevOpsDsl.DevOpsHasApplications.Application
 		/// </summary>
 		public virtual DevOps DevOps
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Variamos.DevOpsDsl.DevOpsHasApplication.ApplicationDomainRoleId) as DevOps;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Variamos.DevOpsDsl.DevOpsHasApplications.ApplicationDomainRoleId) as DevOps;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Variamos.DevOpsDsl.DevOpsHasApplication.ApplicationDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Variamos.DevOpsDsl.DevOpsHasApplications.ApplicationDomainRoleId, value);
 			}
 		}
 		#endregion
-		#region DevopsCategories opposite domain role accessor
+		#region Containers opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of DevopsCategories.
-		/// Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories.Application
+		/// Gets a list of Containers.
+		/// Description for Variamos.DevOpsDsl.ApplicationHasContainers.Application
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<DevopsCategory> DevopsCategories
+		public virtual DslModeling::LinkedElementCollection<Container> Containers
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<DevopsCategory>, DevopsCategory>(global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.ApplicationDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Container>, Container>(global::Variamos.DevOpsDsl.ApplicationHasContainers.ApplicationDomainRoleId);
 			}
 		}
 		#endregion
@@ -525,7 +520,7 @@ namespace Variamos.DevOpsDsl
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Variamos.DevOpsDsl.DevopsCategory.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Variamos.DevOpsDsl.Container.DomainClassId)) 
 				{
 					return true;
 				}
@@ -554,11 +549,11 @@ namespace Variamos.DevOpsDsl
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Variamos.DevOpsDsl.DevopsCategory sourceDevopsCategory1 = sourceElement as global::Variamos.DevOpsDsl.DevopsCategory;
-			if (sourceDevopsCategory1 != null)
+			global::Variamos.DevOpsDsl.Container sourceContainer1 = sourceElement as global::Variamos.DevOpsDsl.Container;
+			if (sourceContainer1 != null)
 			{
-				// Create link for path ApplicationHasDevopsCategories.DevopsCategories
-				this.DevopsCategories.Add(sourceDevopsCategory1);
+				// Create link for path ApplicationHasContainers.Containers
+				this.Containers.Add(sourceContainer1);
 
 				return;
 			}
@@ -585,15 +580,15 @@ namespace Variamos.DevOpsDsl
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Variamos.DevOpsDsl.DevopsCategory sourceDevopsCategory1 = sourceElement as global::Variamos.DevOpsDsl.DevopsCategory;
-			if (sourceDevopsCategory1 != null)
+			global::Variamos.DevOpsDsl.Container sourceContainer1 = sourceElement as global::Variamos.DevOpsDsl.Container;
+			if (sourceContainer1 != null)
 			{
-				// Delete link for path ApplicationHasDevopsCategories.DevopsCategories
+				// Delete link for path ApplicationHasContainers.Containers
 				
-				foreach (DslModeling::ElementLink link in global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.GetLinks((global::Variamos.DevOpsDsl.Application)this, sourceDevopsCategory1))
+				foreach (DslModeling::ElementLink link in global::Variamos.DevOpsDsl.ApplicationHasContainers.GetLinks((global::Variamos.DevOpsDsl.Application)this, sourceContainer1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.ApplicationDomainRoleId, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId);
+					link.Delete(global::Variamos.DevOpsDsl.ApplicationHasContainers.ApplicationDomainRoleId, global::Variamos.DevOpsDsl.ApplicationHasContainers.ContainerDomainRoleId);
 				}
 
 				return;
@@ -607,28 +602,29 @@ namespace Variamos.DevOpsDsl
 namespace Variamos.DevOpsDsl
 {
 	/// <summary>
-	/// DomainClass DevopsCategory
-	/// Description for Variamos.DevOpsDsl.DevopsCategory
+	/// DomainClass Container
+	/// Description for Variamos.DevOpsDsl.Container
 	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsCategory.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsCategory.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Container.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Container.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("f1e36ca0-cf54-4987-98a8-e29d8d78f5a2")]
-	public partial class DevopsCategory : DslModeling::ModelElement
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (ContainerName = {containerNamePropertyStorage})")]
+	[DslModeling::DomainObjectId("3fba09f1-07e3-4ebf-8039-06613d70913a")]
+	public partial class Container : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// DevopsCategory domain class Id.
+		/// Container domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf1e36ca0, 0xcf54, 0x4987, 0x98, 0xa8, 0xe2, 0x9d, 0x8d, 0x78, 0xf5, 0xa2);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x3fba09f1, 0x07e3, 0x4ebf, 0x80, 0x39, 0x06, 0x61, 0x3d, 0x70, 0x91, 0x3a);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DevopsCategory(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Container(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -638,64 +634,65 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DevopsCategory(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public Container(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
 		#endregion
-		#region CategoryName domain property code
+		#region ContainerName domain property code
 		
 		/// <summary>
-		/// CategoryName domain property Id.
+		/// ContainerName domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid CategoryNameDomainPropertyId = new global::System.Guid(0x6befe385, 0x84c0, 0x499f, 0xbf, 0x6e, 0xe1, 0xbc, 0x5b, 0xa0, 0x5e, 0x83);
+		public static readonly global::System.Guid ContainerNameDomainPropertyId = new global::System.Guid(0x7fa1949c, 0x3098, 0x44bf, 0x87, 0x44, 0x69, 0x10, 0x32, 0x52, 0xf3, 0xd1);
 		
 		/// <summary>
-		/// Storage for CategoryName
+		/// Storage for ContainerName
 		/// </summary>
-		private global::System.String categoryNamePropertyStorage = string.Empty;
+		private global::System.String containerNamePropertyStorage = string.Empty;
 		
 		/// <summary>
-		/// Gets or sets the value of CategoryName domain property.
-		/// Description for Variamos.DevOpsDsl.DevopsCategory.Category Name
+		/// Gets or sets the value of ContainerName domain property.
+		/// Description for Variamos.DevOpsDsl.Container.Container Name
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsCategory/CategoryName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsCategory/CategoryName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("6befe385-84c0-499f-bf6e-e1bc5ba05e83")]
-		public global::System.String CategoryName
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Container/ContainerName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Container/ContainerName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::ElementName]
+		[DslModeling::DomainObjectId("7fa1949c-3098-44bf-8744-69103252f3d1")]
+		public global::System.String ContainerName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return categoryNamePropertyStorage;
+				return containerNamePropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				CategoryNamePropertyHandler.Instance.SetValue(this, value);
+				ContainerNamePropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the DevopsCategory.CategoryName domain property.
+		/// Value handler for the Container.ContainerName domain property.
 		/// </summary>
-		internal sealed partial class CategoryNamePropertyHandler : DslModeling::DomainPropertyValueHandler<DevopsCategory, global::System.String>
+		internal sealed partial class ContainerNamePropertyHandler : DslModeling::DomainPropertyValueHandler<Container, global::System.String>
 		{
-			private CategoryNamePropertyHandler() { }
+			private ContainerNamePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the DevopsCategory.CategoryName domain property value handler.
+			/// Gets the singleton instance of the Container.ContainerName domain property value handler.
 			/// </summary>
-			public static readonly CategoryNamePropertyHandler Instance = new CategoryNamePropertyHandler();
+			public static readonly ContainerNamePropertyHandler Instance = new ContainerNamePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the DevopsCategory.CategoryName domain property.
+			/// Gets the Id of the Container.ContainerName domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return CategoryNameDomainPropertyId;
+					return ContainerNameDomainPropertyId;
 				}
 			}
 			
@@ -704,10 +701,10 @@ namespace Variamos.DevOpsDsl
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(DevopsCategory element)
+			public override sealed global::System.String GetValue(Container element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.categoryNamePropertyStorage;
+				return element.containerNamePropertyStorage;
 			}
 		
 			/// <summary>
@@ -715,7 +712,7 @@ namespace Variamos.DevOpsDsl
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(DevopsCategory element, global::System.String newValue)
+			public override sealed void SetValue(Container element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -723,7 +720,268 @@ namespace Variamos.DevOpsDsl
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.categoryNamePropertyStorage = newValue;
+					element.containerNamePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region DevSecOps domain property code
+		
+		/// <summary>
+		/// DevSecOps domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DevSecOpsDomainPropertyId = new global::System.Guid(0xd2cc7913, 0x300d, 0x48f0, 0xae, 0xcb, 0xa7, 0x76, 0x7f, 0x01, 0x1a, 0xbb);
+		
+		/// <summary>
+		/// Storage for DevSecOps
+		/// </summary>
+		private global::System.Boolean devSecOpsPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of DevSecOps domain property.
+		/// Implement DevSecOps practices to the current container
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Container/DevSecOps.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Container/DevSecOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d2cc7913-300d-48f0-aecb-a7767f011abb")]
+		public global::System.Boolean DevSecOps
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return devSecOpsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DevSecOpsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Container.DevSecOps domain property.
+		/// </summary>
+		internal sealed partial class DevSecOpsPropertyHandler : DslModeling::DomainPropertyValueHandler<Container, global::System.Boolean>
+		{
+			private DevSecOpsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Container.DevSecOps domain property value handler.
+			/// </summary>
+			public static readonly DevSecOpsPropertyHandler Instance = new DevSecOpsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Container.DevSecOps domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DevSecOpsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(Container element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.devSecOpsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Container element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.devSecOpsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ContinuousIntegration domain property code
+		
+		/// <summary>
+		/// ContinuousIntegration domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ContinuousIntegrationDomainPropertyId = new global::System.Guid(0xd45aabbd, 0x728a, 0x4307, 0xb3, 0x5a, 0xf4, 0x52, 0xee, 0x8d, 0xaf, 0x49);
+		
+		/// <summary>
+		/// Storage for ContinuousIntegration
+		/// </summary>
+		private global::System.Boolean continuousIntegrationPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of ContinuousIntegration domain property.
+		/// Implement Continuous Integration practices to the current container
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Container/ContinuousIntegration.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Container/ContinuousIntegration.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d45aabbd-728a-4307-b35a-f452ee8daf49")]
+		public global::System.Boolean ContinuousIntegration
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return continuousIntegrationPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ContinuousIntegrationPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Container.ContinuousIntegration domain property.
+		/// </summary>
+		internal sealed partial class ContinuousIntegrationPropertyHandler : DslModeling::DomainPropertyValueHandler<Container, global::System.Boolean>
+		{
+			private ContinuousIntegrationPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Container.ContinuousIntegration domain property value handler.
+			/// </summary>
+			public static readonly ContinuousIntegrationPropertyHandler Instance = new ContinuousIntegrationPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Container.ContinuousIntegration domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ContinuousIntegrationDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(Container element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.continuousIntegrationPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Container element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.continuousIntegrationPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ReleaseManagement domain property code
+		
+		/// <summary>
+		/// ReleaseManagement domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ReleaseManagementDomainPropertyId = new global::System.Guid(0x1c1b8f92, 0xc227, 0x4d08, 0xba, 0x3f, 0xfe, 0x67, 0x58, 0xfa, 0x84, 0x6b);
+		
+		/// <summary>
+		/// Storage for ReleaseManagement
+		/// </summary>
+		private global::System.Boolean releaseManagementPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of ReleaseManagement domain property.
+		/// Implement Release Management practices to the current container
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Container/ReleaseManagement.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Container/ReleaseManagement.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("1c1b8f92-c227-4d08-ba3f-fe6758fa846b")]
+		public global::System.Boolean ReleaseManagement
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return releaseManagementPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ReleaseManagementPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Container.ReleaseManagement domain property.
+		/// </summary>
+		internal sealed partial class ReleaseManagementPropertyHandler : DslModeling::DomainPropertyValueHandler<Container, global::System.Boolean>
+		{
+			private ReleaseManagementPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Container.ReleaseManagement domain property value handler.
+			/// </summary>
+			public static readonly ReleaseManagementPropertyHandler Instance = new ReleaseManagementPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Container.ReleaseManagement domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ReleaseManagementDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(Container element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.releaseManagementPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Container element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.releaseManagementPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -733,280 +991,19 @@ namespace Variamos.DevOpsDsl
 		#region Application opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Application.
-		/// Description for Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategory
+		/// Description for Variamos.DevOpsDsl.ApplicationHasContainers.Container
 		/// </summary>
 		public virtual Application Application
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId) as Application;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Variamos.DevOpsDsl.ApplicationHasContainers.ContainerDomainRoleId) as Application;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Variamos.DevOpsDsl.ApplicationHasDevopsCategories.DevopsCategoryDomainRoleId, value);
-			}
-		}
-		#endregion
-		#region DevopsPracticed opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of DevopsPracticed.
-		/// Description for
-		/// Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategory
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<DevopsPractice> DevopsPracticed
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<DevopsPractice>, DevopsPractice>(global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId);
-			}
-		}
-		#endregion
-		#region ElementGroupPrototype Merge methods
-		/// <summary>
-		/// Returns a value indicating whether the source element represented by the
-		/// specified root ProtoElement can be added to this element.
-		/// </summary>
-		/// <param name="rootElement">
-		/// The root ProtoElement representing a source element.  This can be null, 
-		/// in which case the ElementGroupPrototype does not contain an ProtoElements
-		/// and the code should inspect the ElementGroupPrototype context information.
-		/// </param>
-		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
-		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
-		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
-		{
-			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
-			
-			if (rootElement != null)
-			{
-				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Variamos.DevOpsDsl.DevopsPractice.DomainClassId)) 
-				{
-					return true;
-				}
-			}
-			return base.CanMerge(rootElement, elementGroupPrototype);
-		}
-		
-		/// <summary>
-		/// Called by the Merge process to create a relationship between 
-		/// this target element and the specified source element. 
-		/// Typically, a parent-child relationship is established
-		/// between the target element (the parent) and the source element 
-		/// (the child), but any relationship can be established.
-		/// </summary>
-		/// <param name="sourceElement">The element that is to be related to this model element.</param>
-		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
-		/// <remarks>
-		/// This method is overriden to create the relationship between the target element and the specified source element.
-		/// The base method does nothing.
-		/// </remarks>
-		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
-		{
-			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
-			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
-			// need to support this case.
-			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
-		
-				
-			global::Variamos.DevOpsDsl.DevopsPractice sourceDevopsPractice1 = sourceElement as global::Variamos.DevOpsDsl.DevopsPractice;
-			if (sourceDevopsPractice1 != null)
-			{
-				// Create link for path DevopsCategoryHasDevopsPracticed.DevopsPracticed
-				this.DevopsPracticed.Add(sourceDevopsPractice1);
-
-				return;
-			}
-		
-			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
-			// during a "Paste".
-			if (sourceElement is DslModeling::ExtensionElement
-				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
-			{
-				return;
-			}
-		
-			// Fall through to base class if this class hasn't handled the merge.
-			base.MergeRelate(sourceElement, elementGroup);
-		}
-		
-		/// <summary>
-		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
-		/// element from the current one (removes links created by MergeRelate).
-		/// </summary>
-		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
-		{
-			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
-				
-			global::Variamos.DevOpsDsl.DevopsPractice sourceDevopsPractice1 = sourceElement as global::Variamos.DevOpsDsl.DevopsPractice;
-			if (sourceDevopsPractice1 != null)
-			{
-				// Delete link for path DevopsCategoryHasDevopsPracticed.DevopsPracticed
-				
-				foreach (DslModeling::ElementLink link in global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.GetLinks((global::Variamos.DevOpsDsl.DevopsCategory)this, sourceDevopsPractice1))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsCategoryDomainRoleId, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId);
-				}
-
-				return;
-			}
-			// Fall through to base class if this class hasn't handled the unmerge.
-			base.MergeDisconnect(sourceElement);
-		}
-		#endregion
-	}
-}
-namespace Variamos.DevOpsDsl
-{
-	/// <summary>
-	/// DomainClass DevopsPractice
-	/// Description for Variamos.DevOpsDsl.DevopsPractice
-	/// </summary>
-	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsPractice.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsPractice.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("4f93e5a4-f9ef-4d17-9ccf-cdc28bae346d")]
-	public partial class DevopsPractice : DslModeling::ModelElement
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// DevopsPractice domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4f93e5a4, 0xf9ef, 0x4d17, 0x9c, 0xcf, 0xcd, 0xc2, 0x8b, 0xae, 0x34, 0x6d);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DevopsPractice(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public DevopsPractice(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region PracticeName domain property code
-		
-		/// <summary>
-		/// PracticeName domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid PracticeNameDomainPropertyId = new global::System.Guid(0xed16eb6a, 0x4967, 0x40b1, 0x87, 0x5d, 0x33, 0x23, 0x3a, 0xa3, 0xd2, 0x40);
-		
-		/// <summary>
-		/// Storage for PracticeName
-		/// </summary>
-		private global::System.String practiceNamePropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of PracticeName domain property.
-		/// Description for Variamos.DevOpsDsl.DevopsPractice.Practice Name
-		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.DevopsPractice/PracticeName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevopsPractice/PracticeName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("ed16eb6a-4967-40b1-875d-33233aa3d240")]
-		public global::System.String PracticeName
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return practiceNamePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				PracticeNamePropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the DevopsPractice.PracticeName domain property.
-		/// </summary>
-		internal sealed partial class PracticeNamePropertyHandler : DslModeling::DomainPropertyValueHandler<DevopsPractice, global::System.String>
-		{
-			private PracticeNamePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the DevopsPractice.PracticeName domain property value handler.
-			/// </summary>
-			public static readonly PracticeNamePropertyHandler Instance = new PracticeNamePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the DevopsPractice.PracticeName domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return PracticeNameDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(DevopsPractice element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.practiceNamePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(DevopsPractice element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.practiceNamePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-		#region DevopsCategory opposite domain role accessor
-		/// <summary>
-		/// Gets or sets DevopsCategory.
-		/// Description for
-		/// Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPractice
-		/// </summary>
-		public virtual DevopsCategory DevopsCategory
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId) as DevopsCategory;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Variamos.DevOpsDsl.DevopsCategoryHasDevopsPracticed.DevopsPracticeDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Variamos.DevOpsDsl.ApplicationHasContainers.ContainerDomainRoleId, value);
 			}
 		}
 		#endregion

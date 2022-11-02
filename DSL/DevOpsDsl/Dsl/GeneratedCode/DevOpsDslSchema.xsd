@@ -4,22 +4,19 @@
   <!-- DevOps -->
   <xsd:element name="devOps" type="DevOps" substitutionGroup="core:modelElement" />
   <xsd:complexType name="DevOps">
-    <xsd:annotation>
-      <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
-    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: DevOpsHasApplication -->
-          <xsd:element name="application" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: DevOpsHasApplications -->
+          <xsd:element name="applications" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instance of DevOpsHasApplication</xsd:documentation>
+              <xsd:documentation>Instances of DevOpsHasApplications</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="devOpsHasApplication" minOccurs="0" maxOccurs="1">
+                <xsd:element ref="devOpsHasApplications" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of DevOpsHasApplication needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of DevOpsHasApplications needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -39,7 +36,11 @@
           </xsd:annotation>
         </xsd:attribute>
         <!-- Property: ModelName -->
-        <xsd:attribute name="modelName" type="xsd:string" />
+        <xsd:attribute name="modelName" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Model Name</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -67,16 +68,16 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: ApplicationHasDevopsCategories -->
-          <xsd:element name="devopsCategories" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ApplicationHasContainers -->
+          <xsd:element name="containers" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ApplicationHasDevopsCategories</xsd:documentation>
+              <xsd:documentation>Instances of ApplicationHasContainers</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="applicationHasDevopsCategories" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="applicationHasContainers" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of ApplicationHasDevopsCategories needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of ApplicationHasContainers needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -91,8 +92,8 @@
         </xsd:attribute>
         <!-- Property: ApplicationName -->
         <xsd:attribute name="applicationName" type="xsd:string" />
-        <!-- Property: CloudPlatform -->
-        <xsd:attribute name="cloudPlatform" type="CloudProvider" />
+        <!-- Property: CloudProvider -->
+        <xsd:attribute name="cloudProvider" type="CloudProvider" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -114,45 +115,46 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DevopsCategory -->
-  <xsd:element name="devopsCategory" type="DevopsCategory" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="DevopsCategory">
+  <!-- Container -->
+  <xsd:element name="container" type="Container" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Container">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: DevopsCategoryHasDevopsPracticed -->
-          <xsd:element name="devopsPracticed" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of DevopsCategoryHasDevopsPracticed</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="devopsCategoryHasDevopsPracticed" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of DevopsCategoryHasDevopsPracticed needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: CategoryName -->
-        <xsd:attribute name="categoryName" type="xsd:string" />
+        <!-- Property: ContainerName -->
+        <xsd:attribute name="containerName" type="xsd:string" />
+        <!-- Property: DevSecOps -->
+        <xsd:attribute name="devSecOps" type="xsd:boolean" >
+          <xsd:annotation>
+            <xsd:documentation>Implement DevSecOps practices to the current container</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: ContinuousIntegration -->
+        <xsd:attribute name="continuousIntegration" type="xsd:boolean" >
+          <xsd:annotation>
+            <xsd:documentation>Implement Continuous Integration practices to the current container</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: ReleaseManagement -->
+        <xsd:attribute name="releaseManagement" type="xsd:boolean" >
+          <xsd:annotation>
+            <xsd:documentation>Implement Release Management practices to the current container</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DevopsCategory Moniker -->
-  <xsd:element name="devopsCategoryMoniker" type="DevopsCategoryMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="DevopsCategoryMoniker">
+  <!-- Container Moniker -->
+  <xsd:element name="containerMoniker" type="ContainerMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ContainerMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for DevopsCategory instance.</xsd:documentation>
+      <xsd:documentation>Moniker for Container instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -165,43 +167,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DevopsPractice -->
-  <xsd:element name="devopsPractice" type="DevopsPractice" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="DevopsPractice">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <!-- Property: PracticeName -->
-        <xsd:attribute name="practiceName" type="xsd:string" />
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- DevopsPractice Moniker -->
-  <xsd:element name="devopsPracticeMoniker" type="DevopsPracticeMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="DevopsPracticeMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for DevopsPractice instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- DevOpsHasApplication -->
-  <xsd:element name="devOpsHasApplication" type="DevOpsHasApplication" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="DevOpsHasApplication">
+  <!-- DevOpsHasApplications -->
+  <xsd:element name="devOpsHasApplications" type="DevOpsHasApplications" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DevOpsHasApplications">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -222,11 +190,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DevOpsHasApplication Moniker -->
-  <xsd:element name="devOpsHasApplicationMoniker" type="DevOpsHasApplicationMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="DevOpsHasApplicationMoniker">
+  <!-- DevOpsHasApplications Moniker -->
+  <xsd:element name="devOpsHasApplicationsMoniker" type="DevOpsHasApplicationsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DevOpsHasApplicationsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for DevOpsHasApplication instance.</xsd:documentation>
+      <xsd:documentation>Moniker for DevOpsHasApplications instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -239,14 +207,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ApplicationHasDevopsCategories -->
-  <xsd:element name="applicationHasDevopsCategories" type="ApplicationHasDevopsCategories" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ApplicationHasDevopsCategories">
+  <!-- ApplicationHasContainers -->
+  <xsd:element name="applicationHasContainers" type="ApplicationHasContainers" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ApplicationHasContainers">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end DevopsCategory -->
-          <xsd:element ref="devopsCategory" minOccurs="1" maxOccurs="1">
+          <!-- Target end Container -->
+          <xsd:element ref="container" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -262,51 +230,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ApplicationHasDevopsCategories Moniker -->
-  <xsd:element name="applicationHasDevopsCategoriesMoniker" type="ApplicationHasDevopsCategoriesMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ApplicationHasDevopsCategoriesMoniker">
+  <!-- ApplicationHasContainers Moniker -->
+  <xsd:element name="applicationHasContainersMoniker" type="ApplicationHasContainersMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ApplicationHasContainersMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ApplicationHasDevopsCategories instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- DevopsCategoryHasDevopsPracticed -->
-  <xsd:element name="devopsCategoryHasDevopsPracticed" type="DevopsCategoryHasDevopsPracticed" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="DevopsCategoryHasDevopsPracticed">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end DevopsPractice -->
-          <xsd:element ref="devopsPractice" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- DevopsCategoryHasDevopsPracticed Moniker -->
-  <xsd:element name="devopsCategoryHasDevopsPracticedMoniker" type="DevopsCategoryHasDevopsPracticedMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="DevopsCategoryHasDevopsPracticedMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for DevopsCategoryHasDevopsPracticed instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ApplicationHasContainers instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -337,6 +265,15 @@
           <xsd:documentation>Google Cloud Platform</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum NodeType -->
+  <xsd:simpleType name="NodeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Container"/>
+      <xsd:enumeration value="Capability"/>
+      <xsd:enumeration value="Application"/>
     </xsd:restriction>
   </xsd:simpleType>
   
