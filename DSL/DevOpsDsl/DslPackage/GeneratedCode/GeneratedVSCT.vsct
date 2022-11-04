@@ -15,7 +15,7 @@
       <Parent guid="guidCmdSet" id="menuidContext" />
       <CommandFlag>AlwaysCreate</CommandFlag>
       <Strings>
-        <CanonicalName>DevOpsDsl Designer Context Menu</CanonicalName>
+        <CanonicalName>DevOps Model Designer Context Menu</CanonicalName>
         <ButtonText>DevOpsDsl Context</ButtonText>
       </Strings>
     </Menu>
@@ -23,7 +23,7 @@
       <Parent guid="guidCmdSet" id="menuidExplorer" />
       <CommandFlag>AlwaysCreate</CommandFlag>
       <Strings>
-        <CanonicalName>DevOpsDsl Explorer Context Menu</CanonicalName>
+        <CanonicalName>DevOps Model Explorer Context Menu</CanonicalName>
         <ButtonText>DevOpsDsl Explorer</ButtonText>
       </Strings>
     </Menu>

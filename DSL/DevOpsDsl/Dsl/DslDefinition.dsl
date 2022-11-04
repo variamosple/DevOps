@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5af03ef8-bd8c-4744-90d5-5e9ee1e1d2aa" Description="Description for Variamos.DevOpsDsl.DevOpsDsl" Name="DevOpsDsl" DisplayName="DevOpsDsl" Namespace="Variamos.DevOpsDsl" ProductName="DevOpsDsl" CompanyName="Variamos" PackageGuid="dcd1f89d-000b-4058-8a43-beac92073e9f" PackageNamespace="Variamos.DevOpsDsl" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
+<Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5af03ef8-bd8c-4744-90d5-5e9ee1e1d2aa" Description="Description for Variamos.DevOpsDsl.DevOpsDsl" Name="DevOpsDsl" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" ProductName="DevOpsDsl" CompanyName="Variamos" PackageGuid="dcd1f89d-000b-4058-8a43-beac92073e9f" PackageNamespace="Variamos.DevOpsDsl" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Description for Variamos.DevOpsDsl.Application" Name="Application" DisplayName="Application" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Description for Variamos.DevOpsDsl.Application" Name="Application" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="e449a9e4-b5b2-4013-8a30-7ad6f145e609" Description="Name of the Application" Name="ApplicationName" DisplayName="Application Name" DefaultValue="My application" IsElementName="true">
           <Notes>Name of the Application</Notes>
@@ -29,9 +29,17 @@
             <DomainPath>ApplicationHasContainers.Containers</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="Sre" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>ApplicationHasSre.Sre</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="89646196-a8a0-4186-a288-4384229596fd" Description="Description for Variamos.DevOpsDsl.Container" Name="Container" DisplayName="Container" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="89646196-a8a0-4186-a288-4384229596fd" Description="Description for Variamos.DevOpsDsl.Container" Name="Container" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="7e652c65-8339-43a0-a5ca-5373d18d416d" Description="Description for Variamos.DevOpsDsl.Container.Container Name" Name="ContainerName" DisplayName="Container Name" DefaultValue="My container" IsElementName="true">
           <Type>
@@ -60,23 +68,67 @@
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="3fba09f1-07e3-4ebf-8039-06613d70913a" Description="Description for Variamos.DevOpsDsl.Practice" Name="Practice" DisplayName="Practice" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="3fba09f1-07e3-4ebf-8039-06613d70913a" Description="Description for Variamos.DevOpsDsl.Practice" Name="Practice" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
       <Properties>
-        <DomainProperty Id="7fa1949c-3098-44bf-8744-69103252f3d1" Description="Description for Variamos.DevOpsDsl.Practice.Practice Name" Name="PracticeName" DisplayName="Practice Name" IsElementName="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="2c7cdea9-b379-4bba-9f1b-83b79e5f086b" Description="Description for Variamos.DevOpsDsl.Practice.Practice Type" Name="PracticeType" DisplayName="Practice Type">
+        <DomainProperty Id="7fa1949c-3098-44bf-8744-69103252f3d1" Description="Description for Variamos.DevOpsDsl.Practice.Practice Name" Name="PracticeName" DisplayName="Practice Name">
           <Type>
             <DomainEnumerationMoniker Name="DevOpsPractices" />
           </Type>
         </DomainProperty>
       </Properties>
     </DomainClass>
+    <DomainClass Id="cd85ddf3-cf78-4e6e-a2a9-53bd67fd1ca0" Description="Site Reliability Engineering settings for the application" Name="Sre" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+      <Properties>
+        <DomainProperty Id="42cd10a9-2f6e-4447-aa29-dd1ea3a4eb18" Description="Description for Variamos.DevOpsDsl.Sre.Sre Name" Name="SreName" DisplayName="Sre Name" DefaultValue="Application SRE" IsElementName="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="SLO" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>SreHasSLO.SLO</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
+    </DomainClass>
+    <DomainClass Id="293b3fb7-811a-4759-8baa-2f7d8109a2b5" Description="Service Level Objetive" Name="SLO" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+      <Notes>Service Level Objetive</Notes>
+      <Properties>
+        <DomainProperty Id="f71cdc4e-bf61-4a61-8d00-c0968adf2193" Description="Description for Variamos.DevOpsDsl.SLO.Slo Name" Name="SloName" DisplayName="Slo Name">
+          <Type>
+            <DomainEnumerationMoniker Name="SLI" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="4a3ebddf-54b7-4aa5-a06e-0ed06b58b789" Description="Description for Variamos.DevOpsDsl.SLO.Lower Bound" Name="LowerBound" DisplayName="Lower Bound" DefaultValue="0">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Double" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="5a5cfa5d-e4e0-49c0-913f-c76ab29aff9e" Description="Description for Variamos.DevOpsDsl.SLO.Upper Bound" Name="UpperBound" DisplayName="Upper Bound">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Double" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="e674faf8-19f5-4427-b5f8-82e4f7c0cfbd" Description="Description for Variamos.DevOpsDsl.SLO.Description" Name="Description" DisplayName="Description">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="75c2f44a-0caa-41c6-b74f-8e9f812c42da" Description="Description for Variamos.DevOpsDsl.SLO.Operator" Name="Operator" DisplayName="Operator">
+          <Type>
+            <DomainEnumerationMoniker Name="ComparisonOperator" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
   </Classes>
   <Relationships>
-    <DomainRelationship Id="b66acc16-ee54-4251-b928-007a38cc3e15" Description="Description for Variamos.DevOpsDsl.ApplicationHasContainers" Name="ApplicationHasContainers" DisplayName="Application Has Containers" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
+    <DomainRelationship Id="b66acc16-ee54-4251-b928-007a38cc3e15" Description="Description for Variamos.DevOpsDsl.ApplicationHasContainers" Name="ApplicationHasContainers" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
       <Source>
         <DomainRole Id="44f85076-c197-4de1-af0d-7deca5793366" Description="Description for Variamos.DevOpsDsl.ApplicationHasContainers.Application" Name="Application" DisplayName="Application" PropertyName="Containers" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Containers">
           <RolePlayer>
@@ -92,7 +144,7 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="1a31614f-2028-4783-9531-035dfea87223" Description="Description for Variamos.DevOpsDsl.ContainerHasPracticed" Name="ContainerHasPracticed" DisplayName="Container Has Practiced" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
+    <DomainRelationship Id="1a31614f-2028-4783-9531-035dfea87223" Description="Description for Variamos.DevOpsDsl.ContainerHasPracticed" Name="ContainerHasPracticed" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
       <Source>
         <DomainRole Id="55a60d90-0958-42c8-b32e-3b9cad7a2ce7" Description="Description for Variamos.DevOpsDsl.ContainerHasPracticed.Container" Name="Container" DisplayName="Container" PropertyName="Practiced" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Practiced">
           <RolePlayer>
@@ -104,6 +156,38 @@
         <DomainRole Id="7d65ec8e-9f36-4ae5-b1ab-56d3f3eeab77" Description="Description for Variamos.DevOpsDsl.ContainerHasPracticed.Practice" Name="Practice" DisplayName="Practice" PropertyName="Container" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Container">
           <RolePlayer>
             <DomainClassMoniker Name="Practice" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="d6178439-70f3-4caa-86c6-8a77bc9a297f" Description="Description for Variamos.DevOpsDsl.ApplicationHasSre" Name="ApplicationHasSre" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="39c9fc53-52d0-4c99-90ed-4c9dd0353d1a" Description="Description for Variamos.DevOpsDsl.ApplicationHasSre.Application" Name="Application" DisplayName="Application" PropertyName="Sre" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Sre">
+          <RolePlayer>
+            <DomainClassMoniker Name="Application" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="e848aa64-843b-4900-9201-8be14b0a32eb" Description="Description for Variamos.DevOpsDsl.ApplicationHasSre.Sre" Name="Sre" DisplayName="Sre" PropertyName="Application" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Application">
+          <RolePlayer>
+            <DomainClassMoniker Name="Sre" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="c4ce16a9-afe8-48a2-b947-7fae73bf2322" Description="Description for Variamos.DevOpsDsl.SreHasSLO" Name="SreHasSLO" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="dd60049d-a5ce-4c63-875d-dc321715fc6d" Description="Description for Variamos.DevOpsDsl.SreHasSLO.Sre" Name="Sre" DisplayName="Sre" PropertyName="SLO" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="SLO">
+          <RolePlayer>
+            <DomainClassMoniker Name="Sre" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="c071c337-d176-40ea-ba34-15e340eadd41" Description="Description for Variamos.DevOpsDsl.SreHasSLO.SLO" Name="SLO" DisplayName="SLO" PropertyName="Sre" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Sre">
+          <RolePlayer>
+            <DomainClassMoniker Name="SLO" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -154,6 +238,7 @@
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.ArchitecturalStyles.BigCompute" Name="BigCompute" Value="0" />
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.ArchitecturalStyles.BigData" Name="BigData" Value="5" />
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.ArchitecturalStyles.EventDriven" Name="EventDriven" Value="3" />
+        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.ArchitecturalStyles.EnumerationLiteral1" Name="EnumerationLiteral1" Value="" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="DevOpsPractices" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevOpsPractices">
@@ -176,30 +261,82 @@
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Xcode" Name="Xcode" Value="8" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="SLI" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.SLI">
+      <Literals>
+        <EnumerationLiteral Description="How long it takes to return a response to a request, in seconds" Name="RequestLatency" Value="0">
+          <Notes>How long it takes to return a response to a request, in seconds</Notes>
+        </EnumerationLiteral>
+        <EnumerationLiteral Description="Expressed as a fraction of all requests received" Name="ErrorRate" Value="1">
+          <Notes>Expressed as a fraction of all requests received</Notes>
+        </EnumerationLiteral>
+        <EnumerationLiteral Description="Measured in requests per second (QPS)" Name="SystemThroughput" Value="">
+          <Notes>Measured in requests per second (QPS)</Notes>
+        </EnumerationLiteral>
+        <EnumerationLiteral Description="The fraction of the time that a service is usable" Name="Availability" Value="">
+          <Notes>The fraction of the time that a service is usable</Notes>
+        </EnumerationLiteral>
+      </Literals>
+    </DomainEnumeration>
+    <DomainEnumeration Name="ComparisonOperator" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.ComparisonOperator">
+      <Literals>
+        <EnumerationLiteral Description="Less than" Name="LessThan" Value="0" />
+        <EnumerationLiteral Description="Between" Name="Between" Value="1" />
+        <EnumerationLiteral Description="Grater than" Name="GratherThan" Value="2" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="d7e872c2-b2b8-408a-8805-304f48a2f8cc" Description="Description for Variamos.DevOpsDsl.PracticeShape" Name="PracticeShape" DisplayName="Practice Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Practice Shape" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="PracticeTypeDecorator" DisplayName="Practice Type Decorator" DefaultText="PracticeTypeDecorator" />
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\Terminal.png" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="1f477189-8a64-42e2-994b-b0c1e42e32f1" Description="Description for Variamos.DevOpsDsl.ContainerShape" Name="ContainerShape" DisplayName="Container Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Container Shape" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="12" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="ContinerTypeDecorator" DisplayName="Continer Type Decorator" DefaultText="ContinerTypeDecorator" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="InnerBottomLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="FrameworkDecorator" DisplayName="Framework Decorator" DefaultText="FrameworkDecorator" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\Web.png" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="09345c75-0057-4454-bf2f-67b9116f8717" Description="Description for Variamos.DevOpsDsl.SloShape" Name="SloShape" DisplayName="Slo Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Slo Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="12" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="LowerBoundDecorator" DisplayName="Lower Bound Decorator" DefaultText="LowerBoundDecorator" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="UpperDecorator" DisplayName="Upper Decorator" DefaultText="UpperDecorator" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="OperatorDecorator" DisplayName="Operator Decorator" DefaultText="OperatorDecorator" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\DoneAll.png" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="6353d8f5-88c0-4a44-a0db-20c490f838f7" Description="Description for Variamos.DevOpsDsl.SreShape" Name="SreShape" DisplayName="Sre Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Sre Shape" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="12" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\Dataset.png" />
       </ShapeHasDecorators>
     </GeometryShape>
   </Shapes>
   <Connectors>
     <Connector Id="2e9b8dab-b453-4eac-95e4-4bcd75e4c400" Description="Description for Variamos.DevOpsDsl.ApplicationContainerConnector" Name="ApplicationContainerConnector" DisplayName="Application Container Connector" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Application Container Connector" RoutingStyle="Straight" />
+    <Connector Id="737a3e1f-5d9b-4fcb-90e9-8ddc4ee3dbc7" Description="Description for Variamos.DevOpsDsl.SreSloConnector" Name="SreSloConnector" DisplayName="Sre Slo Connector" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Sre Slo Connector" />
   </Connectors>
   <XmlSerializationBehavior Name="DevOpsDslSerializationBehavior" Namespace="Variamos.DevOpsDsl">
     <ClassData>
@@ -229,6 +366,9 @@
           <XmlPropertyData XmlName="architecturalStyle">
             <DomainPropertyMoniker Name="Application/ArchitecturalStyle" />
           </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="sre">
+            <DomainRelationshipMoniker Name="ApplicationHasSre" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ApplicationHasContainers" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationHasContainersMoniker" ElementName="applicationHasContainers" MonikerTypeName="ApplicationHasContainersMoniker">
@@ -263,13 +403,56 @@
           <XmlPropertyData XmlName="practiceName">
             <DomainPropertyMoniker Name="Practice/PracticeName" />
           </XmlPropertyData>
-          <XmlPropertyData XmlName="practiceType">
-            <DomainPropertyMoniker Name="Practice/PracticeType" />
-          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ApplicationContainerConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationContainerConnectorMoniker" ElementName="applicationContainerConnector" MonikerTypeName="ApplicationContainerConnectorMoniker">
         <ConnectorMoniker Name="ApplicationContainerConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="ApplicationHasSre" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationHasSreMoniker" ElementName="applicationHasSre" MonikerTypeName="ApplicationHasSreMoniker">
+        <DomainRelationshipMoniker Name="ApplicationHasSre" />
+      </XmlClassData>
+      <XmlClassData TypeName="Sre" MonikerAttributeName="" SerializeId="true" MonikerElementName="sreMoniker" ElementName="sre" MonikerTypeName="SreMoniker">
+        <DomainClassMoniker Name="Sre" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="sLO">
+            <DomainRelationshipMoniker Name="SreHasSLO" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="sreName">
+            <DomainPropertyMoniker Name="Sre/SreName" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="SreHasSLO" MonikerAttributeName="" SerializeId="true" MonikerElementName="sreHasSLOMoniker" ElementName="sreHasSLO" MonikerTypeName="SreHasSLOMoniker">
+        <DomainRelationshipMoniker Name="SreHasSLO" />
+      </XmlClassData>
+      <XmlClassData TypeName="SLO" MonikerAttributeName="" SerializeId="true" MonikerElementName="sLOMoniker" ElementName="sLO" MonikerTypeName="SLOMoniker">
+        <DomainClassMoniker Name="SLO" />
+        <ElementData>
+          <XmlPropertyData XmlName="sloName">
+            <DomainPropertyMoniker Name="SLO/SloName" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="lowerBound">
+            <DomainPropertyMoniker Name="SLO/LowerBound" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="upperBound">
+            <DomainPropertyMoniker Name="SLO/UpperBound" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="description">
+            <DomainPropertyMoniker Name="SLO/Description" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="operator">
+            <DomainPropertyMoniker Name="SLO/Operator" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="SloShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="sloShapeMoniker" ElementName="sloShape" MonikerTypeName="SloShapeMoniker">
+        <GeometryShapeMoniker Name="SloShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="SreShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="sreShapeMoniker" ElementName="sreShape" MonikerTypeName="SreShapeMoniker">
+        <GeometryShapeMoniker Name="SreShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="SreSloConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="sreSloConnectorMoniker" ElementName="sreSloConnector" MonikerTypeName="SreSloConnectorMoniker">
+        <ConnectorMoniker Name="SreSloConnector" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -338,21 +521,71 @@
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
+        <GeometryShapeMoniker Name="PracticeShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="Sre" />
+        <ParentElementPath>
+          <DomainPath>ApplicationHasSre.Application/!Application</DomainPath>
+        </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="PracticeShape/PracticeTypeDecorator" />
+          <TextDecoratorMoniker Name="SreShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Practice/PracticeType" />
+              <DomainPropertyMoniker Name="Sre/SreName" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="PracticeShape" />
+        <GeometryShapeMoniker Name="SreShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="SLO" />
+        <ParentElementPath>
+          <DomainPath>SreHasSLO.Sre/!Sre/ApplicationHasSre.Application/!Application</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="SloShape/NameDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="SLO/SloName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="SloShape/LowerBoundDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="SLO/LowerBound" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="SloShape/OperatorDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="SLO/Operator" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="SloShape/UpperDecorator" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="SLO/UpperBound" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="SloShape" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
         <ConnectorMoniker Name="ApplicationContainerConnector" />
         <DomainRelationshipMoniker Name="ContainerHasPracticed" />
+      </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="SreSloConnector" />
+        <DomainRelationshipMoniker Name="SreHasSLO" />
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>

@@ -122,7 +122,7 @@
     <comment>Description for DslLibrary &apos;DevOpsDsl&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevOpsDslDomainModel.DisplayName" xml:space="preserve">
-    <value>DevOpsDsl</value>
+    <value>DevOps Model</value>
     <comment>DisplayName for DslLibrary &apos;DevOpsDsl&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application.Description" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>Description for DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application.DisplayName" xml:space="preserve">
-    <value>Application</value>
+    <value>DevOps Model</value>
     <comment>DisplayName for DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application/ApplicationName.Description" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>Description for DomainClass &apos;Container&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Container.DisplayName" xml:space="preserve">
-    <value>Container</value>
+    <value>DevOps Model</value>
     <comment>DisplayName for DomainClass &apos;Container&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Container/ContainerName.Description" xml:space="preserve">
@@ -194,7 +194,7 @@
     <comment>Description for DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Practice.DisplayName" xml:space="preserve">
-    <value>Practice</value>
+    <value>DevOps Model</value>
     <comment>DisplayName for DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Practice/PracticeName.Description" xml:space="preserve">
@@ -205,20 +205,76 @@
     <value>Practice Name</value>
     <comment>DisplayName for DomainProperty &apos;PracticeName&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Practice/PracticeType.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.Practice.Practice Type</value>
-    <comment>Description for DomainProperty &apos;PracticeType&apos; on DomainClass &apos;Practice&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Sre.Description" xml:space="preserve">
+    <value>Site Reliability Engineering settings for the application</value>
+    <comment>Description for DomainClass &apos;Sre&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Practice/PracticeType.DisplayName" xml:space="preserve">
-    <value>Practice Type</value>
-    <comment>DisplayName for DomainProperty &apos;PracticeType&apos; on DomainClass &apos;Practice&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Sre.DisplayName" xml:space="preserve">
+    <value>DevOps Model</value>
+    <comment>DisplayName for DomainClass &apos;Sre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Sre/SreName.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Sre.Sre Name</value>
+    <comment>Description for DomainProperty &apos;SreName&apos; on DomainClass &apos;Sre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Sre/SreName.DisplayName" xml:space="preserve">
+    <value>Sre Name</value>
+    <comment>DisplayName for DomainProperty &apos;SreName&apos; on DomainClass &apos;Sre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO.Description" xml:space="preserve">
+    <value>Service Level Objetive</value>
+    <comment>Description for DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO.DisplayName" xml:space="preserve">
+    <value>DevOps Model</value>
+    <comment>DisplayName for DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/SloName.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SLO.Slo Name</value>
+    <comment>Description for DomainProperty &apos;SloName&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/SloName.DisplayName" xml:space="preserve">
+    <value>Slo Name</value>
+    <comment>DisplayName for DomainProperty &apos;SloName&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/LowerBound.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SLO.Lower Bound</value>
+    <comment>Description for DomainProperty &apos;LowerBound&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/LowerBound.DisplayName" xml:space="preserve">
+    <value>Lower Bound</value>
+    <comment>DisplayName for DomainProperty &apos;LowerBound&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/UpperBound.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SLO.Upper Bound</value>
+    <comment>Description for DomainProperty &apos;UpperBound&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/UpperBound.DisplayName" xml:space="preserve">
+    <value>Upper Bound</value>
+    <comment>DisplayName for DomainProperty &apos;UpperBound&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/Description.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SLO.Description</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/Operator.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SLO.Operator</value>
+    <comment>Description for DomainProperty &apos;Operator&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/Operator.DisplayName" xml:space="preserve">
+    <value>Operator</value>
+    <comment>DisplayName for DomainProperty &apos;Operator&apos; on DomainClass &apos;SLO&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ApplicationHasContainers.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.ApplicationHasContainers</value>
     <comment>Description for DomainClass &apos;ApplicationHasContainers&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ApplicationHasContainers.DisplayName" xml:space="preserve">
-    <value>Application Has Containers</value>
+    <value>DevOps Model</value>
     <comment>DisplayName for DomainClass &apos;ApplicationHasContainers&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ApplicationHasContainers/Application.Description" xml:space="preserve">
@@ -250,7 +306,7 @@
     <comment>Description for DomainClass &apos;ContainerHasPracticed&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ContainerHasPracticed.DisplayName" xml:space="preserve">
-    <value>Container Has Practiced</value>
+    <value>DevOps Model</value>
     <comment>DisplayName for DomainClass &apos;ContainerHasPracticed&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Container.Description" xml:space="preserve">
@@ -276,6 +332,70 @@
   <data name="Variamos.DevOpsDsl.ContainerHasPracticed/Practice.PropertyDisplayName" xml:space="preserve">
     <value>Container</value>
     <comment>PropertyDisplayName for DomainRole &apos;Practice&apos; on DomainRelationship &apos;ContainerHasPracticed&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ApplicationHasSre</value>
+    <comment>Description for DomainClass &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre.DisplayName" xml:space="preserve">
+    <value>DevOps Model</value>
+    <comment>DisplayName for DomainClass &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre/Application.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ApplicationHasSre.Application</value>
+    <comment>Description for DomainRole &apos;Application&apos; on DomainRelationship &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre/Application.DisplayName" xml:space="preserve">
+    <value>Application</value>
+    <comment>DisplayName for DomainRole &apos;Application&apos; on DomainRelationship &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre/Application.PropertyDisplayName" xml:space="preserve">
+    <value>Sre</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Application&apos; on DomainRelationship &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre/Sre.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ApplicationHasSre.Sre</value>
+    <comment>Description for DomainRole &apos;Sre&apos; on DomainRelationship &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre/Sre.DisplayName" xml:space="preserve">
+    <value>Sre</value>
+    <comment>DisplayName for DomainRole &apos;Sre&apos; on DomainRelationship &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ApplicationHasSre/Sre.PropertyDisplayName" xml:space="preserve">
+    <value>Application</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Sre&apos; on DomainRelationship &apos;ApplicationHasSre&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SreHasSLO</value>
+    <comment>Description for DomainClass &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO.DisplayName" xml:space="preserve">
+    <value>DevOps Model</value>
+    <comment>DisplayName for DomainClass &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO/Sre.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SreHasSLO.Sre</value>
+    <comment>Description for DomainRole &apos;Sre&apos; on DomainRelationship &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO/Sre.DisplayName" xml:space="preserve">
+    <value>Sre</value>
+    <comment>DisplayName for DomainRole &apos;Sre&apos; on DomainRelationship &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO/Sre.PropertyDisplayName" xml:space="preserve">
+    <value>SLO</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Sre&apos; on DomainRelationship &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO/SLO.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SreHasSLO.SLO</value>
+    <comment>Description for DomainRole &apos;SLO&apos; on DomainRelationship &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO/SLO.DisplayName" xml:space="preserve">
+    <value>SLO</value>
+    <comment>DisplayName for DomainRole &apos;SLO&apos; on DomainRelationship &apos;SreHasSLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreHasSLO/SLO.PropertyDisplayName" xml:space="preserve">
+    <value>Sre</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SLO&apos; on DomainRelationship &apos;SreHasSLO&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.CloudProvider/Azure.DisplayName" xml:space="preserve">
     <value>Azure</value>
@@ -397,6 +517,14 @@
     <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.EventDriven</value>
     <comment>Description for EnumerationLiteral &apos;EventDriven&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/EnumerationLiteral1.DisplayName" xml:space="preserve">
+    <value>EnumerationLiteral1</value>
+    <comment>Display name for EnumerationLiteral &apos;EnumerationLiteral1&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ArchitecturalStyles/EnumerationLiteral1.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.EnumerationLiteral1</value>
+    <comment>Description for EnumerationLiteral &apos;EnumerationLiteral1&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.DevOpsPractices/ContinuousIntegration.DisplayName" xml:space="preserve">
     <value>ContinuousIntegration</value>
     <comment>Display name for EnumerationLiteral &apos;ContinuousIntegration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
@@ -493,6 +621,62 @@
     <value>Description for Variamos.DevOpsDsl.DevelopmentFrameworks.Xcode</value>
     <comment>Description for EnumerationLiteral &apos;Xcode&apos; on DomainEnumeration &apos;DevelopmentFrameworks&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.SLI/RequestLatency.DisplayName" xml:space="preserve">
+    <value>RequestLatency</value>
+    <comment>Display name for EnumerationLiteral &apos;RequestLatency&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/RequestLatency.Description" xml:space="preserve">
+    <value>How long it takes to return a response to a request, in seconds</value>
+    <comment>Description for EnumerationLiteral &apos;RequestLatency&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/ErrorRate.DisplayName" xml:space="preserve">
+    <value>ErrorRate</value>
+    <comment>Display name for EnumerationLiteral &apos;ErrorRate&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/ErrorRate.Description" xml:space="preserve">
+    <value>Expressed as a fraction of all requests received</value>
+    <comment>Description for EnumerationLiteral &apos;ErrorRate&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/SystemThroughput.DisplayName" xml:space="preserve">
+    <value>SystemThroughput</value>
+    <comment>Display name for EnumerationLiteral &apos;SystemThroughput&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/SystemThroughput.Description" xml:space="preserve">
+    <value>Measured in requests per second (QPS)</value>
+    <comment>Description for EnumerationLiteral &apos;SystemThroughput&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/Availability.DisplayName" xml:space="preserve">
+    <value>Availability</value>
+    <comment>Display name for EnumerationLiteral &apos;Availability&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/Availability.Description" xml:space="preserve">
+    <value>The fraction of the time that a service is usable</value>
+    <comment>Description for EnumerationLiteral &apos;Availability&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ComparisonOperator/LessThan.DisplayName" xml:space="preserve">
+    <value>LessThan</value>
+    <comment>Display name for EnumerationLiteral &apos;LessThan&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ComparisonOperator/LessThan.Description" xml:space="preserve">
+    <value>Less than</value>
+    <comment>Description for EnumerationLiteral &apos;LessThan&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ComparisonOperator/Between.DisplayName" xml:space="preserve">
+    <value>Between</value>
+    <comment>Display name for EnumerationLiteral &apos;Between&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ComparisonOperator/Between.Description" xml:space="preserve">
+    <value>Between</value>
+    <comment>Description for EnumerationLiteral &apos;Between&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ComparisonOperator/GratherThan.DisplayName" xml:space="preserve">
+    <value>GratherThan</value>
+    <comment>Display name for EnumerationLiteral &apos;GratherThan&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.ComparisonOperator/GratherThan.Description" xml:space="preserve">
+    <value>Grater than</value>
+    <comment>Description for EnumerationLiteral &apos;GratherThan&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.PracticeShape.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.PracticeShape</value>
     <comment>Description for DomainClass &apos;PracticeShape&apos;</comment>
@@ -503,10 +687,6 @@
   </data>
   <data name="PracticeShapeNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="PracticeShapePracticeTypeDecoratorDefaultText" xml:space="preserve">
-    <value>PracticeTypeDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ContainerShape.Description" xml:space="preserve">
@@ -529,6 +709,42 @@
     <value>FrameworkDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.SloShape.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SloShape</value>
+    <comment>Description for DomainClass &apos;SloShape&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SloShape.DisplayName" xml:space="preserve">
+    <value>Slo Shape</value>
+    <comment>DisplayName for DomainClass &apos;SloShape&apos;</comment>
+  </data>
+  <data name="SloShapeNameDecoratorDefaultText" xml:space="preserve">
+    <value>NameDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SloShapeLowerBoundDecoratorDefaultText" xml:space="preserve">
+    <value>LowerBoundDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SloShapeUpperDecoratorDefaultText" xml:space="preserve">
+    <value>UpperDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SloShapeOperatorDecoratorDefaultText" xml:space="preserve">
+    <value>OperatorDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreShape.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SreShape</value>
+    <comment>Description for DomainClass &apos;SreShape&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreShape.DisplayName" xml:space="preserve">
+    <value>Sre Shape</value>
+    <comment>DisplayName for DomainClass &apos;SreShape&apos;</comment>
+  </data>
+  <data name="SreShapeNameDecoratorDefaultText" xml:space="preserve">
+    <value>NameDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.ApplicationContainerConnector.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.ApplicationContainerConnector</value>
     <comment>Description for DomainClass &apos;ApplicationContainerConnector&apos;</comment>
@@ -537,8 +753,16 @@
     <value>Application Container Connector</value>
     <comment>DisplayName for DomainClass &apos;ApplicationContainerConnector&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.SreSloConnector.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SreSloConnector</value>
+    <comment>Description for DomainClass &apos;SreSloConnector&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SreSloConnector.DisplayName" xml:space="preserve">
+    <value>Sre Slo Connector</value>
+    <comment>DisplayName for DomainClass &apos;SreSloConnector&apos;</comment>
+  </data>
   <data name="FormatList" xml:space="preserve">
-    <value>DevOpsDsl (*.DevOpsDsl)|*.DevOpsDsl</value>
+    <value>DevOps Model (*.DevOpsDsl)|*.DevOpsDsl</value>
     <comment>A list of file format specifiers for the Save dialog box</comment>
   </data>
   <data name="ModelExplorerTitle" xml:space="preserve">
@@ -688,6 +912,23 @@ A DomainClass can be serialized as a moniker only if
   <data name="UnloadableSaveValidationFailed" xml:space="preserve">
     <value>There were validation errors. Continuing to save may cause the file to become unloadable, do you want to continue?</value>
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PracticeShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Terminal.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="ContainerShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Web.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="SloShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\DoneAll.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="SreShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Dataset.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
   </data>
 </root>
 

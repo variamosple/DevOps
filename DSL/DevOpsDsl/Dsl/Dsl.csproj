@@ -161,6 +161,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Dataset.png" />
+    <Content Include="Resources\DoneAll.png" />
+    <Content Include="Resources\Terminal.png" />
+    <Content Include="Resources\Web.png" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>

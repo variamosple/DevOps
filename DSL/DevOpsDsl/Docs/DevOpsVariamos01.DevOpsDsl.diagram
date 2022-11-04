@@ -1,34 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<devOpsDiagram dslVersion="1.0.0.0" Id="c71eec72-9ff6-4b68-9173-38f735b2e646" absoluteBounds="0, 0, 11, 8.5" name="DevOpsVariamos01" diamgramName="Variamos - DevOps Model">
+<devOpsDiagram dslVersion="1.0.0.0" Id="c71eec72-9ff6-4b68-9173-38f735b2e646" absoluteBounds="0, 0, 17.625, 8.5" name="DevOpsVariamos01" diamgramName="Variamos - DevOps Model">
   <applicationMoniker Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" />
   <nestedChildShapes>
-    <containerShape Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" isExpanded="false" absoluteBounds="2.375, 1.875, 2.625, 1">
+    <containerShape Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" isExpanded="false" absoluteBounds="2.375, 0.875, 2.625, 1">
       <containerMoniker Id="a203568c-8057-4292-afb7-9a90b9fc07d4" />
     </containerShape>
-    <containerShape Id="71a2c853-7ddf-47ff-823d-296185a16e5c" absoluteBounds="5.25, 1.875, 2.625, 1">
+    <containerShape Id="71a2c853-7ddf-47ff-823d-296185a16e5c" absoluteBounds="7.25, 0.875, 2.625, 1">
       <containerMoniker Id="6519a090-54a2-4c31-8b3e-6e1b2da613ae" />
     </containerShape>
-    <containerShape Id="68d11f36-2dec-4064-bbd0-b28acbc6181c" absoluteBounds="8.125, 1.875, 2.625, 1">
+    <containerShape Id="68d11f36-2dec-4064-bbd0-b28acbc6181c" absoluteBounds="12.875, 0.875, 2.625, 1">
       <containerMoniker Id="c29f0b63-8420-4a6a-af60-76420850d156" />
     </containerShape>
-    <practiceShape Id="311de19e-29d9-49dc-b52c-90a63da17b7d" absoluteBounds="0.5, 3.5, 2.625, 1">
+    <practiceShape Id="311de19e-29d9-49dc-b52c-90a63da17b7d" absoluteBounds="0.5, 2.5, 2.625, 1">
       <practiceMoniker Id="9163d529-9009-4a59-b16a-cd57656f851c" />
     </practiceShape>
-    <applicationContainerConnector Id="1b4ba27c-5f5b-417f-b1a1-d3330c3f4037" edgePoints="[(2.75 : 2.875); (2.75 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <applicationContainerConnector Id="1b4ba27c-5f5b-417f-b1a1-d3330c3f4037" edgePoints="[(2.75 : 1.875); (2.75 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <containerHasPracticedMoniker Id="9e530470-38e6-499c-9474-1f801ca1f98e" />
       <nodes>
         <containerShapeMoniker Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" />
         <practiceShapeMoniker Id="311de19e-29d9-49dc-b52c-90a63da17b7d" />
       </nodes>
     </applicationContainerConnector>
-    <practiceShape Id="6ba65312-f8cb-413a-9134-b54e6daa07f6" absoluteBounds="3.875, 3.5, 2.625, 1">
+    <practiceShape Id="6ba65312-f8cb-413a-9134-b54e6daa07f6" absoluteBounds="3.875, 2.5, 2.625, 1">
       <practiceMoniker Id="0251a29c-b48d-4039-8401-2ed51e1edb95" />
     </practiceShape>
-    <applicationContainerConnector Id="48adc962-020c-48d2-a16d-0b8eb9e2a864" edgePoints="[(4.4375 : 2.875); (4.4375 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <applicationContainerConnector Id="48adc962-020c-48d2-a16d-0b8eb9e2a864" edgePoints="[(4.4375 : 1.875); (4.4375 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <containerHasPracticedMoniker Id="6b9613a1-b3e5-4773-8223-9eaf12014a97" />
       <nodes>
         <containerShapeMoniker Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" />
         <practiceShapeMoniker Id="6ba65312-f8cb-413a-9134-b54e6daa07f6" />
+      </nodes>
+    </applicationContainerConnector>
+    <sreShape Id="19a81e5e-5e2a-4ecf-8350-d5d4ff849af1" absoluteBounds="7.875, 4.5, 1.5, 1">
+      <sreMoniker Id="1433cabb-85ee-4a77-9c80-94067be4d0fe" />
+    </sreShape>
+    <sloShape Id="7a447880-2095-4a51-9af3-5f3d1ae5aff5" absoluteBounds="6, 6, 1.5, 1">
+      <sLOMoniker Id="fe9e0372-8214-4aeb-8afa-836eda583c5f" />
+    </sloShape>
+    <sreSloConnector Id="15590816-717f-43cb-b032-21f7bcd41704" edgePoints="[(7.875 : 5); (6.75 : 5); (6.75 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <sreHasSLOMoniker Id="3a21ff75-44e9-4fbd-8d38-a58c541cd950" />
+      <nodes>
+        <sreShapeMoniker Id="19a81e5e-5e2a-4ecf-8350-d5d4ff849af1" />
+        <sloShapeMoniker Id="7a447880-2095-4a51-9af3-5f3d1ae5aff5" />
+      </nodes>
+    </sreSloConnector>
+    <sloShape Id="5fcede93-0eb2-402b-a127-9b318f307394" absoluteBounds="7.875, 6, 1.5, 1">
+      <sLOMoniker Id="fc45b689-f258-407f-adc3-ddc2d2aad0fc" />
+    </sloShape>
+    <sreSloConnector Id="e0653741-6659-423e-a7aa-2b914e11567a" edgePoints="[(8.625 : 5.5); (8.625 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <sreHasSLOMoniker Id="ca94c89c-431a-458e-bd06-114c8601a409" />
+      <nodes>
+        <sreShapeMoniker Id="19a81e5e-5e2a-4ecf-8350-d5d4ff849af1" />
+        <sloShapeMoniker Id="5fcede93-0eb2-402b-a127-9b318f307394" />
+      </nodes>
+    </sreSloConnector>
+    <sloShape Id="eee64a6d-8c9c-439b-acfe-cf678131365e" absoluteBounds="9.75, 6, 1.5, 1">
+      <sLOMoniker Id="3365b1c3-c398-4143-a6f0-fd38675053ae" />
+    </sloShape>
+    <sreSloConnector Id="06418687-2771-401d-b282-ef308f3e439d" edgePoints="[(9.375 : 5); (10.5 : 5); (10.5 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <sreHasSLOMoniker Id="2b55776b-8eeb-4f8a-9066-d5d8b538174a" />
+      <nodes>
+        <sreShapeMoniker Id="19a81e5e-5e2a-4ecf-8350-d5d4ff849af1" />
+        <sloShapeMoniker Id="eee64a6d-8c9c-439b-acfe-cf678131365e" />
+      </nodes>
+    </sreSloConnector>
+    <practiceShape Id="db449a9e-10d4-4576-b5e7-0f8d9f8791b9" absoluteBounds="7.25, 2.5, 2.625, 1">
+      <practiceMoniker Id="9128ff53-2ec7-48c5-a665-c3b64cf320c5" />
+    </practiceShape>
+    <applicationContainerConnector Id="0c3c8e91-6010-4900-a2a5-2ed20ce60280" edgePoints="[(8.5625 : 1.875); (8.5625 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <containerHasPracticedMoniker Id="4a8cb140-dfe2-4774-83e8-10a898c0e03e" />
+      <nodes>
+        <containerShapeMoniker Id="71a2c853-7ddf-47ff-823d-296185a16e5c" />
+        <practiceShapeMoniker Id="db449a9e-10d4-4576-b5e7-0f8d9f8791b9" />
+      </nodes>
+    </applicationContainerConnector>
+    <practiceShape Id="6b8577d7-895f-4879-9584-4cc7d2ac078a" absoluteBounds="11, 2.5, 2.625, 1">
+      <practiceMoniker Id="56d622c4-81d9-4756-8b08-5397cd1fb451" />
+    </practiceShape>
+    <applicationContainerConnector Id="396646c4-6ee8-4422-9b88-4ba2e1bf33ae" edgePoints="[(13.25 : 1.875); (13.25 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <containerHasPracticedMoniker Id="f66990a6-9b5f-4821-9db7-942748253efc" />
+      <nodes>
+        <containerShapeMoniker Id="68d11f36-2dec-4064-bbd0-b28acbc6181c" />
+        <practiceShapeMoniker Id="6b8577d7-895f-4879-9584-4cc7d2ac078a" />
+      </nodes>
+    </applicationContainerConnector>
+    <practiceShape Id="ee1efbe2-ea4d-4f08-9486-4582d7af26db" absoluteBounds="14.75, 2.5, 2.625, 1">
+      <practiceMoniker Id="163755b6-2be6-472c-a21c-99754d654cab" />
+    </practiceShape>
+    <applicationContainerConnector Id="d0815041-e7fb-471b-bb82-f39551b020c4" edgePoints="[(15.125 : 1.875); (15.125 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <containerHasPracticedMoniker Id="44b289e2-dfb2-4691-9ff3-bc433db6b851" />
+      <nodes>
+        <containerShapeMoniker Id="68d11f36-2dec-4064-bbd0-b28acbc6181c" />
+        <practiceShapeMoniker Id="ee1efbe2-ea4d-4f08-9486-4582d7af26db" />
       </nodes>
     </applicationContainerConnector>
   </nestedChildShapes>

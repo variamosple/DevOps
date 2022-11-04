@@ -70,12 +70,19 @@ namespace Variamos.DevOpsDsl
 				typeof(Application),
 				typeof(Container),
 				typeof(Practice),
+				typeof(Sre),
+				typeof(SLO),
 				typeof(ApplicationHasContainers),
 				typeof(ContainerHasPracticed),
+				typeof(ApplicationHasSre),
+				typeof(SreHasSLO),
 				typeof(DevOpsDiagram),
 				typeof(ApplicationContainerConnector),
+				typeof(SreSloConnector),
 				typeof(PracticeShape),
 				typeof(ContainerShape),
+				typeof(SloShape),
+				typeof(SreShape),
 				typeof(global::Variamos.DevOpsDsl.FixUpDiagram),
 				typeof(global::Variamos.DevOpsDsl.ConnectorRolePlayerChanged),
 			};
@@ -96,7 +103,12 @@ namespace Variamos.DevOpsDsl
 				new DomainMemberInfo(typeof(Container), "ContainerType", Container.ContainerTypeDomainPropertyId, typeof(Container.ContainerTypePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerFramework", Container.ContainerFrameworkDomainPropertyId, typeof(Container.ContainerFrameworkPropertyHandler)),
 				new DomainMemberInfo(typeof(Practice), "PracticeName", Practice.PracticeNameDomainPropertyId, typeof(Practice.PracticeNamePropertyHandler)),
-				new DomainMemberInfo(typeof(Practice), "PracticeType", Practice.PracticeTypeDomainPropertyId, typeof(Practice.PracticeTypePropertyHandler)),
+				new DomainMemberInfo(typeof(Sre), "SreName", Sre.SreNameDomainPropertyId, typeof(Sre.SreNamePropertyHandler)),
+				new DomainMemberInfo(typeof(SLO), "SloName", SLO.SloNameDomainPropertyId, typeof(SLO.SloNamePropertyHandler)),
+				new DomainMemberInfo(typeof(SLO), "LowerBound", SLO.LowerBoundDomainPropertyId, typeof(SLO.LowerBoundPropertyHandler)),
+				new DomainMemberInfo(typeof(SLO), "UpperBound", SLO.UpperBoundDomainPropertyId, typeof(SLO.UpperBoundPropertyHandler)),
+				new DomainMemberInfo(typeof(SLO), "Description", SLO.DescriptionDomainPropertyId, typeof(SLO.DescriptionPropertyHandler)),
+				new DomainMemberInfo(typeof(SLO), "Operator", SLO.OperatorDomainPropertyId, typeof(SLO.OperatorPropertyHandler)),
 				new DomainMemberInfo(typeof(DevOpsDiagram), "DiamgramName", DevOpsDiagram.DiamgramNameDomainPropertyId, typeof(DevOpsDiagram.DiamgramNamePropertyHandler)),
 			};
 		}
@@ -112,6 +124,10 @@ namespace Variamos.DevOpsDsl
 				new DomainRolePlayerInfo(typeof(ApplicationHasContainers), "Container", ApplicationHasContainers.ContainerDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ContainerHasPracticed), "Container", ContainerHasPracticed.ContainerDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ContainerHasPracticed), "Practice", ContainerHasPracticed.PracticeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ApplicationHasSre), "Application", ApplicationHasSre.ApplicationDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ApplicationHasSre), "Sre", ApplicationHasSre.SreDomainRoleId),
+				new DomainRolePlayerInfo(typeof(SreHasSLO), "Sre", SreHasSLO.SreDomainRoleId),
+				new DomainRolePlayerInfo(typeof(SreHasSLO), "SLO", SreHasSLO.SLODomainRoleId),
 			};
 		}
 		#endregion
@@ -133,14 +149,19 @@ namespace Variamos.DevOpsDsl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(12);
 				createElementMap.Add(typeof(Application), 0);
 				createElementMap.Add(typeof(Container), 1);
 				createElementMap.Add(typeof(Practice), 2);
-				createElementMap.Add(typeof(DevOpsDiagram), 3);
-				createElementMap.Add(typeof(ApplicationContainerConnector), 4);
-				createElementMap.Add(typeof(PracticeShape), 5);
-				createElementMap.Add(typeof(ContainerShape), 6);
+				createElementMap.Add(typeof(Sre), 3);
+				createElementMap.Add(typeof(SLO), 4);
+				createElementMap.Add(typeof(DevOpsDiagram), 5);
+				createElementMap.Add(typeof(ApplicationContainerConnector), 6);
+				createElementMap.Add(typeof(SreSloConnector), 7);
+				createElementMap.Add(typeof(PracticeShape), 8);
+				createElementMap.Add(typeof(ContainerShape), 9);
+				createElementMap.Add(typeof(SloShape), 10);
+				createElementMap.Add(typeof(SreShape), 11);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -157,10 +178,15 @@ namespace Variamos.DevOpsDsl
 				case 0: return new Application(partition, propertyAssignments);
 				case 1: return new Container(partition, propertyAssignments);
 				case 2: return new Practice(partition, propertyAssignments);
-				case 3: return new DevOpsDiagram(partition, propertyAssignments);
-				case 4: return new ApplicationContainerConnector(partition, propertyAssignments);
-				case 5: return new PracticeShape(partition, propertyAssignments);
-				case 6: return new ContainerShape(partition, propertyAssignments);
+				case 3: return new Sre(partition, propertyAssignments);
+				case 4: return new SLO(partition, propertyAssignments);
+				case 5: return new DevOpsDiagram(partition, propertyAssignments);
+				case 6: return new ApplicationContainerConnector(partition, propertyAssignments);
+				case 7: return new SreSloConnector(partition, propertyAssignments);
+				case 8: return new PracticeShape(partition, propertyAssignments);
+				case 9: return new ContainerShape(partition, propertyAssignments);
+				case 10: return new SloShape(partition, propertyAssignments);
+				case 11: return new SreShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -183,9 +209,11 @@ namespace Variamos.DevOpsDsl
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
 				createElementLinkMap.Add(typeof(ApplicationHasContainers), 0);
 				createElementLinkMap.Add(typeof(ContainerHasPracticed), 1);
+				createElementLinkMap.Add(typeof(ApplicationHasSre), 2);
+				createElementLinkMap.Add(typeof(SreHasSLO), 3);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -202,6 +230,8 @@ namespace Variamos.DevOpsDsl
 			{
 				case 0: return new ApplicationHasContainers(partition, roleAssignments, propertyAssignments);
 				case 1: return new ContainerHasPracticed(partition, roleAssignments, propertyAssignments);
+				case 2: return new ApplicationHasSre(partition, roleAssignments, propertyAssignments);
+				case 3: return new SreHasSLO(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -372,6 +402,8 @@ namespace Variamos.DevOpsDsl
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::Variamos.DevOpsDsl.ApplicationHasContainers.ContainerDomainRoleId, true);
 			DomainRoles.Add(global::Variamos.DevOpsDsl.ContainerHasPracticed.PracticeDomainRoleId, true);
+			DomainRoles.Add(global::Variamos.DevOpsDsl.ApplicationHasSre.SreDomainRoleId, true);
+			DomainRoles.Add(global::Variamos.DevOpsDsl.SreHasSLO.SLODomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
@@ -578,6 +610,12 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ArchitecturalStyles/EventDriven.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		EventDriven = 3,
+		/// <summary>
+		/// EnumerationLiteral1
+		/// Description for Variamos.DevOpsDsl.ArchitecturalStyles.EnumerationLiteral1
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ArchitecturalStyles/EnumerationLiteral1.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		EnumerationLiteral1,
 	}
 }
 namespace Variamos.DevOpsDsl
@@ -672,6 +710,70 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevelopmentFrameworks/Xcode.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		Xcode = 8,
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainEnumeration: SLI
+	/// Description for Variamos.DevOpsDsl.SLI
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum SLI
+	{
+		/// <summary>
+		/// RequestLatency
+		/// How long it takes to return a response to a request, in seconds
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/RequestLatency.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		RequestLatency = 0,
+		/// <summary>
+		/// ErrorRate
+		/// Expressed as a fraction of all requests received
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/ErrorRate.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		ErrorRate = 1,
+		/// <summary>
+		/// SystemThroughput
+		/// Measured in requests per second (QPS)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/SystemThroughput.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		SystemThroughput,
+		/// <summary>
+		/// Availability
+		/// The fraction of the time that a service is usable
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/Availability.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		Availability,
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainEnumeration: ComparisonOperator
+	/// Description for Variamos.DevOpsDsl.ComparisonOperator
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum ComparisonOperator
+	{
+		/// <summary>
+		/// LessThan
+		/// Less than
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ComparisonOperator/LessThan.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		LessThan = 0,
+		/// <summary>
+		/// Between
+		/// Between
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ComparisonOperator/Between.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		Between = 1,
+		/// <summary>
+		/// GratherThan
+		/// Grater than
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ComparisonOperator/GratherThan.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		GratherThan = 2,
 	}
 }
 

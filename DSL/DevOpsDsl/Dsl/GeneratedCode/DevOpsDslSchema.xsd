@@ -22,6 +22,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: ApplicationHasSre -->
+          <xsd:element name="sre" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ApplicationHasSre</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="applicationHasSre" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of ApplicationHasSre needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -137,9 +152,7 @@
           </xsd:annotation>
         </xsd:attribute>
         <!-- Property: PracticeName -->
-        <xsd:attribute name="practiceName" type="xsd:string" />
-        <!-- Property: PracticeType -->
-        <xsd:attribute name="practiceType" type="DevOpsPractices" />
+        <xsd:attribute name="practiceName" type="DevOpsPractices" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -149,6 +162,105 @@
   <xsd:complexType name="PracticeMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for Practice instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Sre -->
+  <xsd:element name="sre" type="Sre" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Sre">
+    <xsd:annotation>
+      <xsd:documentation>Site Reliability Engineering settings for the application</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: SreHasSLO -->
+          <xsd:element name="sLO" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of SreHasSLO</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="sreHasSLO" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of SreHasSLO needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: SreName -->
+        <xsd:attribute name="sreName" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Sre Moniker -->
+  <xsd:element name="sreMoniker" type="SreMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="SreMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Sre instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SLO -->
+  <xsd:element name="sLO" type="SLO" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="SLO">
+    <xsd:annotation>
+      <xsd:documentation>Service Level Objetive</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: SloName -->
+        <xsd:attribute name="sloName" type="SLI" />
+        <!-- Property: LowerBound -->
+        <xsd:attribute name="lowerBound" type="xsd:double" />
+        <!-- Property: UpperBound -->
+        <xsd:attribute name="upperBound" type="xsd:double" />
+        <!-- Property: Description -->
+        <xsd:attribute name="description" type="xsd:string" />
+        <!-- Property: Operator -->
+        <xsd:attribute name="operator" type="ComparisonOperator" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SLO Moniker -->
+  <xsd:element name="sLOMoniker" type="SLOMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="SLOMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SLO instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -241,6 +353,86 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- ApplicationHasSre -->
+  <xsd:element name="applicationHasSre" type="ApplicationHasSre" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ApplicationHasSre">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Sre -->
+          <xsd:element ref="sre" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ApplicationHasSre Moniker -->
+  <xsd:element name="applicationHasSreMoniker" type="ApplicationHasSreMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ApplicationHasSreMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ApplicationHasSre instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SreHasSLO -->
+  <xsd:element name="sreHasSLO" type="SreHasSLO" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="SreHasSLO">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end SLO -->
+          <xsd:element ref="sLO" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SreHasSLO Moniker -->
+  <xsd:element name="sreHasSLOMoniker" type="SreHasSLOMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="SreHasSLOMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SreHasSLO instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- Enum CloudProvider -->
   <xsd:simpleType name="CloudProvider">
     <xsd:restriction base="xsd:string">
@@ -289,6 +481,7 @@
       <xsd:enumeration value="BigCompute"/>
       <xsd:enumeration value="BigData"/>
       <xsd:enumeration value="EventDriven"/>
+      <xsd:enumeration value="EnumerationLiteral1"/>
     </xsd:restriction>
   </xsd:simpleType>
   
@@ -313,6 +506,57 @@
       <xsd:enumeration value="Angular"/>
       <xsd:enumeration value="ReactNative"/>
       <xsd:enumeration value="Xcode"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum SLI -->
+  <xsd:simpleType name="SLI">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="RequestLatency">
+        <xsd:annotation>
+          <xsd:documentation>How long it takes to return a response to a request, in seconds</xsd:documentation>
+          <xsd:documentation>How long it takes to return a response to a request, in seconds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ErrorRate">
+        <xsd:annotation>
+          <xsd:documentation>Expressed as a fraction of all requests received</xsd:documentation>
+          <xsd:documentation>Expressed as a fraction of all requests received</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SystemThroughput">
+        <xsd:annotation>
+          <xsd:documentation>Measured in requests per second (QPS)</xsd:documentation>
+          <xsd:documentation>Measured in requests per second (QPS)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Availability">
+        <xsd:annotation>
+          <xsd:documentation>The fraction of the time that a service is usable</xsd:documentation>
+          <xsd:documentation>The fraction of the time that a service is usable</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum ComparisonOperator -->
+  <xsd:simpleType name="ComparisonOperator">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LessThan">
+        <xsd:annotation>
+          <xsd:documentation>Less than</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Between">
+        <xsd:annotation>
+          <xsd:documentation>Between</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GratherThan">
+        <xsd:annotation>
+          <xsd:documentation>Grater than</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   

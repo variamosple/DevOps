@@ -203,9 +203,26 @@ namespace Variamos.DevOpsDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Variamos.DevOpsDsl.Sre)
+			{
+				global::Variamos.DevOpsDsl.SreShape newShape = new global::Variamos.DevOpsDsl.SreShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Variamos.DevOpsDsl.SLO)
+			{
+				global::Variamos.DevOpsDsl.SloShape newShape = new global::Variamos.DevOpsDsl.SloShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Variamos.DevOpsDsl.ContainerHasPracticed)
 			{
 				global::Variamos.DevOpsDsl.ApplicationContainerConnector newShape = new global::Variamos.DevOpsDsl.ApplicationContainerConnector(this.Partition);
+				return newShape;
+			}
+			if(element is global::Variamos.DevOpsDsl.SreHasSLO)
+			{
+				global::Variamos.DevOpsDsl.SreSloConnector newShape = new global::Variamos.DevOpsDsl.SreSloConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -221,6 +238,8 @@ namespace Variamos.DevOpsDsl
 			base.InitializeShapeFields(shapeFields);
 			global::Variamos.DevOpsDsl.ContainerShape.DecoratorsInitialized += ContainerShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Variamos.DevOpsDsl.PracticeShape.DecoratorsInitialized += PracticeShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Variamos.DevOpsDsl.SreShape.DecoratorsInitialized += SreShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Variamos.DevOpsDsl.SloShape.DecoratorsInitialized += SloShapeDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -265,9 +284,51 @@ namespace Variamos.DevOpsDsl
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Practice.PracticeNameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for SreShape.
+		/// </summary>
+		internal static partial class SreShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for SreShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Practice.PracticeTypeDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "PracticeTypeDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Sre.SreNameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for SloShape.
+		/// </summary>
+		internal static partial class SloShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for SloShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.SLO.SloNameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.SLO.LowerBoundDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "LowerBoundDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.SLO.OperatorDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "OperatorDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.SLO.UpperBoundDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "UpperDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -408,7 +469,10 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.Container), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.Practice), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.Sre), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.SLO), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.ContainerHasPracticed), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.SreHasSLO), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -432,6 +496,14 @@ namespace Variamos.DevOpsDsl
 				{
 					parentElement = GetParentForPractice((global::Variamos.DevOpsDsl.Practice)childElement);
 				} else
+				if(childElement is global::Variamos.DevOpsDsl.Sre)
+				{
+					parentElement = GetParentForSre((global::Variamos.DevOpsDsl.Sre)childElement);
+				} else
+				if(childElement is global::Variamos.DevOpsDsl.SLO)
+				{
+					parentElement = GetParentForSLO((global::Variamos.DevOpsDsl.SLO)childElement);
+				} else
 				{
 					parentElement = null;
 				}
@@ -452,6 +524,23 @@ namespace Variamos.DevOpsDsl
 			{
 				// Segments 0 and 1
 				global::Variamos.DevOpsDsl.Container root2 = root.Container;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Variamos.DevOpsDsl.Application result = root2.Application;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Variamos.DevOpsDsl.Application GetParentForSre( global::Variamos.DevOpsDsl.Sre root )
+			{
+				// Segments 0 and 1
+				global::Variamos.DevOpsDsl.Application result = root.Application;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Variamos.DevOpsDsl.Application GetParentForSLO( global::Variamos.DevOpsDsl.SLO root )
+			{
+				// Segments 0 and 1
+				global::Variamos.DevOpsDsl.Sre root2 = root.Sre;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
 				global::Variamos.DevOpsDsl.Application result = root2.Application;
@@ -548,6 +637,7 @@ namespace Variamos.DevOpsDsl
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.ContainerHasPracticed), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Variamos.DevOpsDsl.SreHasSLO), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

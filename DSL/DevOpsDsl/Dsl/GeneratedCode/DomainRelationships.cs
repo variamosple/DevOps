@@ -487,3 +487,481 @@ namespace Variamos.DevOpsDsl
 		#endregion
 	}
 }
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainRelationship ApplicationHasSre
+	/// Description for Variamos.DevOpsDsl.ApplicationHasSre
+	/// </summary>
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasSre.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasSre.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("d6178439-70f3-4caa-86c6-8a77bc9a297f")]
+	public partial class ApplicationHasSre : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ApplicationHasSre domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd6178439, 0x70f3, 0x4caa, 0x86, 0xc6, 0x8a, 0x77, 0xbc, 0x9a, 0x29, 0x7f);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ApplicationHasSre link in the same Partition as the given Application
+		/// </summary>
+		/// <param name="source">Application to use as the source of the relationship.</param>
+		/// <param name="target">Sre to use as the target of the relationship.</param>
+		public ApplicationHasSre(Application source, Sre target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ApplicationHasSre.ApplicationDomainRoleId, source), new DslModeling::RoleAssignment(ApplicationHasSre.SreDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ApplicationHasSre(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ApplicationHasSre(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ApplicationHasSre(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ApplicationHasSre(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Application domain role code
+		
+		/// <summary>
+		/// Application domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ApplicationDomainRoleId = new global::System.Guid(0x39c9fc53, 0x52d0, 0x4c99, 0x90, 0xed, 0x4c, 0x9d, 0xd0, 0x35, 0x3d, 0x1a);
+		
+		/// <summary>
+		/// DomainRole Application
+		/// Description for Variamos.DevOpsDsl.ApplicationHasSre.Application
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasSre/Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasSre/Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Sre", PropertyDisplayNameKey="Variamos.DevOpsDsl.ApplicationHasSre/Application.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("39c9fc53-52d0-4c99-90ed-4c9dd0353d1a")]
+		public virtual Application Application
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Application)DslModeling::DomainRoleInfo.GetRolePlayer(this, ApplicationDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ApplicationDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Application of a Sre
+		/// <summary>
+		/// Gets Application.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Application GetApplication(Sre element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, SreDomainRoleId) as Application;
+		}
+		
+		/// <summary>
+		/// Sets Application.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetApplication(Sre element, Application newApplication)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, SreDomainRoleId, newApplication);
+		}
+		#endregion
+		#region Sre domain role code
+		
+		/// <summary>
+		/// Sre domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SreDomainRoleId = new global::System.Guid(0xe848aa64, 0x843b, 0x4900, 0x92, 0x01, 0x8b, 0xe1, 0x4b, 0x0a, 0x32, 0xeb);
+		
+		/// <summary>
+		/// DomainRole Sre
+		/// Description for Variamos.DevOpsDsl.ApplicationHasSre.Sre
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.ApplicationHasSre/Sre.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ApplicationHasSre/Sre.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Application", PropertyDisplayNameKey="Variamos.DevOpsDsl.ApplicationHasSre/Sre.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("e848aa64-843b-4900-9201-8be14b0a32eb")]
+		public virtual Sre Sre
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Sre)DslModeling::DomainRoleInfo.GetRolePlayer(this, SreDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SreDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Sre of a Application
+		/// <summary>
+		/// Gets a list of Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Sre> GetSre(Application element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Sre>, Sre>(element, ApplicationDomainRoleId);
+		}
+		#endregion
+		#region Application link accessor
+		/// <summary>
+		/// Get the list of ApplicationHasSre links to a Application.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.ApplicationHasSre> GetLinksToSre ( global::Variamos.DevOpsDsl.Application applicationInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasSre>(applicationInstance, global::Variamos.DevOpsDsl.ApplicationHasSre.ApplicationDomainRoleId);
+		}
+		#endregion
+		#region Sre link accessor
+		/// <summary>
+		/// Get the ApplicationHasSre link to a Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Variamos.DevOpsDsl.ApplicationHasSre GetLinkToApplication (global::Variamos.DevOpsDsl.Sre sreInstance)
+		{
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasSre> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasSre>(sreInstance, global::Variamos.DevOpsDsl.ApplicationHasSre.SreDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Sre not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ApplicationHasSre instance accessors
+		
+		/// <summary>
+		/// Get any ApplicationHasSre links between a given Application and a Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.ApplicationHasSre> GetLinks( global::Variamos.DevOpsDsl.Application source, global::Variamos.DevOpsDsl.Sre target )
+		{
+			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.ApplicationHasSre> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.ApplicationHasSre>();
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasSre> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasSre>(source, global::Variamos.DevOpsDsl.ApplicationHasSre.ApplicationDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.ApplicationHasSre link in links )
+			{
+				if ( target.Equals(link.Sre) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ApplicationHasSre link between a given Applicationand a Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Variamos.DevOpsDsl.ApplicationHasSre GetLink( global::Variamos.DevOpsDsl.Application source, global::Variamos.DevOpsDsl.Sre target )
+		{
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.ApplicationHasSre> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.ApplicationHasSre>(source, global::Variamos.DevOpsDsl.ApplicationHasSre.ApplicationDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.ApplicationHasSre link in links )
+			{
+				if ( target.Equals(link.Sre) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainRelationship SreHasSLO
+	/// Description for Variamos.DevOpsDsl.SreHasSLO
+	/// </summary>
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SreHasSLO.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SreHasSLO.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("c4ce16a9-afe8-48a2-b947-7fae73bf2322")]
+	public partial class SreHasSLO : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// SreHasSLO domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc4ce16a9, 0xafe8, 0x48a2, 0xb9, 0x47, 0x7f, 0xae, 0x73, 0xbf, 0x23, 0x22);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a SreHasSLO link in the same Partition as the given Sre
+		/// </summary>
+		/// <param name="source">Sre to use as the source of the relationship.</param>
+		/// <param name="target">SLO to use as the target of the relationship.</param>
+		public SreHasSLO(Sre source, SLO target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(SreHasSLO.SreDomainRoleId, source), new DslModeling::RoleAssignment(SreHasSLO.SLODomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public SreHasSLO(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public SreHasSLO(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public SreHasSLO(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public SreHasSLO(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Sre domain role code
+		
+		/// <summary>
+		/// Sre domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SreDomainRoleId = new global::System.Guid(0xdd60049d, 0xa5ce, 0x4c63, 0x87, 0x5d, 0xdc, 0x32, 0x17, 0x15, 0xfc, 0x6d);
+		
+		/// <summary>
+		/// DomainRole Sre
+		/// Description for Variamos.DevOpsDsl.SreHasSLO.Sre
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SreHasSLO/Sre.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SreHasSLO/Sre.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "SLO", PropertyDisplayNameKey="Variamos.DevOpsDsl.SreHasSLO/Sre.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("dd60049d-a5ce-4c63-875d-dc321715fc6d")]
+		public virtual Sre Sre
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Sre)DslModeling::DomainRoleInfo.GetRolePlayer(this, SreDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SreDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Sre of a SLO
+		/// <summary>
+		/// Gets Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Sre GetSre(SLO element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, SLODomainRoleId) as Sre;
+		}
+		
+		/// <summary>
+		/// Sets Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetSre(SLO element, Sre newSre)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, SLODomainRoleId, newSre);
+		}
+		#endregion
+		#region SLO domain role code
+		
+		/// <summary>
+		/// SLO domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SLODomainRoleId = new global::System.Guid(0xc071c337, 0xd176, 0x40ea, 0xba, 0x34, 0x15, 0xe3, 0x40, 0xea, 0xdd, 0x41);
+		
+		/// <summary>
+		/// DomainRole SLO
+		/// Description for Variamos.DevOpsDsl.SreHasSLO.SLO
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SreHasSLO/SLO.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SreHasSLO/SLO.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Sre", PropertyDisplayNameKey="Variamos.DevOpsDsl.SreHasSLO/SLO.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("c071c337-d176-40ea-ba34-15e340eadd41")]
+		public virtual SLO SLO
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (SLO)DslModeling::DomainRoleInfo.GetRolePlayer(this, SLODomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SLODomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access SLO of a Sre
+		/// <summary>
+		/// Gets a list of SLO.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<SLO> GetSLO(Sre element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<SLO>, SLO>(element, SreDomainRoleId);
+		}
+		#endregion
+		#region Sre link accessor
+		/// <summary>
+		/// Get the list of SreHasSLO links to a Sre.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.SreHasSLO> GetLinksToSLO ( global::Variamos.DevOpsDsl.Sre sreInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.SreHasSLO>(sreInstance, global::Variamos.DevOpsDsl.SreHasSLO.SreDomainRoleId);
+		}
+		#endregion
+		#region SLO link accessor
+		/// <summary>
+		/// Get the SreHasSLO link to a SLO.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Variamos.DevOpsDsl.SreHasSLO GetLinkToSre (global::Variamos.DevOpsDsl.SLO sLOInstance)
+		{
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.SreHasSLO> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.SreHasSLO>(sLOInstance, global::Variamos.DevOpsDsl.SreHasSLO.SLODomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of SLO not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region SreHasSLO instance accessors
+		
+		/// <summary>
+		/// Get any SreHasSLO links between a given Sre and a SLO.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Variamos.DevOpsDsl.SreHasSLO> GetLinks( global::Variamos.DevOpsDsl.Sre source, global::Variamos.DevOpsDsl.SLO target )
+		{
+			global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.SreHasSLO> outLinks = new global::System.Collections.Generic.List<global::Variamos.DevOpsDsl.SreHasSLO>();
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.SreHasSLO> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.SreHasSLO>(source, global::Variamos.DevOpsDsl.SreHasSLO.SreDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.SreHasSLO link in links )
+			{
+				if ( target.Equals(link.SLO) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one SreHasSLO link between a given Sreand a SLO.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Variamos.DevOpsDsl.SreHasSLO GetLink( global::Variamos.DevOpsDsl.Sre source, global::Variamos.DevOpsDsl.SLO target )
+		{
+			global::System.Collections.Generic.IList<global::Variamos.DevOpsDsl.SreHasSLO> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Variamos.DevOpsDsl.SreHasSLO>(source, global::Variamos.DevOpsDsl.SreHasSLO.SreDomainRoleId);
+			foreach ( global::Variamos.DevOpsDsl.SreHasSLO link in links )
+			{
+				if ( target.Equals(link.SLO) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

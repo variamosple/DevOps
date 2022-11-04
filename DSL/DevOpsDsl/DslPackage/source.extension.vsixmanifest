@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="dcd1f89d-000b-4058-8a43-beac92073e9f" Version="1.0.0.0" Language="en-US" Publisher="Variamos" />
-    <DisplayName>DevOpsDsl</DisplayName>
+    <DisplayName>DevOps Model</DisplayName>
     <Description>Description for Variamos.DevOpsDsl.DevOpsDsl</Description>
   </Metadata>
   <Installation InstalledByMsi="false">

@@ -183,13 +183,8 @@ namespace Variamos.DevOpsDsl
 			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold10");			
 			shapeFields.Add(field1);
 			
-			DslDiagrams::TextField field2 = new DslDiagrams::TextField("PracticeTypeDecorator");
-			field2.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("PracticeShapePracticeTypeDecoratorDefaultText");
-			field2.DefaultFocusable = true;
-			field2.DefaultAutoSize = true;
-			field2.AnchoringBehavior.MinimumHeightInLines = 1;
-			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			DslDiagrams::ImageField field2 = new DslDiagrams::ImageField("IconDecorator");
+			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetObject("PracticeShapeIconDecoratorDefaultImage"));
 			shapeFields.Add(field2);
 			
 		}
@@ -204,11 +199,11 @@ namespace Variamos.DevOpsDsl
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
-			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "PracticeTypeDecorator");
-			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerBottomCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IconDecorator");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
 				
 		}
@@ -451,6 +446,10 @@ namespace Variamos.DevOpsDsl
 			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
 			shapeFields.Add(field3);
 			
+			DslDiagrams::ImageField field4 = new DslDiagrams::ImageField("IconDecorator");
+			field4.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetObject("ContainerShapeIconDecoratorDefaultImage"));
+			shapeFields.Add(field4);
+			
 		}
 		
 		/// <summary>
@@ -463,7 +462,7 @@ namespace Variamos.DevOpsDsl
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
 			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ContinerTypeDecorator");
@@ -471,8 +470,12 @@ namespace Variamos.DevOpsDsl
 			decorators.Add(decorator2);
 				
 			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "FrameworkDecorator");
-			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerBottomLeft, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator3);
+				
+			DslDiagrams::ShapeField field4 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IconDecorator");
+			DslDiagrams::Decorator decorator4 = new DslDiagrams::ShapeDecorator(field4, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator4);
 				
 		}
 		
@@ -518,6 +521,535 @@ namespace Variamos.DevOpsDsl
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
 		public ContainerShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainClass SloShape
+	/// Description for Variamos.DevOpsDsl.SloShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SloShape.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SloShape.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("09345c75-0057-4454-bf2f-67b9116f8717")]
+	public partial class SloShape : DslDiagrams::NodeShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with SloShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindSloShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 12/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold12"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return true;
+			}
+		}
+		
+		/// <summary>
+		/// Indicates the direction of the gradient.
+		/// </summary>
+		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
+		{
+			get
+			{
+				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("NameDecorator");
+			field1.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("SloShapeNameDecoratorDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold12");			
+			shapeFields.Add(field1);
+			
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("LowerBoundDecorator");
+			field2.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("SloShapeLowerBoundDecoratorDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field2);
+			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("UpperDecorator");
+			field3.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("SloShapeUpperDecoratorDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
+			
+			DslDiagrams::TextField field4 = new DslDiagrams::TextField("OperatorDecorator");
+			field4.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("SloShapeOperatorDecoratorDefaultText");
+			field4.DefaultFocusable = true;
+			field4.DefaultAutoSize = true;
+			field4.AnchoringBehavior.MinimumHeightInLines = 1;
+			field4.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field4.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field4);
+			
+			DslDiagrams::ImageField field5 = new DslDiagrams::ImageField("IconDecorator");
+			field5.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetObject("SloShapeIconDecoratorDefaultImage"));
+			shapeFields.Add(field5);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "LowerBoundDecorator");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerBottomLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "UpperDecorator");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
+				
+			DslDiagrams::ShapeField field4 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "OperatorDecorator");
+			DslDiagrams::Decorator decorator4 = new DslDiagrams::ShapeDecorator(field4, DslDiagrams::ShapeDecoratorPosition.InnerBottomCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator4);
+				
+			DslDiagrams::ShapeField field5 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IconDecorator");
+			DslDiagrams::Decorator decorator5 = new DslDiagrams::ShapeDecorator(field5, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator5);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// SloShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x09345c75, 0x0057, 0x4454, 0xbf, 0x2f, 0x67, 0xb9, 0x11, 0x6f, 0x87, 0x17);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SloShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SloShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainClass SreShape
+	/// Description for Variamos.DevOpsDsl.SreShape
+	/// </summary>
+	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SreShape.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SreShape.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("6353d8f5-88c0-4a44-a0db-20c490f838f7")]
+	public partial class SreShape : DslDiagrams::NodeShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with SreShape.
+		/// </summary>
+		public static DslDiagrams::Decorator FindSreShapeDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1.5, 1);
+			}
+		}
+		#endregion
+		#region Shape styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Custom font styles
+			DslDiagrams::FontSettings fontSettings;
+			fontSettings = new DslDiagrams::FontSettings();
+			fontSettings.Style =  global::System.Drawing.FontStyle.Bold ;
+			fontSettings.Size = 12/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold12"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+		}
+		
+		/// <summary>
+		/// Indicates whether this shape displays a background gradient.
+		/// </summary>
+		public override bool HasBackgroundGradient
+		{
+			get
+			{
+				return true;
+			}
+		}
+		
+		/// <summary>
+		/// Indicates the direction of the gradient.
+		/// </summary>
+		public override global::System.Drawing.Drawing2D.LinearGradientMode BackgroundGradientMode
+		{
+			get
+			{
+				return global::System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+			}
+		}
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("NameDecorator");
+			field1.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("SreShapeNameDecoratorDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextBold12");			
+			shapeFields.Add(field1);
+			
+			DslDiagrams::ImageField field2 = new DslDiagrams::ImageField("IconDecorator");
+			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetObject("SreShapeIconDecoratorDefaultImage"));
+			shapeFields.Add(field2);
+			
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IconDecorator");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// SreShape domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x6353d8f5, 0x88c0, 0x4a44, 0xa0, 0xdb, 0x20, 0xc4, 0x90, 0xf8, 0x38, 0xf7);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SreShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SreShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
