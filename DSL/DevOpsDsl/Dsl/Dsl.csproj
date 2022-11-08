@@ -162,7 +162,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Dataset.png" />
+    <Content Include="Resources\DevOpsIcon.png" />
     <Content Include="Resources\DoneAll.png" />
+    <Content Include="Resources\ProcessorIcon.png" />
+    <Content Include="Resources\ProcessorIcon_7.jpg" />
+    <Content Include="Resources\ProcessorIcon_8.png" />
+    <Content Include="Resources\ProcessorIcon_9.png" />
+    <Content Include="Resources\SloIcon.png" />
+    <Content Include="Resources\SreIcon.png" />
     <Content Include="Resources\Terminal.png" />
     <Content Include="Resources\Web.png" />
     <None Include="DslDefinition.dsl.diagram">

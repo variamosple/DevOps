@@ -13,7 +13,7 @@ namespace Variamos.DevOpsDsl
 {
 	/// <summary>
 	/// DomainClass Application
-	/// Description for Variamos.DevOpsDsl.Application
+	/// Application tobe implemnted DevOps
 	/// </summary>
 	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
@@ -915,6 +915,7 @@ namespace Variamos.DevOpsDsl
 	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (PracticeName = {PracticeName})")]
 	[DslModeling::DomainObjectId("3fba09f1-07e3-4ebf-8039-06613d70913a")]
 	public partial class Practice : DslModeling::ModelElement
 	{
@@ -944,17 +945,99 @@ namespace Variamos.DevOpsDsl
 		{
 		}
 		#endregion
+		#region PracticeType domain property code
+		
+		/// <summary>
+		/// PracticeType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PracticeTypeDomainPropertyId = new global::System.Guid(0x7fa1949c, 0x3098, 0x44bf, 0x87, 0x44, 0x69, 0x10, 0x32, 0x52, 0xf3, 0xd1);
+		
+		/// <summary>
+		/// Storage for PracticeType
+		/// </summary>
+		private DevOpsPractices practiceTypePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of PracticeType domain property.
+		/// Description for Variamos.DevOpsDsl.Practice.Practice Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Practice/PracticeType.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice/PracticeType.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("7fa1949c-3098-44bf-8744-69103252f3d1")]
+		public DevOpsPractices PracticeType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return practiceTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PracticeTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Practice.PracticeType domain property.
+		/// </summary>
+		internal sealed partial class PracticeTypePropertyHandler : DslModeling::DomainPropertyValueHandler<Practice, DevOpsPractices>
+		{
+			private PracticeTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Practice.PracticeType domain property value handler.
+			/// </summary>
+			public static readonly PracticeTypePropertyHandler Instance = new PracticeTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Practice.PracticeType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PracticeTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed DevOpsPractices GetValue(Practice element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.practiceTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Practice element, DevOpsPractices newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				DevOpsPractices oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.practiceTypePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region PracticeName domain property code
 		
 		/// <summary>
 		/// PracticeName domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid PracticeNameDomainPropertyId = new global::System.Guid(0x7fa1949c, 0x3098, 0x44bf, 0x87, 0x44, 0x69, 0x10, 0x32, 0x52, 0xf3, 0xd1);
-		
-		/// <summary>
-		/// Storage for PracticeName
-		/// </summary>
-		private DevOpsPractices practiceNamePropertyStorage;
+		public static readonly global::System.Guid PracticeNameDomainPropertyId = new global::System.Guid(0x68410d3a, 0x4f59, 0x4cfe, 0xbb, 0x57, 0x49, 0xba, 0x19, 0x6a, 0xb5, 0xc1);
 		
 		/// <summary>
 		/// Gets or sets the value of PracticeName domain property.
@@ -962,24 +1045,23 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Practice/PracticeName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice/PracticeName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("7fa1949c-3098-44bf-8744-69103252f3d1")]
-		public DevOpsPractices PracticeName
+		[global::System.ComponentModel.DefaultValue("Practice.PracticeName")]
+		[global::System.ComponentModel.ReadOnly(true)]
+		[DslModeling::ElementName]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.Calculated)]
+		[DslModeling::DomainObjectId("68410d3a-4f59-4cfe-bb57-49ba196ab5c1")]
+		public global::System.String PracticeName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return practiceNamePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				PracticeNamePropertyHandler.Instance.SetValue(this, value);
+				return PracticeNamePropertyHandler.Instance.GetValue(this);
 			}
 		}
 		/// <summary>
 		/// Value handler for the Practice.PracticeName domain property.
 		/// </summary>
-		internal sealed partial class PracticeNamePropertyHandler : DslModeling::DomainPropertyValueHandler<Practice, DevOpsPractices>
+		internal sealed partial class PracticeNamePropertyHandler : DslModeling::CalculatedPropertyValueHandler<Practice, global::System.String>
 		{
 			private PracticeNamePropertyHandler() { }
 		
@@ -1005,29 +1087,15 @@ namespace Variamos.DevOpsDsl
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed DevOpsPractices GetValue(Practice element)
+			public override sealed global::System.String GetValue(Practice element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.practiceNamePropertyStorage;
+				// There is no storage for PracticeName because its Kind is
+				// set to Calculated. Please provide the GetPracticeNameValue()
+				// method on the domain class.
+				return element.PracticeType.ToString();
 			}
 		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(Practice element, DevOpsPractices newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				DevOpsPractices oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.practiceNamePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
 		}
 		
 		#endregion

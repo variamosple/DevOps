@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5af03ef8-bd8c-4744-90d5-5e9ee1e1d2aa" Description="Description for Variamos.DevOpsDsl.DevOpsDsl" Name="DevOpsDsl" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" ProductName="DevOpsDsl" CompanyName="Variamos" PackageGuid="dcd1f89d-000b-4058-8a43-beac92073e9f" PackageNamespace="Variamos.DevOpsDsl" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Description for Variamos.DevOpsDsl.Application" Name="Application" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Application tobe implemnted DevOps" Name="Application" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="e449a9e4-b5b2-4013-8a30-7ad6f145e609" Description="Name of the Application" Name="ApplicationName" DisplayName="Application Name" DefaultValue="My application" IsElementName="true">
           <Notes>Name of the Application</Notes>
@@ -70,9 +70,14 @@
     </DomainClass>
     <DomainClass Id="3fba09f1-07e3-4ebf-8039-06613d70913a" Description="Description for Variamos.DevOpsDsl.Practice" Name="Practice" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
       <Properties>
-        <DomainProperty Id="7fa1949c-3098-44bf-8744-69103252f3d1" Description="Description for Variamos.DevOpsDsl.Practice.Practice Name" Name="PracticeName" DisplayName="Practice Name">
+        <DomainProperty Id="7fa1949c-3098-44bf-8744-69103252f3d1" Description="Description for Variamos.DevOpsDsl.Practice.Practice Type" Name="PracticeType" DisplayName="Practice Type">
           <Type>
             <DomainEnumerationMoniker Name="DevOpsPractices" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="68410d3a-4f59-4cfe-bb57-49ba196ab5c1" Description="Description for Variamos.DevOpsDsl.Practice.Practice Name" Name="PracticeName" DisplayName="Practice Name" DefaultValue="Practice.PracticeName" Kind="Calculated" IsElementName="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -290,8 +295,8 @@
       <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="10" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\Terminal.png" />
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\DevOpsIcon.png" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="1f477189-8a64-42e2-994b-b0c1e42e32f1" Description="Description for Variamos.DevOpsDsl.ContainerShape" Name="ContainerShape" DisplayName="Container Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Container Shape" InitialHeight="1" Geometry="Rectangle">
@@ -304,8 +309,8 @@
       <ShapeHasDecorators Position="InnerBottomLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="FrameworkDecorator" DisplayName="Framework Decorator" DefaultText="FrameworkDecorator" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\Web.png" />
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\ProcessorIcon_9.png" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="09345c75-0057-4454-bf2f-67b9116f8717" Description="Description for Variamos.DevOpsDsl.SloShape" Name="SloShape" DisplayName="Slo Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Slo Shape" InitialHeight="1" Geometry="Rectangle">
@@ -321,16 +326,16 @@
       <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="OperatorDecorator" DisplayName="Operator Decorator" DefaultText="OperatorDecorator" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\DoneAll.png" />
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\SloIcon.png" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="6353d8f5-88c0-4a44-a0db-20c490f838f7" Description="Description for Variamos.DevOpsDsl.SreShape" Name="SreShape" DisplayName="Sre Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Sre Shape" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" FontStyle="Bold" FontSize="12" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
-        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\Dataset.png" />
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\SreIcon.png" />
       </ShapeHasDecorators>
     </GeometryShape>
   </Shapes>
@@ -400,7 +405,10 @@
       <XmlClassData TypeName="Practice" MonikerAttributeName="" SerializeId="true" MonikerElementName="practiceMoniker" ElementName="practice" MonikerTypeName="PracticeMoniker">
         <DomainClassMoniker Name="Practice" />
         <ElementData>
-          <XmlPropertyData XmlName="practiceName">
+          <XmlPropertyData XmlName="practiceType">
+            <DomainPropertyMoniker Name="Practice/PracticeType" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="practiceName" Representation="Ignore">
             <DomainPropertyMoniker Name="Practice/PracticeName" />
           </XmlPropertyData>
         </ElementData>
@@ -457,7 +465,7 @@
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="DevOpsDslExplorer" />
-  <Diagram Id="aa0ce2b2-1fa5-458a-82dd-05d3b4d5e591" Description="Description for Variamos.DevOpsDsl.DevOpsDiagram" Name="DevOpsDiagram" DisplayName="Dev Ops Diagram" Namespace="Variamos.DevOpsDsl">
+  <Diagram Id="aa0ce2b2-1fa5-458a-82dd-05d3b4d5e591" Description="Description for Variamos.DevOpsDsl.DevOpsDiagram" Name="DevOpsDiagram" DisplayName="DevOps Diagram" Namespace="Variamos.DevOpsDsl">
     <Properties>
       <DomainProperty Id="5613bec2-725d-4f55-8ee8-0f27bc54f13a" Description="Name of the diagram" Name="DiamgramName" DisplayName="Diamgram Name" DefaultValue="My diagram">
         <Type>
@@ -509,7 +517,7 @@
           <TextDecoratorMoniker Name="PracticeShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Practice/PracticeName" />
+              <DomainPropertyMoniker Name="Practice/PracticeType" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
@@ -517,7 +525,7 @@
           <TextDecoratorMoniker Name="ContainerShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Practice/PracticeName" />
+              <DomainPropertyMoniker Name="Practice/PracticeType" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>

@@ -126,7 +126,7 @@
     <comment>DisplayName for DslLibrary &apos;DevOpsDsl&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.Application</value>
+    <value>Application tobe implemnted DevOps</value>
     <comment>Description for DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application.DisplayName" xml:space="preserve">
@@ -196,6 +196,14 @@
   <data name="Variamos.DevOpsDsl.Practice.DisplayName" xml:space="preserve">
     <value>DevOps Model</value>
     <comment>DisplayName for DomainClass &apos;Practice&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Practice/PracticeType.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Practice.Practice Type</value>
+    <comment>Description for DomainProperty &apos;PracticeType&apos; on DomainClass &apos;Practice&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Practice/PracticeType.DisplayName" xml:space="preserve">
+    <value>Practice Type</value>
+    <comment>DisplayName for DomainProperty &apos;PracticeType&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Practice/PracticeName.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.Practice.Practice Name</value>
@@ -774,7 +782,7 @@
     <comment>Description for DomainClass &apos;DevOpsDiagram&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevOpsDiagram.DisplayName" xml:space="preserve">
-    <value>Dev Ops Diagram</value>
+    <value>DevOps Diagram</value>
     <comment>DisplayName for DomainClass &apos;DevOpsDiagram&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevOpsDiagram/DiamgramName.Description" xml:space="preserve">
@@ -915,19 +923,19 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PracticeShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Terminal.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\DevOpsIcon.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
   <data name="ContainerShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Web.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\ProcessorIcon_9.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
   <data name="SloShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\DoneAll.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\SloIcon.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
   <data name="SreShapeIconDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\Dataset.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\SreIcon.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
 </root>

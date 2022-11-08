@@ -4,6 +4,9 @@
   <!-- Application -->
   <xsd:element name="application" type="Application" substitutionGroup="core:modelElement" />
   <xsd:complexType name="Application">
+    <xsd:annotation>
+      <xsd:documentation>Application tobe implemnted DevOps</xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -151,8 +154,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: PracticeName -->
-        <xsd:attribute name="practiceName" type="DevOpsPractices" />
+        <!-- Property: PracticeType -->
+        <xsd:attribute name="practiceType" type="DevOpsPractices" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

@@ -102,6 +102,7 @@ namespace Variamos.DevOpsDsl
 				new DomainMemberInfo(typeof(Container), "ContainerName", Container.ContainerNameDomainPropertyId, typeof(Container.ContainerNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerType", Container.ContainerTypeDomainPropertyId, typeof(Container.ContainerTypePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerFramework", Container.ContainerFrameworkDomainPropertyId, typeof(Container.ContainerFrameworkPropertyHandler)),
+				new DomainMemberInfo(typeof(Practice), "PracticeType", Practice.PracticeTypeDomainPropertyId, typeof(Practice.PracticeTypePropertyHandler)),
 				new DomainMemberInfo(typeof(Practice), "PracticeName", Practice.PracticeNameDomainPropertyId, typeof(Practice.PracticeNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Sre), "SreName", Sre.SreNameDomainPropertyId, typeof(Sre.SreNamePropertyHandler)),
 				new DomainMemberInfo(typeof(SLO), "SloName", SLO.SloNameDomainPropertyId, typeof(SLO.SloNamePropertyHandler)),

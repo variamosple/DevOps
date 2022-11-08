@@ -1919,20 +1919,20 @@ namespace Variamos.DevOpsDsl
 			Practice instanceOfPractice = element as Practice;
 			global::System.Diagnostics.Debug.Assert(instanceOfPractice != null, "Expecting an instance of Practice");
 	
-			// PracticeName
+			// PracticeType
 			if (!serializationContext.Result.Failed)
 			{
-				string attribPracticeName = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "practiceName");
-				if (attribPracticeName != null)
+				string attribPracticeType = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "practiceType");
+				if (attribPracticeType != null)
 				{
-					DevOpsPractices valueOfPracticeName;
-					if (DslModeling::SerializationUtilities.TryGetValue<DevOpsPractices>(serializationContext, attribPracticeName, out valueOfPracticeName))
+					DevOpsPractices valueOfPracticeType;
+					if (DslModeling::SerializationUtilities.TryGetValue<DevOpsPractices>(serializationContext, attribPracticeType, out valueOfPracticeType))
 					{
-						instanceOfPractice.PracticeName = valueOfPracticeName;
+						instanceOfPractice.PracticeType = valueOfPracticeType;
 					}
 					else
 					{	// Invalid property value, ignored.
-						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "practiceName", typeof(DevOpsPractices), attribPracticeName);
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "practiceType", typeof(DevOpsPractices), attribPracticeType);
 					}
 				}
 			}
@@ -2361,14 +2361,14 @@ namespace Variamos.DevOpsDsl
 			Practice instanceOfPractice = element as Practice;
 			global::System.Diagnostics.Debug.Assert(instanceOfPractice != null, "Expecting an instance of Practice");
 	
-			// PracticeName
+			// PracticeType
 			if (!serializationContext.Result.Failed)
 			{
-				DevOpsPractices propValue = instanceOfPractice.PracticeName;
+				DevOpsPractices propValue = instanceOfPractice.PracticeType;
 				string serializedPropValue = DslModeling::SerializationUtilities.GetString<DevOpsPractices>(serializationContext, propValue);
 				if (!serializationContext.Result.Failed)
 				{
-					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "practiceName", serializedPropValue);
+					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "practiceType", serializedPropValue);
 				}
 			}
 		}

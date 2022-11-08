@@ -56,6 +56,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DevOpsDslReportVB.txt</LastGenOutput>
     </None>
+    <None Include="DevOpsVariamos02.DevOpsDsl" />
+    <None Include="DevOpsVariamos02.DevOpsDsl.diagram">
+      <DependentUpon>DevOpsVariamos02.DevOpsDsl</DependentUpon>
+    </None>
     <None Include="Sample.DevOpsDsl" />
     <None Include="Sample.DevOpsDsl.diagram">
       <DependentUpon>Sample.DevOpsDsl</DependentUpon>
