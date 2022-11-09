@@ -608,7 +608,7 @@
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="DevOpsDiagram" />
   </Designer>
-  <Explorer ExplorerGuid="4862bab5-3ef9-4f41-baf7-5415442935ef" Title="DevOpsDsl Explorer">
+  <Explorer ExplorerGuid="4862bab5-3ef9-4f41-baf7-5415442935ef" Title="DevOps DSL">
     <ExplorerBehaviorMoniker Name="DevOpsDsl/DevOpsDslExplorer" />
   </Explorer>
 </Dsl>

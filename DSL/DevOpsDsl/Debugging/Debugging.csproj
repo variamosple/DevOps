@@ -50,7 +50,7 @@
     </None>
     <None Include="DevOpsDslReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DevOpsDslReport.txt</LastGenOutput>
+      <LastGenOutput>DevOpsDslReport.html</LastGenOutput>
     </None>
     <None Include="DevOpsDslReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -69,7 +69,7 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DevOpsDslReport.txt">
+    <Content Include="DevOpsDslReport.html">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DevOpsDslReport.tt</DependentUpon>

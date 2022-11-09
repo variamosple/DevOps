@@ -24,7 +24,7 @@
       <CommandFlag>AlwaysCreate</CommandFlag>
       <Strings>
         <CanonicalName>DevOps Model Explorer Context Menu</CanonicalName>
-        <ButtonText>DevOpsDsl Explorer</ButtonText>
+        <ButtonText>DevOps DSL</ButtonText>
       </Strings>
     </Menu>
   </Menus>
@@ -43,7 +43,7 @@
             <CommandFlag>DefaultInvisible</CommandFlag>
             <CommandFlag>DynamicVisibility</CommandFlag>
             <Strings>
-                <ButtonText>DevOpsDsl Explorer</ButtonText>
+                <ButtonText>DevOps DSL</ButtonText>
             </Strings>
         </Button>
     </Buttons>

@@ -774,7 +774,7 @@
     <comment>A list of file format specifiers for the Save dialog box</comment>
   </data>
   <data name="ModelExplorerTitle" xml:space="preserve">
-    <value>DevOpsDsl Explorer</value>
+    <value>DevOps DSL</value>
     <comment>Model Explorer Toolwindow title</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevOpsDiagram.Description" xml:space="preserve">
