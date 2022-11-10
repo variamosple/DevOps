@@ -253,8 +253,19 @@
     </DomainEnumeration>
     <DomainEnumeration Name="DevOpsPractices" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevOpsPractices">
       <Literals>
-        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.DevOpsPractices.ContinuousIntegration" Name="ContinuousIntegration" Value="0" />
-        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.DevOpsPractices.InfrastructureAsCode" Name="InfrastructureAsCode" Value="1" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Behavior-driven development (BDD)" Name="CiBehaviorDrivenDevelopment" Value="0" />
+        <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.DevOpsPractices.CpInfrastructureAsCode" Name="CpInfrastructureAsCode" Value="1" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Strategy and portofolio planning" Name="CpStrategyPortofolioPlanning" Value="2" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Lean product planning" Name="CpLeanProductPlanning" Value="3" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Release planning" Name="CpReleasePlanning" Value="4" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Sprint planning" Name="CpSprintPlanning" Value="5" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Agile requirement management" Name="CpAgileRequirementManagement" Value="6" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Security requirement" Name="CpSecurityRequirement" Value="7" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Architecture design" Name="CpArchitectureDesign" Value="8" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Capacity planning" Name="CpCapacityPlanning" Value="9" />
+        <EnumerationLiteral Description="Continuous Planning (CP): UX architecture design" Name="CpUxArchitectureDesign" Value="11" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Thread modeling" Name="CpThreadModeling" Value="12" />
+        <EnumerationLiteral Description="Continuous Planning (CP): Value stream mapping" Name="CpValueStreamMapping" Value="13" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="DevelopmentFrameworks" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevelopmentFrameworks">

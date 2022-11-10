@@ -630,17 +630,83 @@ namespace Variamos.DevOpsDsl
 	public enum DevOpsPractices
 	{
 		/// <summary>
-		/// ContinuousIntegration
-		/// Description for Variamos.DevOpsDsl.DevOpsPractices.ContinuousIntegration
+		/// CiBehaviorDrivenDevelopment
+		/// Continuous Integration (CI): Behavior-driven development (BDD)
 		/// </summary>
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/ContinuousIntegration.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		ContinuousIntegration = 0,
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiBehaviorDrivenDevelopment.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiBehaviorDrivenDevelopment = 0,
 		/// <summary>
-		/// InfrastructureAsCode
-		/// Description for Variamos.DevOpsDsl.DevOpsPractices.InfrastructureAsCode
+		/// CpInfrastructureAsCode
+		/// Description for Variamos.DevOpsDsl.DevOpsPractices.CpInfrastructureAsCode
 		/// </summary>
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/InfrastructureAsCode.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		InfrastructureAsCode = 1,
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpInfrastructureAsCode.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpInfrastructureAsCode = 1,
+		/// <summary>
+		/// CpStrategyPortofolioPlanning
+		/// Continuous Planning (CP): Strategy and portofolio planning
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpStrategyPortofolioPlanning.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpStrategyPortofolioPlanning = 2,
+		/// <summary>
+		/// CpLeanProductPlanning
+		/// Continuous Planning (CP): Lean product planning
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpLeanProductPlanning.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpLeanProductPlanning = 3,
+		/// <summary>
+		/// CpReleasePlanning
+		/// Continuous Planning (CP): Release planning
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpReleasePlanning.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpReleasePlanning = 4,
+		/// <summary>
+		/// CpSprintPlanning
+		/// Continuous Planning (CP): Sprint planning
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpSprintPlanning.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpSprintPlanning = 5,
+		/// <summary>
+		/// CpAgileRequirementManagement
+		/// Continuous Planning (CP): Agile requirement management
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpAgileRequirementManagement.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpAgileRequirementManagement = 6,
+		/// <summary>
+		/// CpSecurityRequirement
+		/// Continuous Planning (CP): Security requirement
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpSecurityRequirement.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpSecurityRequirement = 7,
+		/// <summary>
+		/// CpArchitectureDesign
+		/// Continuous Planning (CP): Architecture design
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpArchitectureDesign.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpArchitectureDesign = 8,
+		/// <summary>
+		/// CpCapacityPlanning
+		/// Continuous Planning (CP): Capacity planning
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpCapacityPlanning.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpCapacityPlanning = 9,
+		/// <summary>
+		/// CpUxArchitectureDesign
+		/// Continuous Planning (CP): UX architecture design
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpUxArchitectureDesign.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpUxArchitectureDesign = 11,
+		/// <summary>
+		/// CpThreadModeling
+		/// Continuous Planning (CP): Thread modeling
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpThreadModeling.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpThreadModeling = 12,
+		/// <summary>
+		/// CpValueStreamMapping
+		/// Continuous Planning (CP): Value stream mapping
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpValueStreamMapping.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CpValueStreamMapping = 13,
 	}
 }
 namespace Variamos.DevOpsDsl

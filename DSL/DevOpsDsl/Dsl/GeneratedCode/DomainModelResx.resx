@@ -541,21 +541,109 @@
     <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.EnumerationLiteral1</value>
     <comment>Description for EnumerationLiteral &apos;EnumerationLiteral1&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsPractices/ContinuousIntegration.DisplayName" xml:space="preserve">
-    <value>ContinuousIntegration</value>
-    <comment>Display name for EnumerationLiteral &apos;ContinuousIntegration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBehaviorDrivenDevelopment.DisplayName" xml:space="preserve">
+    <value>CiBehaviorDrivenDevelopment</value>
+    <comment>Display name for EnumerationLiteral &apos;CiBehaviorDrivenDevelopment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsPractices/ContinuousIntegration.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.DevOpsPractices.ContinuousIntegration</value>
-    <comment>Description for EnumerationLiteral &apos;ContinuousIntegration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBehaviorDrivenDevelopment.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Behavior-driven development (BDD)</value>
+    <comment>Description for EnumerationLiteral &apos;CiBehaviorDrivenDevelopment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsPractices/InfrastructureAsCode.DisplayName" xml:space="preserve">
-    <value>InfrastructureAsCode</value>
-    <comment>Display name for EnumerationLiteral &apos;InfrastructureAsCode&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpInfrastructureAsCode.DisplayName" xml:space="preserve">
+    <value>CpInfrastructureAsCode</value>
+    <comment>Display name for EnumerationLiteral &apos;CpInfrastructureAsCode&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsPractices/InfrastructureAsCode.Description" xml:space="preserve">
-    <value>Description for Variamos.DevOpsDsl.DevOpsPractices.InfrastructureAsCode</value>
-    <comment>Description for EnumerationLiteral &apos;InfrastructureAsCode&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpInfrastructureAsCode.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.DevOpsPractices.CpInfrastructureAsCode</value>
+    <comment>Description for EnumerationLiteral &apos;CpInfrastructureAsCode&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpStrategyPortofolioPlanning.DisplayName" xml:space="preserve">
+    <value>CpStrategyPortofolioPlanning</value>
+    <comment>Display name for EnumerationLiteral &apos;CpStrategyPortofolioPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpStrategyPortofolioPlanning.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Strategy and portofolio planning</value>
+    <comment>Description for EnumerationLiteral &apos;CpStrategyPortofolioPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpLeanProductPlanning.DisplayName" xml:space="preserve">
+    <value>CpLeanProductPlanning</value>
+    <comment>Display name for EnumerationLiteral &apos;CpLeanProductPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpLeanProductPlanning.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Lean product planning</value>
+    <comment>Description for EnumerationLiteral &apos;CpLeanProductPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpReleasePlanning.DisplayName" xml:space="preserve">
+    <value>CpReleasePlanning</value>
+    <comment>Display name for EnumerationLiteral &apos;CpReleasePlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpReleasePlanning.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Release planning</value>
+    <comment>Description for EnumerationLiteral &apos;CpReleasePlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpSprintPlanning.DisplayName" xml:space="preserve">
+    <value>CpSprintPlanning</value>
+    <comment>Display name for EnumerationLiteral &apos;CpSprintPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpSprintPlanning.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Sprint planning</value>
+    <comment>Description for EnumerationLiteral &apos;CpSprintPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpAgileRequirementManagement.DisplayName" xml:space="preserve">
+    <value>CpAgileRequirementManagement</value>
+    <comment>Display name for EnumerationLiteral &apos;CpAgileRequirementManagement&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpAgileRequirementManagement.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Agile requirement management</value>
+    <comment>Description for EnumerationLiteral &apos;CpAgileRequirementManagement&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpSecurityRequirement.DisplayName" xml:space="preserve">
+    <value>CpSecurityRequirement</value>
+    <comment>Display name for EnumerationLiteral &apos;CpSecurityRequirement&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpSecurityRequirement.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Security requirement</value>
+    <comment>Description for EnumerationLiteral &apos;CpSecurityRequirement&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpArchitectureDesign.DisplayName" xml:space="preserve">
+    <value>CpArchitectureDesign</value>
+    <comment>Display name for EnumerationLiteral &apos;CpArchitectureDesign&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpArchitectureDesign.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Architecture design</value>
+    <comment>Description for EnumerationLiteral &apos;CpArchitectureDesign&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpCapacityPlanning.DisplayName" xml:space="preserve">
+    <value>CpCapacityPlanning</value>
+    <comment>Display name for EnumerationLiteral &apos;CpCapacityPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpCapacityPlanning.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Capacity planning</value>
+    <comment>Description for EnumerationLiteral &apos;CpCapacityPlanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpUxArchitectureDesign.DisplayName" xml:space="preserve">
+    <value>CpUxArchitectureDesign</value>
+    <comment>Display name for EnumerationLiteral &apos;CpUxArchitectureDesign&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpUxArchitectureDesign.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): UX architecture design</value>
+    <comment>Description for EnumerationLiteral &apos;CpUxArchitectureDesign&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpThreadModeling.DisplayName" xml:space="preserve">
+    <value>CpThreadModeling</value>
+    <comment>Display name for EnumerationLiteral &apos;CpThreadModeling&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpThreadModeling.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Thread modeling</value>
+    <comment>Description for EnumerationLiteral &apos;CpThreadModeling&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpValueStreamMapping.DisplayName" xml:space="preserve">
+    <value>CpValueStreamMapping</value>
+    <comment>Display name for EnumerationLiteral &apos;CpValueStreamMapping&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CpValueStreamMapping.Description" xml:space="preserve">
+    <value>Continuous Planning (CP): Value stream mapping</value>
+    <comment>Description for EnumerationLiteral &apos;CpValueStreamMapping&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Java.DisplayName" xml:space="preserve">
     <value>Java</value>

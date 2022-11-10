@@ -497,8 +497,67 @@
   <!-- Enum DevOpsPractices -->
   <xsd:simpleType name="DevOpsPractices">
     <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="ContinuousIntegration"/>
-      <xsd:enumeration value="InfrastructureAsCode"/>
+      <xsd:enumeration value="CiBehaviorDrivenDevelopment">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Behavior-driven development (BDD)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpInfrastructureAsCode"/>
+      <xsd:enumeration value="CpStrategyPortofolioPlanning">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Strategy and portofolio planning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpLeanProductPlanning">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Lean product planning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpReleasePlanning">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Release planning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpSprintPlanning">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Sprint planning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpAgileRequirementManagement">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Agile requirement management</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpSecurityRequirement">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Security requirement</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpArchitectureDesign">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Architecture design</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpCapacityPlanning">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Capacity planning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpUxArchitectureDesign">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): UX architecture design</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpThreadModeling">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Thread modeling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CpValueStreamMapping">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Planning (CP): Value stream mapping</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   
