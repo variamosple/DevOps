@@ -3,20 +3,43 @@
 <#@ DevOpsDsl processor="DevOpsDslDirectiveProcessor" requires="fileName='..\Docs\DevOpsVariamos01.DevOpsDsl'" #>
 <html>
 <head>
-	<title><#= this.Application.ApplicationName #></title>
+	<title><#= this.Application.ApplicationName + "DevOps Model" #></title>
 </head>
+
 	
 <body>
-	<table>
-		<tr>
-			<td>Container</td>
+	<h1>DevOps Model</h1>
+	<h2>Application: <#= this.Application.ApplicationName #></h2>
+	<h3>DevOps Practices</h3>
 <#
   foreach(Container container in this.Application.Containers){
   #>
-  <tr><td><#= container.ContainerName #></td></tr>
+	<h4>Container: <#= container.ContainerName #></h4>
   <#
+	foreach(Practice practice in container.Practiced){
+	#>
+		<p>DevOps Practice: <#= practice.PracticeName #></p>
+		
+	<#
+	}
   }
-#>		</tr>
-	</table>
+#>	
+	<h3>SRE</h3>
+<#
+	foreach(Sre sre in this.Application.Sre)
+	{
+
+	 #>
+		<h4>SRE: <#= sre.SreName #></h4>
+	<#
+		foreach(SLO slo in sre.SLO){
+			#>
+			<p>SLO: <#= slo.SloName #></p>
+		
+			<#
+		}
+
+	}
+#>
 </body>
 </html>
