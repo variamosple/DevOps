@@ -6,10 +6,33 @@
 	<title><#= this.Application.ApplicationName + "DevOps Model" #></title>
 </head>
 
+<style>
+	.titlestyle {
+		text-align: center;
+		width: 100%;
+		background: #505EFF;
+		margin: 0;
+		padding: 0;
+		border-spacing: 0;
+	}
+	.subtitlestyle {
+		text-align: left;
+		width: 100%;
+		margin: 0;
+		background: #FFFFFF;
+		padding: 0;
+		border-spacing: 0;
+	}
+</style>
 	
 <body>
-	<h1>DevOps Model</h1>
-	<h2>Application: <#= this.Application.ApplicationName #></h2>
+	<div class="titlestyle"><h1>DevOps Model</h1></div>
+	<div class="subtitlestyle"><h2>Application: <#= this.Application.ApplicationName #></h2></div>
+
+	<p>Cloud Provider: <#= this.Application.CloudProvider #></p>
+	<p>Architectural Style: <#= this.Application.ArchitecturalStyle #></p>
+	<p>Model Version: <#= this.Application.ModelVersion #></p>
+
 	<h3>DevOps Practices</h3>
 <#
   foreach(Container container in this.Application.Containers){
@@ -19,7 +42,6 @@
 	foreach(Practice practice in container.Practiced){
 	#>
 		<p>DevOps Practice: <#= practice.PracticeName #></p>
-		
 	<#
 	}
   }

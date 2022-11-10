@@ -205,6 +205,23 @@ namespace Variamos.DevOpsDsl
 					}
 				}
 			}
+			// ModelVersion
+			if (!serializationContext.Result.Failed)
+			{
+				string attribModelVersion = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "modelVersion");
+				if (attribModelVersion != null)
+				{
+					global::System.String valueOfModelVersion;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribModelVersion, out valueOfModelVersion))
+					{
+						instanceOfApplication.ModelVersion = valueOfModelVersion;
+					}
+					else
+					{	// Invalid property value, ignored.
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "modelVersion", typeof(global::System.String), attribModelVersion);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -809,6 +826,18 @@ namespace Variamos.DevOpsDsl
 				if (!serializationContext.Result.Failed)
 				{
 					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "architecturalStyle", serializedPropValue);
+				}
+			}
+			// ModelVersion
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfApplication.ModelVersion;
+				if (!serializationContext.Result.Failed)
+				{
+					if (propValue != null && (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(propValue, "0.0.0") != 0))
+					{	// No need to write the value out if it's the same as default value.
+						DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "modelVersion", propValue);
+					}
 				}
 			}
 		}

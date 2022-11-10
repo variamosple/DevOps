@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<application xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" applicationName="Variamos" cloudProvider="Azure" architecturalStyle="NTierApplication" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
+<application xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" applicationName="Variamos" cloudProvider="Azure" architecturalStyle="NTierApplication" modelVersion="0.0.1" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
   <containers>
     <applicationHasContainers Id="e271a0e1-76ff-423b-91f2-b23bb4ba2f13">
       <container Id="a203568c-8057-4292-afb7-9a90b9fc07d4" containerName="VariaMos" containerType="WebApplication" containerFramework="React">

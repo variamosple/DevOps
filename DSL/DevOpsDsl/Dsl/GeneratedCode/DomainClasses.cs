@@ -13,7 +13,7 @@ namespace Variamos.DevOpsDsl
 {
 	/// <summary>
 	/// DomainClass Application
-	/// Application tobe implemnted DevOps
+	/// Application to be implemnted DevOps best practices
 	/// </summary>
 	[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
@@ -306,6 +306,94 @@ namespace Variamos.DevOpsDsl
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.architecturalStylePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ModelVersion domain property code
+		
+		/// <summary>
+		/// ModelVersion domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ModelVersionDomainPropertyId = new global::System.Guid(0xbc7e168c, 0x8c5d, 0x428f, 0xba, 0x4e, 0x42, 0x72, 0x68, 0xb3, 0x3f, 0x96);
+		
+		/// <summary>
+		/// Storage for ModelVersion
+		/// </summary>
+		private global::System.String modelVersionPropertyStorage = "0.0.0";
+		
+		/// <summary>
+		/// Gets or sets the value of ModelVersion domain property.
+		/// Version of the model
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application/ModelVersion.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application/ModelVersion.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("0.0.0")]
+		[DslModeling::DomainObjectId("bc7e168c-8c5d-428f-ba4e-427268b33f96")]
+		public global::System.String ModelVersion
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return modelVersionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ModelVersionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Application.ModelVersion domain property.
+		/// </summary>
+		internal sealed partial class ModelVersionPropertyHandler : DslModeling::DomainPropertyValueHandler<Application, global::System.String>
+		{
+			private ModelVersionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Application.ModelVersion domain property value handler.
+			/// </summary>
+			public static readonly ModelVersionPropertyHandler Instance = new ModelVersionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Application.ModelVersion domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ModelVersionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Application element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.modelVersionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Application element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.modelVersionPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -1093,7 +1181,7 @@ namespace Variamos.DevOpsDsl
 				// There is no storage for PracticeName because its Kind is
 				// set to Calculated. Please provide the GetPracticeNameValue()
 				// method on the domain class.
-				return element.PracticeType.ToString();
+				return element.GetPracticeNameValue();
 			}
 		
 		}

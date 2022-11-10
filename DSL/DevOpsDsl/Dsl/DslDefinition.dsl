@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5af03ef8-bd8c-4744-90d5-5e9ee1e1d2aa" Description="Description for Variamos.DevOpsDsl.DevOpsDsl" Name="DevOpsDsl" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl" ProductName="DevOpsDsl" CompanyName="Variamos" PackageGuid="dcd1f89d-000b-4058-8a43-beac92073e9f" PackageNamespace="Variamos.DevOpsDsl" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
-    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Application tobe implemnted DevOps" Name="Application" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="53fa3ae4-60e5-44d4-9a97-0d287f987aa9" Description="Application to be implemnted DevOps best practices" Name="Application" DisplayName="Application" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="e449a9e4-b5b2-4013-8a30-7ad6f145e609" Description="Name of the Application" Name="ApplicationName" DisplayName="Application Name" DefaultValue="My application" IsElementName="true">
           <Notes>Name of the Application</Notes>
@@ -17,6 +17,11 @@
         <DomainProperty Id="90ce1392-a03b-46df-b086-e79a8d97d857" Description="Description for Variamos.DevOpsDsl.Application.Architectural Style" Name="ArchitecturalStyle" DisplayName="Architectural Style">
           <Type>
             <DomainEnumerationMoniker Name="ArchitecturalStyles" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="bc7e168c-8c5d-428f-ba4e-427268b33f96" Description="Version of the model" Name="ModelVersion" DisplayName="Model Version" DefaultValue="0.0.0">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -39,7 +44,7 @@
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="89646196-a8a0-4186-a288-4384229596fd" Description="Description for Variamos.DevOpsDsl.Container" Name="Container" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="89646196-a8a0-4186-a288-4384229596fd" Description="Description for Variamos.DevOpsDsl.Container" Name="Container" DisplayName="Container" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="7e652c65-8339-43a0-a5ca-5373d18d416d" Description="Description for Variamos.DevOpsDsl.Container.Container Name" Name="ContainerName" DisplayName="Container Name" DefaultValue="My container" IsElementName="true">
           <Type>
@@ -68,7 +73,7 @@
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="3fba09f1-07e3-4ebf-8039-06613d70913a" Description="Description for Variamos.DevOpsDsl.Practice" Name="Practice" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="3fba09f1-07e3-4ebf-8039-06613d70913a" Description="Description for Variamos.DevOpsDsl.Practice" Name="Practice" DisplayName="DevOps Practice" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="7fa1949c-3098-44bf-8744-69103252f3d1" Description="Description for Variamos.DevOpsDsl.Practice.Practice Type" Name="PracticeType" DisplayName="Practice Type">
           <Type>
@@ -82,7 +87,7 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="cd85ddf3-cf78-4e6e-a2a9-53bd67fd1ca0" Description="Site Reliability Engineering settings for the application" Name="Sre" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="cd85ddf3-cf78-4e6e-a2a9-53bd67fd1ca0" Description="Site Reliability Engineering settings for the application" Name="Sre" DisplayName="SRE Definition" Namespace="Variamos.DevOpsDsl">
       <Properties>
         <DomainProperty Id="42cd10a9-2f6e-4447-aa29-dd1ea3a4eb18" Description="Description for Variamos.DevOpsDsl.Sre.Sre Name" Name="SreName" DisplayName="Sre Name" DefaultValue="Application SRE" IsElementName="true">
           <Type>
@@ -101,7 +106,7 @@
         </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
-    <DomainClass Id="293b3fb7-811a-4759-8baa-2f7d8109a2b5" Description="Service Level Objetive" Name="SLO" DisplayName="DevOps Model" Namespace="Variamos.DevOpsDsl">
+    <DomainClass Id="293b3fb7-811a-4759-8baa-2f7d8109a2b5" Description="Service Level Objetive" Name="SLO" DisplayName="SLO" Namespace="Variamos.DevOpsDsl">
       <Notes>Service Level Objetive</Notes>
       <Properties>
         <DomainProperty Id="f71cdc4e-bf61-4a61-8d00-c0968adf2193" Description="Description for Variamos.DevOpsDsl.SLO.Slo Name" Name="SloName" DisplayName="Slo Name">
@@ -374,6 +379,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="sre">
             <DomainRelationshipMoniker Name="ApplicationHasSre" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="modelVersion">
+            <DomainPropertyMoniker Name="Application/ModelVersion" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ApplicationHasContainers" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationHasContainersMoniker" ElementName="applicationHasContainers" MonikerTypeName="ApplicationHasContainersMoniker">

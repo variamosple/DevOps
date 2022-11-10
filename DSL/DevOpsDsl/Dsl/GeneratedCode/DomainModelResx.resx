@@ -126,11 +126,11 @@
     <comment>DisplayName for DslLibrary &apos;DevOpsDsl&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application.Description" xml:space="preserve">
-    <value>Application tobe implemnted DevOps</value>
+    <value>Application to be implemnted DevOps best practices</value>
     <comment>Description for DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application.DisplayName" xml:space="preserve">
-    <value>DevOps Model</value>
+    <value>Application</value>
     <comment>DisplayName for DomainClass &apos;Application&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Application/ApplicationName.Description" xml:space="preserve">
@@ -157,12 +157,20 @@
     <value>Architectural Style</value>
     <comment>DisplayName for DomainProperty &apos;ArchitecturalStyle&apos; on DomainClass &apos;Application&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.Application/ModelVersion.Description" xml:space="preserve">
+    <value>Version of the model</value>
+    <comment>Description for DomainProperty &apos;ModelVersion&apos; on DomainClass &apos;Application&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Application/ModelVersion.DisplayName" xml:space="preserve">
+    <value>Model Version</value>
+    <comment>DisplayName for DomainProperty &apos;ModelVersion&apos; on DomainClass &apos;Application&apos;</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.Container.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.Container</value>
     <comment>Description for DomainClass &apos;Container&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Container.DisplayName" xml:space="preserve">
-    <value>DevOps Model</value>
+    <value>Container</value>
     <comment>DisplayName for DomainClass &apos;Container&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Container/ContainerName.Description" xml:space="preserve">
@@ -194,7 +202,7 @@
     <comment>Description for DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Practice.DisplayName" xml:space="preserve">
-    <value>DevOps Model</value>
+    <value>DevOps Practice</value>
     <comment>DisplayName for DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Practice/PracticeType.Description" xml:space="preserve">
@@ -218,7 +226,7 @@
     <comment>Description for DomainClass &apos;Sre&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Sre.DisplayName" xml:space="preserve">
-    <value>DevOps Model</value>
+    <value>SRE Definition</value>
     <comment>DisplayName for DomainClass &apos;Sre&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Sre/SreName.Description" xml:space="preserve">
@@ -234,7 +242,7 @@
     <comment>Description for DomainClass &apos;SLO&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.SLO.DisplayName" xml:space="preserve">
-    <value>DevOps Model</value>
+    <value>SLO</value>
     <comment>DisplayName for DomainClass &apos;SLO&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.SLO/SloName.Description" xml:space="preserve">

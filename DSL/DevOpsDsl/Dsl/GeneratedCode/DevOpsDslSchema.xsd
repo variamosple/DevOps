@@ -5,7 +5,7 @@
   <xsd:element name="application" type="Application" substitutionGroup="core:modelElement" />
   <xsd:complexType name="Application">
     <xsd:annotation>
-      <xsd:documentation>Application tobe implemnted DevOps</xsd:documentation>
+      <xsd:documentation>Application to be implemnted DevOps best practices</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
@@ -67,6 +67,12 @@
         </xsd:attribute>
         <!-- Property: ArchitecturalStyle -->
         <xsd:attribute name="architecturalStyle" type="ArchitecturalStyles" />
+        <!-- Property: ModelVersion -->
+        <xsd:attribute name="modelVersion" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Version of the model</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

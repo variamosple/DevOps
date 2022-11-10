@@ -99,6 +99,7 @@ namespace Variamos.DevOpsDsl
 				new DomainMemberInfo(typeof(Application), "ApplicationName", Application.ApplicationNameDomainPropertyId, typeof(Application.ApplicationNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Application), "CloudProvider", Application.CloudProviderDomainPropertyId, typeof(Application.CloudProviderPropertyHandler)),
 				new DomainMemberInfo(typeof(Application), "ArchitecturalStyle", Application.ArchitecturalStyleDomainPropertyId, typeof(Application.ArchitecturalStylePropertyHandler)),
+				new DomainMemberInfo(typeof(Application), "ModelVersion", Application.ModelVersionDomainPropertyId, typeof(Application.ModelVersionPropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerName", Container.ContainerNameDomainPropertyId, typeof(Container.ContainerNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerType", Container.ContainerTypeDomainPropertyId, typeof(Container.ContainerTypePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerFramework", Container.ContainerFrameworkDomainPropertyId, typeof(Container.ContainerFrameworkPropertyHandler)),
