@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<application xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" applicationName="Variamos" cloudProvider="Azure" architecturalStyle="NTierApplication" modelVersion="0.0.1" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
+<application xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" applicationName="Variamos" cloudProvider="Azure" architecturalStyle="NTierApplication" modelVersion="0.0.1" description="Variamos - DevOps Model - Current Status" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
   <containers>
     <applicationHasContainers Id="e271a0e1-76ff-423b-91f2-b23bb4ba2f13">
       <container Id="a203568c-8057-4292-afb7-9a90b9fc07d4" containerName="VariaMos" containerType="WebApplication" containerFramework="React">
         <practiced>
           <containerHasPracticed Id="9e530470-38e6-499c-9474-1f801ca1f98e">
-            <practice Id="9163d529-9009-4a59-b16a-cd57656f851c" practiceType="CiBehaviorDrivenDevelopment" />
+            <practice Id="9163d529-9009-4a59-b16a-cd57656f851c" practiceType="CiBehaviorDrivenDevelopment" implementedValue="NI" />
           </containerHasPracticed>
           <containerHasPracticed Id="6b9613a1-b3e5-4773-8223-9eaf12014a97">
-            <practice Id="0251a29c-b48d-4039-8401-2ed51e1edb95" practiceType="CiBehaviorDrivenDevelopment" />
+            <practice Id="0251a29c-b48d-4039-8401-2ed51e1edb95" practiceType="CpSprintPlanning" implementedValue="NI" />
           </containerHasPracticed>
         </practiced>
       </container>
@@ -17,7 +17,7 @@
       <container Id="6519a090-54a2-4c31-8b3e-6e1b2da613ae" containerName="variamos-ms-apireference" containerType="Api" containerFramework="NodeJS">
         <practiced>
           <containerHasPracticed Id="4a8cb140-dfe2-4774-83e8-10a898c0e03e">
-            <practice Id="9128ff53-2ec7-48c5-a665-c3b64cf320c5" practiceType="CiBehaviorDrivenDevelopment" />
+            <practice Id="9128ff53-2ec7-48c5-a665-c3b64cf320c5" practiceType="CiBehaviorDrivenDevelopment" implementedValue="FI" />
           </containerHasPracticed>
         </practiced>
       </container>
@@ -26,10 +26,10 @@
       <container Id="c29f0b63-8420-4a6a-af60-76420850d156" containerName="variamos-ms-languages" containerType="Api" containerFramework="NodeJS">
         <practiced>
           <containerHasPracticed Id="f66990a6-9b5f-4821-9db7-942748253efc">
-            <practice Id="56d622c4-81d9-4756-8b08-5397cd1fb451" practiceType="CiBehaviorDrivenDevelopment" />
+            <practice Id="56d622c4-81d9-4756-8b08-5397cd1fb451" practiceType="CiBehaviorDrivenDevelopment" implementedValue="FI" />
           </containerHasPracticed>
           <containerHasPracticed Id="44b289e2-dfb2-4691-9ff3-bc433db6b851">
-            <practice Id="163755b6-2be6-472c-a21c-99754d654cab" practiceType="CiBehaviorDrivenDevelopment" />
+            <practice Id="163755b6-2be6-472c-a21c-99754d654cab" practiceType="CiBehaviorDrivenDevelopment" implementedValue="FI" />
           </containerHasPracticed>
         </practiced>
       </container>
@@ -40,13 +40,13 @@
       <sre Id="1433cabb-85ee-4a77-9c80-94067be4d0fe" sreName="Variamos SRE">
         <sLO>
           <sreHasSLO Id="3a21ff75-44e9-4fbd-8d38-a58c541cd950">
-            <sLO Id="fe9e0372-8214-4aeb-8afa-836eda583c5f" sloName="Availability" lowerBound="99.9" upperBound="100" operator="GratherThan" />
+            <sLO Id="fe9e0372-8214-4aeb-8afa-836eda583c5f" lowerBound="99.9" upperBound="100" operator="GratherThan" sliType="RequestLatency" />
           </sreHasSLO>
           <sreHasSLO Id="ca94c89c-431a-458e-bd06-114c8601a409">
-            <sLO Id="fc45b689-f258-407f-adc3-ddc2d2aad0fc" sloName="RequestLatency" upperBound="100" operator="LessThan" />
+            <sLO Id="fc45b689-f258-407f-adc3-ddc2d2aad0fc" upperBound="100" operator="LessThan" sliType="ErrorRate" />
           </sreHasSLO>
           <sreHasSLO Id="2b55776b-8eeb-4f8a-9066-d5d8b538174a">
-            <sLO Id="3365b1c3-c398-4143-a6f0-fd38675053ae" sloName="SystemThroughput" lowerBound="100" upperBound="500" operator="Between" />
+            <sLO Id="3365b1c3-c398-4143-a6f0-fd38675053ae" lowerBound="100" upperBound="500" operator="Between" sliType="SystemThroughput" />
           </sreHasSLO>
         </sLO>
       </sre>

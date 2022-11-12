@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<devOpsDiagram dslVersion="1.0.0.0" Id="c71eec72-9ff6-4b68-9173-38f735b2e646" absoluteBounds="0, 0, 17.625, 8.5" name="DevOpsVariamos01" diamgramName="Variamos - DevOps Model">
+<devOpsDiagram dslVersion="1.0.0.0" Id="c71eec72-9ff6-4b68-9173-38f735b2e646" absoluteBounds="0, 0, 17.625, 8.5" name="DevOpsVariamos01" diamgramName="Variamos DevOps Model">
   <applicationMoniker Id="2f5b7aa8-b00f-4026-a0d9-c51f34705fe1" />
   <nestedChildShapes>
     <containerShape Id="ab3860c1-49d7-44d1-9aee-04371b04a3b4" isExpanded="false" absoluteBounds="2.375, 0.875, 2.625, 1">
