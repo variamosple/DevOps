@@ -73,6 +73,8 @@
             <xsd:documentation>Version of the model</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Description -->
+        <xsd:attribute name="description" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -162,6 +164,12 @@
         </xsd:attribute>
         <!-- Property: PracticeType -->
         <xsd:attribute name="practiceType" type="DevOpsPractices" />
+        <!-- Property: ImplementedValue -->
+        <xsd:attribute name="implementedValue" type="DevOpsPracticesAdoptionValue" >
+          <xsd:annotation>
+            <xsd:documentation>% of implementation value. Fully Implemented (FI): 100%​, Largely Implemented (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI): [1,20] %​, Not Yet (NY): 0%</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -251,8 +259,6 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: SloName -->
-        <xsd:attribute name="sloName" type="SLI" />
         <!-- Property: LowerBound -->
         <xsd:attribute name="lowerBound" type="xsd:double" />
         <!-- Property: UpperBound -->
@@ -261,6 +267,8 @@
         <xsd:attribute name="description" type="xsd:string" />
         <!-- Property: Operator -->
         <xsd:attribute name="operator" type="ComparisonOperator" />
+        <!-- Property: SliType -->
+        <xsd:attribute name="sliType" type="SLI" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -623,6 +631,37 @@
       <xsd:enumeration value="GratherThan">
         <xsd:annotation>
           <xsd:documentation>Grater than</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum DevOpsPracticesAdoptionValue -->
+  <xsd:simpleType name="DevOpsPracticesAdoptionValue">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="FI">
+        <xsd:annotation>
+          <xsd:documentation>FI - Full implemented</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LI">
+        <xsd:annotation>
+          <xsd:documentation>LI - Largely Implemented</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PI">
+        <xsd:annotation>
+          <xsd:documentation>PI - Partially implemented</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NI">
+        <xsd:annotation>
+          <xsd:documentation>NI - Not implemented</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NY">
+        <xsd:annotation>
+          <xsd:documentation>NY - Not yet</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>

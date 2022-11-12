@@ -282,8 +282,11 @@ namespace Variamos.DevOpsDsl
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Practice.PracticeTypeDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Practice.PracticeTypeDomainPropertyId);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Practice.PracticeNameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Variamos.DevOpsDsl.Practice.ImplementedValueDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ImplementedValue").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		

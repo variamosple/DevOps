@@ -187,6 +187,15 @@ namespace Variamos.DevOpsDsl
 			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetObject("PracticeShapeIconDecoratorDefaultImage"));
 			shapeFields.Add(field2);
 			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("ImplementedValue");
+			field3.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("PracticeShapeImplementedValueDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
+			
 		}
 		
 		/// <summary>
@@ -205,6 +214,10 @@ namespace Variamos.DevOpsDsl
 			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IconDecorator");
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ImplementedValue");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerBottomLeft, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
 				
 		}
 		

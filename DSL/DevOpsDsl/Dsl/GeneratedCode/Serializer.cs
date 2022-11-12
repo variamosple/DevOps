@@ -222,6 +222,23 @@ namespace Variamos.DevOpsDsl
 					}
 				}
 			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				string attribDescription = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "description");
+				if (attribDescription != null)
+				{
+					global::System.String valueOfDescription;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribDescription, out valueOfDescription))
+					{
+						instanceOfApplication.Description = valueOfDescription;
+					}
+					else
+					{	// Invalid property value, ignored.
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "description", typeof(global::System.String), attribDescription);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -838,6 +855,17 @@ namespace Variamos.DevOpsDsl
 					{	// No need to write the value out if it's the same as default value.
 						DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "modelVersion", propValue);
 					}
+				}
+			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfApplication.Description;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "description", propValue);
+	
 				}
 			}
 		}
@@ -1965,6 +1993,23 @@ namespace Variamos.DevOpsDsl
 					}
 				}
 			}
+			// ImplementedValue
+			if (!serializationContext.Result.Failed)
+			{
+				string attribImplementedValue = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "implementedValue");
+				if (attribImplementedValue != null)
+				{
+					DevOpsPracticesAdoptionValue valueOfImplementedValue;
+					if (DslModeling::SerializationUtilities.TryGetValue<DevOpsPracticesAdoptionValue>(serializationContext, attribImplementedValue, out valueOfImplementedValue))
+					{
+						instanceOfPractice.ImplementedValue = valueOfImplementedValue;
+					}
+					else
+					{	// Invalid property value, ignored.
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "implementedValue", typeof(DevOpsPracticesAdoptionValue), attribImplementedValue);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -2398,6 +2443,16 @@ namespace Variamos.DevOpsDsl
 				if (!serializationContext.Result.Failed)
 				{
 					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "practiceType", serializedPropValue);
+				}
+			}
+			// ImplementedValue
+			if (!serializationContext.Result.Failed)
+			{
+				DevOpsPracticesAdoptionValue propValue = instanceOfPractice.ImplementedValue;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<DevOpsPracticesAdoptionValue>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "implementedValue", serializedPropValue);
 				}
 			}
 		}
@@ -3402,23 +3457,6 @@ namespace Variamos.DevOpsDsl
 			SLO instanceOfSLO = element as SLO;
 			global::System.Diagnostics.Debug.Assert(instanceOfSLO != null, "Expecting an instance of SLO");
 	
-			// SloName
-			if (!serializationContext.Result.Failed)
-			{
-				string attribSloName = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "sloName");
-				if (attribSloName != null)
-				{
-					SLI valueOfSloName;
-					if (DslModeling::SerializationUtilities.TryGetValue<SLI>(serializationContext, attribSloName, out valueOfSloName))
-					{
-						instanceOfSLO.SloName = valueOfSloName;
-					}
-					else
-					{	// Invalid property value, ignored.
-						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "sloName", typeof(SLI), attribSloName);
-					}
-				}
-			}
 			// LowerBound
 			if (!serializationContext.Result.Failed)
 			{
@@ -3484,6 +3522,23 @@ namespace Variamos.DevOpsDsl
 					else
 					{	// Invalid property value, ignored.
 						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "operator", typeof(ComparisonOperator), attribOperator);
+					}
+				}
+			}
+			// SliType
+			if (!serializationContext.Result.Failed)
+			{
+				string attribSliType = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "sliType");
+				if (attribSliType != null)
+				{
+					SLI valueOfSliType;
+					if (DslModeling::SerializationUtilities.TryGetValue<SLI>(serializationContext, attribSliType, out valueOfSliType))
+					{
+						instanceOfSLO.SliType = valueOfSliType;
+					}
+					else
+					{	// Invalid property value, ignored.
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "sliType", typeof(SLI), attribSliType);
 					}
 				}
 			}
@@ -3912,16 +3967,6 @@ namespace Variamos.DevOpsDsl
 			SLO instanceOfSLO = element as SLO;
 			global::System.Diagnostics.Debug.Assert(instanceOfSLO != null, "Expecting an instance of SLO");
 	
-			// SloName
-			if (!serializationContext.Result.Failed)
-			{
-				SLI propValue = instanceOfSLO.SloName;
-				string serializedPropValue = DslModeling::SerializationUtilities.GetString<SLI>(serializationContext, propValue);
-				if (!serializationContext.Result.Failed)
-				{
-					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "sloName", serializedPropValue);
-				}
-			}
 			// LowerBound
 			if (!serializationContext.Result.Failed)
 			{
@@ -3964,6 +4009,16 @@ namespace Variamos.DevOpsDsl
 				if (!serializationContext.Result.Failed)
 				{
 					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "operator", serializedPropValue);
+				}
+			}
+			// SliType
+			if (!serializationContext.Result.Failed)
+			{
+				SLI propValue = instanceOfSLO.SliType;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<SLI>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "sliType", serializedPropValue);
 				}
 			}
 		}

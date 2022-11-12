@@ -100,17 +100,20 @@ namespace Variamos.DevOpsDsl
 				new DomainMemberInfo(typeof(Application), "CloudProvider", Application.CloudProviderDomainPropertyId, typeof(Application.CloudProviderPropertyHandler)),
 				new DomainMemberInfo(typeof(Application), "ArchitecturalStyle", Application.ArchitecturalStyleDomainPropertyId, typeof(Application.ArchitecturalStylePropertyHandler)),
 				new DomainMemberInfo(typeof(Application), "ModelVersion", Application.ModelVersionDomainPropertyId, typeof(Application.ModelVersionPropertyHandler)),
+				new DomainMemberInfo(typeof(Application), "Description", Application.DescriptionDomainPropertyId, typeof(Application.DescriptionPropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerName", Container.ContainerNameDomainPropertyId, typeof(Container.ContainerNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerType", Container.ContainerTypeDomainPropertyId, typeof(Container.ContainerTypePropertyHandler)),
 				new DomainMemberInfo(typeof(Container), "ContainerFramework", Container.ContainerFrameworkDomainPropertyId, typeof(Container.ContainerFrameworkPropertyHandler)),
 				new DomainMemberInfo(typeof(Practice), "PracticeType", Practice.PracticeTypeDomainPropertyId, typeof(Practice.PracticeTypePropertyHandler)),
 				new DomainMemberInfo(typeof(Practice), "PracticeName", Practice.PracticeNameDomainPropertyId, typeof(Practice.PracticeNamePropertyHandler)),
+				new DomainMemberInfo(typeof(Practice), "ImplementedValue", Practice.ImplementedValueDomainPropertyId, typeof(Practice.ImplementedValuePropertyHandler)),
 				new DomainMemberInfo(typeof(Sre), "SreName", Sre.SreNameDomainPropertyId, typeof(Sre.SreNamePropertyHandler)),
 				new DomainMemberInfo(typeof(SLO), "SloName", SLO.SloNameDomainPropertyId, typeof(SLO.SloNamePropertyHandler)),
 				new DomainMemberInfo(typeof(SLO), "LowerBound", SLO.LowerBoundDomainPropertyId, typeof(SLO.LowerBoundPropertyHandler)),
 				new DomainMemberInfo(typeof(SLO), "UpperBound", SLO.UpperBoundDomainPropertyId, typeof(SLO.UpperBoundPropertyHandler)),
 				new DomainMemberInfo(typeof(SLO), "Description", SLO.DescriptionDomainPropertyId, typeof(SLO.DescriptionPropertyHandler)),
 				new DomainMemberInfo(typeof(SLO), "Operator", SLO.OperatorDomainPropertyId, typeof(SLO.OperatorPropertyHandler)),
+				new DomainMemberInfo(typeof(SLO), "SliType", SLO.SliTypeDomainPropertyId, typeof(SLO.SliTypePropertyHandler)),
 				new DomainMemberInfo(typeof(DevOpsDiagram), "DiamgramName", DevOpsDiagram.DiamgramNameDomainPropertyId, typeof(DevOpsDiagram.DiamgramNamePropertyHandler)),
 			};
 		}
@@ -842,6 +845,47 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.ComparisonOperator/GratherThan.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		GratherThan = 2,
+	}
+}
+namespace Variamos.DevOpsDsl
+{
+	/// <summary>
+	/// DomainEnumeration: DevOpsPracticesAdoptionValue
+	/// Description for Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum DevOpsPracticesAdoptionValue
+	{
+		/// <summary>
+		/// FI
+		/// FI - Full implemented
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/FI.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		FI = 0,
+		/// <summary>
+		/// LI
+		/// LI - Largely Implemented
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/LI.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		LI = 1,
+		/// <summary>
+		/// PI
+		/// PI - Partially implemented
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/PI.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		PI = 2,
+		/// <summary>
+		/// NI
+		/// NI - Not implemented
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/NI.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		NI = 3,
+		/// <summary>
+		/// NY
+		/// NY - Not yet
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/NY.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		NY = 4,
 	}
 }
 

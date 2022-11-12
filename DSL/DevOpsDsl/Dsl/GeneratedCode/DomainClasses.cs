@@ -400,6 +400,93 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		#endregion
+		#region Description domain property code
+		
+		/// <summary>
+		/// Description domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DescriptionDomainPropertyId = new global::System.Guid(0xd78e4e1a, 0xd5bb, 0x475f, 0x90, 0x23, 0x2a, 0xfd, 0x87, 0xaf, 0x43, 0xe3);
+		
+		/// <summary>
+		/// Storage for Description
+		/// </summary>
+		private global::System.String descriptionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Description domain property.
+		/// Description for Variamos.DevOpsDsl.Application.Description
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Application/Description.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Application/Description.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d78e4e1a-d5bb-475f-9023-2afd87af43e3")]
+		public global::System.String Description
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return descriptionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DescriptionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Application.Description domain property.
+		/// </summary>
+		internal sealed partial class DescriptionPropertyHandler : DslModeling::DomainPropertyValueHandler<Application, global::System.String>
+		{
+			private DescriptionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Application.Description domain property value handler.
+			/// </summary>
+			public static readonly DescriptionPropertyHandler Instance = new DescriptionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Application.Description domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DescriptionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Application element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.descriptionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Application element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.descriptionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Containers opposite domain role accessor
 		
 		/// <summary>
@@ -1187,6 +1274,95 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		#endregion
+		#region ImplementedValue domain property code
+		
+		/// <summary>
+		/// ImplementedValue domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ImplementedValueDomainPropertyId = new global::System.Guid(0x9478b1a3, 0x2f5c, 0x451c, 0xbc, 0x7d, 0x71, 0x79, 0xcb, 0xe1, 0x16, 0x5f);
+		
+		/// <summary>
+		/// Storage for ImplementedValue
+		/// </summary>
+		private DevOpsPracticesAdoptionValue implementedValuePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of ImplementedValue domain property.
+		/// % of implementation value. Fully Implemented (FI): 100%​, Largely Implemented
+		/// (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI):
+		/// [1,20] %​, Not Yet (NY): 0%
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Practice/ImplementedValue.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice/ImplementedValue.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("9478b1a3-2f5c-451c-bc7d-7179cbe1165f")]
+		public DevOpsPracticesAdoptionValue ImplementedValue
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return implementedValuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ImplementedValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Practice.ImplementedValue domain property.
+		/// </summary>
+		internal sealed partial class ImplementedValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Practice, DevOpsPracticesAdoptionValue>
+		{
+			private ImplementedValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Practice.ImplementedValue domain property value handler.
+			/// </summary>
+			public static readonly ImplementedValuePropertyHandler Instance = new ImplementedValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Practice.ImplementedValue domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ImplementedValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed DevOpsPracticesAdoptionValue GetValue(Practice element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.implementedValuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Practice element, DevOpsPracticesAdoptionValue newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				DevOpsPracticesAdoptionValue oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.implementedValuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Container opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Container.
@@ -1480,6 +1656,7 @@ namespace Variamos.DevOpsDsl
 	[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLO.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel))]
 	[global::System.CLSCompliant(true)]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (SloName = {SloName})")]
 	[DslModeling::DomainObjectId("293b3fb7-811a-4759-8baa-2f7d8109a2b5")]
 	public partial class SLO : DslModeling::ModelElement
 	{
@@ -1517,34 +1694,27 @@ namespace Variamos.DevOpsDsl
 		public static readonly global::System.Guid SloNameDomainPropertyId = new global::System.Guid(0xf71cdc4e, 0xbf61, 0x4a61, 0x8d, 0x00, 0xc0, 0x96, 0x8a, 0xdf, 0x21, 0x93);
 		
 		/// <summary>
-		/// Storage for SloName
-		/// </summary>
-		private SLI sloNamePropertyStorage;
-		
-		/// <summary>
 		/// Gets or sets the value of SloName domain property.
 		/// Description for Variamos.DevOpsDsl.SLO.Slo Name
 		/// </summary>
 		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SLO/SloName.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLO/SloName.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.ReadOnly(true)]
+		[DslModeling::ElementName]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.Calculated)]
 		[DslModeling::DomainObjectId("f71cdc4e-bf61-4a61-8d00-c0968adf2193")]
-		public SLI SloName
+		public global::System.String SloName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return sloNamePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				SloNamePropertyHandler.Instance.SetValue(this, value);
+				return SloNamePropertyHandler.Instance.GetValue(this);
 			}
 		}
 		/// <summary>
 		/// Value handler for the SLO.SloName domain property.
 		/// </summary>
-		internal sealed partial class SloNamePropertyHandler : DslModeling::DomainPropertyValueHandler<SLO, SLI>
+		internal sealed partial class SloNamePropertyHandler : DslModeling::CalculatedPropertyValueHandler<SLO, global::System.String>
 		{
 			private SloNamePropertyHandler() { }
 		
@@ -1570,29 +1740,15 @@ namespace Variamos.DevOpsDsl
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed SLI GetValue(SLO element)
+			public override sealed global::System.String GetValue(SLO element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.sloNamePropertyStorage;
+				// There is no storage for SloName because its Kind is
+				// set to Calculated. Please provide the GetSloNameValue()
+				// method on the domain class.
+				return element.GetSloNameValue();
 			}
 		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(SLO element, SLI newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				SLI oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.sloNamePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
 		}
 		
 		#endregion
@@ -1940,6 +2096,93 @@ namespace Variamos.DevOpsDsl
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.operatorPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region SliType domain property code
+		
+		/// <summary>
+		/// SliType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid SliTypeDomainPropertyId = new global::System.Guid(0x59864d65, 0xe456, 0x4c74, 0xa6, 0x06, 0x61, 0x62, 0x8e, 0xb9, 0xe9, 0x65);
+		
+		/// <summary>
+		/// Storage for SliType
+		/// </summary>
+		private SLI sliTypePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of SliType domain property.
+		/// Description for Variamos.DevOpsDsl.SLO.Sli Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.SLO/SliType.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLO/SliType.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("59864d65-e456-4c74-a606-61628eb9e965")]
+		public SLI SliType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return sliTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				SliTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the SLO.SliType domain property.
+		/// </summary>
+		internal sealed partial class SliTypePropertyHandler : DslModeling::DomainPropertyValueHandler<SLO, SLI>
+		{
+			private SliTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the SLO.SliType domain property value handler.
+			/// </summary>
+			public static readonly SliTypePropertyHandler Instance = new SliTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the SLO.SliType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return SliTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed SLI GetValue(SLO element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.sliTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(SLO element, SLI newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				SLI oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.sliTypePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}

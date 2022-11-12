@@ -3,7 +3,7 @@
 <#@ DevOpsDsl processor="DevOpsDslDirectiveProcessor" requires="fileName='..\Docs\DevOpsVariamos01.DevOpsDsl'" #>
 <html>
 <head>
-	<title><#= this.Application.ApplicationName + "DevOps Model" #></title>
+	<title><#= this.Application.Description #></title>
 </head>
 
 <style>
@@ -23,15 +23,18 @@
 		padding: 0;
 		border-spacing: 0;
 	}
+	.labelstyle{
+		font-weight: bold
+	}
 </style>
 	
 <body>
-	<div class="titlestyle"><h1>DevOps Model</h1></div>
+	<div class="titlestyle"><h1><#= this.Application.Description #></h1></div>
 	<div class="subtitlestyle"><h2>Application: <#= this.Application.ApplicationName #></h2></div>
 
-	<p>Cloud Provider: <#= this.Application.CloudProvider #></p>
-	<p>Architectural Style: <#= this.Application.ArchitecturalStyle #></p>
-	<p>Model Version: <#= this.Application.ModelVersion #></p>
+	<p><strong>Cloud Provider:</strong> <#= this.Application.CloudProvider #></p>
+	<p><strong>Architectural Style:</strong> <#= this.Application.ArchitecturalStyle #></p>
+	<p><strong>Model Version:</strong> <#= this.Application.ModelVersion #></p>
 
 	<h3>DevOps Practices</h3>
 <#
@@ -41,7 +44,8 @@
   <#
 	foreach(Practice practice in container.Practiced){
 	#>
-		<p>DevOps Practice: <#= practice.PracticeName #></p>
+		
+		<div><label class="labelstyle">DevOps Practice: </label><#= practice.PracticeName #><label class="labelstyle"> Implemented value: </label><#= practice.ImplementedValue #></div>
 	<#
 	}
   }

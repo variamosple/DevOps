@@ -165,6 +165,14 @@
     <value>Model Version</value>
     <comment>DisplayName for DomainProperty &apos;ModelVersion&apos; on DomainClass &apos;Application&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.Application/Description.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Application.Description</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;Application&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Application/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;Application&apos;</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.Container.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.Container</value>
     <comment>Description for DomainClass &apos;Container&apos;</comment>
@@ -220,6 +228,14 @@
   <data name="Variamos.DevOpsDsl.Practice/PracticeName.DisplayName" xml:space="preserve">
     <value>Practice Name</value>
     <comment>DisplayName for DomainProperty &apos;PracticeName&apos; on DomainClass &apos;Practice&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Practice/ImplementedValue.Description" xml:space="preserve">
+    <value>% of implementation value. Fully Implemented (FI): 100%​, Largely Implemented (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI): [1,20] %​, Not Yet (NY): 0%</value>
+    <comment>Description for DomainProperty &apos;ImplementedValue&apos; on DomainClass &apos;Practice&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Practice/ImplementedValue.DisplayName" xml:space="preserve">
+    <value>Implemented Value</value>
+    <comment>DisplayName for DomainProperty &apos;ImplementedValue&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Sre.Description" xml:space="preserve">
     <value>Site Reliability Engineering settings for the application</value>
@@ -284,6 +300,14 @@
   <data name="Variamos.DevOpsDsl.SLO/Operator.DisplayName" xml:space="preserve">
     <value>Operator</value>
     <comment>DisplayName for DomainProperty &apos;Operator&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/SliType.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.SLO.Sli Type</value>
+    <comment>Description for DomainProperty &apos;SliType&apos; on DomainClass &apos;SLO&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLO/SliType.DisplayName" xml:space="preserve">
+    <value>Sli Type</value>
+    <comment>DisplayName for DomainProperty &apos;SliType&apos; on DomainClass &apos;SLO&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ApplicationHasContainers.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.ApplicationHasContainers</value>
@@ -781,6 +805,46 @@
     <value>Grater than</value>
     <comment>Description for EnumerationLiteral &apos;GratherThan&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/FI.DisplayName" xml:space="preserve">
+    <value>FI</value>
+    <comment>Display name for EnumerationLiteral &apos;FI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/FI.Description" xml:space="preserve">
+    <value>FI - Full implemented</value>
+    <comment>Description for EnumerationLiteral &apos;FI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/LI.DisplayName" xml:space="preserve">
+    <value>LI</value>
+    <comment>Display name for EnumerationLiteral &apos;LI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/LI.Description" xml:space="preserve">
+    <value>LI - Largely Implemented</value>
+    <comment>Description for EnumerationLiteral &apos;LI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/PI.DisplayName" xml:space="preserve">
+    <value>PI</value>
+    <comment>Display name for EnumerationLiteral &apos;PI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/PI.Description" xml:space="preserve">
+    <value>PI - Partially implemented</value>
+    <comment>Description for EnumerationLiteral &apos;PI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/NI.DisplayName" xml:space="preserve">
+    <value>NI</value>
+    <comment>Display name for EnumerationLiteral &apos;NI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/NI.Description" xml:space="preserve">
+    <value>NI - Not implemented</value>
+    <comment>Description for EnumerationLiteral &apos;NI&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/NY.DisplayName" xml:space="preserve">
+    <value>NY</value>
+    <comment>Display name for EnumerationLiteral &apos;NY&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue/NY.Description" xml:space="preserve">
+    <value>NY - Not yet</value>
+    <comment>Description for EnumerationLiteral &apos;NY&apos; on DomainEnumeration &apos;DevOpsPracticesAdoptionValue&apos;</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.PracticeShape.Description" xml:space="preserve">
     <value>Description for Variamos.DevOpsDsl.PracticeShape</value>
     <comment>Description for DomainClass &apos;PracticeShape&apos;</comment>
@@ -791,6 +855,10 @@
   </data>
   <data name="PracticeShapeNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="PracticeShapeImplementedValueDefaultText" xml:space="preserve">
+    <value>ImplementedValue</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ContainerShape.Description" xml:space="preserve">

@@ -24,6 +24,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="d78e4e1a-d5bb-475f-9023-2afd87af43e3" Description="Description for Variamos.DevOpsDsl.Application.Description" Name="Description" DisplayName="Description">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
@@ -85,6 +90,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="9478b1a3-2f5c-451c-bc7d-7179cbe1165f" Description="% of implementation value. Fully Implemented (FI): 100%​, Largely Implemented (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI): [1,20] %​, Not Yet (NY): 0%" Name="ImplementedValue" DisplayName="Implemented Value">
+          <Type>
+            <DomainEnumerationMoniker Name="DevOpsPracticesAdoptionValue" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="cd85ddf3-cf78-4e6e-a2a9-53bd67fd1ca0" Description="Site Reliability Engineering settings for the application" Name="Sre" DisplayName="SRE Definition" Namespace="Variamos.DevOpsDsl">
@@ -109,9 +119,9 @@
     <DomainClass Id="293b3fb7-811a-4759-8baa-2f7d8109a2b5" Description="Service Level Objetive" Name="SLO" DisplayName="SLO" Namespace="Variamos.DevOpsDsl">
       <Notes>Service Level Objetive</Notes>
       <Properties>
-        <DomainProperty Id="f71cdc4e-bf61-4a61-8d00-c0968adf2193" Description="Description for Variamos.DevOpsDsl.SLO.Slo Name" Name="SloName" DisplayName="Slo Name">
+        <DomainProperty Id="f71cdc4e-bf61-4a61-8d00-c0968adf2193" Description="Description for Variamos.DevOpsDsl.SLO.Slo Name" Name="SloName" DisplayName="Slo Name" Kind="Calculated" IsElementName="true">
           <Type>
-            <DomainEnumerationMoniker Name="SLI" />
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
         <DomainProperty Id="4a3ebddf-54b7-4aa5-a06e-0ed06b58b789" Description="Description for Variamos.DevOpsDsl.SLO.Lower Bound" Name="LowerBound" DisplayName="Lower Bound" DefaultValue="0">
@@ -132,6 +142,11 @@
         <DomainProperty Id="75c2f44a-0caa-41c6-b74f-8e9f812c42da" Description="Description for Variamos.DevOpsDsl.SLO.Operator" Name="Operator" DisplayName="Operator">
           <Type>
             <DomainEnumerationMoniker Name="ComparisonOperator" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="59864d65-e456-4c74-a606-61628eb9e965" Description="Description for Variamos.DevOpsDsl.SLO.Sli Type" Name="SliType" DisplayName="Sli Type">
+          <Type>
+            <DomainEnumerationMoniker Name="SLI" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -305,6 +320,15 @@
         <EnumerationLiteral Description="Grater than" Name="GratherThan" Value="2" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="DevOpsPracticesAdoptionValue" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevOpsPracticesAdoptionValue">
+      <Literals>
+        <EnumerationLiteral Description="FI - Full implemented" Name="FI" Value="0" />
+        <EnumerationLiteral Description="LI - Largely Implemented" Name="LI" Value="1" />
+        <EnumerationLiteral Description="PI - Partially implemented" Name="PI" Value="2" />
+        <EnumerationLiteral Description="NI - Not implemented" Name="NI" Value="3" />
+        <EnumerationLiteral Description="NY - Not yet" Name="NY" Value="4" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="d7e872c2-b2b8-408a-8805-304f48a2f8cc" Description="Description for Variamos.DevOpsDsl.PracticeShape" Name="PracticeShape" DisplayName="Practice Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Practice Shape" InitialHeight="1" Geometry="Rectangle">
@@ -313,6 +337,9 @@
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
         <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\DevOpsIcon.png" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="ImplementedValue" DisplayName="Implemented Value" DefaultText="ImplementedValue" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="1f477189-8a64-42e2-994b-b0c1e42e32f1" Description="Description for Variamos.DevOpsDsl.ContainerShape" Name="ContainerShape" DisplayName="Container Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Container Shape" InitialHeight="1" Geometry="Rectangle">
@@ -393,6 +420,9 @@
           <XmlPropertyData XmlName="modelVersion">
             <DomainPropertyMoniker Name="Application/ModelVersion" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="description">
+            <DomainPropertyMoniker Name="Application/Description" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ApplicationHasContainers" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationHasContainersMoniker" ElementName="applicationHasContainers" MonikerTypeName="ApplicationHasContainersMoniker">
@@ -430,6 +460,9 @@
           <XmlPropertyData XmlName="practiceName" Representation="Ignore">
             <DomainPropertyMoniker Name="Practice/PracticeName" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="implementedValue">
+            <DomainPropertyMoniker Name="Practice/ImplementedValue" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="ApplicationContainerConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="applicationContainerConnectorMoniker" ElementName="applicationContainerConnector" MonikerTypeName="ApplicationContainerConnectorMoniker">
@@ -455,7 +488,7 @@
       <XmlClassData TypeName="SLO" MonikerAttributeName="" SerializeId="true" MonikerElementName="sLOMoniker" ElementName="sLO" MonikerTypeName="SLOMoniker">
         <DomainClassMoniker Name="SLO" />
         <ElementData>
-          <XmlPropertyData XmlName="sloName">
+          <XmlPropertyData XmlName="sloName" Representation="Ignore">
             <DomainPropertyMoniker Name="SLO/SloName" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="lowerBound">
@@ -469,6 +502,9 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="operator">
             <DomainPropertyMoniker Name="SLO/Operator" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="sliType">
+            <DomainPropertyMoniker Name="SLO/SliType" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -536,7 +572,7 @@
           <TextDecoratorMoniker Name="PracticeShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Practice/PracticeType" />
+              <DomainPropertyMoniker Name="Practice/PracticeName" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
@@ -545,6 +581,14 @@
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="Practice/PracticeType" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="PracticeShape/ImplementedValue" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Practice/ImplementedValue" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
