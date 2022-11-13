@@ -633,11 +633,11 @@ namespace Variamos.DevOpsDsl
 	public enum DevOpsPractices
 	{
 		/// <summary>
-		/// CiBehaviorDrivenDevelopment
+		/// CiBdd
 		/// Continuous Integration (CI): Behavior-driven development (BDD)
 		/// </summary>
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiBehaviorDrivenDevelopment.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		CiBehaviorDrivenDevelopment = 0,
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiBdd.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiBdd = 0,
 		/// <summary>
 		/// CpInfrastructureAsCode
 		/// Description for Variamos.DevOpsDsl.DevOpsPractices.CpInfrastructureAsCode
@@ -710,6 +710,291 @@ namespace Variamos.DevOpsDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CpValueStreamMapping.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		CpValueStreamMapping = 13,
+		/// <summary>
+		/// CiTdd
+		/// Continuous Integration (CI): Test-driven development (TDD)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiTdd.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiTdd = 14,
+		/// <summary>
+		/// CiShiftLeftTesting
+		/// Continuous Integration (CI): Shift-left testing
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiShiftLeftTesting.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiShiftLeftTesting = 15,
+		/// <summary>
+		/// CiMicroservicesDevelopmen
+		/// Continuous Integration (CI): Description for
+		/// Variamos.DevOpsDsl.DevOpsPractices.CiMicroservicesDevelopmen
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiMicroservicesDevelopmen.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiMicroservicesDevelopmen = 16,
+		/// <summary>
+		/// CiSast
+		/// Continuous Integration (CI): Static application security testing (SAST)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiSast.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiSast = 16,
+		/// <summary>
+		/// CiSecretsScanning
+		/// Continuous Integration (CI): Secrets scanning
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiSecretsScanning.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiSecretsScanning = 17,
+		/// <summary>
+		/// CiSca
+		/// Continuous Integration (CI): Software composition analysis (SCA)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiSca.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiSca = 19,
+		/// <summary>
+		/// CiUnitTestCodeCoverage
+		/// Continuous Integration (CI): Unit test/code coverage
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiUnitTestCodeCoverage.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiUnitTestCodeCoverage = 21,
+		/// <summary>
+		/// CiGitPullRequest
+		/// Continuous Integration (CI): Git pull request
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiGitPullRequest.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiGitPullRequest = 22,
+		/// <summary>
+		/// CiGatedCheckIn
+		/// Continuous Integration (CI): Gated check-in
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiGatedCheckIn.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiGatedCheckIn = 24,
+		/// <summary>
+		/// CiBuildPipeline
+		/// Continuous Integration (CI): Build pipeline
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CiBuildPipeline.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CiBuildPipeline = 25,
+		/// <summary>
+		/// CdReleasePipeline
+		/// Continuous Delivery (CD): Release pipeline
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CdReleasePipeline.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CdReleasePipeline = 25,
+		/// <summary>
+		/// CdSecureInfrastructureDeployment
+		/// Continuous Delivery (CD): Secure infrastructure deployment
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CdSecureInfrastructureDeployment.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CdSecureInfrastructureDeployment = 26,
+		/// <summary>
+		/// CdIaasDeployment
+		/// Continuous Delivery (CD): Infrastructure as a service (IaaS) deployment
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CdIaasDeployment.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CdIaasDeployment = 26,
+		/// <summary>
+		/// CdPaasDeployment
+		/// Continuous Delivery (CD): Platform as a service (PaaS) deployment
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CdPaasDeployment.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CdPaasDeployment = 27,
+		/// <summary>
+		/// CoSre
+		/// Continuous Operations (CO): Site reliability engineering (SRE)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoSre.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoSre = 40,
+		/// <summary>
+		/// CoMonitoring
+		/// Continuous Operations (CO): Telemetry/Monitoring
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoMonitoring.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoMonitoring = 41,
+		/// <summary>
+		/// CoDr
+		/// Continuous Operations (CO): Auto failover and scaling and deployment request
+		/// (DR)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoDr.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoDr = 43,
+		/// <summary>
+		/// CoModernService
+		/// Continuous Operations (CO): Modern service management
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoModernService.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoModernService = 44,
+		/// <summary>
+		/// CoSecureAccess
+		/// Continuous Operations (CO): Secure access/app/data
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoSecureAccess.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoSecureAccess = 45,
+		/// <summary>
+		/// CoDevSecOps
+		/// Continuous Operations (CO): DevSecOps
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoDevSecOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoDevSecOps = 47,
+		/// <summary>
+		/// CoChatOps
+		///  Continuous Operations (CO): ChatOps
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoChatOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoChatOps = 48,
+		/// <summary>
+		/// CoShiftRightTesting
+		/// Continuous Operations (CO): Shift-Right testing
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoShiftRightTesting.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoShiftRightTesting = 50,
+		/// <summary>
+		/// CoSecretsManagement
+		/// Continuous Operations (CO): Secrets management
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoSecretsManagement.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoSecretsManagement = 52,
+		/// <summary>
+		/// CoGovernance
+		/// Continuous Operations (CO): Governance
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CoGovernance.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CoGovernance = 54,
+		/// <summary>
+		/// CqQualityRequirimients
+		/// Continuous Quality (CQ): Quality Requirimients
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CqQualityRequirimients.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CqQualityRequirimients = 60,
+		/// <summary>
+		/// CqShiftLeftTesting
+		/// Continuous Quality (CQ): Shift-left testing
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CqShiftLeftTesting.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CqShiftLeftTesting = 61,
+		/// <summary>
+		/// CqGovernance
+		/// Continuous Quality (CQ): Governance and standards
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CqGovernance.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CqGovernance = 62,
+		/// <summary>
+		/// CqTestAutomation
+		/// Continuous Quality (CQ): Test automation
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CqTestAutomation.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CqTestAutomation = 63,
+		/// <summary>
+		/// CqCompliance
+		/// Continuous Quality (CQ): Compliance and audit
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CqCompliance.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CqCompliance = 64,
+		/// <summary>
+		/// CqShiftRightTesting
+		/// Continuous Quality (CQ): Shift-right testing
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CqShiftRightTesting.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CqShiftRightTesting = 65,
+		/// <summary>
+		/// CsSecureArchitecture
+		/// Continuous security (CS): Secure architecture
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CsSecureArchitecture.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CsSecureArchitecture = 70,
+		/// <summary>
+		/// CsGovernance
+		/// Continuous security (CS): Governance, compliance
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CsGovernance.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CsGovernance = 73,
+		/// <summary>
+		/// CsIdentity
+		/// Continuous security (CS): Identity and access management
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CsIdentity.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CsIdentity = 71,
+		/// <summary>
+		/// CsApplicationSecurity
+		/// Continuous security (CS): Application security
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CsApplicationSecurity.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CsApplicationSecurity = 72,
+		/// <summary>
+		/// CsSecureInfrastructure
+		/// Continuous security (CS): Secure infrastructure
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CsSecureInfrastructure.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CsSecureInfrastructure = 73,
+		/// <summary>
+		/// CsSecureData
+		/// Continuous security (CS): Secure data and secure operation
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CsSecureData.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CsSecureData = 72,
+		/// <summary>
+		/// CcCultureCollaboration
+		/// Continuous collaboration (CC): Culture collaboration
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CcCultureCollaboration.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CcCultureCollaboration = 80,
+		/// <summary>
+		/// CcAligmentAndAutonomy
+		/// Continuous collaboration (CC): Continuous collaboration (CC): Aligment and
+		/// autonomy
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CcAligmentAndAutonomy.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CcAligmentAndAutonomy = 81,
+		/// <summary>
+		/// CcKanbanCollaboration
+		/// Kanban collaboration
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CcKanbanCollaboration.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CcKanbanCollaboration = 82,
+		/// <summary>
+		/// CcWiki
+		/// Continuous collaboration (CC): Wiki and Teams collaboration
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CcWiki.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CcWiki = 84,
+		/// <summary>
+		/// CcChatOps
+		/// Continuous collaboration (CC): ChatOps collaboration
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CcChatOps.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CcChatOps = 85,
+		/// <summary>
+		/// CimLeadTime
+		/// Continuous improvement (CIM): Lead time and cycle time
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CimLeadTime.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CimLeadTime = 90,
+		/// <summary>
+		/// CimDeploymentFrequency
+		/// Continuous improvement (CIM): Deployment frequency
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CimDeploymentFrequency.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CimDeploymentFrequency = 91,
+		/// <summary>
+		/// CimMttr
+		/// Continuous improvement (CIM): Mean time to resolution (MTTR)
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CimMttr.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CimMttr = 93,
+		/// <summary>
+		/// CimChangeFailPercentage
+		/// Continuous improvement (CIM): Change fail percentage
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CimChangeFailPercentage.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CimChangeFailPercentage = 94,
+		/// <summary>
+		/// CimContinuousFeedback
+		/// Continuous improvement (CIM): Continuous feedback
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CimContinuousFeedback.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CimContinuousFeedback = 95,
+		/// <summary>
+		/// CimValueStreamMapping
+		/// Continuous improvement (CIM): Value stream mapping
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.DevOpsPractices/CimValueStreamMapping.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		CimValueStreamMapping = 96,
 	}
 }
 namespace Variamos.DevOpsDsl

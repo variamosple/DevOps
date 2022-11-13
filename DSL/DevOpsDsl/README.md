@@ -23,6 +23,6 @@ This DSL allows us to create the models and generate reports with the sugestion 
 - [Get Started with Domain-Specific Languages](https://learn.microsoft.com/en-us/visualstudio/modeling/getting-started-with-domain-specific-languages?source=recommendations&view=vs-2022)
 
 - [228-Introduce the foundation pillars of DevOps: Culture and Lean Product](https://learn.microsoft.com/en-us/training/modules/introduce-foundation-pillars-devops/)
-	Introduce the foundation pillars of DevOps Culture and Lean Product
+
 	
 - [229-Designing and Implementing Microsoft DevOps Solutions AZ-400 Exam Guide - Second Edition](https://learning-oreilly-com.ezproxy.eafit.edu.co/library/view/designing-and-implementing/9781803240664/B18655_01.xhtml#_idParaDest-23)

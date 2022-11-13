@@ -5,7 +5,7 @@
       <container Id="a203568c-8057-4292-afb7-9a90b9fc07d4" containerName="VariaMos" containerType="WebApplication" containerFramework="React">
         <practiced>
           <containerHasPracticed Id="9e530470-38e6-499c-9474-1f801ca1f98e">
-            <practice Id="9163d529-9009-4a59-b16a-cd57656f851c" practiceType="CiBehaviorDrivenDevelopment" implementedValue="NI" />
+            <practice Id="9163d529-9009-4a59-b16a-cd57656f851c" practiceType="CiBdd" implementedValue="NI" />
           </containerHasPracticed>
           <containerHasPracticed Id="6b9613a1-b3e5-4773-8223-9eaf12014a97">
             <practice Id="0251a29c-b48d-4039-8401-2ed51e1edb95" practiceType="CpSprintPlanning" implementedValue="NI" />
@@ -17,7 +17,7 @@
       <container Id="6519a090-54a2-4c31-8b3e-6e1b2da613ae" containerName="variamos-ms-apireference" containerType="Api" containerFramework="NodeJS">
         <practiced>
           <containerHasPracticed Id="4a8cb140-dfe2-4774-83e8-10a898c0e03e">
-            <practice Id="9128ff53-2ec7-48c5-a665-c3b64cf320c5" practiceType="CiBehaviorDrivenDevelopment" implementedValue="FI" />
+            <practice Id="9128ff53-2ec7-48c5-a665-c3b64cf320c5" practiceType="CiBdd" implementedValue="FI" />
           </containerHasPracticed>
         </practiced>
       </container>
@@ -26,10 +26,10 @@
       <container Id="c29f0b63-8420-4a6a-af60-76420850d156" containerName="variamos-ms-languages" containerType="Api" containerFramework="NodeJS">
         <practiced>
           <containerHasPracticed Id="f66990a6-9b5f-4821-9db7-942748253efc">
-            <practice Id="56d622c4-81d9-4756-8b08-5397cd1fb451" practiceType="CiBehaviorDrivenDevelopment" implementedValue="FI" />
+            <practice Id="56d622c4-81d9-4756-8b08-5397cd1fb451" practiceType="CiBdd" implementedValue="FI" />
           </containerHasPracticed>
           <containerHasPracticed Id="44b289e2-dfb2-4691-9ff3-bc433db6b851">
-            <practice Id="163755b6-2be6-472c-a21c-99754d654cab" practiceType="CiBehaviorDrivenDevelopment" implementedValue="FI" />
+            <practice Id="163755b6-2be6-472c-a21c-99754d654cab" practiceType="CiBdd" implementedValue="FI" />
           </containerHasPracticed>
         </practiced>
       </container>

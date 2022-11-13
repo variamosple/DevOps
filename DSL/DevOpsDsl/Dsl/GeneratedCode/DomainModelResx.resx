@@ -565,13 +565,13 @@
     <value>Description for Variamos.DevOpsDsl.ArchitecturalStyles.EnumerationLiteral1</value>
     <comment>Description for EnumerationLiteral &apos;EnumerationLiteral1&apos; on DomainEnumeration &apos;ArchitecturalStyles&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBehaviorDrivenDevelopment.DisplayName" xml:space="preserve">
-    <value>CiBehaviorDrivenDevelopment</value>
-    <comment>Display name for EnumerationLiteral &apos;CiBehaviorDrivenDevelopment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBdd.DisplayName" xml:space="preserve">
+    <value>CiBdd</value>
+    <comment>Display name for EnumerationLiteral &apos;CiBdd&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBehaviorDrivenDevelopment.Description" xml:space="preserve">
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBdd.Description" xml:space="preserve">
     <value>Continuous Integration (CI): Behavior-driven development (BDD)</value>
-    <comment>Description for EnumerationLiteral &apos;CiBehaviorDrivenDevelopment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+    <comment>Description for EnumerationLiteral &apos;CiBdd&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevOpsPractices/CpInfrastructureAsCode.DisplayName" xml:space="preserve">
     <value>CpInfrastructureAsCode</value>
@@ -668,6 +668,382 @@
   <data name="Variamos.DevOpsDsl.DevOpsPractices/CpValueStreamMapping.Description" xml:space="preserve">
     <value>Continuous Planning (CP): Value stream mapping</value>
     <comment>Description for EnumerationLiteral &apos;CpValueStreamMapping&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiTdd.DisplayName" xml:space="preserve">
+    <value>CiTdd</value>
+    <comment>Display name for EnumerationLiteral &apos;CiTdd&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiTdd.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Test-driven development (TDD)</value>
+    <comment>Description for EnumerationLiteral &apos;CiTdd&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiShiftLeftTesting.DisplayName" xml:space="preserve">
+    <value>CiShiftLeftTesting</value>
+    <comment>Display name for EnumerationLiteral &apos;CiShiftLeftTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiShiftLeftTesting.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Shift-left testing</value>
+    <comment>Description for EnumerationLiteral &apos;CiShiftLeftTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiMicroservicesDevelopmen.DisplayName" xml:space="preserve">
+    <value>CiMicroservicesDevelopmen</value>
+    <comment>Display name for EnumerationLiteral &apos;CiMicroservicesDevelopmen&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiMicroservicesDevelopmen.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Description for Variamos.DevOpsDsl.DevOpsPractices.CiMicroservicesDevelopmen</value>
+    <comment>Description for EnumerationLiteral &apos;CiMicroservicesDevelopmen&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiSast.DisplayName" xml:space="preserve">
+    <value>CiSast</value>
+    <comment>Display name for EnumerationLiteral &apos;CiSast&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiSast.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Static application security testing (SAST)</value>
+    <comment>Description for EnumerationLiteral &apos;CiSast&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiSecretsScanning.DisplayName" xml:space="preserve">
+    <value>CiSecretsScanning</value>
+    <comment>Display name for EnumerationLiteral &apos;CiSecretsScanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiSecretsScanning.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Secrets scanning</value>
+    <comment>Description for EnumerationLiteral &apos;CiSecretsScanning&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiSca.DisplayName" xml:space="preserve">
+    <value>CiSca</value>
+    <comment>Display name for EnumerationLiteral &apos;CiSca&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiSca.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Software composition analysis (SCA)</value>
+    <comment>Description for EnumerationLiteral &apos;CiSca&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiUnitTestCodeCoverage.DisplayName" xml:space="preserve">
+    <value>CiUnitTestCodeCoverage</value>
+    <comment>Display name for EnumerationLiteral &apos;CiUnitTestCodeCoverage&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiUnitTestCodeCoverage.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Unit test/code coverage</value>
+    <comment>Description for EnumerationLiteral &apos;CiUnitTestCodeCoverage&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiGitPullRequest.DisplayName" xml:space="preserve">
+    <value>CiGitPullRequest</value>
+    <comment>Display name for EnumerationLiteral &apos;CiGitPullRequest&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiGitPullRequest.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Git pull request</value>
+    <comment>Description for EnumerationLiteral &apos;CiGitPullRequest&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiGatedCheckIn.DisplayName" xml:space="preserve">
+    <value>CiGatedCheckIn</value>
+    <comment>Display name for EnumerationLiteral &apos;CiGatedCheckIn&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiGatedCheckIn.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Gated check-in</value>
+    <comment>Description for EnumerationLiteral &apos;CiGatedCheckIn&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBuildPipeline.DisplayName" xml:space="preserve">
+    <value>CiBuildPipeline</value>
+    <comment>Display name for EnumerationLiteral &apos;CiBuildPipeline&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CiBuildPipeline.Description" xml:space="preserve">
+    <value>Continuous Integration (CI): Build pipeline</value>
+    <comment>Description for EnumerationLiteral &apos;CiBuildPipeline&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdReleasePipeline.DisplayName" xml:space="preserve">
+    <value>CdReleasePipeline</value>
+    <comment>Display name for EnumerationLiteral &apos;CdReleasePipeline&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdReleasePipeline.Description" xml:space="preserve">
+    <value>Continuous Delivery (CD): Release pipeline</value>
+    <comment>Description for EnumerationLiteral &apos;CdReleasePipeline&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdSecureInfrastructureDeployment.DisplayName" xml:space="preserve">
+    <value>CdSecureInfrastructureDeployment</value>
+    <comment>Display name for EnumerationLiteral &apos;CdSecureInfrastructureDeployment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdSecureInfrastructureDeployment.Description" xml:space="preserve">
+    <value>Continuous Delivery (CD): Secure infrastructure deployment</value>
+    <comment>Description for EnumerationLiteral &apos;CdSecureInfrastructureDeployment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdIaasDeployment.DisplayName" xml:space="preserve">
+    <value>CdIaasDeployment</value>
+    <comment>Display name for EnumerationLiteral &apos;CdIaasDeployment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdIaasDeployment.Description" xml:space="preserve">
+    <value>Continuous Delivery (CD): Infrastructure as a service (IaaS) deployment</value>
+    <comment>Description for EnumerationLiteral &apos;CdIaasDeployment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdPaasDeployment.DisplayName" xml:space="preserve">
+    <value>CdPaasDeployment</value>
+    <comment>Display name for EnumerationLiteral &apos;CdPaasDeployment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CdPaasDeployment.Description" xml:space="preserve">
+    <value>Continuous Delivery (CD): Platform as a service (PaaS) deployment</value>
+    <comment>Description for EnumerationLiteral &apos;CdPaasDeployment&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoSre.DisplayName" xml:space="preserve">
+    <value>CoSre</value>
+    <comment>Display name for EnumerationLiteral &apos;CoSre&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoSre.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Site reliability engineering (SRE)</value>
+    <comment>Description for EnumerationLiteral &apos;CoSre&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoMonitoring.DisplayName" xml:space="preserve">
+    <value>CoMonitoring</value>
+    <comment>Display name for EnumerationLiteral &apos;CoMonitoring&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoMonitoring.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Telemetry/Monitoring</value>
+    <comment>Description for EnumerationLiteral &apos;CoMonitoring&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoDr.DisplayName" xml:space="preserve">
+    <value>CoDr</value>
+    <comment>Display name for EnumerationLiteral &apos;CoDr&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoDr.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Auto failover and scaling and deployment request (DR)</value>
+    <comment>Description for EnumerationLiteral &apos;CoDr&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoModernService.DisplayName" xml:space="preserve">
+    <value>CoModernService</value>
+    <comment>Display name for EnumerationLiteral &apos;CoModernService&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoModernService.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Modern service management</value>
+    <comment>Description for EnumerationLiteral &apos;CoModernService&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoSecureAccess.DisplayName" xml:space="preserve">
+    <value>CoSecureAccess</value>
+    <comment>Display name for EnumerationLiteral &apos;CoSecureAccess&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoSecureAccess.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Secure access/app/data</value>
+    <comment>Description for EnumerationLiteral &apos;CoSecureAccess&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoDevSecOps.DisplayName" xml:space="preserve">
+    <value>CoDevSecOps</value>
+    <comment>Display name for EnumerationLiteral &apos;CoDevSecOps&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoDevSecOps.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): DevSecOps</value>
+    <comment>Description for EnumerationLiteral &apos;CoDevSecOps&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoChatOps.DisplayName" xml:space="preserve">
+    <value>CoChatOps</value>
+    <comment>Display name for EnumerationLiteral &apos;CoChatOps&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoChatOps.Description" xml:space="preserve">
+    <value> Continuous Operations (CO): ChatOps</value>
+    <comment>Description for EnumerationLiteral &apos;CoChatOps&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoShiftRightTesting.DisplayName" xml:space="preserve">
+    <value>CoShiftRightTesting</value>
+    <comment>Display name for EnumerationLiteral &apos;CoShiftRightTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoShiftRightTesting.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Shift-Right testing</value>
+    <comment>Description for EnumerationLiteral &apos;CoShiftRightTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoSecretsManagement.DisplayName" xml:space="preserve">
+    <value>CoSecretsManagement</value>
+    <comment>Display name for EnumerationLiteral &apos;CoSecretsManagement&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoSecretsManagement.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Secrets management</value>
+    <comment>Description for EnumerationLiteral &apos;CoSecretsManagement&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoGovernance.DisplayName" xml:space="preserve">
+    <value>CoGovernance</value>
+    <comment>Display name for EnumerationLiteral &apos;CoGovernance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CoGovernance.Description" xml:space="preserve">
+    <value>Continuous Operations (CO): Governance</value>
+    <comment>Description for EnumerationLiteral &apos;CoGovernance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqQualityRequirimients.DisplayName" xml:space="preserve">
+    <value>CqQualityRequirimients</value>
+    <comment>Display name for EnumerationLiteral &apos;CqQualityRequirimients&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqQualityRequirimients.Description" xml:space="preserve">
+    <value>Continuous Quality (CQ): Quality Requirimients</value>
+    <comment>Description for EnumerationLiteral &apos;CqQualityRequirimients&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqShiftLeftTesting.DisplayName" xml:space="preserve">
+    <value>CqShiftLeftTesting</value>
+    <comment>Display name for EnumerationLiteral &apos;CqShiftLeftTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqShiftLeftTesting.Description" xml:space="preserve">
+    <value>Continuous Quality (CQ): Shift-left testing</value>
+    <comment>Description for EnumerationLiteral &apos;CqShiftLeftTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqGovernance.DisplayName" xml:space="preserve">
+    <value>CqGovernance</value>
+    <comment>Display name for EnumerationLiteral &apos;CqGovernance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqGovernance.Description" xml:space="preserve">
+    <value>Continuous Quality (CQ): Governance and standards</value>
+    <comment>Description for EnumerationLiteral &apos;CqGovernance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqTestAutomation.DisplayName" xml:space="preserve">
+    <value>CqTestAutomation</value>
+    <comment>Display name for EnumerationLiteral &apos;CqTestAutomation&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqTestAutomation.Description" xml:space="preserve">
+    <value>Continuous Quality (CQ): Test automation</value>
+    <comment>Description for EnumerationLiteral &apos;CqTestAutomation&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqCompliance.DisplayName" xml:space="preserve">
+    <value>CqCompliance</value>
+    <comment>Display name for EnumerationLiteral &apos;CqCompliance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqCompliance.Description" xml:space="preserve">
+    <value>Continuous Quality (CQ): Compliance and audit</value>
+    <comment>Description for EnumerationLiteral &apos;CqCompliance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqShiftRightTesting.DisplayName" xml:space="preserve">
+    <value>CqShiftRightTesting</value>
+    <comment>Display name for EnumerationLiteral &apos;CqShiftRightTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CqShiftRightTesting.Description" xml:space="preserve">
+    <value>Continuous Quality (CQ): Shift-right testing</value>
+    <comment>Description for EnumerationLiteral &apos;CqShiftRightTesting&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsSecureArchitecture.DisplayName" xml:space="preserve">
+    <value>CsSecureArchitecture</value>
+    <comment>Display name for EnumerationLiteral &apos;CsSecureArchitecture&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsSecureArchitecture.Description" xml:space="preserve">
+    <value>Continuous security (CS): Secure architecture</value>
+    <comment>Description for EnumerationLiteral &apos;CsSecureArchitecture&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsGovernance.DisplayName" xml:space="preserve">
+    <value>CsGovernance</value>
+    <comment>Display name for EnumerationLiteral &apos;CsGovernance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsGovernance.Description" xml:space="preserve">
+    <value>Continuous security (CS): Governance, compliance</value>
+    <comment>Description for EnumerationLiteral &apos;CsGovernance&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsIdentity.DisplayName" xml:space="preserve">
+    <value>CsIdentity</value>
+    <comment>Display name for EnumerationLiteral &apos;CsIdentity&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsIdentity.Description" xml:space="preserve">
+    <value>Continuous security (CS): Identity and access management</value>
+    <comment>Description for EnumerationLiteral &apos;CsIdentity&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsApplicationSecurity.DisplayName" xml:space="preserve">
+    <value>CsApplicationSecurity</value>
+    <comment>Display name for EnumerationLiteral &apos;CsApplicationSecurity&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsApplicationSecurity.Description" xml:space="preserve">
+    <value>Continuous security (CS): Application security</value>
+    <comment>Description for EnumerationLiteral &apos;CsApplicationSecurity&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsSecureInfrastructure.DisplayName" xml:space="preserve">
+    <value>CsSecureInfrastructure</value>
+    <comment>Display name for EnumerationLiteral &apos;CsSecureInfrastructure&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsSecureInfrastructure.Description" xml:space="preserve">
+    <value>Continuous security (CS): Secure infrastructure</value>
+    <comment>Description for EnumerationLiteral &apos;CsSecureInfrastructure&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsSecureData.DisplayName" xml:space="preserve">
+    <value>CsSecureData</value>
+    <comment>Display name for EnumerationLiteral &apos;CsSecureData&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CsSecureData.Description" xml:space="preserve">
+    <value>Continuous security (CS): Secure data and secure operation</value>
+    <comment>Description for EnumerationLiteral &apos;CsSecureData&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcCultureCollaboration.DisplayName" xml:space="preserve">
+    <value>CcCultureCollaboration</value>
+    <comment>Display name for EnumerationLiteral &apos;CcCultureCollaboration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcCultureCollaboration.Description" xml:space="preserve">
+    <value>Continuous collaboration (CC): Culture collaboration</value>
+    <comment>Description for EnumerationLiteral &apos;CcCultureCollaboration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcAligmentAndAutonomy.DisplayName" xml:space="preserve">
+    <value>CcAligmentAndAutonomy</value>
+    <comment>Display name for EnumerationLiteral &apos;CcAligmentAndAutonomy&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcAligmentAndAutonomy.Description" xml:space="preserve">
+    <value>Continuous collaboration (CC): Continuous collaboration (CC): Aligment and autonomy</value>
+    <comment>Description for EnumerationLiteral &apos;CcAligmentAndAutonomy&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcKanbanCollaboration.DisplayName" xml:space="preserve">
+    <value>CcKanbanCollaboration</value>
+    <comment>Display name for EnumerationLiteral &apos;CcKanbanCollaboration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcKanbanCollaboration.Description" xml:space="preserve">
+    <value>Kanban collaboration</value>
+    <comment>Description for EnumerationLiteral &apos;CcKanbanCollaboration&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcWiki.DisplayName" xml:space="preserve">
+    <value>CcWiki</value>
+    <comment>Display name for EnumerationLiteral &apos;CcWiki&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcWiki.Description" xml:space="preserve">
+    <value>Continuous collaboration (CC): Wiki and Teams collaboration</value>
+    <comment>Description for EnumerationLiteral &apos;CcWiki&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcChatOps.DisplayName" xml:space="preserve">
+    <value>CcChatOps</value>
+    <comment>Display name for EnumerationLiteral &apos;CcChatOps&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CcChatOps.Description" xml:space="preserve">
+    <value>Continuous collaboration (CC): ChatOps collaboration</value>
+    <comment>Description for EnumerationLiteral &apos;CcChatOps&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimLeadTime.DisplayName" xml:space="preserve">
+    <value>CimLeadTime</value>
+    <comment>Display name for EnumerationLiteral &apos;CimLeadTime&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimLeadTime.Description" xml:space="preserve">
+    <value>Continuous improvement (CIM): Lead time and cycle time</value>
+    <comment>Description for EnumerationLiteral &apos;CimLeadTime&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimDeploymentFrequency.DisplayName" xml:space="preserve">
+    <value>CimDeploymentFrequency</value>
+    <comment>Display name for EnumerationLiteral &apos;CimDeploymentFrequency&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimDeploymentFrequency.Description" xml:space="preserve">
+    <value>Continuous improvement (CIM): Deployment frequency</value>
+    <comment>Description for EnumerationLiteral &apos;CimDeploymentFrequency&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimMttr.DisplayName" xml:space="preserve">
+    <value>CimMttr</value>
+    <comment>Display name for EnumerationLiteral &apos;CimMttr&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimMttr.Description" xml:space="preserve">
+    <value>Continuous improvement (CIM): Mean time to resolution (MTTR)</value>
+    <comment>Description for EnumerationLiteral &apos;CimMttr&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimChangeFailPercentage.DisplayName" xml:space="preserve">
+    <value>CimChangeFailPercentage</value>
+    <comment>Display name for EnumerationLiteral &apos;CimChangeFailPercentage&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimChangeFailPercentage.Description" xml:space="preserve">
+    <value>Continuous improvement (CIM): Change fail percentage</value>
+    <comment>Description for EnumerationLiteral &apos;CimChangeFailPercentage&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimContinuousFeedback.DisplayName" xml:space="preserve">
+    <value>CimContinuousFeedback</value>
+    <comment>Display name for EnumerationLiteral &apos;CimContinuousFeedback&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimContinuousFeedback.Description" xml:space="preserve">
+    <value>Continuous improvement (CIM): Continuous feedback</value>
+    <comment>Description for EnumerationLiteral &apos;CimContinuousFeedback&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimValueStreamMapping.DisplayName" xml:space="preserve">
+    <value>CimValueStreamMapping</value>
+    <comment>Display name for EnumerationLiteral &apos;CimValueStreamMapping&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.DevOpsPractices/CimValueStreamMapping.Description" xml:space="preserve">
+    <value>Continuous improvement (CIM): Value stream mapping</value>
+    <comment>Description for EnumerationLiteral &apos;CimValueStreamMapping&apos; on DomainEnumeration &apos;DevOpsPractices&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.DevelopmentFrameworks/Java.DisplayName" xml:space="preserve">
     <value>Java</value>

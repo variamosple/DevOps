@@ -268,7 +268,7 @@
     </DomainEnumeration>
     <DomainEnumeration Name="DevOpsPractices" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevOpsPractices">
       <Literals>
-        <EnumerationLiteral Description="Continuous Integration (CI): Behavior-driven development (BDD)" Name="CiBehaviorDrivenDevelopment" Value="0" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Behavior-driven development (BDD)" Name="CiBdd" Value="0" />
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.DevOpsPractices.CpInfrastructureAsCode" Name="CpInfrastructureAsCode" Value="1" />
         <EnumerationLiteral Description="Continuous Planning (CP): Strategy and portofolio planning" Name="CpStrategyPortofolioPlanning" Value="2" />
         <EnumerationLiteral Description="Continuous Planning (CP): Lean product planning" Name="CpLeanProductPlanning" Value="3" />
@@ -281,6 +281,55 @@
         <EnumerationLiteral Description="Continuous Planning (CP): UX architecture design" Name="CpUxArchitectureDesign" Value="11" />
         <EnumerationLiteral Description="Continuous Planning (CP): Thread modeling" Name="CpThreadModeling" Value="12" />
         <EnumerationLiteral Description="Continuous Planning (CP): Value stream mapping" Name="CpValueStreamMapping" Value="13" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Test-driven development (TDD)" Name="CiTdd" Value="14" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Shift-left testing" Name="CiShiftLeftTesting" Value="15" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Description for Variamos.DevOpsDsl.DevOpsPractices.CiMicroservicesDevelopmen" Name="CiMicroservicesDevelopmen" Value="16">
+          <Notes>Microservices and container development</Notes>
+        </EnumerationLiteral>
+        <EnumerationLiteral Description="Continuous Integration (CI): Static application security testing (SAST)" Name="CiSast" Value="16" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Secrets scanning" Name="CiSecretsScanning" Value="17" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Software composition analysis (SCA)" Name="CiSca" Value="19" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Unit test/code coverage" Name="CiUnitTestCodeCoverage" Value="21" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Git pull request" Name="CiGitPullRequest" Value="22" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Gated check-in" Name="CiGatedCheckIn" Value="24" />
+        <EnumerationLiteral Description="Continuous Integration (CI): Build pipeline" Name="CiBuildPipeline" Value="25" />
+        <EnumerationLiteral Description="Continuous Delivery (CD): Release pipeline" Name="CdReleasePipeline" Value="25" />
+        <EnumerationLiteral Description="Continuous Delivery (CD): Secure infrastructure deployment" Name="CdSecureInfrastructureDeployment" Value="26" />
+        <EnumerationLiteral Description="Continuous Delivery (CD): Infrastructure as a service (IaaS) deployment" Name="CdIaasDeployment" Value="26" />
+        <EnumerationLiteral Description="Continuous Delivery (CD): Platform as a service (PaaS) deployment" Name="CdPaasDeployment" Value="27" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Site reliability engineering (SRE)" Name="CoSre" Value="40" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Telemetry/Monitoring" Name="CoMonitoring" Value="41" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Auto failover and scaling and deployment request (DR)" Name="CoDr" Value="43" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Modern service management" Name="CoModernService" Value="44" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Secure access/app/data" Name="CoSecureAccess" Value="45" />
+        <EnumerationLiteral Description="Continuous Operations (CO): DevSecOps" Name="CoDevSecOps" Value="47" />
+        <EnumerationLiteral Description=" Continuous Operations (CO): ChatOps" Name="CoChatOps" Value="48" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Shift-Right testing" Name="CoShiftRightTesting" Value="50" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Secrets management" Name="CoSecretsManagement" Value="52" />
+        <EnumerationLiteral Description="Continuous Operations (CO): Governance" Name="CoGovernance" Value="54" />
+        <EnumerationLiteral Description="Continuous Quality (CQ): Quality Requirimients" Name="CqQualityRequirimients" Value="60" />
+        <EnumerationLiteral Description="Continuous Quality (CQ): Shift-left testing" Name="CqShiftLeftTesting" Value="61" />
+        <EnumerationLiteral Description="Continuous Quality (CQ): Governance and standards" Name="CqGovernance" Value="62" />
+        <EnumerationLiteral Description="Continuous Quality (CQ): Test automation" Name="CqTestAutomation" Value="63" />
+        <EnumerationLiteral Description="Continuous Quality (CQ): Compliance and audit" Name="CqCompliance" Value="64" />
+        <EnumerationLiteral Description="Continuous Quality (CQ): Shift-right testing" Name="CqShiftRightTesting" Value="65" />
+        <EnumerationLiteral Description="Continuous security (CS): Secure architecture" Name="CsSecureArchitecture" Value="70" />
+        <EnumerationLiteral Description="Continuous security (CS): Governance, compliance" Name="CsGovernance" Value="73" />
+        <EnumerationLiteral Description="Continuous security (CS): Identity and access management" Name="CsIdentity" Value="71" />
+        <EnumerationLiteral Description="Continuous security (CS): Application security" Name="CsApplicationSecurity" Value="72" />
+        <EnumerationLiteral Description="Continuous security (CS): Secure infrastructure" Name="CsSecureInfrastructure" Value="73" />
+        <EnumerationLiteral Description="Continuous security (CS): Secure data and secure operation" Name="CsSecureData" Value="72" />
+        <EnumerationLiteral Description="Continuous collaboration (CC): Culture collaboration" Name="CcCultureCollaboration" Value="80" />
+        <EnumerationLiteral Description="Continuous collaboration (CC): Continuous collaboration (CC): Aligment and autonomy" Name="CcAligmentAndAutonomy" Value="81" />
+        <EnumerationLiteral Description="Kanban collaboration" Name="CcKanbanCollaboration" Value="82" />
+        <EnumerationLiteral Description="Continuous collaboration (CC): Wiki and Teams collaboration" Name="CcWiki" Value="84" />
+        <EnumerationLiteral Description="Continuous collaboration (CC): ChatOps collaboration" Name="CcChatOps" Value="85" />
+        <EnumerationLiteral Description="Continuous improvement (CIM): Lead time and cycle time" Name="CimLeadTime" Value="90" />
+        <EnumerationLiteral Description="Continuous improvement (CIM): Deployment frequency" Name="CimDeploymentFrequency" Value="91" />
+        <EnumerationLiteral Description="Continuous improvement (CIM): Mean time to resolution (MTTR)" Name="CimMttr" Value="93" />
+        <EnumerationLiteral Description="Continuous improvement (CIM): Change fail percentage" Name="CimChangeFailPercentage" Value="94" />
+        <EnumerationLiteral Description="Continuous improvement (CIM): Continuous feedback" Name="CimContinuousFeedback" Value="95" />
+        <EnumerationLiteral Description="Continuous improvement (CIM): Value stream mapping" Name="CimValueStreamMapping" Value="96" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="DevelopmentFrameworks" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevelopmentFrameworks">

@@ -505,7 +505,7 @@
   <!-- Enum DevOpsPractices -->
   <xsd:simpleType name="DevOpsPractices">
     <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="CiBehaviorDrivenDevelopment">
+      <xsd:enumeration value="CiBdd">
         <xsd:annotation>
           <xsd:documentation>Continuous Integration (CI): Behavior-driven development (BDD)</xsd:documentation>
         </xsd:annotation>
@@ -564,6 +564,242 @@
       <xsd:enumeration value="CpValueStreamMapping">
         <xsd:annotation>
           <xsd:documentation>Continuous Planning (CP): Value stream mapping</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiTdd">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Test-driven development (TDD)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiShiftLeftTesting">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Shift-left testing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiMicroservicesDevelopmen">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Description for Variamos.DevOpsDsl.DevOpsPractices.CiMicroservicesDevelopmen</xsd:documentation>
+          <xsd:documentation>Microservices and container development</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiSast">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Static application security testing (SAST)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiSecretsScanning">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Secrets scanning</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiSca">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Software composition analysis (SCA)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiUnitTestCodeCoverage">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Unit test/code coverage</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiGitPullRequest">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Git pull request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiGatedCheckIn">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Gated check-in</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CiBuildPipeline">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Integration (CI): Build pipeline</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CdReleasePipeline">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Delivery (CD): Release pipeline</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CdSecureInfrastructureDeployment">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Delivery (CD): Secure infrastructure deployment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CdIaasDeployment">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Delivery (CD): Infrastructure as a service (IaaS) deployment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CdPaasDeployment">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Delivery (CD): Platform as a service (PaaS) deployment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoSre">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Site reliability engineering (SRE)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoMonitoring">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Telemetry/Monitoring</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoDr">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Auto failover and scaling and deployment request (DR)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoModernService">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Modern service management</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoSecureAccess">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Secure access/app/data</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoDevSecOps">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): DevSecOps</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoChatOps">
+        <xsd:annotation>
+          <xsd:documentation> Continuous Operations (CO): ChatOps</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoShiftRightTesting">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Shift-Right testing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoSecretsManagement">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Secrets management</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CoGovernance">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Operations (CO): Governance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CqQualityRequirimients">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Quality (CQ): Quality Requirimients</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CqShiftLeftTesting">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Quality (CQ): Shift-left testing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CqGovernance">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Quality (CQ): Governance and standards</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CqTestAutomation">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Quality (CQ): Test automation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CqCompliance">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Quality (CQ): Compliance and audit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CqShiftRightTesting">
+        <xsd:annotation>
+          <xsd:documentation>Continuous Quality (CQ): Shift-right testing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CsSecureArchitecture">
+        <xsd:annotation>
+          <xsd:documentation>Continuous security (CS): Secure architecture</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CsGovernance">
+        <xsd:annotation>
+          <xsd:documentation>Continuous security (CS): Governance, compliance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CsIdentity">
+        <xsd:annotation>
+          <xsd:documentation>Continuous security (CS): Identity and access management</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CsApplicationSecurity">
+        <xsd:annotation>
+          <xsd:documentation>Continuous security (CS): Application security</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CsSecureInfrastructure">
+        <xsd:annotation>
+          <xsd:documentation>Continuous security (CS): Secure infrastructure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CsSecureData">
+        <xsd:annotation>
+          <xsd:documentation>Continuous security (CS): Secure data and secure operation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CcCultureCollaboration">
+        <xsd:annotation>
+          <xsd:documentation>Continuous collaboration (CC): Culture collaboration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CcAligmentAndAutonomy">
+        <xsd:annotation>
+          <xsd:documentation>Continuous collaboration (CC): Continuous collaboration (CC): Aligment and autonomy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CcKanbanCollaboration">
+        <xsd:annotation>
+          <xsd:documentation>Kanban collaboration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CcWiki">
+        <xsd:annotation>
+          <xsd:documentation>Continuous collaboration (CC): Wiki and Teams collaboration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CcChatOps">
+        <xsd:annotation>
+          <xsd:documentation>Continuous collaboration (CC): ChatOps collaboration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CimLeadTime">
+        <xsd:annotation>
+          <xsd:documentation>Continuous improvement (CIM): Lead time and cycle time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CimDeploymentFrequency">
+        <xsd:annotation>
+          <xsd:documentation>Continuous improvement (CIM): Deployment frequency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CimMttr">
+        <xsd:annotation>
+          <xsd:documentation>Continuous improvement (CIM): Mean time to resolution (MTTR)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CimChangeFailPercentage">
+        <xsd:annotation>
+          <xsd:documentation>Continuous improvement (CIM): Change fail percentage</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CimContinuousFeedback">
+        <xsd:annotation>
+          <xsd:documentation>Continuous improvement (CIM): Continuous feedback</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CimValueStreamMapping">
+        <xsd:annotation>
+          <xsd:documentation>Continuous improvement (CIM): Value stream mapping</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
