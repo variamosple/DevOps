@@ -266,7 +266,7 @@
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.ArchitecturalStyles.EnumerationLiteral1" Name="EnumerationLiteral1" Value="" />
       </Literals>
     </DomainEnumeration>
-    <DomainEnumeration Name="DevOpsPractices" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.DevOpsPractices">
+    <DomainEnumeration Name="DevOpsPractices" Namespace="Variamos.DevOpsDsl" Description="DevOps best practices to be implemented in a development project">
       <Literals>
         <EnumerationLiteral Description="Continuous Integration (CI): Behavior-driven development (BDD)" Name="CiBdd" Value="0" />
         <EnumerationLiteral Description="Description for Variamos.DevOpsDsl.DevOpsPractices.CpInfrastructureAsCode" Name="CpInfrastructureAsCode" Value="1" />
@@ -354,12 +354,13 @@
         <EnumerationLiteral Description="Expressed as a fraction of all requests received" Name="ErrorRate" Value="1">
           <Notes>Expressed as a fraction of all requests received</Notes>
         </EnumerationLiteral>
-        <EnumerationLiteral Description="Measured in requests per second (QPS)" Name="SystemThroughput" Value="">
+        <EnumerationLiteral Description="Measured in requests per second (QPS)" Name="SystemThroughput" Value="3">
           <Notes>Measured in requests per second (QPS)</Notes>
         </EnumerationLiteral>
-        <EnumerationLiteral Description="The fraction of the time that a service is usable" Name="Availability" Value="">
+        <EnumerationLiteral Description="The fraction of the time that a service is usable" Name="Availability" Value="2">
           <Notes>The fraction of the time that a service is usable</Notes>
         </EnumerationLiteral>
+        <EnumerationLiteral Description="Was the right answer returned, the right data retrieved, the right analysis done?" Name="Correctness" Value="4" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="ComparisonOperator" Namespace="Variamos.DevOpsDsl" Description="Description for Variamos.DevOpsDsl.ComparisonOperator">

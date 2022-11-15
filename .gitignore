@@ -1,6 +1,10 @@
 DSL/DevOpsDsl/DslPackage/bin/Debug/
 DSL/DevOpsDsl/Dsl/obj/Debug/
 DSL/DevOpsDsl/DslPackage/obj/
-DSL/DevOpsDsl/Debugging
+DSL/DevOpsDsl/Debugging/bin/
+DSL/DevOpsDsl/Debugging/.vs/Debugging
+DSL/DevOpsDsl/Debugging/obj/Debug
+DSL/DevOpsDsl/Debugging/css
+DSL/DevOpsDsl/Debugging/images
 DSL/DevOpsDsl/.vs/
 DSL/DevOpsDsl/DslPackage/obj/Debug/

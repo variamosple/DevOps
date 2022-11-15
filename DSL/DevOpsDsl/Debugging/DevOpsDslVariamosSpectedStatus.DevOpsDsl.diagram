@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<devOpsDiagram dslVersion="1.0.0.0" Id="44eefd1e-9199-430e-bd64-0e622d638cc3" absoluteBounds="0, 0, 11, 8.5" name="DevOpsDslVariamosSpectedStatus" diamgramName="DevOps Variamos Diagram">
+  <applicationMoniker Id="17d36285-e46d-4e7b-ab4e-eacb8c2accca" />
+  <nestedChildShapes>
+    <containerShape Id="f8d32315-cf3e-48b9-bf2f-7421b8932379" absoluteBounds="2.375, 1.25, 3, 1">
+      <containerMoniker Id="0caf769e-af35-4e99-a94f-96082b6a9076" />
+    </containerShape>
+    <practiceShape Id="9c61599f-6e77-4617-b445-6800deea268e" absoluteBounds="4.25, 2.625, 3, 1">
+      <practiceMoniker Id="5af250e6-9fa1-4947-a486-05226fbc2475" />
+    </practiceShape>
+    <practiceShape Id="56f3e168-d5ab-4bbe-8d1f-5a0db39ddee3" absoluteBounds="0.5, 2.625, 3, 1">
+      <practiceMoniker Id="2db07c24-90d5-407c-b309-ebbe53e85cb4" />
+    </practiceShape>
+    <applicationContainerConnector Id="8ec2d684-19e2-48fa-873d-b706879f8d9e" edgePoints="[(4.8125 : 2.25); (4.8125 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <containerHasPracticedMoniker Id="7b3887dd-dc10-4d76-a474-6580380795b6" />
+      <nodes>
+        <containerShapeMoniker Id="f8d32315-cf3e-48b9-bf2f-7421b8932379" />
+        <practiceShapeMoniker Id="9c61599f-6e77-4617-b445-6800deea268e" />
+      </nodes>
+    </applicationContainerConnector>
+    <applicationContainerConnector Id="511bad81-83d3-4ea7-8006-f71f9dec0351" edgePoints="[(2.9375 : 2.25); (2.9375 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <containerHasPracticedMoniker Id="de5e6527-6fa1-47e2-a650-42f168f5d3fe" />
+      <nodes>
+        <containerShapeMoniker Id="f8d32315-cf3e-48b9-bf2f-7421b8932379" />
+        <practiceShapeMoniker Id="56f3e168-d5ab-4bbe-8d1f-5a0db39ddee3" />
+      </nodes>
+    </applicationContainerConnector>
+  </nestedChildShapes>
+</devOpsDiagram>

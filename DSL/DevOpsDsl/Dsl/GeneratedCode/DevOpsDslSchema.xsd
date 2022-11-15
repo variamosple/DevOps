@@ -504,6 +504,9 @@
   
   <!-- Enum DevOpsPractices -->
   <xsd:simpleType name="DevOpsPractices">
+    <xsd:annotation>
+      <xsd:documentation>DevOps best practices to be implemented in a development project</xsd:documentation>
+    </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="CiBdd">
         <xsd:annotation>
@@ -846,6 +849,11 @@
         <xsd:annotation>
           <xsd:documentation>The fraction of the time that a service is usable</xsd:documentation>
           <xsd:documentation>The fraction of the time that a service is usable</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Correctness">
+        <xsd:annotation>
+          <xsd:documentation>Was the right answer returned, the right data retrieved, the right analysis done?</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>

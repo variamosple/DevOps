@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dc6f3b1f-ef06-437e-a76e-d4c200d2c1b8" cloudProvider="Azure" architecturalStyle="BigCompute" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl" />

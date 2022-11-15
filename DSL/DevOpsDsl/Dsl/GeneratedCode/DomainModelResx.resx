@@ -1157,6 +1157,14 @@
     <value>The fraction of the time that a service is usable</value>
     <comment>Description for EnumerationLiteral &apos;Availability&apos; on DomainEnumeration &apos;SLI&apos;</comment>
   </data>
+  <data name="Variamos.DevOpsDsl.SLI/Correctness.DisplayName" xml:space="preserve">
+    <value>Correctness</value>
+    <comment>Display name for EnumerationLiteral &apos;Correctness&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.SLI/Correctness.Description" xml:space="preserve">
+    <value>Was the right answer returned, the right data retrieved, the right analysis done?</value>
+    <comment>Description for EnumerationLiteral &apos;Correctness&apos; on DomainEnumeration &apos;SLI&apos;</comment>
+  </data>
   <data name="Variamos.DevOpsDsl.ComparisonOperator/LessThan.DisplayName" xml:space="preserve">
     <value>LessThan</value>
     <comment>Display name for EnumerationLiteral &apos;LessThan&apos; on DomainEnumeration &apos;ComparisonOperator&apos;</comment>

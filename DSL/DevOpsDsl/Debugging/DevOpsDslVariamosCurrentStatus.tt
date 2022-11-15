@@ -1,6 +1,6 @@
 ﻿<#@ template debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" language="C#" #>
 <#@ output extension=".html" #>
-<#@ DevOpsDsl processor="DevOpsDslDirectiveProcessor" requires="fileName='..\Docs\DevOpsVariamos01.DevOpsDsl'" #>
+<#@ DevOpsDsl processor="DevOpsDslDirectiveProcessor" requires="fileName='.\DevOpsDslVariamosCurrentStatus.DevOpsDsl'" #>
 <html>
 <head>
 	<title><#= this.Application.Description #></title>
@@ -52,11 +52,23 @@
 <body>
 	<div class="titlestyle"><h1><#= this.Application.Description #></h1></div>
 	<div class="paragraph">
-		<div class="subtitlestyle"><h2>Application: <#= this.Application.ApplicationName #></h2></div>
-
-		<p><strong>Cloud Provider:</strong> <#= this.Application.CloudProvider #></p>
-		<p><strong>Architectural Style:</strong> <#= this.Application.ArchitecturalStyle #></p>
-		<p><strong>Model Version:</strong> <#= this.Application.ModelVersion #></p>
+		<table>
+			<tr>
+				<td><strong>Application:</strong></td><td> <#= this.Application.ApplicationName #></td>
+			</tr>
+			<tr>
+				<td><strong>Cloud Provider:</strong></td><td> <#= this.Application.CloudProvider #></td>
+			</tr>
+			<tr>
+				<td><strong>Architectural Style:</strong></td><td> <#= this.Application.ArchitecturalStyle #></td>
+			</tr>
+			<tr>
+				<td><strong>Model Version:</strong></td> <td><#= this.Application.ModelVersion #></td>
+			</tr>
+			<tr>
+				<td><strong>Date:</strong></td><td> <#= DateTime.Now #></td>
+			</tr>
+		</table>
 	</div>
 	
 	<div class="title3style"><h3>DevOps Practices</h3></div>
@@ -64,14 +76,24 @@
 <#
   foreach(Container container in this.Application.Containers){
   #>
-	<h4>Container: <#= container.ContainerName #></h4>
+	<table>
+		<tr>
+			<td><strong>Container:</strong></td><td><#= container.ContainerName #></td>
+		</tr>
+	</table>
+	<table>
   <#
 	foreach(Practice practice in container.Practiced){
 	#>
-		
-		<div><label class="labelstyle">DevOps Practice: </label><#= practice.PracticeName #><label class="labelstyle"> Implemented value: </label><#= practice.ImplementedValue #></div>
+		<tr>
+		<td><div><label class="labelstyle">DevOps Practice: </label></td><td><#= practice.PracticeName #></td><td><label class="labelstyle"> Implemented value: </label></td><td><#= practice.ImplementedValue #></div></td>
+		</tr>
 	<#
 	}
+	#>
+	</table>
+	<br>
+	<#
   }
 #>	
 	</div>

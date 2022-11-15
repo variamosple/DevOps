@@ -627,7 +627,7 @@ namespace Variamos.DevOpsDsl
 {
 	/// <summary>
 	/// DomainEnumeration: DevOpsPractices
-	/// Description for Variamos.DevOpsDsl.DevOpsPractices
+	/// DevOps best practices to be implemented in a development project
 	/// </summary>
 	[global::System.CLSCompliant(true)]
 	public enum DevOpsPractices
@@ -1094,13 +1094,20 @@ namespace Variamos.DevOpsDsl
 		/// Measured in requests per second (QPS)
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/SystemThroughput.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		SystemThroughput,
+		SystemThroughput = 3,
 		/// <summary>
 		/// Availability
 		/// The fraction of the time that a service is usable
 		/// </summary>
 		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/Availability.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		Availability,
+		Availability = 2,
+		/// <summary>
+		/// Correctness
+		/// Was the right answer returned, the right data retrieved, the right analysis
+		/// done?
+		/// </summary>
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.SLI/Correctness.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		Correctness = 4,
 	}
 }
 namespace Variamos.DevOpsDsl
