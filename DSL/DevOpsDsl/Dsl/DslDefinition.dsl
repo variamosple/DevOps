@@ -90,7 +90,12 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="9478b1a3-2f5c-451c-bc7d-7179cbe1165f" Description="% of implementation value. Fully Implemented (FI): 100%​, Largely Implemented (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI): [1,20] %​, Not Yet (NY): 0%" Name="ImplementedValue" DisplayName="Implemented Value">
+        <DomainProperty Id="9478b1a3-2f5c-451c-bc7d-7179cbe1165f" Description="% of implementation value. Fully Implemented (FI): 100%​, Largely Implemented (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI): [1,20] %​, Not Yet (NY): 0%" Name="CurrentValue" DisplayName="Current Value">
+          <Type>
+            <DomainEnumerationMoniker Name="DevOpsPracticesAdoptionValue" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="918fc5c2-32bc-4455-b7d7-82badc633bed" Description="Description for Variamos.DevOpsDsl.Practice.Target Value" Name="TargetValue" DisplayName="Target Value">
           <Type>
             <DomainEnumerationMoniker Name="DevOpsPracticesAdoptionValue" />
           </Type>
@@ -389,7 +394,10 @@
         <IconDecorator Name="IconDecorator" DisplayName="Icon Decorator" DefaultIcon="Resources\DevOpsIcon.png" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="InnerBottomLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="ImplementedValue" DisplayName="Implemented Value" DefaultText="ImplementedValue" />
+        <TextDecorator Name="CurrentValue" DisplayName="Current Value" DefaultText="CurrentValue" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="TargetValue" DisplayName="Target Value" DefaultText="TargetValue" />
       </ShapeHasDecorators>
     </GeometryShape>
     <GeometryShape Id="1f477189-8a64-42e2-994b-b0c1e42e32f1" Description="Description for Variamos.DevOpsDsl.ContainerShape" Name="ContainerShape" DisplayName="Container Shape" Namespace="Variamos.DevOpsDsl" FixedTooltipText="Container Shape" InitialHeight="1" Geometry="Rectangle">
@@ -510,8 +518,11 @@
           <XmlPropertyData XmlName="practiceName" Representation="Ignore">
             <DomainPropertyMoniker Name="Practice/PracticeName" />
           </XmlPropertyData>
-          <XmlPropertyData XmlName="implementedValue">
-            <DomainPropertyMoniker Name="Practice/ImplementedValue" />
+          <XmlPropertyData XmlName="currentValue">
+            <DomainPropertyMoniker Name="Practice/CurrentValue" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="targetValue">
+            <DomainPropertyMoniker Name="Practice/TargetValue" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -635,10 +646,18 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="PracticeShape/ImplementedValue" />
+          <TextDecoratorMoniker Name="PracticeShape/CurrentValue" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="Practice/ImplementedValue" />
+              <DomainPropertyMoniker Name="Practice/CurrentValue" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="PracticeShape/TargetValue" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="Practice/TargetValue" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>

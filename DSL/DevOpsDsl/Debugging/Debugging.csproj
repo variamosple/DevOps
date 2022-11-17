@@ -56,13 +56,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DevOpsDslReportVB.txt</LastGenOutput>
     </None>
-    <None Include="DevOpsDslVariamosCurrentStatus.DevOpsDsl" />
-    <None Include="DevOpsDslVariamosCurrentStatus.DevOpsDsl.diagram">
-      <DependentUpon>DevOpsDslVariamosCurrentStatus.DevOpsDsl</DependentUpon>
-    </None>
-    <None Include="DevOpsDslVariamosSpectedStatus.DevOpsDsl" />
-    <None Include="DevOpsDslVariamosSpectedStatus.DevOpsDsl.diagram">
-      <DependentUpon>DevOpsDslVariamosSpectedStatus.DevOpsDsl</DependentUpon>
+    <None Include="DevOpsDslVariamosStatus.DevOpsDsl" />
+    <None Include="DevOpsDslVariamosStatus.DevOpsDsl.diagram">
+      <DependentUpon>DevOpsDslVariamosStatus.DevOpsDsl</DependentUpon>
     </None>
     <None Include="DevOpsVariamos02.DevOpsDsl" />
     <None Include="DevOpsVariamos02.DevOpsDsl.diagram">
@@ -87,23 +83,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DevOpsDslReportVB.tt</DependentUpon>
     </Content>
-    <Content Include="DevOpsDslVariamosCurrentStatus.html">
+    <Content Include="DevOpsDslVariamosStatus.html">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DevOpsDslVariamosCurrentStatus.tt</DependentUpon>
+      <DependentUpon>DevOpsDslVariamosStatus.tt</DependentUpon>
     </Content>
-    <Content Include="DevOpsDslVariamosCurrentStatus.tt">
+    <Content Include="DevOpsDslVariamosStatus.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DevOpsDslVariamosCurrentStatus.html</LastGenOutput>
-    </Content>
-    <Content Include="DevOpsDslVariamosSpectedStatus.html">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DevOpsDslVariamosSpectedStatus.tt</DependentUpon>
-    </Content>
-    <Content Include="DevOpsDslVariamosSpectedStatus.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DevOpsDslVariamosSpectedStatus.html</LastGenOutput>
+      <LastGenOutput>DevOpsDslVariamosStatus.html</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

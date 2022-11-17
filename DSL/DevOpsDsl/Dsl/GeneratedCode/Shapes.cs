@@ -187,14 +187,23 @@ namespace Variamos.DevOpsDsl
 			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetObject("PracticeShapeIconDecoratorDefaultImage"));
 			shapeFields.Add(field2);
 			
-			DslDiagrams::TextField field3 = new DslDiagrams::TextField("ImplementedValue");
-			field3.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("PracticeShapeImplementedValueDefaultText");
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("CurrentValue");
+			field3.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("PracticeShapeCurrentValueDefaultText");
 			field3.DefaultFocusable = true;
 			field3.DefaultAutoSize = true;
 			field3.AnchoringBehavior.MinimumHeightInLines = 1;
 			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
 			shapeFields.Add(field3);
+			
+			DslDiagrams::TextField field4 = new DslDiagrams::TextField("TargetValue");
+			field4.DefaultText = global::Variamos.DevOpsDsl.DevOpsDslDomainModel.SingletonResourceManager.GetString("PracticeShapeTargetValueDefaultText");
+			field4.DefaultFocusable = true;
+			field4.DefaultAutoSize = true;
+			field4.AnchoringBehavior.MinimumHeightInLines = 1;
+			field4.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field4.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field4);
 			
 		}
 		
@@ -215,9 +224,13 @@ namespace Variamos.DevOpsDsl
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
 				
-			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ImplementedValue");
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "CurrentValue");
 			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerBottomLeft, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator3);
+				
+			DslDiagrams::ShapeField field4 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "TargetValue");
+			DslDiagrams::Decorator decorator4 = new DslDiagrams::ShapeDecorator(field4, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator4);
 				
 		}
 		

@@ -1274,61 +1274,61 @@ namespace Variamos.DevOpsDsl
 		}
 		
 		#endregion
-		#region ImplementedValue domain property code
+		#region CurrentValue domain property code
 		
 		/// <summary>
-		/// ImplementedValue domain property Id.
+		/// CurrentValue domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid ImplementedValueDomainPropertyId = new global::System.Guid(0x9478b1a3, 0x2f5c, 0x451c, 0xbc, 0x7d, 0x71, 0x79, 0xcb, 0xe1, 0x16, 0x5f);
+		public static readonly global::System.Guid CurrentValueDomainPropertyId = new global::System.Guid(0x9478b1a3, 0x2f5c, 0x451c, 0xbc, 0x7d, 0x71, 0x79, 0xcb, 0xe1, 0x16, 0x5f);
 		
 		/// <summary>
-		/// Storage for ImplementedValue
+		/// Storage for CurrentValue
 		/// </summary>
-		private DevOpsPracticesAdoptionValue implementedValuePropertyStorage;
+		private DevOpsPracticesAdoptionValue currentValuePropertyStorage;
 		
 		/// <summary>
-		/// Gets or sets the value of ImplementedValue domain property.
+		/// Gets or sets the value of CurrentValue domain property.
 		/// % of implementation value. Fully Implemented (FI): 100%​, Largely Implemented
 		/// (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI):
 		/// [1,20] %​, Not Yet (NY): 0%
 		/// </summary>
-		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Practice/ImplementedValue.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice/ImplementedValue.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Practice/CurrentValue.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice/CurrentValue.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("9478b1a3-2f5c-451c-bc7d-7179cbe1165f")]
-		public DevOpsPracticesAdoptionValue ImplementedValue
+		public DevOpsPracticesAdoptionValue CurrentValue
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return implementedValuePropertyStorage;
+				return currentValuePropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				ImplementedValuePropertyHandler.Instance.SetValue(this, value);
+				CurrentValuePropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the Practice.ImplementedValue domain property.
+		/// Value handler for the Practice.CurrentValue domain property.
 		/// </summary>
-		internal sealed partial class ImplementedValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Practice, DevOpsPracticesAdoptionValue>
+		internal sealed partial class CurrentValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Practice, DevOpsPracticesAdoptionValue>
 		{
-			private ImplementedValuePropertyHandler() { }
+			private CurrentValuePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the Practice.ImplementedValue domain property value handler.
+			/// Gets the singleton instance of the Practice.CurrentValue domain property value handler.
 			/// </summary>
-			public static readonly ImplementedValuePropertyHandler Instance = new ImplementedValuePropertyHandler();
+			public static readonly CurrentValuePropertyHandler Instance = new CurrentValuePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the Practice.ImplementedValue domain property.
+			/// Gets the Id of the Practice.CurrentValue domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return ImplementedValueDomainPropertyId;
+					return CurrentValueDomainPropertyId;
 				}
 			}
 			
@@ -1340,7 +1340,7 @@ namespace Variamos.DevOpsDsl
 			public override sealed DevOpsPracticesAdoptionValue GetValue(Practice element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.implementedValuePropertyStorage;
+				return element.currentValuePropertyStorage;
 			}
 		
 			/// <summary>
@@ -1356,7 +1356,94 @@ namespace Variamos.DevOpsDsl
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.implementedValuePropertyStorage = newValue;
+					element.currentValuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region TargetValue domain property code
+		
+		/// <summary>
+		/// TargetValue domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TargetValueDomainPropertyId = new global::System.Guid(0x918fc5c2, 0x32bc, 0x4455, 0xb7, 0xd7, 0x82, 0xba, 0xdc, 0x63, 0x3b, 0xed);
+		
+		/// <summary>
+		/// Storage for TargetValue
+		/// </summary>
+		private DevOpsPracticesAdoptionValue targetValuePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of TargetValue domain property.
+		/// Description for Variamos.DevOpsDsl.Practice.Target Value
+		/// </summary>
+		[DslDesign::DisplayNameResource("Variamos.DevOpsDsl.Practice/TargetValue.DisplayName", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Variamos.DevOpsDsl.Practice/TargetValue.Description", typeof(global::Variamos.DevOpsDsl.DevOpsDslDomainModel), "Variamos.DevOpsDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("918fc5c2-32bc-4455-b7d7-82badc633bed")]
+		public DevOpsPracticesAdoptionValue TargetValue
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return targetValuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TargetValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Practice.TargetValue domain property.
+		/// </summary>
+		internal sealed partial class TargetValuePropertyHandler : DslModeling::DomainPropertyValueHandler<Practice, DevOpsPracticesAdoptionValue>
+		{
+			private TargetValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Practice.TargetValue domain property value handler.
+			/// </summary>
+			public static readonly TargetValuePropertyHandler Instance = new TargetValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Practice.TargetValue domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TargetValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed DevOpsPracticesAdoptionValue GetValue(Practice element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.targetValuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Practice element, DevOpsPracticesAdoptionValue newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				DevOpsPracticesAdoptionValue oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.targetValuePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}

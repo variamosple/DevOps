@@ -1,6 +1,6 @@
 ﻿<#@ template debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" language="C#" #>
 <#@ output extension=".html" #>
-<#@ DevOpsDsl processor="DevOpsDslDirectiveProcessor" requires="fileName='.\DevOpsDslVariamosSpectedStatus.DevOpsDsl'" #>
+<#@ DevOpsDsl processor="DevOpsDslDirectiveProcessor" requires="fileName='.\DevOpsDslVariamosStatus.DevOpsDsl'" #>
 <html>
 <head>
 	<title><#= this.Application.Description #></title>
@@ -47,6 +47,27 @@
 	.paragraph{
 		margin:0.5cm;
 	}
+	.table100{
+		width:100%
+	}
+	.td50{
+		width:50%
+	}
+	.NI{
+		color: #FF0000
+	}
+	.PI{
+		color: #FF7300
+	}
+	.LI{
+		color: #00B50D
+	}
+	.NY{
+		color: #7C7C7C
+	}
+	.FI{
+		color: #00C90E
+	}
 </style>
 	
 <body>
@@ -71,51 +92,49 @@
 		</table>
 	</div>
 	
+
 	<div class="title3style"><h3>DevOps Practices</h3></div>
 	<div class="paragraph">
+	
 <#
   foreach(Container container in this.Application.Containers){
   #>
-	<table>
-		<tr>
-			<td><strong>Container:</strong></td><td><#= container.ContainerName #></td>
-		</tr>
-	</table>
-	<br>
-	<table>
+	<table class="table100">
+	<tr><td class="td50"><strong><#= container.ContainerName #></strong></td><td><strong>Current</strong></td><td><strong>Target</strong></td></tr>	
   <#
+	//foreach(Practice practice in container.Practiced){
 	foreach(Practice practice in container.Practiced){
 	#>
-		<tr>
-		<td><div><label class="labelstyle">DevOps Practice: </label></td><td><#= practice.PracticeName #></td><td><label class="labelstyle"> Implemented value: </label></td><td><#= practice.ImplementedValue #></div></td>
-		</tr>
+		<tr><td class="td50"><#= practice.PracticeName #></td><td class="<#=practice.CurrentValue#>"><#= practice.CurrentValue #></td><td class="<#= practice.TargetValue #>"><#= practice.TargetValue #></td></tr>
 	<#
 	}
 	#>
 	</table>
+	<br>
 	<#
   }
 #>	
+	<!--</table>-->
 	</div>
 	<div class="title3style"><h3>SRE</h3></div>
 <#
 	foreach(Sre sre in this.Application.Sre)
 	{
-
 	 #>
 		<div class="paragraph">
 		<h4>SRE: <#= sre.SreName #></h4>
-		
 	<#
 		foreach(SLO slo in sre.SLO){
 			#>
 			<p>SLO: <#= slo.SloName #></p>
-		
 			<#
 		}
-
 	}
 #>
 		</div>
 </body>
 </html>
+
+<#
+
+#>

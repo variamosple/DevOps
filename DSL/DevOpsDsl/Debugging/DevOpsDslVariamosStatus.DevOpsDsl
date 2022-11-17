@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="17d36285-e46d-4e7b-ab4e-eacb8c2accca" applicationName="Variamos" cloudProvider="Azure" architecturalStyle="NTierApplication" modelVersion="0.0.1" description="Variamos DevOps adoption spected status" xmlns="http://schemas.microsoft.com/dsltools/DevOpsDsl">
+  <containers>
+    <applicationHasContainers Id="669efede-0259-465e-91ac-3c84411750cf">
+      <container Id="0caf769e-af35-4e99-a94f-96082b6a9076" containerName="VariaMos" containerType="WebApplication" containerFramework="React">
+        <practiced>
+          <containerHasPracticed Id="7b3887dd-dc10-4d76-a474-6580380795b6">
+            <practice Id="5af250e6-9fa1-4947-a486-05226fbc2475" practiceType="CiSecretsScanning" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="de5e6527-6fa1-47e2-a650-42f168f5d3fe">
+            <practice Id="2db07c24-90d5-407c-b309-ebbe53e85cb4" practiceType="CpSprintPlanning" currentValue="NY" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="1b66c4df-16fe-4771-9308-93c17842c14c">
+            <practice Id="a657bbd5-2174-44f6-b11e-2c4be2bbd7d6" practiceType="CiGitPullRequest" currentValue="FI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="9f3ffdc9-1c89-48a8-8b26-ea3e3e54096f">
+            <practice Id="3acb135d-183c-4b4f-bb3b-74aab215115a" practiceType="CdReleasePipeline" currentValue="LI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="eb9b0e04-493c-4189-aa23-2ebd9d843acc">
+            <practice Id="1292a466-d753-4bb0-a9ce-a3c479722966" practiceType="CdSecureInfrastructureDeployment" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="d5405c38-7c00-4f24-a370-0273adc10bcd">
+            <practice Id="8bf8ee38-d72a-48a5-829a-9212d46a13c1" practiceType="CoMonitoring" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+        </practiced>
+      </container>
+    </applicationHasContainers>
+    <applicationHasContainers Id="1d217a4e-6f39-4f42-ad47-daaa45691d1c">
+      <container Id="bf5b0e8b-b0fd-4e93-b433-47b1f5e1181e" containerName="variamos-ms-languages" containerType="Api" containerFramework="NodeJS">
+        <practiced>
+          <containerHasPracticed Id="eabf4fbe-9b64-49df-a4fe-43e88ad6971d">
+            <practice Id="d5215e87-0eca-4d77-843c-137012cf2e4a" practiceType="CpReleasePlanning" currentValue="NY" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="041d2ef8-49bd-4a2d-9e5f-5b4f8c3a70ba">
+            <practice Id="511c65fb-76ca-4ab5-826e-a1e2e22bf127" practiceType="CiGitPullRequest" currentValue="FI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="023b0278-2c65-447e-a27c-fd2185680d48">
+            <practice Id="6aac9f82-ddfb-4e8f-bab8-ad058152b0a2" practiceType="CiSecretsScanning" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="e720cb1d-99f4-46bc-b923-f3ad89a74e58">
+            <practice Id="9935820a-0800-4dc3-ba70-a58bf8448191" practiceType="CdSecureInfrastructureDeployment" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="fb8c3bf5-9735-430f-b10c-b2f439463530">
+            <practice Id="97c0c02d-522a-4acb-8cfc-1f6ec6ec38e0" practiceType="CoMonitoring" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="666764c8-d88f-4446-b09e-3865129654f3">
+            <practice Id="38e00345-1292-488a-b56c-96e953979940" practiceType="CdReleasePipeline" currentValue="LI" targetValue="FI" />
+          </containerHasPracticed>
+        </practiced>
+      </container>
+    </applicationHasContainers>
+    <applicationHasContainers Id="e6a737cc-4dda-44b7-bd30-373d8c2c3dfe">
+      <container Id="545486c4-d169-4a38-8c86-843f7dc32542" containerName="variamos-ms-languages1" containerType="Api" containerFramework="NodeJS">
+        <practiced>
+          <containerHasPracticed Id="7bb0a2ef-dbfd-413d-a2ee-7008a431308a">
+            <practice Id="ee58ea7c-de63-4b29-98e9-0eb2e87029ba" practiceType="CpReleasePlanning" currentValue="NY" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="f2da33d6-8db9-431d-a138-5f6a90c1f9c9">
+            <practice Id="74b45c99-0714-4263-a00a-09abec4c912e" practiceType="CiGitPullRequest" currentValue="FI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="bf1d66cf-dcb0-4e2b-bc19-2529cb5e8edf">
+            <practice Id="d4dc3fea-7b08-49ea-8677-3628f93f557c" practiceType="CiSecretsScanning" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="919f8846-a906-4724-bc3a-f7649c83aadc">
+            <practice Id="3b996f67-4475-4b7b-8684-6022adafeeb0" practiceType="CdReleasePipeline" currentValue="LI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="2875497e-2aa3-41f7-bd94-d9fe77782c2a">
+            <practice Id="0cab48b2-08b7-4963-9320-d6688b63408d" practiceType="CoMonitoring" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+          <containerHasPracticed Id="cb5be439-15d8-4ae2-a8c4-b94b093528bf">
+            <practice Id="01f590c6-6857-4c0f-bae9-c9680b55ce5c" practiceType="CdSecureInfrastructureDeployment" currentValue="NI" targetValue="FI" />
+          </containerHasPracticed>
+        </practiced>
+      </container>
+    </applicationHasContainers>
+  </containers>
+</application>

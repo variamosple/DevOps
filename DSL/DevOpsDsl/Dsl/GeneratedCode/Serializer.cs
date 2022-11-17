@@ -1993,20 +1993,37 @@ namespace Variamos.DevOpsDsl
 					}
 				}
 			}
-			// ImplementedValue
+			// CurrentValue
 			if (!serializationContext.Result.Failed)
 			{
-				string attribImplementedValue = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "implementedValue");
-				if (attribImplementedValue != null)
+				string attribCurrentValue = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "currentValue");
+				if (attribCurrentValue != null)
 				{
-					DevOpsPracticesAdoptionValue valueOfImplementedValue;
-					if (DslModeling::SerializationUtilities.TryGetValue<DevOpsPracticesAdoptionValue>(serializationContext, attribImplementedValue, out valueOfImplementedValue))
+					DevOpsPracticesAdoptionValue valueOfCurrentValue;
+					if (DslModeling::SerializationUtilities.TryGetValue<DevOpsPracticesAdoptionValue>(serializationContext, attribCurrentValue, out valueOfCurrentValue))
 					{
-						instanceOfPractice.ImplementedValue = valueOfImplementedValue;
+						instanceOfPractice.CurrentValue = valueOfCurrentValue;
 					}
 					else
 					{	// Invalid property value, ignored.
-						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "implementedValue", typeof(DevOpsPracticesAdoptionValue), attribImplementedValue);
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "currentValue", typeof(DevOpsPracticesAdoptionValue), attribCurrentValue);
+					}
+				}
+			}
+			// TargetValue
+			if (!serializationContext.Result.Failed)
+			{
+				string attribTargetValue = DevOpsDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "targetValue");
+				if (attribTargetValue != null)
+				{
+					DevOpsPracticesAdoptionValue valueOfTargetValue;
+					if (DslModeling::SerializationUtilities.TryGetValue<DevOpsPracticesAdoptionValue>(serializationContext, attribTargetValue, out valueOfTargetValue))
+					{
+						instanceOfPractice.TargetValue = valueOfTargetValue;
+					}
+					else
+					{	// Invalid property value, ignored.
+						DevOpsDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "targetValue", typeof(DevOpsPracticesAdoptionValue), attribTargetValue);
 					}
 				}
 			}
@@ -2445,14 +2462,24 @@ namespace Variamos.DevOpsDsl
 					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "practiceType", serializedPropValue);
 				}
 			}
-			// ImplementedValue
+			// CurrentValue
 			if (!serializationContext.Result.Failed)
 			{
-				DevOpsPracticesAdoptionValue propValue = instanceOfPractice.ImplementedValue;
+				DevOpsPracticesAdoptionValue propValue = instanceOfPractice.CurrentValue;
 				string serializedPropValue = DslModeling::SerializationUtilities.GetString<DevOpsPracticesAdoptionValue>(serializationContext, propValue);
 				if (!serializationContext.Result.Failed)
 				{
-					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "implementedValue", serializedPropValue);
+					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "currentValue", serializedPropValue);
+				}
+			}
+			// TargetValue
+			if (!serializationContext.Result.Failed)
+			{
+				DevOpsPracticesAdoptionValue propValue = instanceOfPractice.TargetValue;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<DevOpsPracticesAdoptionValue>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					DevOpsDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "targetValue", serializedPropValue);
 				}
 			}
 		}

@@ -229,13 +229,21 @@
     <value>Practice Name</value>
     <comment>DisplayName for DomainProperty &apos;PracticeName&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Practice/ImplementedValue.Description" xml:space="preserve">
+  <data name="Variamos.DevOpsDsl.Practice/CurrentValue.Description" xml:space="preserve">
     <value>% of implementation value. Fully Implemented (FI): 100%​, Largely Implemented (LI): [51,99] %​, Partially Implemented (PI) : [21,50]%​, Not Implemented (NI): [1,20] %​, Not Yet (NY): 0%</value>
-    <comment>Description for DomainProperty &apos;ImplementedValue&apos; on DomainClass &apos;Practice&apos;</comment>
+    <comment>Description for DomainProperty &apos;CurrentValue&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
-  <data name="Variamos.DevOpsDsl.Practice/ImplementedValue.DisplayName" xml:space="preserve">
-    <value>Implemented Value</value>
-    <comment>DisplayName for DomainProperty &apos;ImplementedValue&apos; on DomainClass &apos;Practice&apos;</comment>
+  <data name="Variamos.DevOpsDsl.Practice/CurrentValue.DisplayName" xml:space="preserve">
+    <value>Current Value</value>
+    <comment>DisplayName for DomainProperty &apos;CurrentValue&apos; on DomainClass &apos;Practice&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Practice/TargetValue.Description" xml:space="preserve">
+    <value>Description for Variamos.DevOpsDsl.Practice.Target Value</value>
+    <comment>Description for DomainProperty &apos;TargetValue&apos; on DomainClass &apos;Practice&apos;</comment>
+  </data>
+  <data name="Variamos.DevOpsDsl.Practice/TargetValue.DisplayName" xml:space="preserve">
+    <value>Target Value</value>
+    <comment>DisplayName for DomainProperty &apos;TargetValue&apos; on DomainClass &apos;Practice&apos;</comment>
   </data>
   <data name="Variamos.DevOpsDsl.Sre.Description" xml:space="preserve">
     <value>Site Reliability Engineering settings for the application</value>
@@ -1241,8 +1249,12 @@
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="PracticeShapeImplementedValueDefaultText" xml:space="preserve">
-    <value>ImplementedValue</value>
+  <data name="PracticeShapeCurrentValueDefaultText" xml:space="preserve">
+    <value>CurrentValue</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="PracticeShapeTargetValueDefaultText" xml:space="preserve">
+    <value>TargetValue</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="Variamos.DevOpsDsl.ContainerShape.Description" xml:space="preserve">
