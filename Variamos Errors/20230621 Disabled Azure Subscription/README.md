@@ -27,6 +27,12 @@ We are going to use the subscription with ID: ######15b and name: BizSpark-Appli
 
 ![Variamos-ASP-04.png](Variamos-ASP-04.png)
 
+#### 3. Deploy variamos-db, It didn't work
+
+Parameter 'AdministratorLoginPassword' must be specified. This parameter cannot be NULL or empty. (Code: MissingRequiredParameter)
+
+#### 4. Deploy variamosacr
+
 
 ## Solution 2
 
