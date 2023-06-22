@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serverfarms_ASP_variamosspla_a699_name": {
+            "defaultValue": "ASP-variamosspla-a699",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2022-09-01",
+            "name": "[parameters('serverfarms_ASP_variamosspla_a699_name')]",
+            "location": "East US",
+            "sku": {
+                "name": "P1v2",
+                "tier": "PremiumV2",
+                "size": "P1v2",
+                "family": "Pv2",
+                "capacity": 0
+            },
+            "kind": "linux",
+            "properties": {
+                "perSiteScaling": false,
+                "elasticScaleEnabled": false,
+                "maximumElasticWorkerCount": 0,
+                "isSpot": false,
+                "reserved": true,
+                "isXenon": false,
+                "hyperV": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0,
+                "zoneRedundant": false
+            }
+        }
+    ]
+}
