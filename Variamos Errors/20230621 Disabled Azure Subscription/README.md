@@ -33,12 +33,39 @@ Parameter 'AdministratorLoginPassword' must be specified. This parameter cannot 
 
 #### 4. Deploy variamosacr
 
+#### 5. Deploy Site: VariaMos2023
+
+[ariamos2023.json](Variamos2023.json)
+
+#### 6. Publish variamosple to ACR
+
+`cd VARIAMOS-WEB`
+
+`docker build -t variamosacr.azurecr.io/variamos/variamosple:latest .`
+
+`docker login variamosacr.azurecr.io --username variamosacr --password U2rFQIR7q1cRV8ZXIET0uhG3glnUzFcDbqDuvAw+V8+ACRCb2i0D`
+
+`docker push variamosacr.azurecr.io/variamos/variamosple:latest`
+
+#### 6. Deploy App variamos-ms-languages-2023
+
+#### 7. Deploy App variamos-ms-restriction-2023
+
+
 
 ## Solution 2
 
 **Solution**
 
 Hiba is going to get a 150 U$D subscription for a year.
+
+## Where is Variamos portal hosted ?
+
+https://www.hostinger.com/, it was found with https://mxtoolbox.com/SuperTool.aspx 
+
+![Variamos-10.png](Variamos-10.png)
+
+
 
 # References
 
