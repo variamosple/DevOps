@@ -1,0 +1,90 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "flexibleServers_variamos_db_name": {
+            "defaultValue": "variamos-db",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.DBforPostgreSQL/flexibleServers",
+            "apiVersion": "2022-12-01",
+            "name": "[parameters('flexibleServers_variamos_db_name')]",
+            "location": "East US",
+            "sku": {
+                "name": "Standard_B1ms",
+                "tier": "Burstable"
+            },
+            "properties": {
+                "authConfig": {
+                    "activeDirectoryAuth": "Disabled",
+                    "passwordAuth": "Enabled"
+                },
+                "dataEncryption": {
+                    "type": "SystemManaged"
+                },
+                "version": "12",
+                "administratorLogin": "adminpg",
+                "availabilityZone": "1",
+                "storage": {
+                    "storageSizeGB": 32
+                },
+                "backup": {
+                    "backupRetentionDays": 7,
+                    "geoRedundantBackup": "Disabled"
+                },
+                "network": {},
+                "highAvailability": {
+                    "mode": "Disabled"
+                },
+                "maintenanceWindow": {
+                    "customWindow": "Disabled",
+                    "dayOfWeek": 0,
+                    "startHour": 0,
+                    "startMinute": 0
+                },
+                "replicationRole": "Primary",
+                "replicaCapacity": 5
+            }
+        },
+        {
+            "type": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules",
+            "apiVersion": "2022-12-01",
+            "name": "[concat(parameters('flexibleServers_variamos_db_name'), '/AllowAll_2021-6-21_22-16-39')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DBforPostgreSQL/flexibleServers', parameters('flexibleServers_variamos_db_name'))]"
+            ],
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "255.255.255.255"
+            }
+        },
+        {
+            "type": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules",
+            "apiVersion": "2022-12-01",
+            "name": "[concat(parameters('flexibleServers_variamos_db_name'), '/AllowAllAzureServicesAndResourcesWithinAzureIps_2023-6-9_8-5-42')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DBforPostgreSQL/flexibleServers', parameters('flexibleServers_variamos_db_name'))]"
+            ],
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            }
+        },
+        {
+            "type": "Microsoft.DBforPostgreSQL/flexibleServers/firewallRules",
+            "apiVersion": "2022-12-01",
+            "name": "[concat(parameters('flexibleServers_variamos_db_name'), '/ClientIPAddress_2023-6-9_8-2-24')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DBforPostgreSQL/flexibleServers', parameters('flexibleServers_variamos_db_name'))]"
+            ],
+            "properties": {
+                "startIpAddress": "200.12.183.136",
+                "endIpAddress": "200.12.183.136"
+            }
+        }
+    ]
+}
