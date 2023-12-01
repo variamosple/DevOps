@@ -51,10 +51,37 @@ sudo docker-compose --env-file .env.aws.develop -f docker-compose-aws-develop.ym
 
 sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml pull
 
+### 9. Stop and start the service
+
+**WARNING: the down option destroys all data and volumes** 
+
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml stop
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml start
+
+### 10. Restart your containers
+
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml up -d
+
 ## Setup GitRHub self hosted funner
 
 **Runner image:** Linux
 **Architecture:** ARM64/x64
+
+### 11. Update docker compose services with upodate definition of docker compose file
+
+**Set the environments vars**
+source .env.aws.develop 
+
+**Pull the images**
+
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml pull
+
+**Run docker compose with the option up**
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml up -d
+
+**Check the containers running**
+sudo docker-compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml ps
+
 
 **Download**
 
@@ -76,11 +103,23 @@ sudo chmod 666 /var/run/docker.sock
 
 **Execute the runner if it is stoped after rebbot the system**
 
+**Runs it once and then reboot the system**
+sudo usermod -aG docker $USER
+
 cd actions-runner/
-
 ./run.sh
+close de tereminal
 
-close terminal
+## Restore database
+
+**View the logs on db container**
+sudo docker logs variamos_db_aws_develop
+sudo docker logs variamos_pgadmin_aws_develop
+
+**Open the terminal of the DB in the container**
+sudo docker exec -it variamos_db_aws_develop /bin/bash
+
+psql -h 127.0.0.1 -p 5432 -U adminpg -d VariamosDB
 
 ## Errors
 
@@ -94,3 +133,108 @@ sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.ym
 
 WARN[0000] The "VARIAMOS_MS_LANGUAGES_DB_HOST" variable is not set. Defaulting to a blank string. 
 WARN[0000] The "VARIAMOS_MS_LANGUAGES_DB_DATABASE" variable is not set. Defaulting to a blank string. 
+
+### ERROR 20231201 01
+
+**command**
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml up -d
+
+After run the option up the container **vms_domain_application_aws_develop** shows that is **Started** buth after run ps option the contanier is not showed.
+
+**View containter status**
+
+**View running containers**
+
+docker ps -a
+
+09d0209db792   jasotov/vms_domain_application:main     "docker-entrypoint.s…"   8 hours ago   **Exited (1)** 5 seconds ago 
+
+**View container logs**
+
+docker logs vms_domain_application_aws_develop
+
+**Shell**
+
+docker exec -it vms_domain_application_aws_develop /bin/sh
+
+
+**Result**
+
+> autocomplete@1.0.0 start
+> node index.js
+
+node:internal/modules/cjs/loader:1031
+  throw err;
+  ^
+
+Error: Cannot find module '/vms_domain_application/index.js'
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1028:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:22:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+> autocomplete@1.0.0 start
+> node index.js
+
+node:internal/modules/cjs/loader:1031
+  throw err;
+  ^
+
+Error: Cannot find module '/vms_domain_application/index.js'
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1028:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:22:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+> autocomplete@1.0.0 start
+> node index.js
+
+node:internal/modules/cjs/loader:1031
+  throw err;
+  ^
+
+Error: Cannot find module '/vms_domain_application/index.js'
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1028:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:22:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+> autocomplete@1.0.0 start
+> node index.js
+
+node:internal/modules/cjs/loader:1031
+  throw err;
+  ^
+
+Error: Cannot find module '/vms_domain_application/index.js'
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1028:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:22:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+**Solution**
+
+**Set the environments vars**
+source .env.aws.develop 
+
+**Pull the images**
+
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml pull
+
+**Run docker compose with the option up**
+sudo docker compose --env-file .env.aws.develop -f docker-compose-aws-develop.yml up -d
+
+docker run -p 4040:4000 --name test_variamos_domain jasotov/vms_domain_application:main
+

@@ -71,6 +71,22 @@ services:
       - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
       - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
 
+  vmsdomainapplicationaws:
+    image: jasotov/vms_domain_application:main
+    container_name: vms_domain_application_aws_develop
+    hostname: vms_domain_application
+    ports:
+      - 6001:8081
+    networks:
+      - variamosnet_aws_develop
+    environment:
+      - DB_HOST=${VARIAMOS_MS_LANGUAGES_DB_HOST}
+      - DB_DATABASE=${VARIAMOS_MS_LANGUAGES_DB_DATABASE} 
+      - DB_PORT=${VARIAMOS_MS_LANGUAGES_DB_PORT}
+      - DB_SSL=${VARIAMOS_MS_LANGUAGES_DB_SSL}
+      - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
+      - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+
 networks:
   variamosnet_aws_develop:
   
