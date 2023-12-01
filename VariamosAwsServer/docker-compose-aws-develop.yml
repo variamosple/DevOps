@@ -73,10 +73,10 @@ services:
 
   vmsdomainapplicationaws:
     image: jasotov/vms_domain_application:main
-    container_name: vms_domain_application_aws_main
+    container_name: vms_domain_application_aws_develop
     hostname: vms_domain_application
     ports:
-      - 6001:4000
+      - 6001:8081
     networks:
       - variamosnet_aws_develop
     environment:
