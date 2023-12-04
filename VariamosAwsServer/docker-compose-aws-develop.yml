@@ -38,13 +38,19 @@ services:
       - 8000:3000
     networks:
       - variamosnet_aws_develop
+    environment:
+      - REACT_APP_VARIAMOSPLE_URL_BACKEND_LANGUAGES=${REACT_APP_VARIAMOSPLE_URL_BACKEND_LANGUAGES}
+      - REACT_APP_VARIAMOSPLE_ENVIROMENT=${REACT_APP_VARIAMOSPLE_ENVIROMENT}
+      - REACT_APP_VARIAMOSPLE_URL_VARIAMOS_DOCUMNETATION=${REACT_APP_VARIAMOSPLE_URL_VARIAMOS_DOCUMNETATION}
+      - REACT_APP_VARIAMOSPLE_URL_VARIAMOS_LANGUAGE_DOCUMENTATION=${REACT_APP_VARIAMOSPLE_URL_VARIAMOS_LANGUAGE_DOCUMENTATION}
+      - REACT_APP_VARIAMOSPLE_URL_VARIAMOS_MS_LANGUAGES=${REACT_APP_VARIAMOSPLE_URL_VARIAMOS_MS_LANGUAGES}
 
   variamosmslanguagesaws:
     image: jasotov/variamos_ms_languages:develop
     container_name: variamos_ms_languages_aws_develop
     hostname: variamos_ms_languages
     ports:
-      - 6000:4000
+      - 8001:4000
     networks:
       - variamosnet_aws_develop
     environment:

@@ -118,8 +118,14 @@ sudo docker logs variamos_pgadmin_aws_develop
 
 **Open the terminal of the DB in the container**
 sudo docker exec -it variamos_db_aws_develop /bin/bash
+docker cp 20231203VariamosAzure.sql variamos_db
+_aws_develop:/20231203VariamosAzure.sql
+Successfully copied 1.36MB to variamos_db_aws_develop:/20231203VariamosAzure.sql
 
-psql -h 127.0.0.1 -p 5432 -U adminpg -d VariamosDB
+**Run from container shell**
+
+psql -h localhost -p 5432 -U adminpg -d VariamosDB<20231203VariamosAzure.sql
+
 
 ## Errors
 
