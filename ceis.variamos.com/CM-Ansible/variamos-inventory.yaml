@@ -9,4 +9,5 @@ all:
           ansible_host: ceis.variamos.com
           ansible_ssh_user: "{{ admin_user }}"
           ansible_ssh_pass: "{{ admin_password }}"
+          ansible_become_pass: "{{ admin_password }}"
           ansible_ssh_common_args: '-o PubkeyAuthentication=no -o PreferredAuthentications=password'
