@@ -1,0 +1,27 @@
+server {
+    listen 80;
+    server_name ceis.variamos.com;
+
+    # Redirect HTTP to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name ceis.variamos.com;
+
+    ssl_certificate /etc/nginx/ssl/ceis.variamos.com.pem;
+    ssl_certificate_key /etc/nginx/ssl/ceis.variamos.com.key;
+
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+
+    root /var/www/ceis.variamos.com;
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Optionally add more configurations here if needed
+}

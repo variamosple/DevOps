@@ -76,6 +76,39 @@ changed: [prod_server]
 PLAY RECAP **************************************************************************************************************************************************
 prod_server                : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+## Install Nginx
+
+Certs Location
+
+ssl_certificate /etc/ssl/certs/variamos-domain.pem;
+ssl_certificate_key /etc/ssl/certs/variamos-domain.key;
+
+`source .env`
+
+`ansible-playbook -i variamos-inventory.yaml nginx-install-prod-playbook-02.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
+
+**Results**
+
+
+PLAY [Install Nginx and enable HTTPS for ceis.variamos.com] *************************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************************
+[WARNING]: Platform linux on host prod_server is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+ok: [prod_server]
+
+TASK [Install Nginx] ****************************************************************************************************************
+changed: [prod_server]
+
+TASK [Ensure Nginx is enabled and running] ******************************************************************************************
+ok: [prod_server]
+
+PLAY RECAP **************************************************************************************************************************
+prod_server                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+# Errors
+
 ## Error001 2024/10/16
 
 ### **Description:**

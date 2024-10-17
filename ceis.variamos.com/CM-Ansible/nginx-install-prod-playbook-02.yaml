@@ -1,0 +1,64 @@
+---
+- name: Install Nginx and Configure SSL for ceis.variamos.com
+  hosts: prod
+  vars:
+    admin_user: ""
+    admin_password: ""
+    ansible_become_pass: ""
+  become: yes
+  become_user: root  # specify that tasks should be run as root
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Enter the sudo password"
+      private: yes
+  tasks:
+    - name: Ensure Nginx is installed
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Create Nginx site directory for ceis.variamos.com
+      file:
+        path: /etc/nginx/sites-available/ceis.variamos.com
+        state: touch
+
+    - name: Enable site directory
+      file:
+        src: /etc/nginx/sites-available/ceis.variamos.com
+        dest: /etc/nginx/sites-enabled/ceis.variamos.com
+        state: link
+
+    - name: Ensure the SSL directory exists
+      file:
+        path: /etc/nginx/ssl
+        state: directory
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Copy SSL certificate
+      copy:
+        src: ceis.variamos.com.pem
+        dest: /etc/nginx/ssl/ceis.variamos.com.pem
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Copy SSL key
+      copy:
+        src: ceis.variamos.com.key
+        dest: /etc/nginx/ssl/ceis.variamos.com.key
+        owner: root
+        group: root
+        mode: 0600
+
+    - name: Configure Nginx for HTTPS
+      template:
+        src: nginx-ssl.conf.j2
+        dest: /etc/nginx/sites-available/ceis.variamos.com
+
+    - name: Restart Nginx to apply changes
+      service:
+        name: nginx
+        state: restarted
