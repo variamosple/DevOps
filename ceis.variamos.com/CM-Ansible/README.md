@@ -22,8 +22,6 @@
 
 `ansible all -m ping -i variamos-inventory.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD"`
 
-`ansible all -m ping -i variamos-inventory.yaml`
-
 **Result**
 
 prod_server | SUCCESS => {
@@ -40,6 +38,43 @@ prod_server | SUCCESS => {
 `source .env`
 
 `ansible-playbook -i variamos-inventory.yaml docker-prod-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
+
+**Result:**
+
+PLAY [Install Docker on Ubuntu] *****************************************************************************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************************************************
+[WARNING]: Platform linux on host prod_server is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [prod_server]
+
+TASK [Update APT package index] *****************************************************************************************************************************
+changed: [prod_server]
+
+TASK [Install packages to allow apt to use a repository over HTTPS] *****************************************************************************************
+changed: [prod_server]
+
+TASK [Add Docker’s official GPG key] ************************************************************************************************************************
+changed: [prod_server]
+
+TASK [Set up the Docker stable repository] ******************************************************************************************************************
+changed: [prod_server]
+
+TASK [Install Docker Engine] ********************************************************************************************************************************
+changed: [prod_server]
+
+TASK [Install Docker Compose (optional)] ********************************************************************************************************************
+changed: [prod_server]
+
+TASK [Ensure Docker service is running] *********************************************************************************************************************
+ok: [prod_server]
+
+TASK [Add the ubuntu user to the docker group (optional)] ***************************************************************************************************
+changed: [prod_server]
+
+PLAY RECAP **************************************************************************************************************************************************
+prod_server                : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 ## Error001 2024/10/16
 
