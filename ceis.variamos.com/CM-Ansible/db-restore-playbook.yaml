@@ -1,0 +1,39 @@
+---
+- name: Restore database
+  vars:
+    admin_user: ""
+    admin_password: ""
+    ansible_become_pass: ""
+    restore_file: ""
+  hosts: prod
+  become: yes
+  become_user: root  # specify that tasks should be run as root
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Enter the sudo password"
+      private: yes
+
+    - name: "restore_file"
+      prompt: "Enter the path to the SQL backup file"
+  tasks:
+
+    - name: Copy the sql file to the server
+      copy:
+        src: "{{ restore_file }}"
+        dest: "/home/oaguayo/{{ restore_file | basename }}"
+
+    - name: Copy backup script to the server
+      copy:
+        src: db-restore-prod.sh
+        dest: /home/oaguayo/db-restore-prod.sh
+        mode: '0755'
+
+    - name: Execute the restore script
+      command: /home/oaguayo/db-restore-prod.sh
+      args:
+        chdir: /home/oaguayo
+      register: restore_output
+
+    - name: Display restore output
+      debug:
+        var: restore_output.stdout

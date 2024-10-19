@@ -138,6 +138,10 @@ prod_server                : ok=3    changed=1    unreachable=0    failed=0    s
 
 `ansible-playbook -i variamos-inventory.yaml server-restart-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
 
+## Restore the Database
+
+`ansible-playbook -i variamos-inventory.yaml db-restore-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD" -e restore_file="db_backup_2024-10-19-02-00-01.sql"`
+
 # Errors
 
 ## Error001 2024/10/16
