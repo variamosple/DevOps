@@ -1,0 +1,49 @@
+---
+- name: Deploy Docker Compose for ceis.variamos.com
+  vars:
+    admin_user: ""
+    admin_password: ""
+    ansible_become_pass: ""
+  hosts: prod  # Change this to your target server
+  become: yes
+  become_user: root  # specify that tasks should be run as root
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Enter the sudo password"
+      private: yes
+  tasks:
+    - name: Upload the nginx-containers.conf file to the server
+      copy:
+        src: nginx-containers.conf  # Replace with the local path to the .ceis.env file
+        dest: /home/oaguayo/nginx-containers.conf  # Replace with the remote path where you want to place the .ceis.env file
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Upload the .ceis.env file to the server
+      copy:
+        src: .ceis.env  # Replace with the local path to the .ceis.env file
+        dest: /home/oaguayo/.ceis.env  # Replace with the remote path where you want to place the .ceis.env file
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Upload the docker-compose-ceis.yaml file to the server
+      copy:
+        src: docker-compose-ceis.yaml  # Replace with the local path to docker-compose-ceis.yml
+        dest: /home/oaguayo/docker-compose-ceis.yaml  # Replace with the remote path where you want to place docker-compose-ceis.yml
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Pull Docker images
+      command: >
+        docker compose --env-file /home/oaguayo/.ceis.env -f /home/oaguayo/docker-compose-ceis.yaml pull
+      args:
+        chdir: /home/oaguayo/  # Directory where docker-compose.yml is located
+
+    - name: Bring up Docker containers in detached mode
+      command: >
+        docker compose --env-file /home/oaguayo/.ceis.env -f /home/oaguayo/docker-compose-ceis.yaml up -d
+      args:
+        chdir: /home/oaguayo/  # Directory where docker-compose.yml is located

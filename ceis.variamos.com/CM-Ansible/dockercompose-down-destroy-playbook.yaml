@@ -1,0 +1,22 @@
+---
+- name: Destroy all services defined in docker compose file
+  
+  vars:
+    admin_user: ""
+    admin_password: ""
+    ansible_become_pass: ""
+  hosts: prod  # or you can target specific groups like 'prod' or 'dev'
+  become: yes
+  become_user: root  # specify that tasks should be run as root
+  
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Enter the sudo password"
+      private: yes
+  
+  tasks:
+    - name: Run down command to destroy all the services defined in the docker compose file
+      command: >
+        docker compose --env-file /home/oaguayo/.ceis.env -f /home/oaguayo/docker-compose-ceis.yml down
+      args:
+        chdir: /home/oaguayo/  # Directory where docker-compose.yml is located

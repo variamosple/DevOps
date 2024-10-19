@@ -18,6 +18,26 @@
         state: present
         update_cache: yes
 
+    - name: Ensure /run directory is writable by Nginx
+      file:
+        path: /run/nginx.pid
+        state: touch
+        #owner: www-data  # Nginx typically runs as www-data, adjust if needed
+        #group: www-data
+        owner: "{{ admin_user }}"  # Nginx typically runs as www-data, adjust if needed
+        group: "{{ admin_user }}"
+        mode: 0644
+
+    - name: Ensure /var/run/nginx.pid exists and is writable
+      file:
+        path: /var/run/nginx.pid
+        state: touch
+        #owner: www-data
+        #group: www-data
+        owner: "{{ admin_user }}"
+        group: "{{ admin_user }}"
+        mode: 0644
+
     - name: Create Nginx site directory for ceis.variamos.com
       file:
         path: /etc/nginx/sites-available/ceis.variamos.com
@@ -53,12 +73,42 @@
         group: root
         mode: 0600
 
+    - name: Copy nginx.conf into /etc/nginx/
+      template:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Copy nginx-ceis.conf into /home/[user]
+      template:
+        src: nginx-ceis.conf
+        dest: /home/oaguayo/nginx-ceis.conf
+    
     - name: Configure Nginx for HTTPS
       template:
-        src: nginx-ssl.conf.j2
+        #src: nginx-ssl.conf.j2
+        src: nginx-ceis.conf
         dest: /etc/nginx/sites-available/ceis.variamos.com
+
+#    - name: Restart Nginx to apply changes
+#      service:
+#        name: nginx
+#        state: restarted
+
+    - name: Test Nginx configuration
+      command: nginx -t
+      register: nginx_test_result
+      ignore_errors: true
+
+    - name: Fail if Nginx config test failed
+      fail:
+        msg: "Nginx configuration test failed. Check configuration."
+      when: nginx_test_result.rc != 0
 
     - name: Restart Nginx to apply changes
       service:
         name: nginx
         state: restarted
+      when: nginx_test_result.rc == 0

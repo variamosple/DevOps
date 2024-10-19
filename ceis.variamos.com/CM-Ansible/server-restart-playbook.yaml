@@ -1,0 +1,20 @@
+---
+- name: Restart Ubuntu Server
+  hosts: prod
+  vars:
+    admin_user: ""
+    admin_password: ""
+    ansible_become_pass: ""
+  become: true  # Ensures the task is executed with sudo privileges
+  become_user: root  # specify that tasks should be run as root
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Enter the sudo password"
+      private: yes
+  tasks:
+    - name: Restart the server
+      ansible.builtin.command:
+        cmd: "shutdown -r now"
+      async: 1
+      poll: 0
+      ignore_errors: true

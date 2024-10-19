@@ -1,0 +1,40 @@
+---
+- name: Stop Nginx service on Ubuntu to release port 443
+  vars:
+    admin_user: ""
+    admin_password: ""
+    ansible_become_pass: ""
+  hosts: prod  # Specify your target server
+  become: yes
+  become_user: root  # specify that tasks should be run as root
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Enter the sudo password"
+      private: yes
+  tasks:
+    - name: Check if Nginx is installed
+      apt:
+        name: nginx
+        state: present
+      register: nginx_installed
+
+    - name: Stop Nginx if it is running
+      service:
+        name: nginx
+        state: stopped
+      when: nginx_installed is not failed
+
+    - name: Check if Nginx is still running
+      shell: "sudo lsof -i :443 | grep nginx"
+      register: nginx_check
+      ignore_errors: yes
+
+    - name: Display message if Nginx is still using port 443
+      debug:
+        msg: "Nginx is still using port 443."
+      when: nginx_check.stdout != ""
+
+    - name: Display success message if port 443 is released
+      debug:
+        msg: "Port 443 is now free."
+      when: nginx_check.stdout == ""

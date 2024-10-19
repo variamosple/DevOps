@@ -32,12 +32,20 @@ prod_server | SUCCESS => {
     "ping": "pong"
 }
 
-
 ## Install Docker and Docker Compose on the server ceis.variamos.com
 
 `source .env`
 
 `ansible-playbook -i variamos-inventory.yaml docker-prod-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
+
+## Run Docker compose file to udate services nad containers
+
+**Pull the images**
+
+`sudo docker compose --env-file .ceis.env -f docker-compose-ceis.yml pull`
+
+**Run docker compose with the option up**
+`sudo docker compose --env-file .ceis.env -f docker-compose-ceis.yml up -d`
 
 **Result:**
 
@@ -89,7 +97,6 @@ ssl_certificate_key /etc/ssl/certs/variamos-domain.key;
 
 **Results**
 
-
 PLAY [Install Nginx and enable HTTPS for ceis.variamos.com] *************************************************************************
 
 TASK [Gathering Facts] **************************************************************************************************************
@@ -106,6 +113,30 @@ ok: [prod_server]
 
 PLAY RECAP **************************************************************************************************************************
 prod_server                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+## Run docker compose pull and up containers
+
+1. Set the environment on the control machine
+
+`source .env`
+
+2. Stop the nginx service to avoid conflicts with the port 443 used by the nginx container
+
+`ansible-playbook -i variamos-inventory.yaml nginx-stop-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
+
+3. Update the services defined in the docker compose file
+
+`ansible-playbook -i variamos-inventory.yaml dockercomponse-pull-up-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
+
+## Destroy all services defined in the docker compose file
+
+**WARNING** 
+
+`ansible-playbook -i variamos-inventory.yaml dockercompose-down-destroy-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
+
+## Restart the server
+
+`ansible-playbook -i variamos-inventory.yaml server-restart-playbook.yaml -e admin_user="$ADMIN_USER" -e admin_password="$ADMIN_PASSWORD" -e ansible_become_pass="$ADMIN_PASSWORD"`
 
 # Errors
 
