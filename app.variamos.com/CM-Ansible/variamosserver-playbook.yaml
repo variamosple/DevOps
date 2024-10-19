@@ -1,0 +1,39 @@
+---
+- name: Install New Relic Infrastructure Agent
+  hosts: webservers
+  become: yes
+
+  vars:
+    new_relic_license_key: YOUR_NEW_RELIC_LICENSE_KEY
+
+  tasks:
+    - name: Add the New Relic repository GPG key
+      apt_key:
+        url: https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
+        state: present
+
+    - name: Create New Relic repository file
+      copy:
+        dest: /etc/apt/sources.list.d/newrelic-infra.list
+        content: |
+          deb [arch=amd64] https://download.newrelic.com/infrastructure_agent/linux/apt focal main
+
+    - name: Update the apt cachemini
+      apt:
+        update_cache: yes
+
+    - name: Install New Relic Infrastructure Agent
+      apt:
+        name: newrelic-infra
+        state: present
+
+    - name: Configure New Relic Infrastructure Agent
+      copy:
+        dest: /etc/newrelic-infra.yml
+        content: |
+          license_key: "{{ new_relic_license_key }}"
+
+    - name: Restart New Relic Infrastructure Agent
+      service:
+        name: newrelic-infra
+        state: restarted

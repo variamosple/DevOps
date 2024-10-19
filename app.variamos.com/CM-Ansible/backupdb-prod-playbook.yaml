@@ -1,0 +1,22 @@
+- name: Setup Database Backup on EC2
+  hosts: prod
+  become: yes
+  tasks:
+    - name: Copy backup script to the server
+      copy:
+        src: dbbackup-prod.sh
+        dest: /usr/local/bin/dbbackup-prod.sh
+        mode: '0755'
+
+    - name: Create backup directory
+      file:
+        path: /home/ubuntu/backupdb
+        state: directory
+
+    - name: Create cron job for database backup
+      cron:
+        name: "Database Backup"
+        minute: "0"
+        hour: "2"  # Set the time you want the backup to run (e.g., 2 AM)
+        job: "/usr/local/bin/dbbackup-prod.sh > /var/log/backupdb-prod.log 2>&1"
+        state: present
