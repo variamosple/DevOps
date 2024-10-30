@@ -1,0 +1,214 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+name: variamos_main
+
+services: 
+
+#  wordpress:
+#    depends_on:
+#      - dbmysql
+#    image: wordpress:latest
+#    container_name: variamos_wordpress_main 
+#    hostname: variamos_wordpress
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ${WORDPRESS_FILES}:/var/www/html
+#    environment:
+#      WORDPRESS_DB_HOST: variamos_mysql
+#      WORDPRESS_DB_USER: ${MYSQL_USER}
+#      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+#      WORDPRESS_DB_NAME: wordpress
+#    restart: always
+#    networks:
+#      - variamosnet_aws_main
+
+#  dbmysql:
+#    image: mysql:8.2
+#    container_name: variamos_mysql_main
+#    hostname: variamos_mysql
+#    volumes:
+#      - ${WORDPRESS_DATA_VOLUME}:/var/lib/mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#      MYSQL_DATABASE: ${MYSQL_DATABASE}
+#      MYSQL_USER: ${MYSQL_USER}
+#      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#      MYSQL_ROOT_HOST: '%'
+#    ports:
+#      - "3306:3306"
+#    networks:
+#      - variamosnet_aws_main
+
+  dbaws:
+    image: postgres:14.8
+    container_name: variamos_db_aws_main
+    hostname: variamos_db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+      POSTGRES_USER: ${VARIAMOS_MS_LANGUAGES_DB_USER}
+      POSTGRES_SSL: ${VARIAMOS_MS_LANGUAGES_DB_SSL}
+    ports:
+      - "5433:${VARIAMOS_MS_LANGUAGES_DB_PORT}"
+    volumes:
+      - variamos_pgdata_aws_main:/var/lib/postgresql/develop/variamosdevelopdata148
+    networks:
+      - variamosnet_aws_main
+
+  admineraws:
+    image: adminer
+    container_name: variamos_pgadmin_aws_main
+    hostname: variamos_pgadmin
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - variamosnet_aws_main
+
+  variamospleaws:
+    image: jasotov/variamosple:main
+    container_name: variamosple_aws_main
+    hostname: variamosple
+    ports:
+      - 8000:3000
+    networks:
+      - variamosnet_aws_main
+    #environment:
+    #  - REACT_APP_NODE_ENV=${REACT_APP_NODE_ENV}
+    #  - REACT_APP_HOST=${REACT_APP_HOST}
+    #  - REACT_APP_PORT=${REACT_APP_PORT}
+    #  - REACT_APP_URLBACKENDRESTRICTION=${REACT_APP_URLBACKENDRESTRICTION}
+    #  - REACT_APP_URLBACKENDLANGUAGE=${REACT_APP_URLBACKENDLANGUAGE}
+    #  - REACT_APP_VARIAMOSPLE_ENVIROMENT=${REACT_APP_VARIAMOSPLE_ENVIROMENT}
+    #  - REACT_APP_URLVARIAMOSLANGDOCUMENTATION=${REACT_APP_URLVARIAMOSLANGDOCUMENTATION}
+    #  - REACT_APP_URLVARIAMOSLANGUAGES=${REACT_APP_URLVARIAMOSLANGUAGES}
+    #  - REACT_APP_URLVARIAMOSDOCUMENTATION=${REACT_APP_URLVARIAMOSDOCUMENTATION}
+
+  variamosmslanguagesaws:
+    image: jasotov/variamos_ms_languages:main
+    container_name: variamos_ms_languages_aws_main
+    hostname: variamos_ms_languages
+    ports:
+      - 8003:4000
+    networks:
+      - variamosnet_aws_main
+    environment:
+      - DB_HOST=${VARIAMOS_MS_LANGUAGES_DB_HOST}
+      - DB_DATABASE=${VARIAMOS_MS_LANGUAGES_DB_DATABASE} 
+      - DB_PORT=${VARIAMOS_MS_LANGUAGES_DB_PORT}
+      - DB_SSL=${VARIAMOS_MS_LANGUAGES_DB_SSL}
+      - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
+      - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+
+  vms_projects:
+    image: jasotov/vms_projects:main
+    container_name: vms_projects_aws_main
+    hostname: vms_projects
+    ports:
+      - 8005:10000
+    networks:
+      - variamosnet_aws_main
+    environment:
+      - DB_HOST=${VARIAMOS_MS_LANGUAGES_DB_HOST}
+      - DB_DATABASE=${VARIAMOS_MS_LANGUAGES_DB_DATABASE} 
+      - DB_PORT=${VARIAMOS_MS_LANGUAGES_DB_PORT}
+      - DB_SSL=${VARIAMOS_MS_LANGUAGES_DB_SSL}
+      - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
+      - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+
+  variamoslanguagesaws:
+    image: jasotov/variamoslanguages:main
+    container_name: variamoslanguages_aws_main
+    hostname: variamoslanguages
+    ports:
+      - 8001:3000
+    networks:
+      - variamosnet_aws_main
+    environment:
+      - REACT_APP_NODE_ENV=${REACT_APP_NODE_ENV}
+      - REACT_APP_HOST=${REACT_APP_HOST}
+      - REACT_APP_PORT=${REACT_APP_PORT}
+      - REACT_APP_URLBACKENDRESTRICTION=${REACT_APP_URLBACKENDRESTRICTION}
+      - REACT_APP_URLBACKENDLANGUAGE=${REACT_APP_URLBACKENDLANGUAGE}
+      - REACT_APP_VARIAMOSPLE_ENVIROMENT=${REACT_APP_VARIAMOSPLE_ENVIROMENT}
+      - REACT_APP_URLVARIAMOSLANGDOCUMENTATION=${REACT_APP_URLVARIAMOSLANGDOCUMENTATION}
+      - REACT_APP_URLVARIAMOSLANGUAGES=${REACT_APP_URLVARIAMOSLANGUAGES}
+      - REACT_APP_URLVARIAMOSDOCUMENTATION=${REACT_APP_URLVARIAMOSDOCUMENTATION}
+      - REACT_APP_URLBACKENDLANGUAGEREVIEWS=${REACT_APP_URLBACKENDLANGUAGEREVIEWS}
+
+  vmsdomainapplicationaws:
+    image: jasotov/vms_domain_application:main
+    container_name: vms_domain_application_aws_main
+    hostname: vms_domain_application
+    ports:
+      - 6001:8081
+    networks:
+      - variamosnet_aws_main
+    environment:
+      - DB_HOST=${VARIAMOS_MS_LANGUAGES_DB_HOST}
+      - DB_DATABASE=${VARIAMOS_MS_LANGUAGES_DB_DATABASE} 
+      - DB_PORT=${VARIAMOS_MS_LANGUAGES_DB_PORT}
+      - DB_SSL=${VARIAMOS_MS_LANGUAGES_DB_SSL}
+      - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
+      - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+
+  vmslanguagereviewsaws:
+    image: jasotov/vms_language_reviews:main
+    container_name: vms_language_reviews_aws_main
+    hostname: vms_language_reviews
+    ports:
+      - 8007:3000
+    networks:
+      - variamosnet_aws_main
+    environment:
+      - DB_HOST=${VARIAMOS_MS_LANGUAGES_DB_HOST}
+      - DB_DATABASE=${VARIAMOS_MS_LANGUAGES_DB_DATABASE} 
+      - DB_PORT=${VARIAMOS_MS_LANGUAGES_DB_PORT}
+      - DB_SSL=${VARIAMOS_MS_LANGUAGES_DB_SSL}
+      - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
+      - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+
+  vmsrequirementsautocompleteaws:
+    image: jasotov/vms_requirements_autocomplete:main
+    container_name: vms_requirements_autocomplete_aws_main
+    hostname: vms_requirements_autocomplete
+    ports:
+      - 8004:8080
+    networks:
+      - variamosnet_aws_main
+    environment:
+      - DB_HOST=${VARIAMOS_MS_LANGUAGES_DB_HOST}
+      - DB_DATABASE=${VARIAMOS_MS_LANGUAGES_DB_DATABASE} 
+      - DB_PORT=${VARIAMOS_MS_LANGUAGES_DB_PORT}
+      - DB_SSL=${VARIAMOS_MS_LANGUAGES_DB_SSL}
+      - DB_USER=${VARIAMOS_MS_LANGUAGES_DB_USER}
+      - DB_PASSWORD=${VARIAMOS_MS_LANGUAGES_DB_PASSWORD}
+
+  nginx_aws:
+    image: nginx:latest
+    container_name: nginx
+    hostname: nginx_aws
+    ports:
+      - 443:443
+    networks:
+      - variamosnet_aws_main
+    volumes:
+      - /home/ubuntu/nginx-develop.conf:/etc/nginx/nginx.conf
+      - /home/ubuntu/variamos-domain.pem:/etc/ssh/variamos-domain.pem
+      - /home/ubuntu/variamos-domain.key:/etc/ssh/variamos-domain.key
+
+  semantic_translator:
+    image: ccorre20/semantic_translator
+    container_name: semantic_translator
+    hostname: semantic_translator
+    ports:
+      - 5000:5000
+    networks:
+      - variamosnet_aws_main
+
+networks:
+  variamosnet_aws_main:
+  
+volumes:
+  variamos_pgdata_aws_main:
